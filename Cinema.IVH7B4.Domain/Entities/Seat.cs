@@ -17,7 +17,8 @@ namespace Cinema.IVH7B4.Domain.Entities {
         [Key]
         public int SeatID { get; set; }
         public int SeatType { get; set; }
-        public int RowNo { get; set; }
+        public int RowX { get; set; }
+        public int RowY { get; set; }
         public int seatNo { get; set; }
 
         public int RoomID { get; set; }
