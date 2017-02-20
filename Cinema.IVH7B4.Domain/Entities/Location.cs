@@ -24,7 +24,7 @@ namespace Cinema.IVH7B4.Domain.Entities {
         public string Country { get; set; }
         public int Rooms { get; set; }
         public decimal TicketPriceNormal { get; set; }
-        public long TicketPriceLong { get; set; }
+        public decimal TicketPriceLong { get; set; }
         public decimal kidDiscount { get; set; }
         public decimal StudentDiscount { get; set; }
         public decimal SeniorDiscount { get; set; }

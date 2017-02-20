@@ -11,13 +11,17 @@ namespace Cinema.IVH7B4.Domain.Entities {
     [Table("Room")]
     public class Room {
 
-        public Room() {
-            
+        public Room() {        
         }
 
         [Key]
         public int RoomID { get; set; }
 
         public int RoomNumber { get; set; }
+
+        public int LayoutID { get; set; }
+
+        [ForeignKey("LayoutID")]
+        public RoomLayout Layout { get; set; }
     }
 }

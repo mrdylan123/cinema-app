@@ -12,12 +12,24 @@ namespace Cinema.IVH7B4.Domain.Entities {
     public class Ticket {
 
         public Ticket() {
-            
+
         }
         [Key]
         public int TicketID { get; set; }
         public decimal Price { get; set; }
         public int TicketType { get; set; }
         public decimal Discount { get; set; }
+
+        public int CustomerID { get; set; }
+
+        [ForeignKey("CustomerID")]
+        public Customer Customer { get; set; }
+
+        public String SecretKey { get; set; }
+
+        public int SeatID { get; set; }
+
+        [ForeignKey("SeatID")]
+        public Seat Seat { get; set;  }
     }
 }

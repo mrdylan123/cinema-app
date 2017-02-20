@@ -87,7 +87,6 @@
     <Compile Include="Entities\Seat.cs" />
     <Compile Include="Entities\Showing.cs" />
     <Compile Include="Entities\Ticket.cs" />
-    <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
