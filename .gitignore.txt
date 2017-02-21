@@ -1,6 +1,6 @@
 Web.config
-*/bin/Debug
-*/obj/Debug
+*/bin/*
+*/obj/*
 
 
 ## Ignore Visual Studio temporary files, build results, and
