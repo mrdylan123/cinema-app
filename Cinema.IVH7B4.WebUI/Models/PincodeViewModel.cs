@@ -5,6 +5,8 @@ using System.Web;
 
 namespace Cinema.IVH7B4.WebUI.Models {
     public class PincodeViewModel {
+        public string MovieName { get; set; }
+        public decimal MoviePrice { get; set; }
 
         private String pinValue;
 
@@ -23,5 +25,6 @@ namespace Cinema.IVH7B4.WebUI.Models {
         public PincodeViewModel() {
             pinValue = "";
         }
+
     }
 }
