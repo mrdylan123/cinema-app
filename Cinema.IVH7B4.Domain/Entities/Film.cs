@@ -19,12 +19,17 @@ namespace Cinema.IVH7B4.Domain.Entities {
 
         public string Name { get; set; }
         public string Language { get; set; }
-        public string LanguagueSubs { get; set; }
+        public string LanguageSubs { get; set; }
         public int Age { get; set; }
         public int FilmType { get; set; }
         public string Description { get; set; }
-        public string Image { get; set; }
-        public int Lenght { get; set; }
+        public byte[] Image { get; set; }
+        public int Length { get; set; }
         public bool Is3D { get; set; }
+
+        public int LocationID { get; set; }
+
+        [ForeignKey("LocationID")]
+        public Location Location { get; set; } 
     }
 }

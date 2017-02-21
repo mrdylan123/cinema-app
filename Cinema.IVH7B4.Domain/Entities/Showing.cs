@@ -20,5 +20,15 @@ namespace Cinema.IVH7B4.Domain.Entities {
 
         public DateTime BeginDateTime { get; set; }
         public DateTime EndDateTime { get; set; }
+
+        public int FilmID { get; set; }
+
+        [ForeignKey("FilmID")]
+        public Film Film { get; set; }
+
+        public int RoomID { get; set; }
+
+        [ForeignKey("RoomID")]
+        public Room Room { get; set; }
     }
 }

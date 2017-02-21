@@ -9,12 +9,18 @@ using System.Threading.Tasks;
 namespace Cinema.IVH7B4.Domain.Entities {
 
     [Table("Manager")]
-    public class Manager : User {
+    public class Manager {
 
         public Manager() {
             
         }
         [Key]
-        public int UserID { get; set; }
+        public int ManagerID { get; set; }
+
+        public string Name { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string BirthPlace { get; set; }
+        public string Telephone { get; set; }
+        public string Email { get; set; }
     }
 }
