@@ -8,7 +8,7 @@ namespace CInema.IVH7B4.UnitTests {
     [TestClass]
     public class UnitTest1 {
 
-        [TestMethod]
+       // [TestMethod]
         public void TestInsertLocation()
         {
             var context = new EFDbContext();
@@ -32,7 +32,7 @@ namespace CInema.IVH7B4.UnitTests {
         }
 
 
-        [TestMethod]
+      //  [TestMethod]
         public void TestInsertFilm() {
             var context = new EFDbContext();
 
@@ -53,7 +53,7 @@ namespace CInema.IVH7B4.UnitTests {
      //       Assert.AreEqual(0, context.Films.Count());
         }
 
-        [TestMethod]
+      //  [TestMethod]
         public void TestInsertRoomLayout()
         {
             var context = new EFDbContext();
@@ -70,7 +70,7 @@ namespace CInema.IVH7B4.UnitTests {
       //      Assert.AreEqual(0, context.RoomLayouts.Count());
         }
 
-        [TestMethod]
+//        [TestMethod]
         public void TestInsertCustomer()
         {
             var context = new EFDbContext();
@@ -90,7 +90,7 @@ namespace CInema.IVH7B4.UnitTests {
       //      Assert.AreEqual(1, context.Customers.Count());
         }
 
-        [TestMethod]
+    //    [TestMethod]
         public void TestInsertManager()
         {
             var context = new EFDbContext();
@@ -108,7 +108,7 @@ namespace CInema.IVH7B4.UnitTests {
      //       Assert.AreEqual(1, context.Managers.Count());
         }
 
-        [TestMethod]
+      //  [TestMethod]
         public void TestInsertRoom()
         {
             var context = new EFDbContext();
@@ -123,7 +123,7 @@ namespace CInema.IVH7B4.UnitTests {
       //      Assert.AreEqual(1, context.Rooms.Count());
         }
 
-        [TestMethod]
+       // [TestMethod]
         public void TestInsertSeat()
         {
             var context = new EFDbContext();
@@ -141,7 +141,7 @@ namespace CInema.IVH7B4.UnitTests {
     //        Assert.AreEqual(1, context.Seats.Count());
         }
 
-        [TestMethod]
+      //  [TestMethod]
         public void TestInsertShowing() { 
             var context = new EFDbContext();
 
@@ -157,7 +157,7 @@ namespace CInema.IVH7B4.UnitTests {
     //        Assert.AreEqual(1, context.Showings.Count());
         }
 
-        [TestMethod]
+       // [TestMethod]
         public void TestInsertTickest()
         {
             var context = new EFDbContext();
