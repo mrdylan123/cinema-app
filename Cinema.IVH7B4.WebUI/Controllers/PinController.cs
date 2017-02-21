@@ -7,6 +7,11 @@ using Cinema.IVH7B4.WebUI.Models;
 
 namespace Cinema.IVH7B4.WebUI.Controllers {
     public class PinController : Controller {
+
+        public PinController() {
+            
+        }
+
         public ViewResult PinView(PincodeViewModel model) {
             return View("PinView" , null, model);
         }

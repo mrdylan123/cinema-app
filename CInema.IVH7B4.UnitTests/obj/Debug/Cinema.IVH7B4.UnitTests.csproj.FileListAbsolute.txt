@@ -51,3 +51,6 @@ C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.W
 C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\obj\Debug\Cinema.IVH7B4.UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.dll
 C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.pdb
+C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\Cinema.IVH7B4.UnitTests.csprojResolveAssemblyReference.cache
+C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.dll
+C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.pdb
