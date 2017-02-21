@@ -16,7 +16,7 @@ namespace Cinema.IVH7B4.WebUI
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Pin", action = "PinView", id = UrlParameter.Optional }
             );
         }
     }
