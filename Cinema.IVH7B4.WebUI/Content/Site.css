@@ -1,0 +1,23 @@
+﻿#header_container {
+    background-color: black;
+    border-bottom: 15px solid #CC0800; 
+    border-top: 3px solid #CC0800;  
+    height: 175px;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+
+#big_title {
+    color: #CC0800;
+    margin-top: 55px;
+    font-size: 350%;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #45474A;
+}
+
+p {
+    color: #7F5955;
+}
