@@ -166,7 +166,15 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
+    <Compile Include="Models\ChildTicketOrder.cs" />
+    <Compile Include="Models\CinemaViewModel.cs" />
+    <Compile Include="Models\FilmType.cs" />
+    <Compile Include="Models\NormalTicketOrder.cs" />
     <Compile Include="Models\PincodeViewModel.cs" />
+    <Compile Include="Models\SeatCoord.cs" />
+    <Compile Include="Models\SeniorTicketOrder.cs" />
+    <Compile Include="Models\StudentTicketOrder.cs" />
+    <Compile Include="Models\TicketOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

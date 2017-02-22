@@ -12,21 +12,18 @@ namespace Cinema.IVH7B4.WebUI.Controllers {
             
         }
 
-        public ViewResult PinView(PincodeViewModel model) {
+        public ViewResult PinView(CinemaViewModel model) {
             return View("PinView" , null, model);
         }
 
         [HttpGet]
-        public ActionResult PinViewReturn(PincodeViewModel model) {
+        public ActionResult PinViewReturn(CinemaViewModel model) {
             return RedirectToAction("PinView", null, model);
         }
 
         [HttpGet]
-        public ActionResult PinViewRemoveChar(PincodeViewModel model) {
-
-            if (model.PinValue.Length > 0) {
-                model.PinValue = model.PinValue.Remove(model.PinValue.Length -1 );
-            }
+        public ActionResult PinViewRemoveChar(CinemaViewModel model) {
+            model.PinRemoveChar();
             return RedirectToAction("PinView", null, model);
         }
     }
