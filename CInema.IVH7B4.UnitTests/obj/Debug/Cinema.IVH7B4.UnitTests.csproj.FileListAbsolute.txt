@@ -103,3 +103,5 @@ C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Razor.xml
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.xml
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\itextsharp.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\itextsharp.xml

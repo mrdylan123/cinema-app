@@ -16,10 +16,10 @@ namespace CInema.IVH7B4.UnitTests {
                 PinValue = "2"
             };
             //act
-            controller.PinViewReturn(model);
-            model.PinValue += "2";
-            controller.PinViewReturn(model);
+            controller.TempData["model"] = model;
+            controller.PinViewAddchar("2");
             //assert
+            model = (CinemaViewModel)controller.TempData["model"];
             Assert.AreEqual(2, model.PinValue.Length);
         }
 
@@ -31,8 +31,10 @@ namespace CInema.IVH7B4.UnitTests {
                 PinValue = "2464"
             };
             //act
+            controller.TempData["model"] = model;
             model.PinValue += "3";
             //assert
+            model = (CinemaViewModel)controller.TempData["model"];
             Assert.AreEqual(model.PinValue.Length, 4);
         }
 
@@ -44,9 +46,11 @@ namespace CInema.IVH7B4.UnitTests {
                 PinValue = "246"
             };
             //act
-            controller.PinViewRemoveChar(model);
+            controller.TempData["model"] = model;
+            controller.PinViewRemoveChar();
             //assert
+            model = (CinemaViewModel)controller.TempData["model"];
             Assert.AreEqual(model.PinValue.Length, 2);
-        }-
+        }
     }
 }
