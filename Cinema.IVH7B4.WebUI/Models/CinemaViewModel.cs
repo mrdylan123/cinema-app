@@ -13,6 +13,7 @@ namespace Cinema.IVH7B4.WebUI.Models
         public Showing SelectedShowing;
         public List<SeatCoord> SeatCoordList;
         private String pinValue;
+        public string WrongPingValue { get; set; }
         public NormalTicketOrder NormalTicketOrder;
         public ChildTicketOrder ChildTicketOrder;
         public StudentTicketOrder StudentTicketOrder;

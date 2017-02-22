@@ -47,6 +47,6 @@ namespace CInema.IVH7B4.UnitTests {
             controller.PinViewRemoveChar(model);
             //assert
             Assert.AreEqual(model.PinValue.Length, 2);
-        }
+        }-
     }
 }

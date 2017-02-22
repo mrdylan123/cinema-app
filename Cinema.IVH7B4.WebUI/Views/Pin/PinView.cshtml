@@ -18,41 +18,41 @@
                     <div class="form-group">
                         <label>Pincode: </label>
                         @Html.Password("myTextBox", Model.PinValue, new { @readonly = "readonly" })
-                        <button type="button" onclick="location.href='@Url.Action()'">betaling afronden</button>
+                        <button type="button" onclick="location.href='@Url.Action("ShowTicketView","Ticket", Model)'">betaling afronden</button>
                     </div>
                 </td>
             </tr>
-          
+            <tr><td>@Model.WrongPingValue</td></tr>
         </tbody>
     </table>
 </div>
 <div class="col-md-offset-5 col-md-2 col-md-offset-5">
     <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" onclick="location.href='@Url.Action("PinViewReturn", "Pin", new PincodeViewModel() { PinValue = Model.PinValue + "1"})'">1</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewReturn", "Pin", new PincodeViewModel() { PinValue = Model.PinValue + "2"})'">2</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewReturn", "Pin", new PincodeViewModel() { PinValue = Model.PinValue + "3"})'">3</button>
+            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "1"})'">1</button>
+            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "2"})'">2</button>
+            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "3"})'">3</button>
         </div>
     </div>
 
     <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" onclick="location.href='@Url.Action("PinViewReturn", "Pin", new PincodeViewModel() { PinValue = Model.PinValue + "4"})'">4</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewReturn", "Pin", new PincodeViewModel() { PinValue = Model.PinValue + "5"})'">5</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewReturn", "Pin", new PincodeViewModel() { PinValue = Model.PinValue + "6"})'">6</button>
+            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "4"})'">4</button>
+            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "5"})'">5</button>
+            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "6"})'">6</button>
         </div>
     </div>
     <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" onclick="location.href='@Url.Action("PinViewReturn", "Pin", new PincodeViewModel() { PinValue = Model.PinValue + "7"})'">7</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewReturn", "Pin", new PincodeViewModel() { PinValue = Model.PinValue + "8"})'">8</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewReturn", "Pin", new PincodeViewModel() { PinValue = Model.PinValue + "9"})'">9</button>
+            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "7"})'">7</button>
+            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "8"})'">8</button>
+            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "9"})'">9</button>
         </div>
     </div>
     <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" onclick="location.href='@Url.Action("PinViewReturn", "Pin", new PincodeViewModel() { PinValue = Model.PinValue + "0"})'">0</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewRemoveChar", "Pin", Model)'">terug</button>
+            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "0"})'">0</button>
+            <button type="button" onclick="location.href='@Url.Action("PinViewRemoveChar", "Pin")'">terug</button>
         </div>
     </div>
 </div>
