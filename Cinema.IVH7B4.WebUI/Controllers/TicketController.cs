@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Cinema.IVH7B4.Domain.Concrete;
+using Cinema.IVH7B4.Domain.Entities;
 using Cinema.IVH7B4.WebUI.Models;
 
 namespace Cinema.IVH7B4.WebUI.Controllers
@@ -20,6 +22,16 @@ namespace Cinema.IVH7B4.WebUI.Controllers
                 return View("ShowTicketView");
             }
             
+        }
+
+        public ActionResult PrintTickets() {
+            var context = new EFDbContext();
+            var loc = new Location() {
+                Name = "Test location name"
+            };
+
+            var pdf = new PDFGenerator(context.Tickets.ToList(), loc);
+            return pdf.SendPdf();
         }
     }
 }

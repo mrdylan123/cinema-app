@@ -126,3 +126,5 @@ C:\dev\Cinema.IVH7B4.WebUI\bin\System.Web.Mvc.xml
 C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.csprojResolveAssemblyReference.cache
 C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.dll
 C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.pdb
+C:\dev\Cinema.IVH7B4.WebUI\bin\itextsharp.dll
+C:\dev\Cinema.IVH7B4.WebUI\bin\itextsharp.xml

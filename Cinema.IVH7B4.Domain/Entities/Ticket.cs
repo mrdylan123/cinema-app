@@ -23,13 +23,18 @@ namespace Cinema.IVH7B4.Domain.Entities {
         public int CustomerID { get; set; }
 
         [ForeignKey("CustomerID")]
-        public Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
 
         public String SecretKey { get; set; }
 
         public int SeatID { get; set; }
 
         [ForeignKey("SeatID")]
-        public Seat Seat { get; set;  }
+        public virtual Seat Seat { get; set;  }
+
+        public int ShowingID { get; set; }
+
+        [ForeignKey("ShowingID")]
+        public virtual Showing Showing { get; set; }
     }
 }

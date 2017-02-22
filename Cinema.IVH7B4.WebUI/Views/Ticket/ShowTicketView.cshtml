@@ -3,6 +3,13 @@
 @{
     ViewBag.Title = "ShowTicketView";
 }
-
-<h2>ShowTicketView</h2>
-
+<div>
+    <h2 align="center">Uw kaartjes worden nu geprint</h2>
+</div>
+<div class="col-md-offset-5 col-md-2 col-md-offset-5">
+<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+        <button type="button" onclick="location.href='@Url.Action("PrintTickets","Ticket")'">Print Kaartjes</button>
+    </div>
+</div>
+    </div>

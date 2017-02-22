@@ -24,11 +24,11 @@ namespace Cinema.IVH7B4.Domain.Entities {
         public int FilmID { get; set; }
 
         [ForeignKey("FilmID")]
-        public Film Film { get; set; }
+        public virtual Film Film { get; set; }
 
         public int RoomID { get; set; }
 
         [ForeignKey("RoomID")]
-        public Room Room { get; set; }
+        public virtual Room Room { get; set; }
     }
 }
