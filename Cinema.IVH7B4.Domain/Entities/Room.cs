@@ -22,6 +22,6 @@ namespace Cinema.IVH7B4.Domain.Entities {
         public int LayoutID { get; set; }
 
         [ForeignKey("LayoutID")]
-        public RoomLayout Layout { get; set; }
+        public virtual RoomLayout Layout { get; set; }
     }
 }

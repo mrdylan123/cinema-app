@@ -30,6 +30,6 @@ namespace Cinema.IVH7B4.Domain.Entities {
         public int LocationID { get; set; }
 
         [ForeignKey("LocationID")]
-        public Location Location { get; set; } 
+        public virtual Location Location { get; set; } 
     }
 }

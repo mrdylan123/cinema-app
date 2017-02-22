@@ -24,6 +24,6 @@ namespace Cinema.IVH7B4.Domain.Entities {
         public int RoomID { get; set; }
 
         [ForeignKey("RoomID")]
-        public Room Room { get; set; }
+        public virtual Room Room { get; set; }
     }
 }

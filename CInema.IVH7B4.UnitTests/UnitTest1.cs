@@ -175,5 +175,6 @@ namespace CInema.IVH7B4.UnitTests {
             context.SaveChanges();
     //        Assert.AreEqual(1, context.Tickets.Count());
         }
+
     }
 }
