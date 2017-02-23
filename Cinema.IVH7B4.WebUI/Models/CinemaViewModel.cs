@@ -80,6 +80,14 @@ namespace Cinema.IVH7B4.WebUI.Models
             }
         }
 
+        public int GetAllTicketsQuantity() {
+            return ChildTicketOrder.Quantity +
+                SeniorTicketOrder.Quantity +
+                StudentTicketOrder.Quantity +
+                NormalTicketOrder.Quantity;
+        }
+
+
         public Decimal GetTotalPriceForAllTickets()
         {
             return ChildTicketOrder.GetTotalPrice() +
@@ -106,21 +114,22 @@ namespace Cinema.IVH7B4.WebUI.Models
             {
                 list.Add(new Seat()
                 {
-                    Room = SelectedShowing.Room,
+                    //Room = SelectedShowing.Room,
+                    RoomID = SelectedShowing.Room.RoomID,
                     RowX = sc.X,
                     RowY = sc.Y,
                     seatNo = sc.GetSeatNumber(SelectedShowing.Room.Layout),
-                    SeatType = 0
+                    SeatType = 0,
                 });
             }
 
             return list;
         }
 
-        public List<Ticket> GetTicketsList(Customer customer)
+        public List<Ticket> GetTicketsList(List<Seat> seatsList, Customer customer)
         {
             var list = new List<Ticket>();
-            var seatsList = GetSeatsList();
+            //var seatsList = GetSeatsList();
 
             // To do check per location 3D movies discount/extra cost?
             // 3D movies have extra cost so return minus
@@ -134,11 +143,15 @@ namespace Cinema.IVH7B4.WebUI.Models
                 var ticket = new Ticket()
                 {
                     Discount = discount,
-                    Customer = customer,
+                    //Customer = customer,
+                    CustomerID =  customer.CustomerID,
                     Price = 0.0m,
-                    Seat = seatsList.Find(s => s.seatNo == sc.GetSeatNumber(SelectedShowing.Room.Layout)),
+                    //Seat = seatsList.Find(s => s.seatNo == sc.GetSeatNumber(SelectedShowing.Room.Layout)),
+                    SeatID = seatsList.Find(s => s.seatNo == sc.GetSeatNumber(SelectedShowing.Room.Layout)).SeatID,
                     SecretKey = GenerateTicketSecretKey(), // TODO
                     TicketType = (int)TicketType.InvalidTicket,
+                    //Showing = SelectedShowing,
+                    ShowingID = SelectedShowing.ShowingID
                 };
                 list.Add(ticket);
 
@@ -182,10 +195,10 @@ namespace Cinema.IVH7B4.WebUI.Models
 
         public String GenerateTicketSecretKey()
         {
-            Random rnd1 = new Random();
-            Random rnd2 = new Random();
-            Random rnd3 = new Random();
-            Random rnd4 = new Random();
+            Random rnd1 = new Random(Guid.NewGuid().GetHashCode());
+            Random rnd2 = new Random(Guid.NewGuid().GetHashCode());
+            Random rnd3 = new Random(Guid.NewGuid().GetHashCode());
+            Random rnd4 = new Random(Guid.NewGuid().GetHashCode());
 
             return rnd1.Next(0, 999999).ToString() + rnd2.Next(0, 999999).ToString()
                 + rnd3.Next(0, 999999).ToString() + rnd4.Next(0, 999999).ToString();

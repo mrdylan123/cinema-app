@@ -15,18 +15,7 @@ namespace Cinema.IVH7B4.WebUI.Models
         {
             debug = new List<String>();
         }
-
-        public struct Coord
-        {
-            public int Y;
-            public int X;
-
-            public Coord(int y, int x)
-            {
-                this.Y = y;
-                this.X = x;
-            }
-        }
+        
 
         public void VisualizeSeats(Room room, List<Seat> occupiedSeats)
         {
@@ -57,9 +46,9 @@ namespace Cinema.IVH7B4.WebUI.Models
             }
         }
 
-        public List<Coord> VisualizeSelectedSeats(Room room, int seats, List<Seat> occupiedSeats)
+        public List<SeatCoord> VisualizeSelectedSeats(Room room, int seats, List<Seat> occupiedSeats)
         {
-            List<Coord> coordList = new List<Coord>();
+            List<SeatCoord> coordList = new List<SeatCoord>();
             if (seats == 0) return coordList;
 
             // get seats where roomid is equal to room roomid and where there are tickets off with the ticketid
@@ -135,11 +124,11 @@ namespace Cinema.IVH7B4.WebUI.Models
             return coordList;
         }
 
-        public void AddCoords(List<Coord> coordList, int Y, int X, int numseats)
+        public void AddCoords(List<SeatCoord> coordList, int Y, int X, int numseats)
         {
             for (int i = 0;  i < numseats; i++)
             {
-                coordList.Add(new Coord(Y, X + i));
+                coordList.Add(new SeatCoord(Y, X + i));
             }        
         }
 

@@ -48,12 +48,13 @@ namespace Cinema.IVH7B4.WebUI.Models {
 
                 // start ticket info
                 addText("TicketID: " + t.TicketID);
-                addText(t.TicketType.ToString());
+
+                addText("TicketType: " + GetDutchString((t.TicketType)));
 
                 addText("Film: " + t.Showing.Film.Name);
                 addText("Taal: " + t.Showing.Film.Language);
-                String ot = t.Showing.Film.LanguageSubs;
-                addText("Ondertiteling: " + ot != "" ? ot : "geen");
+                String ot = t.Showing.Film.LanguageSubs != "" ? t.Showing.Film.LanguageSubs : "geen" ;
+                addText("Ondertiteling: " + ot);
                 addText("Leeftijd: " + t.Showing.Film.Age + " jaar en ouder");
                 addText("Beschrijving: " + t.Showing.Film.Description,smallFont);
                 addText("Categorie: " + ((FilmType)t.Showing.Film.FilmType).GetDutchString());
@@ -99,6 +100,17 @@ namespace Cinema.IVH7B4.WebUI.Models {
             FileStreamResult result = new FileStreamResult(new MemoryStream(stream.GetBuffer()), "pdf/application");
             result.FileDownloadName = "image.pdf";
             return result;
+        }
+
+        public static String GetDutchString(int ticketType) {
+            switch ((TicketType)ticketType) {
+                case TicketType.NormalTicket: return "Normaal"; // 0
+                case TicketType.SeniorTicket: return "65+"; // 1
+                case TicketType.ChildTicket: return "Kind"; // 2
+                case TicketType.StudentTicket: return "Student"; // 3
+
+                default: return "ERROR";
+            }
         }
     }
 }

@@ -17,8 +17,10 @@ namespace Cinema.IVH7B4.Domain.Entities {
 
         public decimal NationaleBioscoopBonCredit { get; set; }
         public int MaDiWoDoFreeTickets { get; set; }
+
         [Key]
-        public int UserID { get; set; }
+        public int CustomerID { get; set; }
+
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
         public string BirthPlace { get; set; }

@@ -1,0 +1,44 @@
+﻿@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+
+@{
+    ViewBag.Title = "SummaryView";
+}
+
+<html>
+<head>
+    @Html.Partial("~/Views/Shared/_FilmImgTitle.cshtml")
+</head>
+<body>
+    <div class="row row_padding">
+        <div class="col-xs-4">
+            
+            <h1>Film Informatie</h1>
+
+            <div class="order_block">
+                <p>Titel: @Model.SelectedShowing.Film.Name</p>
+                <p>Zaal: @Model.SelectedShowing.Room.RoomNumber</p>
+                <p>Rijnummer: @Model.GetSeatsRow()</p>
+                <p>Stoelnummer: @Model.getSeatNumbersString()</p>
+                <p>Datum: @Model.SelectedShowing.BeginDateTime.ToString("dddd d MMMM yyyy")</p>
+                <p>Begintijd: @Model.SelectedShowing.BeginDateTime.ToString("HH:mm")</p>
+                <p>Eindtijd: @Model.SelectedShowing.EndDateTime.ToString("HH:mm")</p>
+            </div>
+        </div>
+        <div class="col-xs-4"></div>
+        @Html.Partial("~/Views/Shared/_OrderSummary.cshtml")
+    </div>
+
+    <div class="row row_padding">
+        <div class="col-xs-1">
+            <!--need to link the button-->
+            <a href="../Rate/RateOverview" class="btn btn-success">< Terug</a>
+        </div>
+        <div class="col-xs-10"></div>
+        <div class="col-xs-1 text-right">
+            <!--need to link the button-->
+            <a href="/Pin/PinView" class="btn btn-success"> Afrekenen ></a>
+        </div>
+    </div>
+</body>
+</html>
+

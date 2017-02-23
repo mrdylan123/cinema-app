@@ -50,13 +50,13 @@ namespace Cinema.IVH7B4.WebUI.Controllers
                 .GroupBy(s => s.FilmID).Select(group => group.First()).ToList();
 
             //Only take the first 6 results to show to the user
-            List<Showing> FirstFiveUniqueShowingsFromNowOrderedByDate = UniqueShowingsFromNowOrderedByDate.ToEnumerable()
+            List<Showing> FirstSixUniqueShowingsFromNowOrderedByDate = UniqueShowingsFromNowOrderedByDate.ToEnumerable()
                .Take(6).ToList();
 
 
             List<Film> ShowingsFilms = new List<Film>();
 
-            foreach (Showing s in FirstFiveUniqueShowingsFromNowOrderedByDate)
+            foreach (Showing s in FirstSixUniqueShowingsFromNowOrderedByDate)
             {
                 ShowingsFilms.Add(s.Film);
             }
@@ -69,7 +69,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             string MinuteOfDay = time.Minute.ToString();
             
             ViewBag.Films = ShowingsFilms;
-            ViewBag.Showings = FirstFiveUniqueShowingsFromNowOrderedByDate;
+            ViewBag.Showings = FirstSixUniqueShowingsFromNowOrderedByDate;
             ViewBag.DayOfWeek = DayOfWeek;
             ViewBag.HourOfDay = HourOfDay;
             ViewBag.MinuteOfDay = MinuteOfDay;

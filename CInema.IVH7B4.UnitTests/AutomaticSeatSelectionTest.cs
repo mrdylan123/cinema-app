@@ -3,14 +3,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Cinema.IVH7B4.Domain.Entities;
 using System.Collections.Generic;
 using Cinema.IVH7B4.WebUI.Models;
-using static Cinema.IVH7B4.WebUI.Models.AutomaticSeatSelection;
 
 namespace CInema.IVH7B4.UnitTests
 {
     [TestClass]
     public class AutomaticSeatSelectionTest
     {
-        private bool AreCoordListsEqual(List<Coord> l1, List<Coord> l2)
+        private bool AreCoordListsEqual(List<SeatCoord> l1, List<SeatCoord> l2)
         {
             if (l1.Count != l2.Count)
             {
@@ -53,12 +52,12 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             var ass = new AutomaticSeatSelection();
-            List<Coord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
-            List<Coord> expected = new List<Coord>()
+            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> expected = new List<SeatCoord>()
             {
-                new Coord(3,2),
-                new Coord(3,3),
-                new Coord(3,4)
+                new SeatCoord(3,2),
+                new SeatCoord(3,3),
+                new SeatCoord(3,4)
             };
 
             Assert.IsTrue(AreCoordListsEqual(ret, expected));
@@ -84,12 +83,12 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             var ass = new AutomaticSeatSelection();
-            List<Coord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
-            List<Coord> expected = new List<Coord>()
+            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> expected = new List<SeatCoord>()
             {
-                new Coord(3,2),
-                new Coord(3,3),
-                new Coord(0,0) //  THIS COORD IS INCORRECT SO WE CAN TEST
+                new SeatCoord(3,2),
+                new SeatCoord(3,3),
+                new SeatCoord(0,0) //  THIS COORD IS INCORRECT SO WE CAN TEST
             };
 
             Assert.IsFalse(AreCoordListsEqual(ret, expected));
@@ -115,12 +114,12 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             var ass = new AutomaticSeatSelection();
-            List<Coord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
-            List<Coord> expected = new List<Coord>()
+            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> expected = new List<SeatCoord>()
             {
-                new Coord(1,0),
-                new Coord(1,1),
-                new Coord(1,2)
+                new SeatCoord(1,0),
+                new SeatCoord(1,1),
+                new SeatCoord(1,2)
             };
 
             Assert.IsTrue(AreCoordListsEqual(ret, expected));
@@ -146,12 +145,12 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             var ass = new AutomaticSeatSelection();
-            List<Coord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
-            List<Coord> expected = new List<Coord>()
+            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> expected = new List<SeatCoord>()
             {
-                new Coord(1,0),
-                new Coord(1,5), //  THIS COORD IS INCORRECT SO WE CAN TEST
-                new Coord(1,2) 
+                new SeatCoord(1,0),
+                new SeatCoord(1,5), //  THIS COORD IS INCORRECT SO WE CAN TEST
+                new SeatCoord(1,2) 
             };
 
             Assert.IsFalse(AreCoordListsEqual(ret, expected));
@@ -178,12 +177,12 @@ namespace CInema.IVH7B4.UnitTests
            };
 
             var ass = new AutomaticSeatSelection();
-            List<Coord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
-            List<Coord> expected = new List<Coord>()
+            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> expected = new List<SeatCoord>()
             {
-                new Coord(7,2),
-                new Coord(7,3),
-                new Coord(7,4)
+                new SeatCoord(7,2),
+                new SeatCoord(7,3),
+                new SeatCoord(7,4)
             };
 
             Assert.IsTrue(AreCoordListsEqual(ret, expected));
@@ -210,12 +209,12 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             var ass = new AutomaticSeatSelection();
-            List<Coord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
-            List<Coord> expected = new List<Coord>()
+            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> expected = new List<SeatCoord>()
             {
-                new Coord(7,2),
-                new Coord(7,3),
-                new Coord(8,4) //  THIS COORD IS INCORRECT SO WE CAN TEST
+                new SeatCoord(7,2),
+                new SeatCoord(7,3),
+                new SeatCoord(8,4) //  THIS COORD IS INCORRECT SO WE CAN TEST
             };
 
             Assert.IsFalse(AreCoordListsEqual(ret, expected));
@@ -245,12 +244,12 @@ namespace CInema.IVH7B4.UnitTests
            };
 
             var ass = new AutomaticSeatSelection();
-            List<Coord> ret = ass.VisualizeSelectedSeats(room,3, occupiedSeats);
-            List<Coord> expected = new List<Coord>()
+            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room,3, occupiedSeats);
+            List<SeatCoord> expected = new List<SeatCoord>()
             {
-                new Coord(8,2),
-                new Coord(8,3),
-                new Coord(8,4)
+                new SeatCoord(8,2),
+                new SeatCoord(8,3),
+                new SeatCoord(8,4)
             };
 
             Assert.IsTrue(AreCoordListsEqual(ret, expected));
@@ -280,12 +279,12 @@ namespace CInema.IVH7B4.UnitTests
            };
 
             var ass = new AutomaticSeatSelection();
-            List<Coord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
-            List<Coord> expected = new List<Coord>()
+            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> expected = new List<SeatCoord>()
             {
-                new Coord(8,2),
-                new Coord(8,3),
-                new Coord(8,1) //  THIS COORD IS INCORRECT SO WE CAN TEST
+                new SeatCoord(8,2),
+                new SeatCoord(8,3),
+                new SeatCoord(8,1) //  THIS COORD IS INCORRECT SO WE CAN TEST
             };
 
             Assert.IsFalse(AreCoordListsEqual(ret, expected));
@@ -312,14 +311,14 @@ namespace CInema.IVH7B4.UnitTests
            };
 
             var ass = new AutomaticSeatSelection();
-            List<Coord> ret = ass.VisualizeSelectedSeats(room, 5, occupiedSeats);
-            List<Coord> expected = new List<Coord>()
+            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 5, occupiedSeats);
+            List<SeatCoord> expected = new List<SeatCoord>()
             {
-                new Coord(7,0),
-                new Coord(7,1),
-                new Coord(7,2),
-                new Coord(7,3),
-                new Coord(7,4)
+                new SeatCoord(7,0),
+                new SeatCoord(7,1),
+                new SeatCoord(7,2),
+                new SeatCoord(7,3),
+                new SeatCoord(7,4)
             };
 
             Assert.IsTrue(AreCoordListsEqual(ret, expected));
@@ -346,12 +345,12 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             var ass = new AutomaticSeatSelection();
-            List<Coord> ret = ass.VisualizeSelectedSeats(room, 5, occupiedSeats);
-            List<Coord> expected = new List<Coord>()
+            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 5, occupiedSeats);
+            List<SeatCoord> expected = new List<SeatCoord>()
             {
-                new Coord(7,0),
-                new Coord(7,1),
-                new Coord(7,2),
+                new SeatCoord(7,0),
+                new SeatCoord(7,1),
+                new SeatCoord(7,2),
                 // ONLY 3 out of 5 expected Coords so we can test FAIL 
             };
 

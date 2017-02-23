@@ -77,11 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IFilmOverviewRepository.cs" />
     <Compile Include="Abstract\IFilmRepository.cs" />
     <Compile Include="Abstract\IShowingRepository.cs" />
+    <Compile Include="Concrete\FilmOverviewRepository.cs" />
     <Compile Include="Concrete\FilmRepository.cs" />
     <Compile Include="Concrete\ShowingRepository.cs" />
-    <Compile Include="Entities\AutomaticSeatSelection.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Film.cs" />

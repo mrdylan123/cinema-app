@@ -27,6 +27,7 @@ namespace Cinema.IVH7B4.WebUI.Infrastructure {
         public void AddBindings() {
             kernel.Bind<IFilmRepository>().To<FilmRepository>();
             kernel.Bind<IShowingRepository>().To<ShowingRepository>();
+            kernel.Bind<IFilmOverviewRepository>().To<FilmOverviewRepository>();
         }
     }
 }
