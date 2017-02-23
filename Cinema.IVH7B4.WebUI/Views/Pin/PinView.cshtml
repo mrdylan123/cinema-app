@@ -1,7 +1,7 @@
 ﻿@using Cinema.IVH7B4.WebUI.Models
 @model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
 @{
-    ViewBag.Title = "View";
+    ViewBag.Title = "Betaling";
 }
 
 <div>
@@ -26,33 +26,43 @@
         </tbody>
     </table>
 </div>
-<div class="col-md-offset-5 col-md-2 col-md-offset-5">
-    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "1"})'">1</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "2"})'">2</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "3"})'">3</button>
+<div class="row row_padding">
+    <div class="col-md-offset-5 col-md-2 col-md-offset-5">
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "1"})'">1</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "2"})'">2</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "3"})'">3</button>
+            </div>
         </div>
-    </div>
 
-    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "4"})'">4</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "5"})'">5</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "6"})'">6</button>
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "4"})'">4</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "5"})'">5</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "6"})'">6</button>
+            </div>
+        </div>
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "7"})'">7</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "8"})'">8</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "9"})'">9</button>
+            </div>
+        </div>
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "0"})'">0</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewRemoveChar", "Pin")'">terug</button>
+            </div>
         </div>
     </div>
-    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "7"})'">7</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "8"})'">8</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "9"})'">9</button>
-        </div>
+</div>
+<div class="row row_padding">
+    <div class="col-xs-1">
+        <a href="/" class="btn btn-success">< Terug</a>
     </div>
-    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "0"})'">0</button>
-            <button type="button" onclick="location.href='@Url.Action("PinViewRemoveChar", "Pin")'">terug</button>
-        </div>
+    <div class="col-xs-10"></div>
+    <div class="col-xs-1 text-right">
     </div>
 </div>

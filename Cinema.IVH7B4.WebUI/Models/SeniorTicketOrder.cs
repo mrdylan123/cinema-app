@@ -16,9 +16,9 @@ namespace Cinema.IVH7B4.WebUI.Models
         public override Decimal GetDiscount()
         {
             DayOfWeek sd = model.SelectedShowing.BeginDateTime.DayOfWeek;
-            int DayOfYear = model.SelectedShowing.BeginDateTime.DayOfYear;
+            DateTime d = model.SelectedShowing.BeginDateTime;
 
-            if (model.IsHoliday(DayOfYear))
+            if (model.IsHoliday(d))
             {
                 return 0.0m;
             }

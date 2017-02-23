@@ -81,6 +81,7 @@ C:\dev\Cinema.IVH7B4.WebUI\bin\Cinema.IVH7B4.WebUI.pdb
 C:\dev\Cinema.IVH7B4.WebUI\bin\Cinema.IVH7B4.Domain.dll
 C:\dev\Cinema.IVH7B4.WebUI\bin\EntityFramework.dll
 C:\dev\Cinema.IVH7B4.WebUI\bin\EntityFramework.SqlServer.dll
+C:\dev\Cinema.IVH7B4.WebUI\bin\itextsharp.dll
 C:\dev\Cinema.IVH7B4.WebUI\bin\Microsoft.AI.Agent.Intercept.dll
 C:\dev\Cinema.IVH7B4.WebUI\bin\Microsoft.AI.DependencyCollector.dll
 C:\dev\Cinema.IVH7B4.WebUI\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -104,6 +105,7 @@ C:\dev\Cinema.IVH7B4.WebUI\bin\WebActivator.dll
 C:\dev\Cinema.IVH7B4.WebUI\bin\Cinema.IVH7B4.Domain.pdb
 C:\dev\Cinema.IVH7B4.WebUI\bin\EntityFramework.xml
 C:\dev\Cinema.IVH7B4.WebUI\bin\EntityFramework.SqlServer.xml
+C:\dev\Cinema.IVH7B4.WebUI\bin\itextsharp.xml
 C:\dev\Cinema.IVH7B4.WebUI\bin\Microsoft.AI.DependencyCollector.xml
 C:\dev\Cinema.IVH7B4.WebUI\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\dev\Cinema.IVH7B4.WebUI\bin\Microsoft.AI.Web.xml
@@ -126,5 +128,3 @@ C:\dev\Cinema.IVH7B4.WebUI\bin\System.Web.Mvc.xml
 C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.csprojResolveAssemblyReference.cache
 C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.dll
 C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.pdb
-C:\dev\Cinema.IVH7B4.WebUI\bin\itextsharp.dll
-C:\dev\Cinema.IVH7B4.WebUI\bin\itextsharp.xml

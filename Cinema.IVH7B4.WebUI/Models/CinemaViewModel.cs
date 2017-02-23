@@ -216,9 +216,32 @@ namespace Cinema.IVH7B4.WebUI.Models
             return false;
         }
 
-        // TODO
-        public bool IsHoliday(int DayOfYear)
-        {
+        public bool IsHoliday(DateTime d) {
+            // Kerstvakantie 2017
+            if (d >= new DateTime(2017, 12, 23) && d <= new DateTime(2018, 1, 7)) {
+                return true;
+            }
+
+            // Krokusvakantie/Carnavalsvakantie 2017
+            if (d >= new DateTime(2017, 2, 25) && d <= new DateTime(2017, 3, 5)) {
+                return true;
+            }
+
+            // Meivakantie 2017
+            if (d >= new DateTime(2017, 4, 22) && d <= new DateTime(2017, 4, 30)) {
+                return true;
+            }
+
+            // Zomervakantie 2017
+            if (d >= new DateTime(2017, 7, 15) && d <= new DateTime(2017, 8, 27)) {
+                return true;
+            }
+
+            // Herfstvakantie 2017
+            if (d >= new DateTime(2017, 10, 14) && d <= new DateTime(2017, 10, 22)) {
+                return true;
+            }
+
             return false;
         }
     }

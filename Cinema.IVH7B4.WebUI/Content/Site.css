@@ -1,0 +1,99 @@
+﻿/*used for: _header partial view*/
+#header_container {
+    background-color: black;
+    border-bottom: 15px solid #CC0800; 
+    border-top: 3px solid #CC0800;  
+    height: 175px;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+}
+
+#big_title {
+    color: #CC0800;
+    margin-top: 55px;
+    font-size: 350%;
+    font-family: sans-serif;
+}
+
+/*end for: _header partial view*/
+
+/*used for: index page*/
+#home_button {
+    width:350px; 
+    height:150px; 
+    font-size: 30px; 
+    text-align:center; 
+    vertical-align:middle; 
+    display: table-cell;
+    background-color:black;
+    border-color:#CC0800;
+    border-bottom:5px solid #CC0800;
+    border-top: 5px solid #CC0800;
+    border-bottom-left-radius:40%;
+    border-bottom-right-radius:40%;
+    border-top-left-radius:40%;
+    border-top-right-radius:40%;
+}
+
+#row-offset{
+    padding-top:9%;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+/*end for: index page*/
+
+/*used for: partial view _FilmImgTitle*/
+#image_setter{
+    width:175px;
+    height:175px;
+    padding-left: 20px;
+}
+
+#film_title{
+    text-align:center; 
+    padding-top:40px;
+}
+
+#row_line{
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+/*end for: partial view _FilmImgTitle*/
+
+/*used for: partial view _OrderSummary*/
+.order_block{
+    padding-top:10px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    border-left:2px solid black;
+    border-right: 2px solid black;
+}
+.label_outline_summary{
+    display:inline-block;
+    min-width:120px;
+    font-weight: normal;
+}
+/*end for: partial view _OrderSummary*/
+
+/*used for: RateOverview*/
+.label_outline{
+    display:inline-block;
+    min-width:450px;
+    font-weight: normal;
+}
+
+.reset_outline{
+    display:inline-block;
+    min-width:580px;
+    font-weight: normal;
+}
+
+.row_padding{
+    padding-left:10px;
+    padding-right:10px;
+}
+/*end for: RateOverview*/
+

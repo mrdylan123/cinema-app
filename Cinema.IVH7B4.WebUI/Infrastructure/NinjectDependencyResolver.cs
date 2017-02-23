@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Cinema.IVH7B4.Domain.Abstract;
+using Cinema.IVH7B4.Domain.Concrete;
 using Ninject;
 
 namespace Cinema.IVH7B4.WebUI.Infrastructure {
@@ -23,7 +25,8 @@ namespace Cinema.IVH7B4.WebUI.Infrastructure {
         }
 
         public void AddBindings() {
-            // put bindings here
+            kernel.Bind<IFilmRepository>().To<FilmRepository>();
+            kernel.Bind<IShowingRepository>().To<ShowingRepository>();
         }
     }
 }

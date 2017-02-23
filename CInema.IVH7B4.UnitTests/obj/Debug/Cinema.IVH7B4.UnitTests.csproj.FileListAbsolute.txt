@@ -51,9 +51,6 @@ C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.W
 C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\obj\Debug\Cinema.IVH7B4.UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.dll
 C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.pdb
-C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\Cinema.IVH7B4.UnitTests.csprojResolveAssemblyReference.cache
-C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.dll
-C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.pdb
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\ApplicationInsights.config
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\csc.exe
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -86,6 +83,7 @@ C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Deployment.dll
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.dll
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Razor.dll
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\WebActivator.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\itextsharp.dll
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.Domain.pdb
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.WebUI.pdb
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.xml
@@ -103,5 +101,7 @@ C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Razor.xml
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.xml
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Razor.xml
-C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\itextsharp.dll
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\itextsharp.xml
+C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\Cinema.IVH7B4.UnitTests.csprojResolveAssemblyReference.cache
+C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.dll
+C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.pdb
