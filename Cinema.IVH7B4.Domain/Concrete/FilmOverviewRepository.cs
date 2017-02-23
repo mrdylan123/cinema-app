@@ -61,12 +61,12 @@ namespace Cinema.IVH7B4.Domain.Concrete
                 string dayMonth = currentBegin.Day.ToString();
                 string month = currentBegin.Month.ToString();
                 string year = currentBegin.Year.ToString();
-                string hourBegin = currentBegin.Hour.ToString();
-                string minutesBegin = currentBegin.Minute.ToString();
+                string hourBegin = currentBegin.Hour.ToString("D2");
+                string minutesBegin = currentBegin.Minute.ToString("D2");
 
                 DateTime currentEnd = dateTime.EndDateTime;
-                string hourEnd = currentEnd.Hour.ToString();
-                string minutesEnd = currentEnd.Minute.ToString();
+                string hourEnd = currentEnd.Hour.ToString("D2");
+                string minutesEnd = currentEnd.Minute.ToString("D2");
 
             switch (dayWeek)
             {
@@ -94,7 +94,7 @@ namespace Cinema.IVH7B4.Domain.Concrete
             }
 
             currentShowings.Add("Datum: " + dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
-                            " " + " " + "Begintijd: " + hourBegin + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + minutesEnd);
+                            " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd);
             }
             return currentShowings;
         }

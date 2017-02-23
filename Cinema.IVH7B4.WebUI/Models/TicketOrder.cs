@@ -17,14 +17,18 @@ namespace Cinema.IVH7B4.WebUI.Models
             this.model = model;
         }
 
-        public Decimal GetPrice()
+        public Decimal GetPrice() {
+            return GetNormalPrice() - GetDiscount();
+        }
+
+        public Decimal GetNormalPrice()
         {
             if (this.model.SelectedFilm.Length > 120)
             {
-                return 9.0m;
+                return 9.00m;
             }
 
-            return 8.5m;
+            return 8.50m;
         }
 
         public Decimal GetTotalPrice()

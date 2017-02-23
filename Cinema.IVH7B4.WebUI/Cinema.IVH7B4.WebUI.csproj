@@ -151,6 +151,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\FilmOverview.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -179,6 +180,7 @@
     <Compile Include="Models\AutomaticSeatSelection.cs" />
     <Compile Include="Models\ChildTicketOrder.cs" />
     <Compile Include="Models\CinemaViewModel.cs" />
+    <Compile Include="Models\DateTimeAndID.cs" />
     <Compile Include="Models\FilmOverviewLogic.cs" />
     <Compile Include="Models\FilmType.cs" />
     <Compile Include="Models\NormalTicketOrder.cs" />

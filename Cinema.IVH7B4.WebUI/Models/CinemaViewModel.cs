@@ -57,6 +57,8 @@ namespace Cinema.IVH7B4.WebUI.Models
                 str += ", ";
             }
 
+            str = str.Remove(str.Length - 2);
+
             return str;
         }
 
@@ -68,8 +70,9 @@ namespace Cinema.IVH7B4.WebUI.Models
             SeniorTicketOrder = new SeniorTicketOrder(this);
         }
 
-        public void SetTicketQuantity(int quantity, TicketType tt)
-        {
+        public void SetTicketQuantity(int quantity, TicketType tt) {
+            if (quantity < 0) return;
+
             switch(tt)
             {
                 case TicketType.ChildTicket: ChildTicketOrder.Quantity = quantity; break;

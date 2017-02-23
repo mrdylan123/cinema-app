@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace CInema.IVH7B4.UnitTests {
     [TestClass]
-    public class UnitTest1 {
+    public class UnitTestDatabaseInsert {
 
        // [TestMethod]
         public void TestInsertLocation()

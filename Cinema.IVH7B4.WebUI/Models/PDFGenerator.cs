@@ -19,9 +19,9 @@ namespace Cinema.IVH7B4.WebUI.Models {
         private Font smallFont;
 
         public PDFGenerator(List<Ticket> tickets, Location loc) {
-            normalFont = FontFactory.GetFont("Segoe UI", 10.0f, BaseColor.BLACK);
-            smallFont = FontFactory.GetFont("Segoe UI", 8.0f, BaseColor.BLACK);
-            largeFont = FontFactory.GetFont("Segoe UI", 12.0f, BaseColor.BLACK);
+            normalFont = FontFactory.GetFont("Segoe UI", 8.0f, BaseColor.BLACK);
+            smallFont = FontFactory.GetFont("Segoe UI", 6.0f, BaseColor.BLACK);
+            largeFont = FontFactory.GetFont("Segoe UI", 10.0f, BaseColor.BLACK);
 
             doc = new Document(PageSize.A6);
             ms = new MemoryStream();

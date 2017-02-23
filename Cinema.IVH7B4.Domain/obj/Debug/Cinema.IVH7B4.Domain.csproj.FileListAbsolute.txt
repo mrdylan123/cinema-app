@@ -43,3 +43,4 @@ C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.Razor.xml
 C:\dev\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.dll
 C:\dev\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.pdb
+C:\dev\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.csprojResolveAssemblyReference.cache

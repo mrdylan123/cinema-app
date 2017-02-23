@@ -4,44 +4,45 @@
     ViewBag.Title = "FilmOverview";
 }
 <html>
-    <head>
-    </head>
+<head>
+
+    <link href="~/Content/FilmOverview.css" rel="stylesheet" />
+</head>
     <body>
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-1"></div>
-                <div class="col-xs-2" id="film_list">
+            <div class="row img_row">
+                <div class="col-xs-3" id="film_list">
                     <ul>
                         @foreach (var property in ViewBag.filmList)
                         {
                             <li>
                                 <a href="@Url.Action("renderFilm", "filmOverview",
-                                        new { filmID = property.FilmID })" class="btn btn-success">@property.Name</a>
+                                        new { filmID = property.FilmID })" class="btn btn-success btn_style">@property.Name</a>
                             </li>
                         }
                     </ul>
                 </div>
-                <div class="col-xs-1"></div>
-                <div class="col-xs-8" id="chooseFilm">
-                        @if (ViewBag.currentFilm == null && ViewBag.filmList[0].Image != null)
-                        {
-                            <img src="@(((byte[])ViewBag.filmList[0].Image).convertImageByteCode())"/>
-                            @ViewBag.filmList[0].Name
-                        }
-                        else if(ViewBag.currentFilm == null && ViewBag.filmList[0].Image == null)
-                        {
-                            <h2>Er is geen Afbeelding beschikbaar</h2>
-                        }
-                        else
-                        {
-                           <img src="@ViewBag.image" />
-                            @ViewBag.currentFilm.Name
+                <div class="col-xs-6 text-center" id="chooseFilm">
+                    @if (ViewBag.currentFilm == null && ViewBag.filmList[0].Image != null)
+                    {
+                        <img src="@(((byte[])ViewBag.filmList[0].Image).convertImageByteCode())"/>
+                        <h2 class="text-center">@ViewBag.filmList[0].Name</h2>
                     }
-                </div>
+                    else if(ViewBag.currentFilm == null && ViewBag.filmList[0].Image == null)
+                    {
+                        <h2>Er is geen Afbeelding beschikbaar</h2>
+                    }
+                    else
+                    {
+                        <img src="@ViewBag.image" />
+                        <h2 class="text-center">@ViewBag.currentFilm.Name</h2>
+                    }
+</div>
+                <div class="col-xs-3"></div>
             </div>
-            <div class="row">
-                <div class="col-xs-2"></div>
-                    <div class="col-xs-2">
+            <div class="row info_row">
+                <div class="col-xs-4"></div>
+                    <div class="col-xs-3" id="info_block">
                         <h3>Film informatie</h3>
                         @if (ViewBag.currentFilm == null)
                         {
@@ -140,7 +141,7 @@
                                 </li>
                                 <li>
                                     <label>Ondertiteling:</label>
-                                    @if (ViewBag.currentFilm.LanguageSubs != null || ViewBag.filmList[0].LanguageSubs != "")
+                                    @if (ViewBag.currentFilm.LanguageSubs == "")
                                     {
                                         @ViewBag.currentFilm.LanguageSubs
                                     } else
@@ -171,13 +172,13 @@
                             </ul>
                         }
                     </div>
-                    <div class="col-xs-2"></div>
-                    <div class="col-xs-4">
+
+                    <div class="col-xs-5" id="time_block">
                         <h3>Tijden</h3>
-                        @if(ViewBag.datetime != null) {
-                            foreach(string property in ViewBag.datetime)
-                            {
-                                @property
+                        @if (ViewBag.datetime != null) {
+                            foreach (DateTimeAndID property in ViewBag.datetime) {
+                                <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("SelectShowing", "FilmOverview", new { index = property.index})'">Bestel kaartjes</button>
+                                @property.str
                                 <br/>
                             }
 
@@ -188,12 +189,11 @@
                                 Geen informatie beschikbaar,
                                 Vraag bij de balie voor meer informatie over deze film
                             </h4>
-                        }
-                        else if (ViewBag.currentFilm == null)
-                        {
-                            foreach (string property in ViewBag.firstDateTime)
-                            {
-                                @property
+                        } else if (ViewBag.currentFilm == null) {
+                            foreach (DateTimeAndID property in ViewBag.firstDateTime) {
+
+                                <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("SelectShowing", "FilmOverview", new { index = property.index})'">Bestel kaartjes</button>
+                                                            @property.str
                                 <br/>
                             }
                         }
@@ -204,14 +204,9 @@
                         }
                 </div>
         </div>
-            <div class="row">
-                <div col-xs-1>
+            <div class="row row_padding">
+                <div class="col-xs-1">
                     <a href="../Home/Index" class="btn btn-success">Terug</a>
-                </div>
-                <div col-xs-10></div>
-                <div col-xs-1>
-                    <!-- hier button -->
-                    <a href="../Rate/RateOverview" class="btn btn-success">Bestel kaarten</a>
                 </div>
             </div>
     </div>

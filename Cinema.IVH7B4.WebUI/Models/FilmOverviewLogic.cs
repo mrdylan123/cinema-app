@@ -35,19 +35,17 @@ namespace Cinema.IVH7B4.WebUI.Models
             return currentFilm;
         }
 
-        public static string getDutchString(this int filmType)
-        {
-            switch (filmType)
-            {
-                case 0: return "Kinder"; // 0
-                case 1: return "Actie"; // 1
-                case 2: return "Komedie"; // 2
-                case 3: return "Drama"; // 3
-                case 4: return "Horror"; // 4
+            public static String getDutchString(this int ft) {
+                switch ((FilmType)ft) {
+                    case FilmType.Children: return "Kinder"; // 0
+                    case FilmType.Action: return "Actie"; // 1
+                    case FilmType.Comedy: return "Komedie"; // 2
+                    case FilmType.Drama: return "Drama"; // 3
+                    case FilmType.Horror: return "Horror"; // 4
 
-                default: return "ERROR";
+                    default: return "ERROR";
+                }
             }
-        }
 
         public static string convertImageByteCode(this byte[] imageCode)
         {
@@ -82,12 +80,12 @@ namespace Cinema.IVH7B4.WebUI.Models
                 string dayMonth = currentBegin.Day.ToString();
                 string month = currentBegin.Month.ToString();
                 string year = currentBegin.Year.ToString();
-                string hourBegin = currentBegin.Hour.ToString();
-                string minutesBegin = currentBegin.Minute.ToString();
+                string hourBegin = currentBegin.Hour.ToString("D2");
+                string minutesBegin = currentBegin.Minute.ToString("D2");
 
                 DateTime currentEnd = dateTime.EndDateTime;
-                string hourEnd = currentEnd.Hour.ToString();
-                string minutesEnd = currentEnd.Minute.ToString();
+                string hourEnd = currentEnd.Hour.ToString("D2");
+                string minutesEnd = currentEnd.Minute.ToString("D2");
 
                 switch (dayWeek)
                 {
@@ -115,7 +113,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                 }
 
                 dateTimeStrings.Add("Datum: " + dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
-                            " " + " " + "Begintijd: " + hourBegin + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + minutesEnd);
+                            " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd);
             }
 
             if (dateTimeStrings != null)
