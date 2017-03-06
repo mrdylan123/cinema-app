@@ -1,0 +1,216 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+
+@{
+    ViewBag.Title = "FilmOverview";
+}
+<html>
+<head>
+
+    <link href="~/Content/FilmOverview.css" rel="stylesheet" />
+</head>
+    <body>
+        <div class="container-fluid">
+            <div class="row img_row">
+                <div class="col-xs-3" id="film_list">
+                    <ul>
+                        @foreach (var property in ViewBag.filmList)
+                        {
+                            <li>
+                                <a href="@Url.Action("renderFilm", "filmOverview",
+                                        new { filmID = property.FilmID })" class="btn btn-success btn_style">@property.Name</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div class="col-xs-6 text-center" id="chooseFilm">
+                    @if (ViewBag.currentFilm == null && ViewBag.filmList[0].Image != null)
+                    {
+                        <img src="@(((byte[])ViewBag.filmList[0].Image).convertImageByteCode())"/>
+                        <h2 class="text-center">@ViewBag.filmList[0].Name</h2>
+                    }
+                    else if(ViewBag.currentFilm == null && ViewBag.filmList[0].Image == null)
+                    {
+                        <h2>Er is geen Afbeelding beschikbaar</h2>
+                    }
+                    else
+                    {
+                        <img src="@ViewBag.image" />
+                        <h2 class="text-center">@ViewBag.currentFilm.Name</h2>
+                    }
+</div>
+                <div class="col-xs-3"></div>
+            </div>
+            <div class="row info_row">
+                <div class="col-xs-4"></div>
+                    <div class="col-xs-3" id="info_block">
+                        <h3>Film informatie</h3>
+                        @if (ViewBag.currentFilm == null)
+                        {
+                            <ul>
+                                <li>
+                                    <label>Duur:</label>
+                                    @if(ViewBag.filmList[0].Length != null){
+                                        @ViewBag.filmList[0].Length
+                                    } else {
+                                        @: Geen informatie beschikbaar
+                                    }
+                                </li>
+                                <li>
+                                    <label>Genre:</label>
+                                    @if (ViewBag.filmList[0].FilmType != null)
+                                    {
+                                        @(((int)ViewBag.filmList[0].FilmType).getDutchString())
+                                    } else
+                                    {
+                                        @: Geen informatie beschikbaar
+                                    }
+                                </li>
+                                <li>
+                                    <label>Taal:</label>
+                                    @if (ViewBag.filmList[0].Language != null)
+                                    {
+                                        @ViewBag.filmList[0].Language
+                                    } else
+                                    {
+                                        @: Geen informatie beschikbaar
+                                    }
+
+                                </li>
+                                <li>
+                                    <label>Ondertiteling:</label>
+                                    @if(ViewBag.filmList[0].LanguageSubs != null || ViewBag.filmList[0].LanguageSubs != "") {
+                                        @ViewBag.filmList[0].LanguageSubs
+                                    } else {
+                                        @:Geen Ondertiteling
+                                    }
+                                </li>
+                                <li>
+                                    <label>3D:</label>
+                                    @if (ViewBag.filmList[0].Is3D == true)
+                                    {
+                                        @: Ja
+                                    } else
+                                    {
+                                        @: Nee
+                                    }
+                                </li>
+                                <li>
+                                    <label>Leeftijd</label>
+                                    @if (ViewBag.filmList[0].Age != null)
+                                    {
+                                        @ViewBag.filmList[0].Age
+                                    } else
+                                    {
+                                        @: Geen informatie beschikbaar
+                                    }
+                                </li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul>
+                                <li>
+                                    <label>Duur:</label>
+                                    @if (ViewBag.currentFilm.Length != null)
+                                    {
+                                        @ViewBag.currentFilm.Length
+                                    } else
+                                    {
+                                        @: Geen informatie beschikbaar
+                                    }
+                                </li>
+                                <li>
+                                    <label>Genre:</label>
+                                    @if (ViewBag.currentFilm.FilmType != null)
+                                    {
+                                        @(((int)@ViewBag.currentFilm.FilmType).getDutchString())
+                                    } else
+                                    {
+                                        @: Geen informatie beschikbaar
+                                    }
+                                </li>
+                                <li>
+                                    <label>Taal:</label>
+                                    @if (ViewBag.currentFilm.Language != null)
+                                    {
+                                        @ViewBag.currentFilm.Language
+                                    } else
+                                    {
+                                        @: Geen informatie beschikbaar
+                                    }
+                                </li>
+                                <li>
+                                    <label>Ondertiteling:</label>
+                                    @if (ViewBag.currentFilm.LanguageSubs == "")
+                                    {
+                                        @ViewBag.currentFilm.LanguageSubs
+                                    } else
+                                    {
+                                        @: Geen ondertiteling
+                                    }
+                                </li>
+                                <li>
+                                    <label>3D:</label>
+                                    @if (ViewBag.currentFilm.Is3D == true)
+                                    {
+                                        @: Ja
+                                    } else
+                                    {
+                                        @: Nee
+                                    }
+                                </li>
+                                <li>
+                                    <label>Leeftijd</label>
+                                    @if (ViewBag.currentFilm.Age != null)
+                                    {
+                                        @ViewBag.currentFilm.Age
+                                    } else
+                                    {
+                                        @: Geen informatie beschikbaar
+                                    }
+                                </li>
+                            </ul>
+                        }
+                    </div>
+
+                    <div class="col-xs-5" id="time_block">
+                        <h3>Tijden</h3>
+                        @if (ViewBag.datetime != null) {
+                            foreach (DateTimeAndID property in ViewBag.datetime) {
+                                <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("SelectShowing", "FilmOverview", new { index = property.index})'">Bestel kaartjes</button>
+                                @property.str
+                                <br/>
+                            }
+
+                        }
+                        else if (ViewBag.currentFilm != null && ViewBag.datetime == "")
+                        {
+                            <h4>
+                                Geen informatie beschikbaar,
+                                Vraag bij de balie voor meer informatie over deze film
+                            </h4>
+                        } else if (ViewBag.currentFilm == null) {
+                            foreach (DateTimeAndID property in ViewBag.firstDateTime) {
+
+                                <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("SelectShowing", "FilmOverview", new { index = property.index})'">Bestel kaartjes</button>
+                                                            @property.str
+                                <br/>
+                            }
+                        }
+                        else
+                        {
+                            <h4>Geen informatie beschikbaar,
+                        Vraag bij de balie voor meer informatie over deze film</h4>
+                        }
+                </div>
+        </div>
+            <div class="row row_padding">
+                <div class="col-xs-1">
+                    <a href="../Home/Index" class="btn btn-success">Terug</a>
+                </div>
+            </div>
+    </div>
+    </body>
+</html>
+
+

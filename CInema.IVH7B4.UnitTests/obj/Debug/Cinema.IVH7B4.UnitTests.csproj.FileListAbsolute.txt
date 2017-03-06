@@ -1,0 +1,161 @@
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\ApplicationInsights.config
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\csc.exe
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\vbc.exe
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\VBCSCompiler.exe
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\CInema.IVH7B4.UnitTests.dll.config
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\CInema.IVH7B4.UnitTests.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\CInema.IVH7B4.UnitTests.pdb
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.Domain.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.WebUI.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Moq.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Common.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Mvc.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Helpers.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Mvc.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Razor.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\WebActivator.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.Domain.pdb
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.WebUI.pdb
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.xml
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Moq.xml
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.pdb
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.xml
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Common.pdb
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Common.xml
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Mvc.pdb
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Mvc.xml
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Helpers.xml
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Mvc.xml
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Razor.xml
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.xml
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\obj\Debug\Cinema.IVH7B4.UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.dll
+C:\Users\maikel\Source\Repos\Groep B4\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.pdb
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\ApplicationInsights.config
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\csc.exe
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\vbc.exe
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\VBCSCompiler.exe
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\CInema.IVH7B4.UnitTests.dll.config
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\CInema.IVH7B4.UnitTests.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\CInema.IVH7B4.UnitTests.pdb
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.Domain.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.WebUI.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.SqlServer.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Moq.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Common.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Mvc.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Helpers.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Mvc.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Razor.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\WebActivator.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\itextsharp.dll
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.Domain.pdb
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.WebUI.pdb
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.SqlServer.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Moq.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.pdb
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Common.pdb
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Common.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Mvc.pdb
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Mvc.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Helpers.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Mvc.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Razor.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\itextsharp.xml
+C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\Cinema.IVH7B4.UnitTests.csprojResolveAssemblyReference.cache
+C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.dll
+C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.pdb
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\ApplicationInsights.config
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\csc.exe
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\vbc.exe
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\VBCSCompiler.exe
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\CInema.IVH7B4.UnitTests.dll.config
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\CInema.IVH7B4.UnitTests.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\CInema.IVH7B4.UnitTests.pdb
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.Domain.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.WebUI.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Moq.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Common.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Mvc.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Helpers.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Mvc.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Razor.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\WebActivator.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\itextsharp.dll
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.Domain.pdb
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Cinema.IVH7B4.WebUI.pdb
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.xml
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Moq.xml
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.pdb
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.xml
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Common.pdb
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Common.xml
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Mvc.pdb
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\Ninject.Web.Mvc.xml
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Helpers.xml
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Mvc.xml
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.Razor.xml
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.xml
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\itextsharp.xml
+C:\Git\CInema.IVH7B4.UnitTests\obj\Debug\Cinema.IVH7B4.UnitTests.csprojResolveAssemblyReference.cache
+C:\Git\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.dll
+C:\Git\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.pdb

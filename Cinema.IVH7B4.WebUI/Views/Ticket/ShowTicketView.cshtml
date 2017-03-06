@@ -1,0 +1,27 @@
+﻿@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+
+@{
+    ViewBag.Title = "ShowTicketView";
+}
+<div>
+    <h2 align="center">Uw kaartjes worden nu geprint</h2>
+</div>
+<div class="row row_padding">
+    <div class="col-md-offset-5 col-md-2 col-md-offset-5">
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                <button class ="btn btn-success" type="button" onclick="location.href='@Url.Action("PrintTickets","Ticket")'">Print Kaartjes</button>
+            </div>
+        </div>
+    </div>
+<div>
+    <h3 align="center">Bedankt voor uw bestelling, Fijne voorstelling!</h3>
+</div>
+<div class="row row_padding">
+    <div class="col-xs-5">
+    </div>
+    <div class="col-xs-2">
+        <a href="/" class="btn btn-success">Home Page</a>
+    </div>
+    <div class="col-xs-5">
+    </div>
+</div>

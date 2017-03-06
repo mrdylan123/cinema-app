@@ -1,0 +1,310 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Eerstkomende films";
+}
+<div class="text-center">
+    <h2>Eerstkomende films</h2>
+    <h3>Huidige tijd: @ViewBag.DayOfWeek  @ViewBag.HourOfDay:@ViewBag.MinuteOfDay</h3>
+    <hr />
+</div>
+
+<!------------------------------------------ First film ----------------------------------->
+<div class="row">
+    <div class="col-xs-2"></div>
+    
+    <div class="col-xs-8">
+        <div class="well">
+            <div class="row">
+                <div class="col-xs-2">
+                    <p>Zaal: @ViewBag.Showings[0].RoomID</p>
+                    <p>Begintijd: @ViewBag.Showings[0].BeginDateTime</p>
+                    <p>Eindtijd: @ViewBag.Showings[0].EndDateTime</p>
+                </div>
+                
+                <div class="col-xs-3">
+                    @if (@ViewBag.Films[0].Image != null)
+                    {
+                        <img class="img-responsive" src="@(((byte[]) ViewBag.Films[0].Image).getImageByteCode())"/>
+                    }
+                    else
+                    {
+                        <img class="img-responsive" src="https://www.articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png" alt="Film picture"/>   
+                    }
+                </div>
+                    
+                <div class="col-xs-5">
+                    <div class="text-center">
+                        <h3>@ViewBag.Films[0].Name</h3>
+                    </div> 
+                    <p>Duur: @ViewBag.Films[0].Length</p>
+                    <p style="float: right">Taal: @ViewBag.Films[0].Language</p>
+                    <p>Genre: @ViewBag.Films[0].FilmType</p>
+                    <p style="float: right">Ondertiteling: @ViewBag.Films[0].LanguageSubs</p>
+                    <p>Leeftijd: @ViewBag.Films[0].Age</p>
+                    <p style="float: right">3D: @ViewBag.Films[0].Is3D</p>
+                </div>
+                
+                <div class="col-xs-2">
+                        <button class="btn btn-success" type="button" onclick="location.href='@Url.Action("Redirect", "UpcomingFilm", new { s = ViewBag.Showings[0].ShowingID, f = @ViewBag.Films[0].FilmID })'">Bestel kaartje(s)</button>
+                </div>
+            </div>    
+
+        </div>
+        
+    </div>
+    
+    <div class="col-xs-2"></div>
+
+</div>
+<!------------------------------------------ End first film ----------------------------------->
+
+<!------------------------------------------ Second film ----------------------------------->
+<div class="row">
+    <div class="col-xs-2"></div>
+
+    <div class="col-xs-8">
+        <div class="well">
+            <div class="row">
+                <div class="col-xs-2">
+                    <p>Zaal: @ViewBag.Showings[1].RoomID</p>
+                    <p>Begintijd: @ViewBag.Showings[1].BeginDateTime</p>
+                    <p>Eindtijd: @ViewBag.Showings[1].EndDateTime</p>
+                </div>
+
+                <div class="col-xs-3">
+                    @if (@ViewBag.Films[1].Image != null)
+                    {
+                        <img class="img-responsive" src="@(((byte[]) ViewBag.Films[1].Image).getImageByteCode())" />
+                    }
+                    else
+                    {
+                        <img class="img-responsive" src="https://www.articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png" alt="Film picture" />
+                    }
+                </div>
+
+                <div class="col-xs-5">
+                    <div class="text-center">
+                        <h3>@ViewBag.Films[1].Name</h3>
+                    </div>
+                    <p>Duur: @ViewBag.Films[1].Length</p>
+                    <p style="float: right">Taal: @ViewBag.Films[1].Language</p>
+                    <p>Genre: @ViewBag.Films[1].FilmType</p>
+                    <p style="float: right">Ondertiteling: @ViewBag.Films[1].LanguageSubs</p>
+                    <p>Leeftijd: @ViewBag.Films[1].Age</p>
+                    <p style="float: right">3D: @ViewBag.Films[1].Is3D</p>
+                </div>
+
+                <div class="col-xs-2">
+                    <button class="btn btn-success" type="button" onclick="location.href='@Url.Action("Redirect", "UpcomingFilm", new { s = ViewBag.Showings[1].ShowingID, f = @ViewBag.Films[1].FilmID })'">Bestel kaartje(s)</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-xs-2"></div>
+
+</div>
+<!------------------------------------------ End second film ----------------------------------->
+
+<!------------------------------------------ Third film ----------------------------------->
+<div class="row">
+    <div class="col-xs-2"></div>
+
+    <div class="col-xs-8">
+        <div class="well">
+            <div class="row">
+                <div class="col-xs-2">
+                    <p>Zaal: @ViewBag.Showings[2].RoomID</p>
+                    <p>Begintijd: @ViewBag.Showings[2].BeginDateTime</p>
+                    <p>Eindtijd: @ViewBag.Showings[2].EndDateTime</p>
+                </div>
+
+                <div class="col-xs-3">
+                    @if (@ViewBag.Films[2].Image != null)
+                    {
+                        <img class="img-responsive" src="@(((byte[]) ViewBag.Films[2].Image).getImageByteCode())" />
+                    }
+                    else
+                    {
+                        <img class="img-responsive" src="https://www.articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png" alt="Film picture" />
+                    }
+                </div>
+
+                <div class="col-xs-5">
+                    <div class="text-center">
+                        <h3>@ViewBag.Films[2].Name</h3>
+                    </div>
+                    <p>Duur: @ViewBag.Films[2].Length</p>
+                    <p style="float: right">Taal: @ViewBag.Films[2].Language</p>
+                    <p>Genre: @ViewBag.Films[2].FilmType</p>
+                    <p style="float: right">Ondertiteling: @ViewBag.Films[2].LanguageSubs</p>
+                    <p>Leeftijd: @ViewBag.Films[2].Age</p>
+                    <p style="float: right">3D: @ViewBag.Films[2].Is3D</p>
+                </div>
+
+                <div class="col-xs-2">
+                    <button class="btn btn-success" type="button" onclick="location.href='@Url.Action("Redirect", "UpcomingFilm", new { s = ViewBag.Showings[2].ShowingID, f = @ViewBag.Films[2].FilmID })'">Bestel kaartje(s)</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-xs-2"></div>
+
+</div>
+<!------------------------------------------ End third film ----------------------------------->
+
+<!------------------------------------------ Fourth film ----------------------------------->
+<div class="row">
+    <div class="col-xs-2"></div>
+
+    <div class="col-xs-8">
+        <div class="well">
+            <div class="row">
+                <div class="col-xs-2">
+                    <p>Zaal: @ViewBag.Showings[3].RoomID</p>
+                    <p>Begintijd: @ViewBag.Showings[3].BeginDateTime</p>
+                    <p>Eindtijd: @ViewBag.Showings[3].EndDateTime</p>
+                </div>
+
+                <div class="col-xs-3">
+                    @if (@ViewBag.Films[3].Image != null)
+                    {
+                        <img class="img-responsive" src="@(((byte[]) ViewBag.Films[3].Image).getImageByteCode())" />
+                    }
+                    else
+                    {
+                        <img class="img-responsive" src="https://www.articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png" alt="Film picture" />
+                    }
+                </div>
+
+                <div class="col-xs-5">
+                    <div class="text-center">
+                        <h3>@ViewBag.Films[3].Name</h3>
+                    </div>
+                    <p>Duur: @ViewBag.Films[3].Length</p>
+                    <p style="float: right">Taal: @ViewBag.Films[3].Language</p>
+                    <p>Genre: @ViewBag.Films[3].FilmType</p>
+                    <p style="float: right">Ondertiteling: @ViewBag.Films[3].LanguageSubs</p>
+                    <p>Leeftijd: @ViewBag.Films[3].Age</p>
+                    <p style="float: right">3D: @ViewBag.Films[3].Is3D</p>
+                </div>
+
+                <div class="col-xs-2">
+                    <button class="btn btn-success" type="button" onclick="location.href='@Url.Action("Redirect", "UpcomingFilm", new { s = ViewBag.Showings[3].ShowingID, f = @ViewBag.Films[3].FilmID })'">Bestel kaartje(s)</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-xs-2"></div>
+
+</div>
+<!------------------------------------------ End fourth film ----------------------------------->
+
+<!------------------------------------------ Fifth film ----------------------------------->
+<div class="row">
+    <div class="col-xs-2"></div>
+
+    <div class="col-xs-8">
+        <div class="well">
+            <div class="row">
+                <div class="col-xs-2">
+                    <p>Zaal: @ViewBag.Showings[4].RoomID</p>
+                    <p>Begintijd: @ViewBag.Showings[4].BeginDateTime</p>
+                    <p>Eindtijd: @ViewBag.Showings[4].EndDateTime</p>
+                </div>
+
+                <div class="col-xs-3">
+                    @if (@ViewBag.Films[4].Image != null)
+                    {
+                        <img class="img-responsive" src="@(((byte[]) ViewBag.Films[4].Image).getImageByteCode())" />
+                    }
+                    else
+                    {
+                        <img class="img-responsive" src="https://www.articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png" alt="Film picture" />
+                    }
+                </div>
+
+                <div class="col-xs-5">
+                    <div class="text-center">
+                        <h3>@ViewBag.Films[4].Name</h3>
+                    </div>
+                    <p>Duur: @ViewBag.Films[4].Length</p>
+                    <p style="float: right">Taal: @ViewBag.Films[4].Language</p>
+                    <p>Genre: @ViewBag.Films[4].FilmType</p>
+                    <p style="float: right">Ondertiteling: @ViewBag.Films[4].LanguageSubs</p>
+                    <p>Leeftijd: @ViewBag.Films[4].Age</p>
+                    <p style="float: right">3D: @ViewBag.Films[4].Is3D</p>
+                </div>
+
+                <div class="col-xs-2">
+                    <button class="btn btn-success" type="button" onclick="location.href='@Url.Action("Redirect", "UpcomingFilm", new { s = ViewBag.Showings[4].ShowingID, f = @ViewBag.Films[4].FilmID })'">Bestel kaartje(s)</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-xs-2"></div>
+
+</div>
+<!------------------------------------------ End fifth film ----------------------------------->
+
+<!------------------------------------------ Sixth film ----------------------------------->
+<div class="row">
+    <div class="col-xs-2"></div>
+
+    <div class="col-xs-8">
+        <div class="well">
+            <div class="row">
+                <div class="col-xs-2">
+                    <p>Zaal: @ViewBag.Showings[5].RoomID</p>
+                    <p>Begintijd: @ViewBag.Showings[5].BeginDateTime</p>
+                    <p>Eindtijd: @ViewBag.Showings[5].EndDateTime</p>
+                </div>
+
+                <div class="col-xs-3">
+                    @if (@ViewBag.Films[5].Image != null)
+                    {
+                        <img class="img-responsive" src="@(((byte[]) ViewBag.Films[5].Image).getImageByteCode())" />
+                    }
+                    else
+                    {
+                        <img class="img-responsive" src="https://www.articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png" alt="Film picture" />
+                    }
+                </div>
+
+                <div class="col-xs-5">
+                    <div class="text-center">
+                        <h3>@ViewBag.Films[5].Name</h3>
+                    </div>
+                    <p>Duur: @ViewBag.Films[5].Length</p>
+                    <p style="float: right">Taal: @ViewBag.Films[5].Language</p>
+                    <p>Genre: @ViewBag.Films[5].FilmType</p>
+                    <p style="float: right">Ondertiteling: @ViewBag.Films[5].LanguageSubs</p>
+                    <p>Leeftijd: @ViewBag.Films[5].Age</p>
+                    <p style="float: right">3D: @ViewBag.Films[5].Is3D</p>
+                </div>
+
+                <div class="col-xs-2">
+                    <button class="btn btn-success" type="button" onclick="location.href='@Url.Action("Redirect", "UpcomingFilm", new { s = ViewBag.Showings[5].ShowingID, f = @ViewBag.Films[5].FilmID })'">Bestel kaartje(s)</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-xs-2"></div>
+
+</div>
+<!------------------------------------------ End sixth film ----------------------------------->

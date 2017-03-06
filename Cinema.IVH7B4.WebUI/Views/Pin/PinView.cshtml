@@ -1,0 +1,68 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Betaling";
+}
+
+<div>
+    <h2 align="center">Betaal Informatie</h2>
+</div>
+<div class="col-md-offset-3 col-md-6 col-md-offset-3" style="padding: 20px; border: solid medium black;">
+    <table>
+        <tbody>
+            <tr><td>Film: @Model.SelectedFilm.Name</td></tr>
+            <tr><td>Aan: Cinema IHV7B4</td></tr>
+            <tr><td>Totaal bedrag: @Model.GetCurrencyString(@Model.GetTotalPriceForAllTickets())</td></tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label>Pincode: </label>
+                        @Html.Password("myTextBox", Model.PinValue, new { @readonly = "readonly" })
+                        <button type="button" onclick="location.href='@Url.Action("ShowTicketView","Ticket", Model)'">betaling afronden</button>
+                    </div>
+                </td>
+            </tr>
+            <tr><td>@Model.WrongPingValue</td></tr>
+        </tbody>
+    </table>
+</div>
+<div class="row row_padding">
+    <div class="col-md-offset-5 col-md-2 col-md-offset-5">
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "1"})'">1</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "2"})'">2</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "3"})'">3</button>
+            </div>
+        </div>
+
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "4"})'">4</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "5"})'">5</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "6"})'">6</button>
+            </div>
+        </div>
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "7"})'">7</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "8"})'">8</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "9"})'">9</button>
+            </div>
+        </div>
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "0"})'">0</button>
+                <button type="button" onclick="location.href='@Url.Action("PinViewRemoveChar", "Pin")'">terug</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row row_padding">
+    <div class="col-xs-1">
+        <a href="/Summary/SummaryView" class="btn btn-success">< Terug</a>
+    </div>
+    <div class="col-xs-10"></div>
+    <div class="col-xs-1 text-right">
+    </div>
+</div>
