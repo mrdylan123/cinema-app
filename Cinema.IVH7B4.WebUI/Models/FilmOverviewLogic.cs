@@ -62,7 +62,7 @@ namespace Cinema.IVH7B4.WebUI.Models
             Film firstFilm = allFilms.ElementAt(0);
             int i = 0;
 
-            while(i < allShowings.Count)
+            while (i < allShowings.Count)
             {
                 Showing currentShowing = allShowings.ElementAt(i);
 
@@ -71,10 +71,14 @@ namespace Cinema.IVH7B4.WebUI.Models
                     currentShowings.Add(currentShowing);
                 }
                 i++;
-            }     
+            }
 
             foreach (var dateTime in currentShowings)
             {
+                int dateCheck = DateTime.Compare(dateTime.BeginDateTime, DateTime.Now);
+                int dayCheck = dateTime.BeginDateTime.Day;
+                int monthCheck = dateTime.BeginDateTime.Month;
+
                 DateTime currentBegin = dateTime.BeginDateTime;
                 string dayWeek = currentBegin.DayOfWeek.ToString();
                 string dayMonth = currentBegin.Day.ToString();
@@ -87,42 +91,47 @@ namespace Cinema.IVH7B4.WebUI.Models
                 string hourEnd = currentEnd.Hour.ToString("D2");
                 string minutesEnd = currentEnd.Minute.ToString("D2");
 
-                switch (dayWeek)
+                //check if film is not in the past and if film is in current week
+                if ((dateCheck == 0 || dateCheck > 0) && dayCheck <= (DateTime.Now.Day + 7) && monthCheck == DateTime.Now.Month)
                 {
-                    case "Monday":
-                        dayWeek = "maandag";
-                        break;
-                    case "Tuesday":
-                        dayWeek = "dinsdag";
-                        break;
-                    case "Wednesday":
-                        dayWeek = "woensdag";
-                        break;
-                    case "Thursday":
-                        dayWeek = "donerdag";
-                        break;
-                    case "Friday":
-                        dayWeek = "vrijdag";
-                        break;
-                    case "Saturday":
-                        dayWeek = "zaterdag";
-                        break;
-                    case "Sunday":
-                        dayWeek = "zondag";
-                        break;
-                }
+                    switch (dayWeek)
+                    {
+                        case "Monday":
+                            dayWeek = "maandag";
+                            break;
+                        case "Tuesday":
+                            dayWeek = "dinsdag";
+                            break;
+                        case "Wednesday":
+                            dayWeek = "woensdag";
+                            break;
+                        case "Thursday":
+                            dayWeek = "donerdag";
+                            break;
+                        case "Friday":
+                            dayWeek = "vrijdag";
+                            break;
+                        case "Saturday":
+                            dayWeek = "zaterdag";
+                            break;
+                        case "Sunday":
+                            dayWeek = "zondag";
+                            break;
+                    }
 
-                dateTimeStrings.Add("Datum: " + dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
-                            " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd);
+                    dateTimeStrings.Add("Datum: " + dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
+                                " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd);
+                }
             }
 
             if (dateTimeStrings != null)
             {
                 return dateTimeStrings;
-            } else
+            }
+            else
             {
                 Debug.WriteLine("dateTimeStrings is null");
-                throw new NullReferenceException();                
+                throw new NullReferenceException();
             }
         }
     }
