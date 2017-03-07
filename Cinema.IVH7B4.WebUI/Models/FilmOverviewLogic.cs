@@ -134,5 +134,10 @@ namespace Cinema.IVH7B4.WebUI.Models
                 throw new NullReferenceException();
             }
         }
+        public static string dateToString(DateTime dateTime)
+        {
+            return "" + dateTime.ToString("dd-mm-yyyy");
+                ;
+        }
     }
 }

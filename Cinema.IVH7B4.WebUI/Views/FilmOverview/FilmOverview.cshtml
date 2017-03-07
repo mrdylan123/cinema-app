@@ -5,8 +5,8 @@
 }
 <html>
 <head>
-
     <link href="~/Content/FilmOverview.css" rel="stylesheet" />
+    <script src="~/Content/FilmOverview.js"></script>
 </head>
     <body>
         <div class="container-fluid">
@@ -14,15 +14,30 @@
                 <div class="col-xs-4">
                     <form method="post" action="@Url.Action("searchFilm", "filmOverview")">
                         <label for="search">Zoeken op film</label>
-                        <input type="text" name="searchFilm" />
+                        <input type="text" name="searchFilm"/>
                         <button type="submit">Zoeken</button>
                      </form>
+                    <form method="post" action="@Url.Action("GetFilteredFilms", "Filter")">
+                        <label for="search">Zoeken op datum</label>
+                        <select name="searchDay">
+                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(0))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(0))</option>
+                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(1))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(1))</option>
+                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(2))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(2))</option>
+                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(3))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(3))</option>
+                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(4))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(4))</option>
+                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(5))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(5))</option>
+                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(6))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(6))</option>
+                        </select>
+                        <label for="search">Zoeken op tijd</label>
+                        <input type="number" name="searchTime" min="13" max="21"><p>uur</p>
+                        <button type="submit">Zoeken</button>
+                    </form>
                  </div>
              <div class="col-xs-1"></div>
              <div class="col-xs-3">  
-                        <div id="errortext">
-                            <p><br/>@ViewBag.isNull</p>
-                        </div>
+                <div id="errortext">
+                    <p><br/>@ViewBag.isNull</p>
+                </div>
             </div>
             </div>
                 <div class="row img_row">

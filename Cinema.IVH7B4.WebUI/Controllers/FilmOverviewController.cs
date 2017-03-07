@@ -94,6 +94,9 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             //repo.getFilmByTitle(inputString);
             string inputString = Request["searchFilm"];
             Film searchResult = searchVerifier.verify(inputString, repo.getFilmList());
+            //string input Day= Request["searchDay]
+            //string input Time = Request["searchtime]
+            //DateTime dateTime = new DateTime()
 
             if (searchResult != null)
             {
