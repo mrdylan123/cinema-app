@@ -1,5 +1,5 @@
 ﻿@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
-
+@using Cinema.IVH7B4.WebUI.Models
 @{
     ViewBag.Title = "SummaryView";
 }
@@ -24,6 +24,35 @@
                 <p>Eindtijd: @Model.SelectedShowing.EndDateTime.ToString("HH:mm")</p>
             </div>
         </div>
+        <div class="col-xs-4">
+        <p>O = vrije stoel, X = bezet, V = is geselecteerd</p>
+
+        @foreach(List<AutomaticSeatSelection.OccupyType> rowList in ViewBag.SeatSelectionGUI)
+        {
+            // null means empty row, to seperate front and back rows 
+            if (rowList == null)
+            {
+                <p>  </p>
+                continue;
+            }
+
+            String str = "";
+
+            foreach(AutomaticSeatSelection.OccupyType ot in rowList)
+            {
+                switch(ot)
+                {
+                    case AutomaticSeatSelection.OccupyType.Occupied: str += "X"; break;
+                    case AutomaticSeatSelection.OccupyType.Selected: str += "V"; break;
+                    case AutomaticSeatSelection.OccupyType.Unoccupied: str +="O"; break;
+                    default: str += "ERROR"; break;
+                }
+            }
+            <p>@str</p>
+
+        }
+        </div>
+
         <div class="col-xs-4"></div>
         @Html.Partial("~/Views/Shared/_OrderSummary.cshtml")
     </div>
