@@ -19,7 +19,11 @@
             </div>
         </div>
     </header>
-    @RenderBody()
+    @Html.Partial("~/Views/Shared/_Menubar.cshtml")
+    <div class="pageContentWrapper">
+        @RenderBody()
+    </div>
+    @Html.Partial("~/Views/Shared/_Footer.cshtml")   
 </body>
 
 </html>
