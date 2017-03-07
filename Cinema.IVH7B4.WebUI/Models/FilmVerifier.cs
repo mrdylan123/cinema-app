@@ -22,14 +22,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                     film = currentFilm;
                 }
             }
-
-            if(film != null)
-            {
                 return film;
-            } else
-            {
-                throw new NullReferenceException();
-            }
         }
     }
 }

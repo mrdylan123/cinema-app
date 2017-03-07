@@ -60,6 +60,14 @@ namespace Cinema.IVH7B4.WebUI.Controllers
 
             var DateTimeAndIDList = new List<DateTimeAndID>();
 
+            if (filmID == -1)
+            {
+                ViewBag.isNull = "GEEN RESULTATEN GEVONDEN";
+            } else
+            {
+                ViewBag.isNull = "";
+            }
+
             int i = 0;
             foreach (string s in repo.convertDateTime(filmID))
             {
@@ -86,11 +94,19 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             //repo.getFilmByTitle(inputString);
             string inputString = Request["searchFilm"];
             Film searchResult = searchVerifier.verify(inputString, repo.getFilmList());
-            SetModelStuff(model, searchResult);
-            TempData["model"] = model;
 
-            //andere controller aanroepen
-        return RedirectToAction("renderFilm", new { filmID = searchResult.FilmID });
+            if (searchResult != null)
+            {
+                SetModelStuff(model, searchResult);
+                TempData["model"] = model;
+
+                //andere controller aanroepen
+                return RedirectToAction("renderFilm", new { filmID = searchResult.FilmID });
+            } else
+            {
+                return RedirectToAction("renderFilm", new { filmID = -1 });
+            }
+            
         }
 
         [HttpGet]
