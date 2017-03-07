@@ -13,5 +13,6 @@ namespace Cinema.IVH7B4.Domain.Abstract
         List<Showing> getShowingList();
         List<Showing> getShowingbyId(int id);
         List<string> convertDateTime(int filmID);
+        //Film getFilmByTitle(string title);
     }
 }

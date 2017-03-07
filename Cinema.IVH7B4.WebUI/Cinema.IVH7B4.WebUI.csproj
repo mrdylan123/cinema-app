@@ -188,6 +188,7 @@
     <Compile Include="Models\NormalTicketOrder.cs" />
     <Compile Include="Models\PDFGenerator.cs" />
     <Compile Include="Models\PincodeViewModel.cs" />
+    <Compile Include="Models\FilmVerifier.cs" />
     <Compile Include="Models\SeatCoord.cs" />
     <Compile Include="Models\SeniorTicketOrder.cs" />
     <Compile Include="Models\StudentTicketOrder.cs" />

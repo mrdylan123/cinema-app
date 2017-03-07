@@ -52,8 +52,8 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
             List<Film> filmList = repo.getFilmList();
-            ViewBag.currentFilm = Models.FilmOverviewLogic.renderFilm(filmID, filmList);
-            ViewBag.firstDateTime = Models.FilmOverviewLogic.convertDateTimeFirstFilm(filmList, repo.getShowingList()); 
+            ViewBag.currentFilm = FilmOverviewLogic.renderFilm(filmID, filmList);
+            ViewBag.firstDateTime = FilmOverviewLogic.convertDateTimeFirstFilm(filmList, repo.getShowingList()); 
 
             ViewBag.filmList = repo.getFilmList();
             ViewBag.image = @"data:image/jpg;base64," + Convert.ToBase64String(Models.FilmOverviewLogic.renderFilm(filmID, filmList).Image);
@@ -76,6 +76,21 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             SetModelStuff(model, ViewBag.currentFilm);
             TempData["model"] = model;
             return View("filmOverview");
+        }
+
+        [HttpPost]
+        public ActionResult searchFilm()
+        {
+            CinemaViewModel model = (CinemaViewModel)TempData["model"];
+            FilmVerifier searchVerifier = new FilmVerifier();
+            //repo.getFilmByTitle(inputString);
+            string inputString = Request["searchFilm"];
+            Film searchResult = searchVerifier.verify(inputString, repo.getFilmList());
+            SetModelStuff(model, searchResult);
+            TempData["model"] = model;
+
+            //andere controller aanroepen
+        return RedirectToAction("renderFilm", new { filmID = searchResult.FilmID });
         }
 
         [HttpGet]

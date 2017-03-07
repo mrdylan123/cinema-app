@@ -10,38 +10,75 @@
 </head>
     <body>
         <div class="container-fluid">
-            <div class="row img_row">
-                <div class="col-xs-3" id="film_list">
-                    <ul>
-                        @foreach (var property in ViewBag.filmList)
-                        {
-                            <li>
-                                <a href="@Url.Action("renderFilm", "filmOverview",
-                                        new { filmID = property.FilmID })" class="btn btn-success btn_style">@property.Name</a>
-                            </li>
-                        }
-                    </ul>
+            <div class="row">
+                <div class="col-xs-4">
+                    <form method="post" action="@Url.Action("searchFilm", "filmOverview")">
+                        <label for="search">Zoeken op film</label>
+                        <input type="text" name="searchFilm" />
+                        <button type="submit">Zoeken</button>
+                    </form>
                 </div>
-                <div class="col-xs-6 text-center" id="chooseFilm">
-                    @if (ViewBag.currentFilm == null && ViewBag.filmList[0].Image != null)
-                    {
-                        <img src="@(((byte[])ViewBag.filmList[0].Image).convertImageByteCode())"/>
-                        <h2 class="text-center">@ViewBag.filmList[0].Name</h2>
-                    }
-                    else if(ViewBag.currentFilm == null && ViewBag.filmList[0].Image == null)
-                    {
-                        <h2>Er is geen Afbeelding beschikbaar</h2>
-                    }
-                    else
-                    {
-                        <img src="@ViewBag.image" />
-                        <h2 class="text-center">@ViewBag.currentFilm.Name</h2>
-                    }
-</div>
-                <div class="col-xs-3"></div>
             </div>
-            <div class="row info_row">
-                <div class="col-xs-4"></div>
+                <div class="row img_row">
+                    <div class="col-xs-3" id="film_list">
+                        <ul>
+                            @foreach (var property in ViewBag.filmList)
+                            {
+                                <li>
+                                    <a href="@Url.Action("renderFilm", "filmOverview",
+                                        new { filmID = property.FilmID })" class="btn btn-success btn_style">@property.Name</a>
+                                    </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="col-xs-6 text-center" id="chooseFilm">
+                        @if (ViewBag.currentFilm == null && ViewBag.filmList[0].Image != null)
+                        {
+                            <img src="@(((byte[])ViewBag.filmList[0].Image).convertImageByteCode())" />
+                            <h2 class="text-center">@ViewBag.filmList[0].Name</h2>
+                        }
+                        else if (ViewBag.currentFilm == null && ViewBag.filmList[0].Image == null)
+                        {
+                            <h2>Er is geen Afbeelding beschikbaar</h2>
+                        }
+                        else
+                        {
+                            <img src="@ViewBag.image" />
+                            <h2 class="text-center">@ViewBag.currentFilm.Name</h2>
+                        }
+                    </div>
+                    <div class="col-xs-3"></div>
+                </div>
+                <div class="row info_row">
+                    <div class="col-xs-4">
+                        <h3>Beschrijving</h3>
+                        @if (ViewBag.currentFilm == null)
+                        {
+                            <p>
+                                @if (ViewBag.filmList[0].Description != null)
+                                {
+                                    @ViewBag.filmList[0].Description
+                                }
+                                else
+                                {
+                                    @: Geen informatie beschikbaar
+                            }
+                            </p>
+                        }
+                        else
+                        {
+                            if (ViewBag.currentFilm.Description != null)
+                            {
+                                <p>
+                                    @ViewBag.currentFilm.Description
+                                </p>
+                            }
+                            else
+                            {
+                                @: Geen informatie beschikbaar
+                        }
+                        }
+                    </div>
                     <div class="col-xs-3" id="info_block">
                         <h3>Film informatie</h3>
                         @if (ViewBag.currentFilm == null)
@@ -49,9 +86,12 @@
                             <ul>
                                 <li>
                                     <label>Duur:</label>
-                                    @if(ViewBag.filmList[0].Length != null){
+                                    @if (ViewBag.filmList[0].Length != null)
+                                    {
                                         @ViewBag.filmList[0].Length
-                                    } else {
+                                    }
+                                    else
+                                    {
                                         @: Geen informatie beschikbaar
                                     }
                                 </li>
@@ -60,7 +100,8 @@
                                     @if (ViewBag.filmList[0].FilmType != null)
                                     {
                                         @(((int)ViewBag.filmList[0].FilmType).getDutchString())
-                                    } else
+                                    }
+                                    else
                                     {
                                         @: Geen informatie beschikbaar
                                     }
@@ -70,7 +111,8 @@
                                     @if (ViewBag.filmList[0].Language != null)
                                     {
                                         @ViewBag.filmList[0].Language
-                                    } else
+                                    }
+                                    else
                                     {
                                         @: Geen informatie beschikbaar
                                     }
@@ -78,9 +120,12 @@
                                 </li>
                                 <li>
                                     <label>Ondertiteling:</label>
-                                    @if(ViewBag.filmList[0].LanguageSubs != null || ViewBag.filmList[0].LanguageSubs != "") {
+                                    @if (ViewBag.filmList[0].LanguageSubs != null || ViewBag.filmList[0].LanguageSubs != "")
+                                    {
                                         @ViewBag.filmList[0].LanguageSubs
-                                    } else {
+                                    }
+                                    else
+                                    {
                                         @:Geen Ondertiteling
                                     }
                                 </li>
@@ -89,7 +134,8 @@
                                     @if (ViewBag.filmList[0].Is3D == true)
                                     {
                                         @: Ja
-                                    } else
+                                    }
+                                    else
                                     {
                                         @: Nee
                                     }
@@ -99,7 +145,8 @@
                                     @if (ViewBag.filmList[0].Age != null)
                                     {
                                         @ViewBag.filmList[0].Age
-                                    } else
+                                    }
+                                    else
                                     {
                                         @: Geen informatie beschikbaar
                                     }
@@ -114,7 +161,8 @@
                                     @if (ViewBag.currentFilm.Length != null)
                                     {
                                         @ViewBag.currentFilm.Length
-                                    } else
+                                    }
+                                    else
                                     {
                                         @: Geen informatie beschikbaar
                                     }
@@ -124,7 +172,8 @@
                                     @if (ViewBag.currentFilm.FilmType != null)
                                     {
                                         @(((int)@ViewBag.currentFilm.FilmType).getDutchString())
-                                    } else
+                                    }
+                                    else
                                     {
                                         @: Geen informatie beschikbaar
                                     }
@@ -134,7 +183,8 @@
                                     @if (ViewBag.currentFilm.Language != null)
                                     {
                                         @ViewBag.currentFilm.Language
-                                    } else
+                                    }
+                                    else
                                     {
                                         @: Geen informatie beschikbaar
                                     }
@@ -144,7 +194,8 @@
                                     @if (ViewBag.currentFilm.LanguageSubs == "")
                                     {
                                         @ViewBag.currentFilm.LanguageSubs
-                                    } else
+                                    }
+                                    else
                                     {
                                         @: Geen ondertiteling
                                     }
@@ -154,7 +205,8 @@
                                     @if (ViewBag.currentFilm.Is3D == true)
                                     {
                                         @: Ja
-                                    } else
+                                    }
+                                    else
                                     {
                                         @: Nee
                                     }
@@ -164,7 +216,8 @@
                                     @if (ViewBag.currentFilm.Age != null)
                                     {
                                         @ViewBag.currentFilm.Age
-                                    } else
+                                    }
+                                    else
                                     {
                                         @: Geen informatie beschikbaar
                                     }
@@ -175,11 +228,20 @@
 
                     <div class="col-xs-5" id="time_block">
                         <h3>Tijden</h3>
-                        @if (ViewBag.datetime != null) {
-                            foreach (DateTimeAndID property in ViewBag.datetime) {
-                                <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("SelectShowing", "FilmOverview", new { index = property.index})'">Bestel kaartjes</button>
-                                @property.str
-                                <br/>
+                        @if (ViewBag.datetime != null)
+                        {
+                            foreach (DateTimeAndID property in ViewBag.datetime)
+                            {
+                                if (property == null)
+                                {
+                                    <h4>Deze film draait komende week niet in onze bioscoop</h4>
+                                }
+                                else
+                                {
+                                    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("SelectShowing", "FilmOverview", new { index = property.index})'">Bestel kaartjes</button>
+                                    @property.str
+                                    <br /><br />
+                                }
                             }
 
                         }
@@ -189,28 +251,34 @@
                                 Geen informatie beschikbaar,
                                 Vraag bij de balie voor meer informatie over deze film
                             </h4>
-                        } else if (ViewBag.currentFilm == null) {
-                            foreach (DateTimeAndID property in ViewBag.firstDateTime) {
+                        }
+                        else if (ViewBag.currentFilm == null)
+                        {
+                            foreach (DateTimeAndID property in ViewBag.firstDateTime)
+                            {
 
                                 <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("SelectShowing", "FilmOverview", new { index = property.index})'">Bestel kaartjes</button>
-                                                            @property.str
-                                <br/>
+                                @property.str
+                                <br />
+                                <br />
                             }
                         }
                         else
                         {
-                            <h4>Geen informatie beschikbaar,
-                        Vraag bij de balie voor meer informatie over deze film</h4>
+                            <h4>
+                                Geen informatie beschikbaar,
+                                Vraag bij de balie voor meer informatie over deze film
+                            </h4>
                         }
+                    </div>
                 </div>
-        </div>
-            <div class="row row_padding">
-                <div class="col-xs-1">
-                    <a href="../Home/Index" class="btn btn-success">Terug</a>
+                <div class="row row_padding">
+                    <div class="col-xs-1">
+                        <a href="../Home/Index" class="btn btn-success">Terug</a>
+                    </div>
                 </div>
             </div>
-    </div>
-    </body>
+</body>
 </html>
 
 

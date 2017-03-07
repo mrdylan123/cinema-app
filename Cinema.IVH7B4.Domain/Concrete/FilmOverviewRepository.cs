@@ -19,6 +19,29 @@ namespace Cinema.IVH7B4.Domain.Concrete
             return context.Films.ToList();
         }
 
+        /*public Film getFilmByTitle(string title)
+        {
+            List<Film> filmList = getFilmList();
+            Film searchResult = null;
+
+            foreach (Film film in filmList)
+            {
+                if (title == film.Name)
+                {
+                    searchResult = film;
+                }
+            }
+                
+            if(searchResult != null)
+            {
+                return searchResult;
+            } else
+            {
+                Debug.WriteLine("het searchResult is null >:(");
+                throw new NullReferenceException();                
+            }
+        }*/
+
         public List<Showing> getShowingList()
         {
             return context.Showings.ToList();
