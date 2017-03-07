@@ -76,6 +76,25 @@
     min-width:120px;
     font-weight: normal;
 }
+
+.clr_occupied {
+    color: red;
+    display: inline;
+    font-family: monospace;
+}
+
+.clr_unoccupied {
+    color: blue;
+    display: inline;
+    font-family: monospace;
+}
+
+.clr_selected {
+    color: green;
+    display: inline;
+    font-family: monospace;
+}
+
 /*end for: partial view _OrderSummary*/
 
 /*used for: RateOverview*/

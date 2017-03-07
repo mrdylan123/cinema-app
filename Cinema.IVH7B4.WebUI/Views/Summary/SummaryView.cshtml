@@ -27,31 +27,30 @@
         <div class="col-xs-4">
         <p>O = vrije stoel, X = bezet, V = is geselecteerd</p>
 
-        @foreach(List<AutomaticSeatSelection.OccupyType> rowList in ViewBag.SeatSelectionGUI)
+        @foreach (List<AutomaticSeatSelection.OccupyType> rowList in ViewBag.SeatSelectionGUI)
         {
             // null means empty row, to seperate front and back rows 
             if (rowList == null)
             {
-                <p>  </p>
+                <p></p>
                 continue;
             }
 
             String str = "";
 
-            foreach(AutomaticSeatSelection.OccupyType ot in rowList)
-            {
-                switch(ot)
+                foreach (AutomaticSeatSelection.OccupyType ot in rowList)
                 {
-                    case AutomaticSeatSelection.OccupyType.Occupied: str += "X"; break;
-                    case AutomaticSeatSelection.OccupyType.Selected: str += "V"; break;
-                    case AutomaticSeatSelection.OccupyType.Unoccupied: str +="O"; break;
-                    default: str += "ERROR"; break;
-                }
-            }
-            <p>@str</p>
 
+                    switch (ot)
+                    {
+                        case AutomaticSeatSelection.OccupyType.Occupied: <p class="clr_occupied">X</p>; break;
+                        case AutomaticSeatSelection.OccupyType.Selected: <p class="clr_selected">V</p>; break;
+                        case AutomaticSeatSelection.OccupyType.Unoccupied: <p class="clr_unoccupied">O</p>; break;
+                        default: str += "ERROR"; break;
+                    }
+                }
+                <p></p>
         }
-        </div>
 
         <div class="col-xs-4"></div>
         @Html.Partial("~/Views/Shared/_OrderSummary.cshtml")
