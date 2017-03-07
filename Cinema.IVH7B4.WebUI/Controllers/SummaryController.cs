@@ -28,7 +28,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
 
             var occupiedSeats = new List<Seat>();
 
-            foreach (Seat s in context.Seats) {
+            foreach (Seat s in context.Seats.ToList()) {
 
                 Ticket t = context.Tickets.ToList().Find(ti => ti.SeatID == s.SeatID && ti.ShowingID == model.SelectedShowing.ShowingID);
 
