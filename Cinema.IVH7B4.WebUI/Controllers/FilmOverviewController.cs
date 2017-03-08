@@ -50,15 +50,30 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         [HttpGet]
         public ViewResult renderFilm(int filmID)
         {
-            CinemaViewModel model = (CinemaViewModel)TempData["model"];
+            CinemaViewModel model;
+            model = (CinemaViewModel)TempData["model"];
+
+            if (model ==  null)
+            {
+                model = new CinemaViewModel();
+            }
+
             List<Film> filmList = repo.getFilmList();
-            ViewBag.currentFilm = Models.FilmOverviewLogic.renderFilm(filmID, filmList);
-            ViewBag.firstDateTime = Models.FilmOverviewLogic.convertDateTimeFirstFilm(filmList, repo.getShowingList()); 
+            ViewBag.currentFilm = FilmOverviewLogic.renderFilm(filmID, filmList);
+            ViewBag.firstDateTime = FilmOverviewLogic.convertDateTimeFirstFilm(filmList, repo.getShowingList()); 
 
             ViewBag.filmList = repo.getFilmList();
             ViewBag.image = @"data:image/jpg;base64," + Convert.ToBase64String(Models.FilmOverviewLogic.renderFilm(filmID, filmList).Image);
 
             var DateTimeAndIDList = new List<DateTimeAndID>();
+
+            if (filmID == -1)
+            {
+                ViewBag.isNull = "GEEN RESULTATEN GEVONDEN";
+            } else
+            {
+                ViewBag.isNull = "";
+            }
 
             int i = 0;
             foreach (string s in repo.convertDateTime(filmID))
@@ -76,6 +91,32 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             SetModelStuff(model, ViewBag.currentFilm);
             TempData["model"] = model;
             return View("filmOverview");
+        }
+
+        [HttpPost]
+        public ActionResult searchFilm()
+        {
+            CinemaViewModel model = (CinemaViewModel)TempData["model"];
+            FilmVerifier searchVerifier = new FilmVerifier();
+            //repo.getFilmByTitle(inputString);
+            string inputString = Request["searchFilm"];
+            Film searchResult = searchVerifier.verify(inputString, repo.getFilmList());
+            //string input Day= Request["searchDay]
+            //string input Time = Request["searchtime]
+            //DateTime dateTime = new DateTime()
+
+            if (searchResult != null)
+            {
+                SetModelStuff(model, searchResult);
+                TempData["model"] = model;
+
+                //andere controller aanroepen
+                return RedirectToAction("renderFilm", new { filmID = searchResult.FilmID });
+            } else
+            {
+                return RedirectToAction("renderFilm", new { filmID = -1 });
+            }
+            
         }
 
         [HttpGet]

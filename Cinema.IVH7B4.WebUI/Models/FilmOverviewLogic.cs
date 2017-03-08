@@ -73,13 +73,13 @@ namespace Cinema.IVH7B4.WebUI.Models
                 i++;
             }
 
-            foreach (var dateTime in currentShowings)
+            foreach (var showing in currentShowings)
             {
-                int dateCheck = DateTime.Compare(dateTime.BeginDateTime, DateTime.Now);
-                int dayCheck = dateTime.BeginDateTime.Day;
-                int monthCheck = dateTime.BeginDateTime.Month;
+                int dateCheck = DateTime.Compare(showing.BeginDateTime, DateTime.Now);
+                int dayCheck = showing.BeginDateTime.Day;
+                int monthCheck = showing.BeginDateTime.Month;
 
-                DateTime currentBegin = dateTime.BeginDateTime;
+                DateTime currentBegin = showing.BeginDateTime;
                 string dayWeek = currentBegin.DayOfWeek.ToString();
                 string dayMonth = currentBegin.Day.ToString();
                 string month = currentBegin.Month.ToString();
@@ -87,7 +87,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                 string hourBegin = currentBegin.Hour.ToString("D2");
                 string minutesBegin = currentBegin.Minute.ToString("D2");
 
-                DateTime currentEnd = dateTime.EndDateTime;
+                DateTime currentEnd = showing.EndDateTime;
                 string hourEnd = currentEnd.Hour.ToString("D2");
                 string minutesEnd = currentEnd.Minute.ToString("D2");
 
@@ -120,7 +120,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                     }
 
                     dateTimeStrings.Add("Datum: " + dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
-                                " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd);
+                                " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd + "Zaalnummer: " + showing.Room.RoomNumber);
                 }
             }
 
@@ -133,6 +133,10 @@ namespace Cinema.IVH7B4.WebUI.Models
                 Debug.WriteLine("dateTimeStrings is null");
                 throw new NullReferenceException();
             }
+        }
+        public static string dateToString(DateTime dateTime)
+        {
+            return "" + dateTime.ToString("dd-mm-yyyy");
         }
     }
 }
