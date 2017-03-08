@@ -1,19 +1,9 @@
 ﻿@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
 <html>
 <body>
-    <div class="row display-table" id="row_line">
-
-        <div class="col-xs-3">
-            <img src="@ViewBag.Base64" id="image_setter"/>
-        </div>
-
-        <div class="col-xs-6" id="film_title">
-            <h1 style="font-size:400%;">@Model.SelectedFilm.Name</h1>
-        </div>
-
-        <div class="col-xs-3">
-        </div>
-
+    <div class="col-xs-4 text-center">
+        <img src="@ViewBag.Base64" id="image_setter"/>
+        <h2>@Model.SelectedFilm.Name</h2>
     </div>
 </body>
 </html>

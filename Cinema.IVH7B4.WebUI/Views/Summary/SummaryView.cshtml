@@ -7,66 +7,65 @@
 <html>
 <head>
     @Html.Partial("~/Views/Shared/_Menubar.cshtml")
-    @Html.Partial("~/Views/Shared/_FilmImgTitle.cshtml")
 </head>
 <body>
-    <div class="row row_padding">
-        <div class="col-xs-4">
+    <div class="container">
+        <div class="row row_padding">
+            @Html.Partial("~/Views/Shared/_FilmImgTitle.cshtml")      
+            <div class="col-xs-4">
             
-            <h1>Film Informatie</h1>
+                <h2><u>Film Informatie</u></h2>
 
-            <div class="order_block">
-                <p>Titel: @Model.SelectedShowing.Film.Name</p>
-                <p>Zaal: @Model.SelectedShowing.Room.RoomNumber</p>
-                <p>Rijnummer: @Model.GetSeatsRow()</p>
-                <p>Stoelnummer: @Model.getSeatNumbersString()</p>
-                <p>Datum: @Model.SelectedShowing.BeginDateTime.ToString("dddd d MMMM yyyy")</p>
-                <p>Begintijd: @Model.SelectedShowing.BeginDateTime.ToString("HH:mm")</p>
-                <p>Eindtijd: @Model.SelectedShowing.EndDateTime.ToString("HH:mm")</p>
+                <div class="order_block">
+                    <p>Titel: @Model.SelectedShowing.Film.Name</p>
+                    <p>Zaal: @Model.SelectedShowing.Room.RoomNumber</p>
+                    <p>Rijnummer: @Model.GetSeatsRow()</p>
+                    <p>Stoelnummer: @Model.getSeatNumbersString()</p>
+                    <p>Datum: @Model.SelectedShowing.BeginDateTime.ToString("dddd d MMMM yyyy")</p>
+                    <p>Begintijd: @Model.SelectedShowing.BeginDateTime.ToString("HH:mm")</p>
+                    <p>Eindtijd: @Model.SelectedShowing.EndDateTime.ToString("HH:mm")</p>
+                </div>
             </div>
-        </div>
-        <div class="col-xs-4">
-        <p>O = vrije stoel, X = bezet, V = is geselecteerd</p>
+            <div class="col-xs-4 text-center" style="margin-top:50px;">
+            <p>O = vrije stoel, X = bezet, V = is geselecteerd</p>
 
-        @foreach (List<AutomaticSeatSelection.OccupyType> rowList in ViewBag.SeatSelectionGUI)
-        {
-            // null means empty row, to seperate front and back rows 
-            if (rowList == null)
+            @foreach (List<AutomaticSeatSelection.OccupyType> rowList in ViewBag.SeatSelectionGUI)
             {
-                <p></p>
-                continue;
-            }
-
-            String str = "";
-
-                foreach (AutomaticSeatSelection.OccupyType ot in rowList)
+                // null means empty row, to seperate front and back rows 
+                if (rowList == null)
                 {
-
-                    switch (ot)
-                    {
-                        case AutomaticSeatSelection.OccupyType.Occupied: <p class="clr_occupied">X</p>; break;
-                        case AutomaticSeatSelection.OccupyType.Selected: <p class="clr_selected">V</p>; break;
-                        case AutomaticSeatSelection.OccupyType.Unoccupied: <p class="clr_unoccupied">O</p>; break;
-                        default: str += "ERROR"; break;
-                    }
+                    <p></p>
+                    continue;
                 }
-                <p></p>
-        }
 
-        <div class="col-xs-4"></div>
-        @Html.Partial("~/Views/Shared/_OrderSummary.cshtml")
-    </div>
+                String str = "";
 
-    <div class="row row_padding">
-        <div class="col-xs-1">
-            <!--need to link the button-->
-            <a href="../Rate/RateOverview" class="btn btn-success">< Terug</a>
+                    foreach (AutomaticSeatSelection.OccupyType ot in rowList)
+                    {
+
+                        switch (ot)
+                        {
+                            case AutomaticSeatSelection.OccupyType.Occupied: <p class="clr_occupied">X</p>; break;
+                            case AutomaticSeatSelection.OccupyType.Selected: <p class="clr_selected">V</p>; break;
+                            case AutomaticSeatSelection.OccupyType.Unoccupied: <p class="clr_unoccupied">O</p>; break;
+                            default: str += "ERROR"; break;
+                        }
+                    }
+                    <p></p>
+            }
+            </div>
+
+            @Html.Partial("~/Views/Shared/_OrderSummary.cshtml")
+       
         </div>
-        <div class="col-xs-10"></div>
-        <div class="col-xs-1 text-right">
-            <!--need to link the button-->
-            <a href="/Pin/PinView" class="btn btn-success"> Afrekenen ></a>
-        </div>
+
+        <div class="row text-right button_padding">
+
+            <div class="col-xs-10"></div>
+            <div class="col-xs-2">
+                <a href="/Pin/PinView" class="btn btn-success"> Afrekenen ></a>
+            </div>
+        </div>      
     </div>
 </body>
 </html>

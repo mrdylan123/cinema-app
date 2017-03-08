@@ -47,20 +47,15 @@
 
 /*used for: partial view _FilmImgTitle*/
 #image_setter{
-    width:175px;
-    height:175px;
-    padding-left: 20px;
+    max-width:380px;
+    max-height:500px;
 }
 
 #film_title{
     text-align:center; 
-    padding-top:40px;
+    padding-top:10px;
 }
 
-#row_line{
-    border-bottom: 2px solid black;
-    padding-bottom: 10px;
-}
 /*end for: partial view _FilmImgTitle*/
 
 /*used for: partial view _OrderSummary*/
@@ -100,19 +95,17 @@
 /*used for: RateOverview*/
 .label_outline{
     display:inline-block;
-    min-width:450px;
+    min-width:350px;
     font-weight: normal;
 }
 
 .reset_outline{
     display:inline-block;
-    min-width:580px;
+    min-width:420px;
     font-weight: normal;
 }
-
-.row_padding{
-    padding-left:10px;
-    padding-right:10px;
+.button_padding{
+    padding-bottom:10px;
 }
 /*end for: RateOverview*/
 
