@@ -1,4 +1,5 @@
-﻿using Cinema.IVH7B4.Domain.Entities;
+﻿using Cinema.IVH7B4.Domain.Concrete;
+using Cinema.IVH7B4.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -259,6 +260,11 @@ namespace Cinema.IVH7B4.WebUI.Models
             }
 
             return false;
+        }
+
+        public Location findLocationByName(String name)
+        {
+            return (new EFDbContext()).Locations.ToList().Find(l => l.Name == name);
         }
     }
 }
