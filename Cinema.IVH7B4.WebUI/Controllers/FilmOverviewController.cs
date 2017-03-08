@@ -64,7 +64,6 @@ namespace Cinema.IVH7B4.WebUI.Controllers
 
             ViewBag.filmList = repo.getFilmList();
             ViewBag.image = @"data:image/jpg;base64," + Convert.ToBase64String(Models.FilmOverviewLogic.renderFilm(filmID, filmList).Image);
-
             var DateTimeAndIDList = new List<DateTimeAndID>();
 
             if (filmID == -1)
@@ -98,12 +97,8 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
             FilmVerifier searchVerifier = new FilmVerifier();
-            //repo.getFilmByTitle(inputString);
             string inputString = Request["searchFilm"];
             Film searchResult = searchVerifier.verify(inputString, repo.getFilmList());
-            //string input Day= Request["searchDay]
-            //string input Time = Request["searchtime]
-            //DateTime dateTime = new DateTime()
 
             if (searchResult != null)
             {
