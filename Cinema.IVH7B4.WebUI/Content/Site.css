@@ -97,3 +97,10 @@
 }
 /*end for: RateOverview*/
 
+/*----- code Lennard filmOverview ---------------*/
+#errortext {
+    color: red;
+    font-weight: bold;
+    font-size: 130%
+}
+/*------------------------------------------------*/
