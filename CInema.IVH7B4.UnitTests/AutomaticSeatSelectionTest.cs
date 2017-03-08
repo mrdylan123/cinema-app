@@ -52,7 +52,7 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             var ass = new AutomaticSeatSelection();
-            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> ret = ass.CalculateSeats(room, 3, occupiedSeats);
             List<SeatCoord> expected = new List<SeatCoord>()
             {
                 new SeatCoord(3,2),
@@ -83,7 +83,7 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             var ass = new AutomaticSeatSelection();
-            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> ret = ass.CalculateSeats(room, 3, occupiedSeats);
             List<SeatCoord> expected = new List<SeatCoord>()
             {
                 new SeatCoord(3,2),
@@ -114,7 +114,7 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             var ass = new AutomaticSeatSelection();
-            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> ret = ass.CalculateSeats(room, 3, occupiedSeats);
             List<SeatCoord> expected = new List<SeatCoord>()
             {
                 new SeatCoord(1,0),
@@ -145,7 +145,7 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             var ass = new AutomaticSeatSelection();
-            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> ret = ass.CalculateSeats(room, 3, occupiedSeats);
             List<SeatCoord> expected = new List<SeatCoord>()
             {
                 new SeatCoord(1,0),
@@ -177,7 +177,7 @@ namespace CInema.IVH7B4.UnitTests
            };
 
             var ass = new AutomaticSeatSelection();
-            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> ret = ass.CalculateSeats(room, 3, occupiedSeats);
             List<SeatCoord> expected = new List<SeatCoord>()
             {
                 new SeatCoord(7,2),
@@ -209,7 +209,7 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             var ass = new AutomaticSeatSelection();
-            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> ret = ass.CalculateSeats(room, 3, occupiedSeats);
             List<SeatCoord> expected = new List<SeatCoord>()
             {
                 new SeatCoord(7,2),
@@ -244,7 +244,7 @@ namespace CInema.IVH7B4.UnitTests
            };
 
             var ass = new AutomaticSeatSelection();
-            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room,3, occupiedSeats);
+            List<SeatCoord> ret = ass.CalculateSeats(room,3, occupiedSeats);
             List<SeatCoord> expected = new List<SeatCoord>()
             {
                 new SeatCoord(8,2),
@@ -279,7 +279,7 @@ namespace CInema.IVH7B4.UnitTests
            };
 
             var ass = new AutomaticSeatSelection();
-            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 3, occupiedSeats);
+            List<SeatCoord> ret = ass.CalculateSeats(room, 3, occupiedSeats);
             List<SeatCoord> expected = new List<SeatCoord>()
             {
                 new SeatCoord(8,2),
@@ -311,7 +311,7 @@ namespace CInema.IVH7B4.UnitTests
            };
 
             var ass = new AutomaticSeatSelection();
-            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 5, occupiedSeats);
+            List<SeatCoord> ret = ass.CalculateSeats(room, 5, occupiedSeats);
             List<SeatCoord> expected = new List<SeatCoord>()
             {
                 new SeatCoord(7,0),
@@ -345,7 +345,7 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             var ass = new AutomaticSeatSelection();
-            List<SeatCoord> ret = ass.VisualizeSelectedSeats(room, 5, occupiedSeats);
+            List<SeatCoord> ret = ass.CalculateSeats(room, 5, occupiedSeats);
             List<SeatCoord> expected = new List<SeatCoord>()
             {
                 new SeatCoord(7,0),
