@@ -152,6 +152,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\FilmOverview.css" />
+    <Content Include="Content\FilmOverview.js" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -188,6 +189,7 @@
     <Compile Include="Models\NormalTicketOrder.cs" />
     <Compile Include="Models\PDFGenerator.cs" />
     <Compile Include="Models\PincodeViewModel.cs" />
+    <Compile Include="Models\FilmVerifier.cs" />
     <Compile Include="Models\SeatCoord.cs" />
     <Compile Include="Models\SeniorTicketOrder.cs" />
     <Compile Include="Models\StudentTicketOrder.cs" />
