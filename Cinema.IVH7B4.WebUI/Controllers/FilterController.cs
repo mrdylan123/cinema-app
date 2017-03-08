@@ -42,7 +42,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             // If a day has been entered, put this in time. Else, take the current day.
             if (dayInput != "")
             {
-                time = DateTime.ParseExact(dayInput, "dd-mm-yyyy", CultureInfo.InvariantCulture);
+                time = DateTime.ParseExact(dayInput, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             }
             else
             {
@@ -116,7 +116,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
                 ViewBag.selectedDate = time.DayOfWeek + " " + time.Day + " " + time.Month;
             }
 
-            ViewBag.selectedTime = time.TimeOfDay.ToString("HH:mm");
+            ViewBag.selectedTime = time.ToString("HH:mm");
             ViewBag.numberOfResults = resultShowings.Count;
             ViewBag.resultShowings = resultShowings;
             ViewBag.resultFilms = allFilms;

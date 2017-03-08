@@ -136,7 +136,7 @@ namespace Cinema.IVH7B4.WebUI.Models
         }
         public static string dateToString(DateTime dateTime)
         {
-            return "" + dateTime.ToString("dd-mm-yyyy");
+            return "" + dateTime.ToString("dd-MM-yyyy");
         }
     }
 }

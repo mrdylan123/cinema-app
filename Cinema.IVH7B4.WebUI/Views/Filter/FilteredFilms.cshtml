@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="col-xs-2">
-                        <button class="btn btn-success" type="button" onclick="location.href = '@Url.Action("Redirect", "UpcomingFilm", new {s = ViewBag.resultShowings.ShowingID, f = @ViewBag.resultFilms.FilmID})'">Bestel kaartje(s)</button>
+                        <button class="btn btn-success" type="button" onclick="location.href = '@Url.Action("Redirect", "UpcomingFilm", new {s = s.ShowingID, f = f.FilmID})'">Bestel kaartje(s)</button>
                     </div>
                 </div>
 
