@@ -3,14 +3,14 @@
     background-color: black;
     border-bottom: 15px solid #CC0800; 
     border-top: 3px solid #CC0800;  
-    height: 175px;
+    height: 100px;
     border-bottom-left-radius: 20%;
     border-bottom-right-radius: 20%;
 }
 
 #big_title {
     color: #CC0800;
-    margin-top: 55px;
+    margin-top: 10px;
     font-size: 350%;
     font-family: sans-serif;
 }
@@ -36,7 +36,7 @@
 }
 
 #row-offset{
-    padding-top:9%;
+    padding-top:7%;
 }
 
 .vertical-align {
