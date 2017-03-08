@@ -152,7 +152,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\FilmOverview.css" />
-    <Content Include="Content\FilmOverview.js" />
+    <Content Include="Content\Flag_of_the_Netherlands.png" />
+    <Content Include="Content\Flag_of_the_United_Kingdom.svg.png" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -186,10 +187,10 @@
     <Compile Include="Models\DateTimeAndID.cs" />
     <Compile Include="Models\FilmOverviewLogic.cs" />
     <Compile Include="Models\FilmType.cs" />
+    <Compile Include="Models\FilmVerifier.cs" />
     <Compile Include="Models\NormalTicketOrder.cs" />
     <Compile Include="Models\PDFGenerator.cs" />
     <Compile Include="Models\PincodeViewModel.cs" />
-    <Compile Include="Models\FilmVerifier.cs" />
     <Compile Include="Models\SeatCoord.cs" />
     <Compile Include="Models\SeniorTicketOrder.cs" />
     <Compile Include="Models\StudentTicketOrder.cs" />
@@ -218,7 +219,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Ticket\ShowTicketView.cshtml" />
-    <Content Include="Views\Shared\_header.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\UpcomingFilm\UpcomingFilms.cshtml" />
     <Content Include="Views\Rate\RateOverview.cshtml" />
@@ -226,6 +227,8 @@
     <Content Include="Views\Shared\_OrderSummary.cshtml" />
     <Content Include="Views\Summary\SummaryView.cshtml" />
     <Content Include="Views\FilmOverview\FilmOverview.cshtml" />
+    <Content Include="Views\Shared\_Menubar.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

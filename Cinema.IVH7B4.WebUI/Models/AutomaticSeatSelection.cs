@@ -15,38 +15,54 @@ namespace Cinema.IVH7B4.WebUI.Models
         {
             debug = new List<String>();
         }
+
+        public enum OccupyType
+        {
+            Unoccupied,
+            Occupied,
+            Selected
+        }
         
 
-        public void VisualizeSeats(Room room, List<Seat> occupiedSeats)
+        public List<List<OccupyType>> VisualizeSeats(Room room, List<Seat> occupiedSeats, List<SeatCoord> seatCoords)
         {
+            var retList = new List<List<OccupyType>>();
+
             // get seats where roomid is equal to room roomid and where there are tickets off with the ticketid
            // List<Seat> occupiedSeats = context.Seats.ToList().Where(s => s.RoomID == room.RoomID && context.Tickets.ToList().Find(t => t.SeatID == s.SeatID) != null).ToList();
             var layout = room.Layout;
-            debug.Add("Front: ");
+            //debug.Add("Front: ");
 
             for (int i = 0; i < layout.FrontY; i++)
             {
-                String str = "";
+                var rowList = new List<OccupyType>();
                 for(int j = 0; j < layout.FrontX; j++)
                 {
-                    str += (IsOccupiedSeat(occupiedSeats, i, j, false) ? "X" : "O");
+                    OccupyType type;
+                    IsOccupiedSeat(occupiedSeats, seatCoords, i, j, false, out type);
+                    rowList.Add(type);
                 }
-                debug.Add(str);
+                retList.Add(rowList);
             }
-            debug.Add("Back:");
+
+            // null to seperate front and back
+            retList.Add(null);
             for (int i = 0; i < layout.BackY; i++)
             {
-                String str = "";
-
+                var rowList = new List<OccupyType>();
                 for (int j = 0; j < layout.BackX; j++)
                 {
-                    str += (IsOccupiedSeat(occupiedSeats, i + layout.FrontY, j, false) ? "X" : "O");
+                    OccupyType type;
+                    IsOccupiedSeat(occupiedSeats, seatCoords, i, j, false, out type);
+                    rowList.Add(type);
                 }
-                debug.Add(str);
+                retList.Add(rowList);
             }
+
+            return retList;
         }
 
-        public List<SeatCoord> VisualizeSelectedSeats(Room room, int seats, List<Seat> occupiedSeats)
+        public List<SeatCoord> CalculateSeats(Room room, int seats, List<Seat> occupiedSeats)
         {
             List<SeatCoord> coordList = new List<SeatCoord>();
             if (seats == 0) return coordList;
@@ -170,7 +186,9 @@ namespace Cinema.IVH7B4.WebUI.Models
 
         public int CheckAdjacentRows(List<Seat> occupiedSeats, int checkX, int maxX, int numSeats, int y)
         {
-            debug.Add(String.Format("Start checking Y = {0}, checkX = {1}, maxX = {2}, numSeats = {3}", y, checkX, maxX, numSeats));
+            OccupyType unused;
+
+           // debug.Add(String.Format("Start checking Y = {0}, checkX = {1}, maxX = {2}, numSeats = {3}", y, checkX, maxX, numSeats));
             for (int i = 0; i < numSeats; i++)
             {
                 int currentX = checkX + i;
@@ -180,14 +198,14 @@ namespace Cinema.IVH7B4.WebUI.Models
                 }
                     // check if there is a seat with same Y and X as current seat
                     // and stop the inner j loop if its the case
-                if (IsOccupiedSeat(occupiedSeats, y, currentX, true) == true)
+                if (IsOccupiedSeat(occupiedSeats, null, y, currentX, true, out unused) == true)
                     {
                         break;
                     }
 
                 if (i == numSeats - 1)
                 {
-                    debug.Add("Found!");
+                    //debug.Add("Found!");
                     //return -1; // DEBUG
                     return checkX; // i has x position of row, first of seats
                 }
@@ -195,19 +213,33 @@ namespace Cinema.IVH7B4.WebUI.Models
             return -1;
         }
 
-        public bool IsOccupiedSeat(List<Seat> seats, int y, int x, bool debug_)
+        public bool IsOccupiedSeat(List<Seat> seats, List<SeatCoord> extraSeatCoords, int y, int x, bool debug_, out OccupyType type)
         {
             if (debug_)
             {
-                debug.Add(String.Format("   Checking: Y = {0}, X = {1}", y, x));
+                //debug.Add(String.Format("   Checking: Y = {0}, X = {1}", y, x));
             }
             foreach(Seat s in seats)
             {
                 if (s.RowX == x && s.RowY == y)
                 {
+                    type = OccupyType.Occupied;
                     return true;
                 }
             }
+            if (extraSeatCoords != null)
+            {
+                foreach (SeatCoord sc in extraSeatCoords)
+                {
+                    if (sc.X == x && sc.Y == y)
+                    {
+                        type = OccupyType.Selected;
+                        return true;
+                    }
+                }
+            }
+
+            type = OccupyType.Unoccupied;
             return false;
         }
     }

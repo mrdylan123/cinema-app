@@ -42,7 +42,8 @@ namespace Cinema.IVH7B4.WebUI.Controllers
                 occupiedSeats.Add(s);
             }
 
-            model.SeatCoordList = ass.VisualizeSelectedSeats(model.SelectedShowing.Room, model.GetAllTicketsQuantity(), occupiedSeats);
+            model.SeatCoordList = ass.CalculateSeats(model.SelectedShowing.Room, model.GetAllTicketsQuantity(), occupiedSeats);
+            ViewBag.SeatSelectionGUI = ass.VisualizeSeats(model.SelectedShowing.Room, occupiedSeats, model.SeatCoordList);
 
             TempData["model"] = model;
             return View("SummaryView", model);

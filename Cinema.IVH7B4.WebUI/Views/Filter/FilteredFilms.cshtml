@@ -1,0 +1,67 @@
+﻿@using Cinema.IVH7B4.Domain.Entities
+@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+
+@{
+    ViewBag.Title = "Zoekresultaten";
+}
+<div class="text-center">
+    <h2>Eerstkomende films na @ViewBag.selectedDate @ViewBag.selectedTime</h2>
+    <h3>@ViewBag.numberOfResults resultaten</h3>
+    <hr />
+</div>
+
+<!------------------------------------- Show all found showings ------------------------------>
+<div class="row">
+    <div class="col-xs-2"></div>
+
+    <div class="col-xs-8">
+        <!-- Loop through the list of showings and show them -->
+        @for(int i = 0; i < ViewBag.numberOfResults; i++)
+        {
+            Showing s = ViewBag.resultShowings[i];
+            Film f = ViewBag.resultFilms[i];
+
+            <div class="well">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <p>Zaal: @s.RoomID</p>
+                        <p>Begintijd: @s.BeginDateTime</p>
+                        <p>Eindtijd: @s.EndDateTime</p>
+                    </div>
+
+                    <div class="col-xs-3">
+                        @if (@f.Image != null)
+                        {
+                            <img class="img-responsive" src="@(((byte[]) f.Image).getImageByteCode())"/>
+                        }
+                        else
+                        {
+                            <img class="img-responsive" src="https://www.articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png" alt="Film picture"/>
+                        }
+                    </div>
+
+                    <div class="col-xs-5">
+                        <div class="text-center">
+                            <h3>@f.Name</h3>
+                        </div>
+                        <p>Duur: @f.Length</p>
+                        <p style="float: right">Taal: @f.Language</p>
+                        <p>Genre: @f.FilmType</p>
+                        <p style="float: right">Ondertiteling: @f.LanguageSubs</p>
+                        <p>Leeftijd: @f.Age</p>
+                        <p style="float: right">3D: @f.Is3D</p>
+                    </div>
+
+                    <div class="col-xs-2">
+                        <button class="btn btn-success" type="button" onclick="location.href = '@Url.Action("Redirect", "UpcomingFilm", new {s = s.ShowingID, f = f.FilmID})'">Bestel kaartje(s)</button>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+
+    <div class="col-xs-2"></div>
+
+</div>
