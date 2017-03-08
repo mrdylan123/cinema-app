@@ -187,6 +187,7 @@
     <Compile Include="Models\DateTimeAndID.cs" />
     <Compile Include="Models\FilmOverviewLogic.cs" />
     <Compile Include="Models\FilmType.cs" />
+    <Compile Include="Models\FilmVerifier.cs" />
     <Compile Include="Models\NormalTicketOrder.cs" />
     <Compile Include="Models\PDFGenerator.cs" />
     <Compile Include="Models\PincodeViewModel.cs" />
