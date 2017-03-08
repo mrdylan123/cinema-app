@@ -19,29 +19,6 @@ namespace Cinema.IVH7B4.Domain.Concrete
             return context.Films.ToList();
         }
 
-        /*public Film getFilmByTitle(string title)
-        {
-            List<Film> filmList = getFilmList();
-            Film searchResult = null;
-
-            foreach (Film film in filmList)
-            {
-                if (title == film.Name)
-                {
-                    searchResult = film;
-                }
-            }
-                
-            if(searchResult != null)
-            {
-                return searchResult;
-            } else
-            {
-                Debug.WriteLine("het searchResult is null >:(");
-                throw new NullReferenceException();                
-            }
-        }*/
-
         public List<Showing> getShowingList()
         {
             return context.Showings.ToList();
@@ -79,13 +56,13 @@ namespace Cinema.IVH7B4.Domain.Concrete
             List<string> currentShowings = new List<string>();
 
 
-            foreach (var dateTime in getShowingbyId(filmID))
+            foreach (Showing showing in getShowingbyId(filmID))
             {
-                int dateCheck = DateTime.Compare(dateTime.BeginDateTime, DateTime.Now);
-                int dayCheck = dateTime.BeginDateTime.Day;
-                int monthCheck = dateTime.BeginDateTime.Month;
+                int dateCheck = DateTime.Compare(showing.BeginDateTime, DateTime.Now);
+                int dayCheck = showing.BeginDateTime.Day;
+                int monthCheck = showing.BeginDateTime.Month;
 
-                DateTime currentBegin = dateTime.BeginDateTime;
+                DateTime currentBegin = showing.BeginDateTime;
                 string dayWeek = currentBegin.DayOfWeek.ToString();
                 string dayMonth = currentBegin.Day.ToString();
                 string month = currentBegin.Month.ToString();
@@ -93,12 +70,12 @@ namespace Cinema.IVH7B4.Domain.Concrete
                 string hourBegin = currentBegin.Hour.ToString("D2");
                 string minutesBegin = currentBegin.Minute.ToString("D2");
 
-                DateTime currentEnd = dateTime.EndDateTime;
+                DateTime currentEnd = showing.EndDateTime;
                 string hourEnd = currentEnd.Hour.ToString("D2");
                 string minutesEnd = currentEnd.Minute.ToString("D2");
 
                 //check if film is not in the past and if film is in current week
-                if ((dateCheck == 0 || dateCheck > 0) && dateTime.BeginDateTime <= DateTime.Now.AddDays(7))
+                if ((dateCheck == 0 || dateCheck > 0) && showing.BeginDateTime <= DateTime.Now.AddDays(7))
                 {
                     switch (dayWeek)
                     {
@@ -126,7 +103,7 @@ namespace Cinema.IVH7B4.Domain.Concrete
                     }
 
                     currentShowings.Add("Datum: " + dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
-                                    " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd);
+                                    " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd + "Zaalnummer: " + showing.Room.RoomNumber);
                 }
             }
             return currentShowings;

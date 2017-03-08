@@ -50,7 +50,14 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         [HttpGet]
         public ViewResult renderFilm(int filmID)
         {
-            CinemaViewModel model = (CinemaViewModel)TempData["model"];
+            CinemaViewModel model;
+            model = (CinemaViewModel)TempData["model"];
+
+            if (model ==  null)
+            {
+                model = new CinemaViewModel();
+            }
+
             List<Film> filmList = repo.getFilmList();
             ViewBag.currentFilm = FilmOverviewLogic.renderFilm(filmID, filmList);
             ViewBag.firstDateTime = FilmOverviewLogic.convertDateTimeFirstFilm(filmList, repo.getShowingList()); 
