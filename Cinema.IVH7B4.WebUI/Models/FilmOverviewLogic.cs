@@ -97,30 +97,30 @@ namespace Cinema.IVH7B4.WebUI.Models
                     switch (dayWeek)
                     {
                         case "Monday":
-                            dayWeek = "maandag";
+                            dayWeek = "Maandag";
                             break;
                         case "Tuesday":
-                            dayWeek = "dinsdag";
+                            dayWeek = "Dinsdag";
                             break;
                         case "Wednesday":
-                            dayWeek = "woensdag";
+                            dayWeek = "Woensdag";
                             break;
                         case "Thursday":
-                            dayWeek = "donerdag";
+                            dayWeek = "Donderdag";
                             break;
                         case "Friday":
-                            dayWeek = "vrijdag";
+                            dayWeek = "Vrijdag";
                             break;
                         case "Saturday":
-                            dayWeek = "zaterdag";
+                            dayWeek = "Zaterdag";
                             break;
                         case "Sunday":
-                            dayWeek = "zondag";
+                            dayWeek = "Zondag";
                             break;
                     }
 
-                    dateTimeStrings.Add("Datum: " + dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
-                                " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd + "Zaalnummer: " + showing.Room.RoomNumber);
+                    dateTimeStrings.Add(dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
+                                " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd + " " + "Zaalnummer: " + showing.Room.RoomNumber);
                 }
             }
 

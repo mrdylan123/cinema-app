@@ -4,27 +4,86 @@
     height:500px;
 }
 
-#info_block{  
-    border-left:2px solid black;
-    border-right: 2px solid black;
+#time_block a {
+    color: #5cb85c;
+    background-color: #eee;
 }
-#time_block{
 
-    border-right: 2px solid black; 
+#info_row {
+    background-color: #eee;
+    margin-bottom: 25px;
+    margin-top: 25px;
 }
+
+#time_block {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+}
+
 ul{
     list-style-type:none;
 }
+
+#film_list {
+    min-height: 458px;
+    background-color: #eee;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#film_list li {
+    width: 100%;
+    padding: 5px;
+    background-color: #eee;    
+}
+
+#film_list li:hover {
+    background-color: #5cb85c;
+}
+
+#filmLink {
+    text-decoration: none;
+    font-size: 125%;
+    color: black;
+}
+
 .img_row{
-    border-bottom:2px solid black;
     padding-top:25px;
 }
-.info_row{
-    border-bottom:2px solid black;
-}
+
 .btn_style{
     margin-bottom : 5px;
     font-size: 20px;
+}
+
+#errortext {
+    color: red;
+    font-weight: bold;
+    font-size: 130%
+}
+
+#searchSection button {
+    font-size: 120%;
+}
+
+#searchTable td {
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+#datum_search {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#searchTable {
+    margin-top: 12px;
+}
+
+#datum_search td {
+    padding: 5px;
 }
 
 

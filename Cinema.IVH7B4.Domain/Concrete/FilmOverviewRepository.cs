@@ -80,30 +80,30 @@ namespace Cinema.IVH7B4.Domain.Concrete
                     switch (dayWeek)
                     {
                         case "Monday":
-                            dayWeek = "maandag";
+                            dayWeek = "Maandag";
                             break;
                         case "Tuesday":
-                            dayWeek = "dinsdag";
+                            dayWeek = "Dinsdag";
                             break;
                         case "Wednesday":
-                            dayWeek = "woensdag";
+                            dayWeek = "Woensdag";
                             break;
                         case "Thursday":
-                            dayWeek = "donerdag";
+                            dayWeek = "Donderdag";
                             break;
                         case "Friday":
-                            dayWeek = "vrijdag";
+                            dayWeek = "Vrijdag";
                             break;
                         case "Saturday":
-                            dayWeek = "zaterdag";
+                            dayWeek = "Zaterdag";
                             break;
                         case "Sunday":
-                            dayWeek = "zondag";
+                            dayWeek = "Zondag";
                             break;
                     }
 
-                    currentShowings.Add("Datum: " + dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
-                                    " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd + "Zaalnummer: " + showing.Room.RoomNumber);
+                    currentShowings.Add(dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
+                                    " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd + " " + "Zaalnummer: " + showing.Room.RoomNumber);
                 }
             }
             return currentShowings;

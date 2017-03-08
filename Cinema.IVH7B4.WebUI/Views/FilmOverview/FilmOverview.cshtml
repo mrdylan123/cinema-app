@@ -6,83 +6,103 @@
 <html>
 <head>
     <link href="~/Content/FilmOverview.css" rel="stylesheet" />
-    <script src="~/Content/FilmOverview.js"></script>
 </head>
     <body>
-        @Html.Partial("~/Views/Shared/_Menubar.cshtml")
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container">
+            <div class="row" id="searchSection">
+                <div class="col-xs-5">
+                    <table id="searchTable">
+                        
+                            <form method="post" action="@Url.Action("searchFilm", "filmOverview")">
+                                <tr>
+                                    <td><label for="search">Zoeken op film:</label></td>
+                                    </tr>
+                                <tr>
+                                    <td><input type="text" name="searchFilm" /></td>
+                                    <td><button type="submit" class="btn btn-success">Zoeken</button></td>
+                                </tr>
+                            </form>
+                        
+                        </table>
+                        <div id="errortext">
+                            <p><br />@ViewBag.isNull</p>
+                        </div>
+                        </div>
+             <div class="col-xs-3"></div>
                 <div class="col-xs-4">
-                    <form method="post" action="@Url.Action("searchFilm", "filmOverview")">
-                        <label for="search">Zoeken op film</label>
-                        <input type="text" name="searchFilm"/>
-                        <button type="submit">Zoeken</button>
-                     </form>
-                    <form method="post" action="@Url.Action("GetFilteredFilms", "Filter")">
-                        <label for="search">Zoeken op datum</label>
-                        <select name="searchDay">
-                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(0))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(0))</option>
-                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(1))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(1))</option>
-                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(2))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(2))</option>
-                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(3))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(3))</option>
-                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(4))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(4))</option>
-                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(5))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(5))</option>
-                            <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(6))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(6))</option>
-                        </select>
-                        <label for="search">Zoeken op tijd</label>
-                        <select name="searchTime">
-                            <option value="13">13:00</option>
-                            <option value="14">14:00</option>
-                            <option value="15">15:00</option>
-                            <option value="16">16:00</option>
-                            <option value="17">17:00</option>
-                            <option value="18">18:00</option>
-                            <option value="19">19:00</option>
-                            <option value="20">20:00</option>
-                            <option value="21">21:00</option>
-                        </select>
-                        <button type="submit">Zoeken</button>
-                    </form>
-                 </div>
-             <div class="col-xs-1"></div>
-             <div class="col-xs-3">  
-                <div id="errortext">
-                    <p><br/>@ViewBag.isNull</p>
+                    <table id="datum_search">
+                        <tr>
+                            <td colspan="3"><label>Zoeken op datum en tijd:</label></td>
+                        </tr>
+                        <tr>
+                            <form method="post" action="@Url.Action("GetFilteredFilms", "Filter")">
+                                <td>Datum:</td>
+                                <td>
+                                    <select name="searchDay">
+                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(0))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(0))</option>
+                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(1))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(1))</option>
+                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(2))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(2))</option>
+                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(3))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(3))</option>
+                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(4))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(4))</option>
+                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(5))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(5))</option>
+                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(6))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(6))</option>
+                                    </select>
+                                </td>
+                                <td>Tijd:</td>
+                                <td>
+                                    <select name="searchTime">
+                                        <option value="13">13:00</option>
+                                        <option value="14">14:00</option>
+                                        <option value="15">15:00</option>
+                                        <option value="16">16:00</option>
+                                        <option value="17">17:00</option>
+                                        <option value="18">18:00</option>
+                                        <option value="19">19:00</option>
+                                        <option value="20">20:00</option>
+                                        <option value="21">21:00</option>
+                                    </select>
+                                </td>
+                                <td><button type="submit" class="btn btn-success">Zoeken</button></td>
+                        </tr>
+                           
+                            </form>
+                    </table>
                 </div>
             </div>
-            </div>
                 <div class="row img_row">
-                    <div class="col-xs-3" id="film_list">
-                        <ul>
+                    <div class="col-xs-3">
+                        <ul id="film_list">
                             @foreach (var property in ViewBag.filmList)
                             {
                                 <li>
-                                    <a href="@Url.Action("renderFilm", "filmOverview",
-                                        new { filmID = property.FilmID })" class="btn btn-success btn_style">@property.Name</a>
+                                    <a id="filmLink" href="@Url.Action("renderFilm", "filmOverview",
+                                        new { filmID = property.FilmID })">@property.Name</a>
                                     </li>
                             }
                         </ul>
                     </div>
-                    <div class="col-xs-6 text-center" id="chooseFilm">
-                        @if (ViewBag.currentFilm == null && ViewBag.filmList[0].Image != null)
+                    <div class="col-xs-6" id="chooseFilm">
+                        @if (ViewBag.currentFilm == null && ViewBag.filmList[0].Trailer != null)
                         {
-                            <img src="@(((byte[])ViewBag.filmList[0].Image).convertImageByteCode())" />
-                            <h2 class="text-center">@ViewBag.filmList[0].Name</h2>
-                        }
-                        else if (ViewBag.currentFilm == null && ViewBag.filmList[0].Image == null)
-                        {
+                            <iframe width="813" height="458" src="@ViewBag.filmList[0].Trailer" frameborder="2" allowfullscreen></iframe>
+                                <!--<img src="(((byte[])ViewBag.filmList[0].Image).convertImageByteCode())" />-->
+                                    <h2 class="text-right">@ViewBag.filmList[0].Name</h2>
+                            }
+                            else if (ViewBag.currentFilm == null && ViewBag.filmList[0].Image == null)
+                            {
                             <h2>Er is geen Afbeelding beschikbaar</h2>
-                        }
-                        else
-                        {
-                            <img src="@ViewBag.image" />
-                            <h2 class="text-center">@ViewBag.currentFilm.Name</h2>
-                        }
-                    </div>
+                            }
+                            else
+                            {
+                                <iframe width="813" height="458" src="@ViewBag.currentFilm.Trailer" frameborder="2" allowfullscreen></iframe>
+                                <!--<img src="ViewBag.image" />-->
+                                    <h2 class="text-right">@ViewBag.currentFilm.Name</h2>
+                            }
+                            </div>
                     <div class="col-xs-3"></div>
                 </div>
-                <div class="row info_row">
-                    <div class="col-xs-4">
+                <div class="row" id="info_row">
+                    <div class="col-xs-4" id="beschrijving_block">
                         <h3>Beschrijving</h3>
                         @if (ViewBag.currentFilm == null)
                         {
@@ -257,9 +277,8 @@
                             </ul>
                         }
                     </div>
-
                     <div class="col-xs-5" id="time_block">
-                        <h3>Tijden</h3>
+                        <h3>Kaarten bestellen</h3>
                         @if (ViewBag.datetime != null)
                         {
                             foreach (DateTimeAndID property in ViewBag.datetime)
@@ -270,8 +289,8 @@
                                 }
                                 else
                                 {
-                                    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("SelectShowing", "FilmOverview", new { index = property.index})'">Bestel kaartjes</button>
-                                    @property.str
+                                    <!--<a href="location.href='Url.Action("SelectShowing", "FilmOverview", new { index = property.index})'">property.str</a>-->
+                                    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("SelectShowing", "FilmOverview", new { index = property.index})'">@property.str</button>
                                     <br /><br />
                                 }
                             }
@@ -289,8 +308,7 @@
                             foreach (DateTimeAndID property in ViewBag.firstDateTime)
                             {
 
-                                <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("SelectShowing", "FilmOverview", new { index = property.index})'">Bestel kaartjes</button>
-                                @property.str
+                                <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("SelectShowing", "FilmOverview", new { index = property.index})'">@property.str</button>
                                 <br />
                                 <br />
                             }
@@ -303,7 +321,7 @@
                             </h4>
                         }
                     </div>
-                </div>
+                    </div>
                 <div class="row row_padding">
                     <div class="col-xs-1">
                         <a href="../Home/Index" class="btn btn-success">Terug</a>
