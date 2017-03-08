@@ -40,11 +40,11 @@ namespace Cinema.IVH7B4.WebUI.Controllers
 
             ViewBag.firstDateTime = DateTimeAndIDList;
 
-            var model = new CinemaViewModel();
-            
+            CinemaViewModel model = (CinemaViewModel)TempData["model"];
+
             SetModelStuff(model, repo.getFilmList()[0]);
             TempData["model"] = model;
-            return View();
+            return View(model);
         }
 
         [HttpGet]

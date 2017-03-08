@@ -1,4 +1,5 @@
-﻿<html>
+﻿@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+<html>
 <head>
     <!-- bootstrap links -->
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
@@ -14,12 +15,19 @@
         <div class="container-fluid" id="header_container">          
             <div class="row">
                 <div class="col-xs-12">
-                    <h1 class="text-center" id="big_title">Bioscoop IVH7B4 Breda</h1>
+                    @if (Model != null && Model.SelectedLocation != null)
+                    {
+                        <h1 class="text-center" id="big_title">Bioscoop IVH7B4 @Model.SelectedLocation.Name</h1>
+                    }
+                    else
+                    {
+                        <h1 class="text-center" id="big_title">Bioscoop IVH7B4</h1>
+                    }
                 </div>
             </div>
         </div>
     </header>
-    @Html.Partial("~/Views/Shared/_Menubar.cshtml")
+    
     <div class="pageContentWrapper">
         @RenderBody()
     </div>

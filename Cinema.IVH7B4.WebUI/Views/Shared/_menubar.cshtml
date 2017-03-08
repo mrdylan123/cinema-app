@@ -10,7 +10,16 @@
                 
                         <ul class="nav navbar-nav">
                             <li><a href="/FilmOverview/FilmOverview">Films</a></li>
-                            <li><a href="/Home/Index">Bioscopen</a></li>
+                            
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bioscopen <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" onclick="location.href='@Url.Action("SetLocationAndGotoFilmOverview", "Home", new { locationName = "Breda"})'">Breda</a></li>
+                                    <li><a href="#" onclick="location.href='@Url.Action("SetLocationAndGotoFilmOverview", "Home", new { locationName = "Eindhoven"})'">Eindhoven</a></li>
+                                    <li><a href="#" onclick="location.href='@Url.Action("SetLocationAndGotoFilmOverview", "Home", new { locationName = "Tilburg"})'">Tilburg</a></li>
+                                </ul>
+                            </li>
+
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </div>
