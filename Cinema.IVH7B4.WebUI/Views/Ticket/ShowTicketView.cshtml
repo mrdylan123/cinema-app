@@ -4,25 +4,37 @@
     ViewBag.Title = "ShowTicketView";
 }
 @Html.Partial("~/Views/Shared/_Menubar.cshtml")
-<div>
-    <h2 align="center">Uw kaartjes worden nu geprint</h2>
-</div>
-<div class="row row_padding">
-    <div class="col-md-offset-5 col-md-2 col-md-offset-5">
-        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
-                <button class ="btn btn-success" type="button" onclick="location.href='@Url.Action("PrintTickets","Ticket")'">Print Kaartjes</button>
+<html>
+<body>
+    <div class="container">
+        <div>
+            <h1 align="center" style="margin-bottom:30px;">Bedankt voor uw bestelling!</h1>
+        </div>
+        <div class="row">
+            <!--Print tickets-->
+            <div class="col-sm-offset-2 col-xs-4">        
+                <button class ="btn btn-success" id="home_button" type="button" onclick="location.href='@Url.Action("PrintTickets","Ticket")'">Print Kaartjes</button>         
+            </div>  
+            <!--Get ticket code--> 
+            <div class="col-xs-4">
+                @if (ViewBag.keycode == null)
+                {
+                    <button class="btn btn-success" id="home_button" type="button" onclick="location.href='@Url.Action("ShowCode","Ticket")'">Laat reservingcode zien</button>
+                }
+                else
+                {
+                    <p>De reservingscode is @ViewBag.keycode</p>
+                }
+                <p class="text-center" style="margin-top:10px;">Met deze code kunt U het kaartje bij de bioscoop uitprinten.</p>
+            </div>     
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                
+                <a href="/" class="btn btn-success" style="margin-top:150px;">Terug naar home</a>
             </div>
         </div>
-    </div>
-<div>
-    <h3 align="center">Bedankt voor uw bestelling, Fijne voorstelling!</h3>
-</div>
-<div class="row row_padding">
-    <div class="col-xs-5">
-    </div>
-    <div class="col-xs-2">
-        <a href="/" class="btn btn-success">Home Page</a>
-    </div>
-    <div class="col-xs-5">
-    </div>
-</div>
+   </div> 
+</body>       
+</html>

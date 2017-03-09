@@ -100,6 +100,25 @@ namespace Cinema.IVH7B4.WebUI.Models
                 NormalTicketOrder.GetTotalPrice();
         }
 
+        public bool IsChildTicketSamePriceAsNormalTicket()
+        {
+            return ChildTicketOrder.GetPrice() == NormalTicketOrder.GetPrice();
+        }
+
+        public bool IsStudentTicketValid(DateTime dt)
+        {
+            return IsMondayTuesdayWednesdayThursday(dt);
+        }
+        public bool IsSeniorTicketValid(DateTime dt)
+        {
+            return IsMondayTuesdayWednesdayThursday(dt) && !IsHoliday(dt);
+        }
+
+        public bool IsMondayTuesdayWednesdayThursday(DateTime dt)
+        {
+            return IsMondayTuesdayWednesdayThursday(dt.DayOfWeek);
+        }
+
         public String GetEuroSign()
         {
             return "€";
@@ -141,7 +160,7 @@ namespace Cinema.IVH7B4.WebUI.Models
 
             //TODO APPLY ADDITIONAL PER LOCATION DISCOUNTS
 
-
+            String secretKey = GenerateTicketSecretKey();
             foreach (SeatCoord sc in SeatCoordList)
             {
                 var ticket = new Ticket()
@@ -152,7 +171,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                     Price = 0.0m,
                     //Seat = seatsList.Find(s => s.seatNo == sc.GetSeatNumber(SelectedShowing.Room.Layout)),
                     SeatID = seatsList.Find(s => s.seatNo == sc.GetSeatNumber(SelectedShowing.Room.Layout)).SeatID,
-                    SecretKey = GenerateTicketSecretKey(), // TODO
+                    SecretKey = secretKey, // TODO
                     TicketType = (int)TicketType.InvalidTicket,
                     //Showing = SelectedShowing,
                     ShowingID = SelectedShowing.ShowingID

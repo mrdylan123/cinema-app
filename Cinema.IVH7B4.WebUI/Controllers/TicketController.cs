@@ -12,55 +12,82 @@ namespace Cinema.IVH7B4.WebUI.Controllers
     public class TicketController : Controller
     {
         // GET: Ticket
-        public ActionResult ShowTicketView() {
-            CinemaViewModel model = (CinemaViewModel) TempData["model"];
-            if (model.PinValue == "0000") {
+        public ActionResult ShowTicketView()
+        {
+            CinemaViewModel model = (CinemaViewModel)TempData["model"];
+
+            if (model.PinValue == "")
+            {
+                return View("ShowTicketVIew");
+            }
+
+            if (model.PinValue == "0000")
+            {
                 model.WrongPingValue = "Vul een geldige pincode in";
 
 
                 TempData["model"] = model;
-                return RedirectToAction("PinView","Pin");
+                return RedirectToAction("PinView", "Pin");
             }
-            else {
+            else
+            {
                 InsertNewTicketsIntoDatabase(model);
 
                 TempData["model"] = model;
                 return View("ShowTicketView");
             }
-            
+
         }
 
-        public ActionResult PrintTickets() {
+        public ActionResult ShowCode()
+        {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
+            List<Ticket> InsertedTickets = ((List<Ticket>)TempData["InsertedTickets"]);
+
+            Ticket t = InsertedTickets[0];
+
+            if (t != null)
+            {
+                ViewBag.keycode = t.SecretKey;
+            }
+
+
+            TempData["model"] = model;
+            TempData["InsertedTickets"] = InsertedTickets;
+            return View("ShowTicketView");
+        }
+
+        public ActionResult PrintTickets()
+        {
+            CinemaViewModel model = (CinemaViewModel)TempData["model"];
+            List<Ticket> InsertedTickets = ((List<Ticket>)TempData["InsertedTickets"]);
+
             var context = new EFDbContext();
             var customer = context.Customers.ToList()[0];
             var loc = context.Locations.ToList()[0];
 
-            var tickets = new List<Ticket>();
-            foreach (Ticket t in (List<Ticket>)TempData["InsertedTickets"]) {
-
-                Ticket ti = context.Tickets.ToList().Find(tt => tt.SecretKey == t.SecretKey);
-
-                if (ti != null) {
-                    tickets.Add(ti);
-                }
-            }
+            Ticket t = ((List<Ticket>)TempData["InsertedTickets"])[0];
+            List<Ticket> tickets = context.Tickets.ToList().FindAll(tt => tt.SecretKey == t.SecretKey).ToList();
 
             var pdf = new PDFGenerator(tickets, loc);
+
             TempData["model"] = model;
+            TempData["InsertedTickets"] = InsertedTickets;
             return pdf.SendPdf();
         }
 
-        private void InsertNewTicketsIntoDatabase(CinemaViewModel model) {
+        private void InsertNewTicketsIntoDatabase(CinemaViewModel model)
+        {
             var context = new EFDbContext();
             var customer = context.Customers.ToList()[0];
 
-            model.GetSeatsList().ForEach(s =>context.Seats.Add(s));
+            model.GetSeatsList().ForEach(s => context.Seats.Add(s));
             context.SaveChanges();
 
             var tickets = model.GetTicketsList(context.Seats.ToList(), customer);
 
-            foreach (Ticket t in tickets) {
+            foreach (Ticket t in tickets)
+            {
                 context.Tickets.Add(t);
                 context.SaveChanges();
             }

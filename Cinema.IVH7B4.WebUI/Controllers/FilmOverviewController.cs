@@ -134,8 +134,16 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         }
 
         private void SetModelStuff(CinemaViewModel model, Film f) {
-            model.SelectedFilm = f;
-            model.SelectedShowing = repo.getShowingList().Where(s => s.FilmID == model.SelectedFilm.FilmID && s.BeginDateTime > DateTime.Now).OrderBy(s => s.BeginDateTime).First();
+            if (model != null)
+            {
+                model.SelectedFilm = f;
+                model.SelectedShowing = repo.getShowingList().Where(s => s.FilmID == model.SelectedFilm.FilmID && s.BeginDateTime > DateTime.Now).OrderBy(s => s.BeginDateTime).First();
+            } else
+            {
+                model = new CinemaViewModel();
+                model.SelectedFilm = f;
+                model.SelectedShowing = repo.getShowingList().Where(s => s.FilmID == model.SelectedFilm.FilmID && s.BeginDateTime > DateTime.Now).OrderBy(s => s.BeginDateTime).FirstOrDefault(null);
+            }
         }
     }
 }

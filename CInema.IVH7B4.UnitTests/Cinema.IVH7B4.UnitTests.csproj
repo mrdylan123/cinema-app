@@ -113,6 +113,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="AutomaticSeatSelectionTest.cs" />
     <Compile Include="FilmOverViewControllerTest.cs" />
+    <Compile Include="UnitTest2.cs" />
     <Compile Include="UnitTestDatabaseInsert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTestFilterModel.cs" />
