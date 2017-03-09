@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
+using System.Web.Mvc;
+using System.Web.Routing;
+using Cinema.IVH7B4.Domain.Entities;
 using Cinema.IVH7B4.WebUI.Controllers;
 using Cinema.IVH7B4.WebUI.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -51,6 +54,33 @@ namespace CInema.IVH7B4.UnitTests {
             //assert
             model = (CinemaViewModel)controller.TempData["model"];
             Assert.AreEqual(model.PinValue.Length, 2);
+        }
+
+        [TestMethod]
+        public void TestFourTimesZero() {
+            //arrange
+            TicketController ticketController = new TicketController();
+            CinemaViewModel model = new CinemaViewModel() {
+                PinValue = "0000"
+            };
+            var dic = new RouteValueDictionary();
+            dic["action"] = "PinView";
+            dic["controller"] = "Pin";
+            //act
+
+            ticketController.TempData["model"] = model;
+            var result = ticketController.ShowTicketView() as RedirectToRouteResult;
+            //assert
+
+            Assert.AreEqual(dic["action"], result.RouteValues["action"]);
+            Assert.AreEqual(dic["controller"], result.RouteValues["controller"]);
+        }
+
+        [TestMethod]
+        public void TestViewTest() {
+            PinController controller = new PinController();
+            var result = controller.PinView();
+            Assert.AreEqual("PinView", result.ViewName);
         }
     }
 }

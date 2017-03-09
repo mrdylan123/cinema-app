@@ -196,3 +196,5 @@ C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.dll
 C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.pdb
 C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Properties.Resources.resources
 C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.csproj.GenerateResource.Cache
+C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Properties.Resources.resources
+C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.csproj.GenerateResource.Cache

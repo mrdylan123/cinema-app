@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Cinema.IVH7B4.WebUI.Models;
+using Ninject.Infrastructure.Language;
 
 namespace Cinema.IVH7B4.WebUI.Controllers
 {
@@ -63,7 +64,13 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             ViewBag.firstDateTime = FilmOverviewLogic.convertDateTimeFirstFilm(filmList, repo.getShowingList()); 
 
             ViewBag.filmList = repo.getFilmList();
-            ViewBag.image = @"data:image/jpg;base64," + Convert.ToBase64String(Models.FilmOverviewLogic.renderFilm(filmID, filmList).Image);
+            var foundFilm = (filmList.ToEnumerable().Where(f => f.FilmID == filmID));
+            foreach (Film f in foundFilm) {
+                if (f.Image != null) {
+                    ViewBag.image = @"data:image/jpg;base64," +
+                                    Convert.ToBase64String(Models.FilmOverviewLogic.renderFilm(filmID, filmList).Image);
+                }
+            }
             var DateTimeAndIDList = new List<DateTimeAndID>();
 
             if (filmID == -1)

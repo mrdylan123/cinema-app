@@ -171,6 +171,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FilmOverviewController.cs" />
+    <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PinController.cs" />
     <Compile Include="Controllers\RateController.cs" />
@@ -229,6 +230,7 @@
     <Content Include="Views\FilmOverview\FilmOverview.cshtml" />
     <Content Include="Views\Shared\_Menubar.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Filter\FilteredFilms.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

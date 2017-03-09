@@ -9,26 +9,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Ninject.Infrastructure.Language;
 
-namespace CInema.IVH7B4.UnitTests
-{
+namespace CInema.IVH7B4.UnitTests {
     /// <summary>
     /// Summary description for UpcomingFilmTest
     /// </summary>
     [TestClass]
-    public class UpcomingFilmTest
-    {
-
-        private bool AreShowingIDListsEqual(List<int> l1, List<int> l2)
-        {
-            if (l1.Count != l2.Count)
-            {
+    public class UpcomingFilmTest {
+        private bool AreShowingIDListsEqual(List<int> l1, List<int> l2) {
+            if (l1.Count != l2.Count) {
                 return false;
             }
 
-            for (int i = 0; i < l1.Count; i++)
-            {
-                if (l1[i] != l2[i])
-                {
+            for (int i = 0; i < l1.Count; i++) {
+                if (l1[i] != l2[i]) {
                     return false;
                 }
             }
@@ -37,14 +30,12 @@ namespace CInema.IVH7B4.UnitTests
         }
 
         [TestMethod]
-        public void TestFilterByDate()
-        {
+        public void TestFilterByDate() {
 
             //Arrange -- get a list of showings to filter
 
             // first make a location to use in film
-            Location testLocation = new Location
-            {
+            Location testLocation = new Location {
                 City = "",
                 Country = "",
                 kidDiscount = 0.0m,
@@ -110,8 +101,7 @@ namespace CInema.IVH7B4.UnitTests
                 ;
 
             // now create a roomlayout to add to room to add to showing
-            RoomLayout testLayout = new RoomLayout
-            {
+            RoomLayout testLayout = new RoomLayout {
                 BackX = 1,
                 BackY = 1,
                 FrontX = 1,
@@ -120,8 +110,7 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             // now create a room that's using above layout
-            Room testRoom = new Room
-            {
+            Room testRoom = new Room {
                 Layout = testLayout,
                 LayoutID = 1,
                 RoomID = 1,
@@ -191,14 +180,12 @@ namespace CInema.IVH7B4.UnitTests
         }
 
         [TestMethod]
-        public void TestOrderByDate()
-        {
+        public void TestOrderByDate() {
 
             //Arrange -- get a list of showings to filter
 
             // first make a location to use in film
-            Location testLocation = new Location
-            {
+            Location testLocation = new Location {
                 City = "",
                 Country = "",
                 kidDiscount = 0.0m,
@@ -264,8 +251,7 @@ namespace CInema.IVH7B4.UnitTests
                 ;
 
             // now create a roomlayout to add to room to add to showing
-            RoomLayout testLayout = new RoomLayout
-            {
+            RoomLayout testLayout = new RoomLayout {
                 BackX = 1,
                 BackY = 1,
                 FrontX = 1,
@@ -274,8 +260,7 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             // now create a room that's using above layout
-            Room testRoom = new Room
-            {
+            Room testRoom = new Room {
                 Layout = testLayout,
                 LayoutID = 1,
                 RoomID = 1,
@@ -343,14 +328,12 @@ namespace CInema.IVH7B4.UnitTests
         }
 
         [TestMethod]
-        public void TestFilterOutSameFilm()
-        {
+        public void TestFilterOutSameFilm() {
 
             //Arrange -- get a list of showings to filter
 
             // first make a location to use in film
-            Location testLocation = new Location
-            {
+            Location testLocation = new Location {
                 City = "",
                 Country = "",
                 kidDiscount = 0.0m,
@@ -416,8 +399,7 @@ namespace CInema.IVH7B4.UnitTests
                 ;
 
             // now create a roomlayout to add to room to add to showing
-            RoomLayout testLayout = new RoomLayout
-            {
+            RoomLayout testLayout = new RoomLayout {
                 BackX = 1,
                 BackY = 1,
                 FrontX = 1,
@@ -426,8 +408,7 @@ namespace CInema.IVH7B4.UnitTests
             };
 
             // now create a room that's using above layout
-            Room testRoom = new Room
-            {
+            Room testRoom = new Room {
                 Layout = testLayout,
                 LayoutID = 1,
                 RoomID = 1,
@@ -481,8 +462,7 @@ namespace CInema.IVH7B4.UnitTests
         }
 
         [TestMethod]
-        public void TestTakeOutOfList()
-        {
+        public void TestTakeOutOfList() {
             // Arrange -- create a list
             List<int> testList = new List<int>
             {
@@ -511,10 +491,12 @@ namespace CInema.IVH7B4.UnitTests
                 4,
                 5
             };
-
             // Assert -- see if the expectedresult of ints have the same value as the testresult ints
             Assert.IsTrue(AreShowingIDListsEqual(testResult, expectedResults));
         }
-    }
+        [TestMethod]
+        public void UpcomingFilmstest() {
 
+        }
+    }
 }
