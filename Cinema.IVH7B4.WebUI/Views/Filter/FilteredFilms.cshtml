@@ -5,6 +5,7 @@
 @{
     ViewBag.Title = "Zoekresultaten";
 }
+@Html.Partial("~/Views/Shared/_Menubar.cshtml")
 <div class="text-center">
     <h2>Eerstkomende films na @ViewBag.selectedDate @ViewBag.selectedTime</h2>
     <h3>@ViewBag.numberOfResults resultaten</h3>
