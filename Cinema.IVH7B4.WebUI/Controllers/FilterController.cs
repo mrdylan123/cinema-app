@@ -55,57 +55,37 @@ namespace Cinema.IVH7B4.WebUI.Controllers
                 time = time.AddHours(Int32.Parse(timeInput));
             }
 
-            /*
-            // split the string by the dash
-            string[] ints = dayInput.Split('-');
-
-            // create int variables
-            int y = 0;
-            int d = 0;
-            int m = 0;
-
-            // parse the strings from the searchDay result to ints
-            foreach (string s in ints)
-            {
-                int day = Int32.Parse(ints[0]);
-                int month = Int32.Parse(ints[1]);
-                d = day;
-                m = month;
-            }
-
-            // parse the string from the searchTime result to int
-            int chosentime = Int32.Parse(timeInput);
-
-            // create a datetime object of the chosen filter parameters
-            DateTime time = new DateTime(DateTime.Now.Year, m, d, chosentime, 0, 0);
-            */
-
             var dayofweek = time.DayOfWeek;
 
             //First get all showings
             IEnumerable<Showing> allShowings = showingRepo.GetShowings();
 
             //Filter the list to only contain showings coming after the given time
-            IEnumerable<Showing> filteredShowings = allShowings.Where(s => s.BeginDateTime > time);
+            IEnumerable<Showing> showingsAfterDate = FilterLogic.GetShowingsAfterDate(allShowings, time);
 
             //Order the results by date so that the most near one will be shown first
-            IEnumerable<Showing> orderedShowings = filteredShowings.OrderBy(s => s.BeginDateTime);
+            IEnumerable<Showing> showingsOrdered = FilterLogic.OrderByDate(showingsAfterDate);
             
             //Filter out showings that are not on the chosen day
-            IEnumerable<Showing> todaysShowings = orderedShowings.Where(s => s.BeginDateTime.DayOfWeek == dayofweek);
+            IEnumerable<Showing> todaysShowings = FilterLogic.TodaysShowings(showingsOrdered, time);
 
-            //Take the first 10 showings to show on the page 
-            List<Showing> resultShowings = todaysShowings.Take(10).ToList();
+            //If the list contains more than 10, take the first 10 showings to show on the page 
+            List<Showing> allTenShowings = new List<Showing>();
+            if (todaysShowings.Count() > 10)
+            {
+                allTenShowings = FilterLogic.TakeTen(todaysShowings);
+            }
+            else
+            {
+                allTenShowings = todaysShowings.ToList();
+            }
 
             //Add the corresponding film to the list of showings,
             //so that the information of the film can be used
             List<Film> allFilms = filmRepo.GetFilms().ToList();
 
             //Add every film that has been found in the result list of showings
-            foreach (Showing s in resultShowings)
-            {
-                allFilms.Add(s.Film);
-            }
+            FilterLogic.AddFilms(allTenShowings, allFilms);
 
             if (time.Day == DateTime.Now.Day)
             {
@@ -117,8 +97,8 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             }
 
             ViewBag.selectedTime = time.ToString("HH:mm");
-            ViewBag.numberOfResults = resultShowings.Count;
-            ViewBag.resultShowings = resultShowings;
+            ViewBag.numberOfResults = allTenShowings.Count;
+            ViewBag.resultShowings = allTenShowings;
             ViewBag.resultFilms = allFilms;
 
             TempData["Model"] = model;
