@@ -122,7 +122,8 @@ namespace Cinema.IVH7B4.WebUI.Models
         {
             var rl = SelectedShowing.Room.Layout;
             int roomSeats = (rl.BackX * rl.BackY) + (rl.FrontX * rl.FrontY);
-            int seatsUsed = (new EFDbContext()).Tickets.Where(t => t.ShowingID == SelectedShowing.ShowingID).Count();
+            int seatsUsed = (new EFDbContext()).Tickets.Where(t => t.ShowingID == SelectedShowing.ShowingID)
+                .GroupBy(x => x.SeatID).Select(y => y.FirstOrDefault()).ToList().Count();
 
             return roomSeats - seatsUsed;
         }
