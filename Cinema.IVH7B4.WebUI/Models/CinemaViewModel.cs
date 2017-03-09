@@ -118,6 +118,14 @@ namespace Cinema.IVH7B4.WebUI.Models
         {
             return IsMondayTuesdayWednesdayThursday(dt.DayOfWeek);
         }
+        public int TotalFreeSeats()
+        {
+            var rl = SelectedShowing.Room.Layout;
+            int roomSeats = (rl.BackX * rl.BackY) + (rl.FrontX * rl.FrontY);
+            int seatsUsed = (new EFDbContext()).Tickets.Where(t => t.ShowingID == SelectedShowing.ShowingID).Count();
+
+            return roomSeats - seatsUsed;
+        }
 
         public String GetEuroSign()
         {

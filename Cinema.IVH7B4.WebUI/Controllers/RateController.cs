@@ -19,7 +19,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         public ActionResult RateOverview()
         {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
-
+            model.ResetTickets();
             ViewBag.Base64 = @"data:image/gif;base64," + Convert.ToBase64String(model.SelectedFilm.Image);
             //model.SelectedFilm;
 

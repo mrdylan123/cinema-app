@@ -14,7 +14,14 @@
         <div class="row row_padding">
             @Html.Partial("~/Views/Shared/_FilmImgTitle.cshtml")
             <div class="col-xs-6" style="padding-bottom:20px;">
-            
+
+                <p>Datum: @Model.SelectedShowing.BeginDateTime.ToString("dddd d MMMM yyyy")</p>
+                <p>Begintijd: @Model.SelectedShowing.BeginDateTime.ToString("HH:mm")</p>
+                <p>Eindtijd: @Model.SelectedShowing.EndDateTime.ToString("HH:mm")</p>
+                <p>Showing ID: @Model.SelectedShowing.ShowingID</p>
+                <p>Aantal vrije stoelen: @Model.TotalFreeSeats()</p>
+                <p class="clr_red">@ViewBag.seatError</p>
+
                 <h2 class="reset_outline"><u>Kaartjes</u></h2>
                 <!--reset all-->
                 <button type="button" onclick="location.href='@Url.Action("ResetQuantity","Rate")'">Reset All</button>

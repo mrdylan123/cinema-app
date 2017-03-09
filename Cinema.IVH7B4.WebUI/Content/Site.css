@@ -89,6 +89,9 @@
     display: inline;
     font-family: monospace;
 }
+.clr_red{
+    color: red;
+}
 
 /*end for: partial view _OrderSummary*/
 

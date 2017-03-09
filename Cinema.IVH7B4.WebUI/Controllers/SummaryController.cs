@@ -16,8 +16,14 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
 
-            if (model.GetAllTicketsQuantity() <= 0) {
+            if (model.GetAllTicketsQuantity() <= 0 ) {
 
+                TempData["model"] = model;
+                return RedirectToAction("RateOverview", "Rate");
+            }
+            if(model.TotalFreeSeats() < model.GetAllTicketsQuantity())
+            {
+                ViewBag.seatError = "U heeft meer tickets besteld dan dat er stoelen zijn.";
                 TempData["model"] = model;
                 return RedirectToAction("RateOverview", "Rate");
             }
