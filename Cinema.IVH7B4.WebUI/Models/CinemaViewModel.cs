@@ -141,7 +141,7 @@ namespace Cinema.IVH7B4.WebUI.Models
 
             //TODO APPLY ADDITIONAL PER LOCATION DISCOUNTS
 
-
+            String secretKey = GenerateTicketSecretKey();
             foreach (SeatCoord sc in SeatCoordList)
             {
                 var ticket = new Ticket()
@@ -152,7 +152,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                     Price = 0.0m,
                     //Seat = seatsList.Find(s => s.seatNo == sc.GetSeatNumber(SelectedShowing.Room.Layout)),
                     SeatID = seatsList.Find(s => s.seatNo == sc.GetSeatNumber(SelectedShowing.Room.Layout)).SeatID,
-                    SecretKey = GenerateTicketSecretKey(), // TODO
+                    SecretKey = secretKey, // TODO
                     TicketType = (int)TicketType.InvalidTicket,
                     //Showing = SelectedShowing,
                     ShowingID = SelectedShowing.ShowingID
