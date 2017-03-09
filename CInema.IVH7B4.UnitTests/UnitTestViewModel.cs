@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices.ComTypes;
 using Cinema.IVH7B4.WebUI.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -7,140 +8,67 @@ namespace CInema.IVH7B4.UnitTests {
     public class UnitTestViewModel {
 
         [TestMethod]
-        public void TestSetTicketChildQuanity() {
+        public void TestSetTicketQuanityChild() {
             //arrange
-            var CinemaViewModel = new CinemaViewModel();
+            var model = new CinemaViewModel();
             int quantity = 2;
-            ChildTicketOrder childOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder normalOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder studentOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder seniorOrder = new ChildTicketOrder(CinemaViewModel);
-
-            TicketType tt = TicketType.ChildTicket;
-
-            switch (tt) {
-                case TicketType.ChildTicket: childOrder.Quantity = quantity; break;
-                case TicketType.SeniorTicket: seniorOrder.Quantity = quantity; break;
-                case TicketType.StudentTicket: studentOrder.Quantity = quantity; break;
-                case TicketType.NormalTicket: normalOrder.Quantity = quantity; break;
-                default: break;
-            }
-
+            TicketType tt = new ChildTicketOrder(model).GetTicketType();
             //act
-            childOrder.Quantity = quantity;
-
+            model.SetTicketQuantity(quantity, tt);
             //assert
-            Assert.AreEqual(2, childOrder.Quantity);
+            Assert.AreEqual(2 , model.ChildTicketOrder.Quantity);
+
         }
         [TestMethod]
         public void TestSetTicketQuanityNormal() {
             //arrange
-            var CinemaViewModel = new CinemaViewModel();
+            var model = new CinemaViewModel();
             int quantity = 2;
-            ChildTicketOrder childOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder normalOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder studentOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder seniorOrder = new ChildTicketOrder(CinemaViewModel);
-
-            TicketType tt = TicketType.NormalTicket;
-
-            switch (tt) {
-                case TicketType.ChildTicket: childOrder.Quantity = quantity; break;
-                case TicketType.SeniorTicket: seniorOrder.Quantity = quantity; break;
-                case TicketType.StudentTicket: studentOrder.Quantity = quantity; break;
-                case TicketType.NormalTicket: normalOrder.Quantity = quantity; break;
-                default: break;
-            }
-
+            TicketType tt = new NormalTicketOrder(model).GetTicketType();
             //act
-            normalOrder.Quantity = quantity;
-
+            model.SetTicketQuantity(quantity, tt);
             //assert
-            Assert.AreEqual(2, normalOrder.Quantity);
+            Assert.AreEqual(2, model.NormalTicketOrder.Quantity);
         }
+
         [TestMethod]
         public void TestSetTicketQuanitySenior() {
             //arrange
-            var CinemaViewModel = new CinemaViewModel();
+            var model = new CinemaViewModel();
             int quantity = 2;
-            ChildTicketOrder childOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder normalOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder studentOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder seniorOrder = new ChildTicketOrder(CinemaViewModel);
-
-            TicketType tt = TicketType.SeniorTicket;
-
-            switch (tt) {
-                case TicketType.ChildTicket: childOrder.Quantity = quantity; break;
-                case TicketType.SeniorTicket: seniorOrder.Quantity = quantity; break;
-                case TicketType.StudentTicket: studentOrder.Quantity = quantity; break;
-                case TicketType.NormalTicket: normalOrder.Quantity = quantity; break;
-                default: break;
-            }
-
+            TicketType tt = model.SeniorTicketOrder.GetTicketType();
             //act
-            seniorOrder.Quantity = quantity;
-
+            model.SetTicketQuantity(quantity, tt);
             //assert
-            Assert.AreEqual(2, seniorOrder.Quantity);
+            Assert.AreEqual(2, model.SeniorTicketOrder.Quantity);
         }
+
         [TestMethod]
         public void TestSetTicketQuantityStudent() {
             //arrange
-            var CinemaViewModel = new CinemaViewModel();
+            var model = new CinemaViewModel();
             int quantity = 2;
-            ChildTicketOrder childOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder normalOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder studentOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder seniorOrder = new ChildTicketOrder(CinemaViewModel);
-
-            TicketType tt = TicketType.StudentTicket;
-
-            switch (tt) {
-                case TicketType.ChildTicket: childOrder.Quantity = quantity; break;
-                case TicketType.SeniorTicket: seniorOrder.Quantity = quantity; break;
-                case TicketType.StudentTicket: studentOrder.Quantity = quantity; break;
-                case TicketType.NormalTicket: normalOrder.Quantity = quantity; break;
-                default: break;
-            }
-
+            TicketType tt = model.StudentTicketOrder.GetTicketType();
             //act
-            studentOrder.Quantity = quantity;
-
+            model.SetTicketQuantity(quantity, tt);
             //assert
-            Assert.AreEqual(2, studentOrder.Quantity);
+            Assert.AreEqual(2, model.StudentTicketOrder.Quantity);
         }
+
         [TestMethod]
         public void GetAllTickektsQuantityTest() {
-            //assert
-            var CinemaViewModel = new CinemaViewModel();
-            int childQuantity = 1;
-            int normalQuantity = 2;
-            int studentQuantity = 1;
-            int seniorQuantity = 1;
-
-            ChildTicketOrder childOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder normalOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder studentOrder = new ChildTicketOrder(CinemaViewModel);
-            ChildTicketOrder seniorOrder = new ChildTicketOrder(CinemaViewModel);
-
+            //arrange
+            var model = new CinemaViewModel();
+            int quantity = 2;
+            TicketType tt = model.StudentTicketOrder.GetTicketType();
+            TicketType ttSenior = model.SeniorTicketOrder.GetTicketType();
             //act
-            childOrder.Quantity = childQuantity;
-            normalOrder.Quantity = normalQuantity;
-            studentOrder.Quantity = studentQuantity;
-            seniorOrder.Quantity = seniorQuantity;
+            model.SetTicketQuantity(quantity, tt);
+            model.SetTicketQuantity(quantity, ttSenior);
 
-            int quantityAllTickets = childOrder.Quantity +
-                                     seniorOrder.Quantity +
-                                     normalOrder.Quantity +
-                                     studentOrder.Quantity;
+            int allTickets = model.GetAllTicketsQuantity();
             //assert
-            Assert.AreEqual(5, quantityAllTickets);
-        }
-
-        [TestMethod]
-        public void getTicketListTest() {
-            
+            Assert.AreEqual(4, allTickets);
         }
     }
 }
