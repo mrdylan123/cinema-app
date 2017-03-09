@@ -16,7 +16,22 @@ namespace Cinema.IVH7B4.Domain.Concrete
 
         public List<Film> getFilmList()
         {
-            return context.Films.ToList();
+            var list = context.Films.ToList();
+            var showingsList = context.Showings.ToList();
+            var retList = new List<Film>();
+
+            foreach(Film f in list)
+            {
+                Showing s = showingsList.Where(sh => sh.FilmID == f.FilmID && sh.BeginDateTime  >= DateTime.Now).
+                    FirstOrDefault();
+
+                if (s != null)
+                {
+                    retList.Add(f);
+                }
+            }
+
+            return retList;
         }
 
         public virtual List<Showing> getShowingList()
