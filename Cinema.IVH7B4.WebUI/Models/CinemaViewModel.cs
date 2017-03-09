@@ -100,6 +100,25 @@ namespace Cinema.IVH7B4.WebUI.Models
                 NormalTicketOrder.GetTotalPrice();
         }
 
+        public bool IsChildTicketSamePriceAsNormalTicket()
+        {
+            return ChildTicketOrder.GetPrice() == NormalTicketOrder.GetPrice();
+        }
+
+        public bool IsStudentTicketValid(DateTime dt)
+        {
+            return IsMondayTuesdayWednesdayThursday(dt);
+        }
+        public bool IsSeniorTicketValid(DateTime dt)
+        {
+            return IsMondayTuesdayWednesdayThursday(dt) && !IsHoliday(dt);
+        }
+
+        public bool IsMondayTuesdayWednesdayThursday(DateTime dt)
+        {
+            return IsMondayTuesdayWednesdayThursday(dt.DayOfWeek);
+        }
+
         public String GetEuroSign()
         {
             return "€";
