@@ -19,7 +19,7 @@ namespace Cinema.IVH7B4.Domain.Concrete
             return context.Films.ToList();
         }
 
-        public List<Showing> getShowingList()
+        public virtual List<Showing> getShowingList()
         {
             return context.Showings.ToList();
         }
@@ -27,7 +27,7 @@ namespace Cinema.IVH7B4.Domain.Concrete
         public List<Showing> getShowingbyId(int id)
         {
             int i = 0;
-            List<Showing> showingList = context.Showings.ToList();
+            List<Showing> showingList = getShowingList();
             List<Showing> showingListById = new List<Showing>();
             while (i < showingList.Count)
             {
