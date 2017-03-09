@@ -10,10 +10,13 @@ namespace CInema.IVH7B4.UnitTests {
         [TestMethod]
         [ExpectedException(typeof(NullReferenceException))]
         public void TestMethodWrite() {
+
             List<Ticket> tickets = new List<Ticket>();
             Ticket ticket = new Ticket();
             tickets.Add(ticket);
+
             Location loc = new Location();
+
             PDFGenerator generator = new PDFGenerator(tickets,loc);
                 var result = generator.Write(tickets, loc);
         }

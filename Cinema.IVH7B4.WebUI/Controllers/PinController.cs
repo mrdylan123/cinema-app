@@ -18,8 +18,6 @@ namespace Cinema.IVH7B4.WebUI.Controllers {
             if (model == null) {
                 model = new CinemaViewModel();
             }
-
-
             TempData["model"] = model;
             return View("PinView",  model);
         }

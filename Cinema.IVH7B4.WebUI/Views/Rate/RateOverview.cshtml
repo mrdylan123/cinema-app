@@ -38,59 +38,86 @@
                     </button>
                 </h4>
                 <!--Child ticket-->
+                @if (Model.IsChildTicketSamePriceAsNormalTicket() != true)
+                {
                 <h4>
                     <label class="label_outline">Kind(t/m 11 jaar) tarief: €@Model.ChildTicketOrder.GetPrice()</label>
 
                     Aantal: @Model.ChildTicketOrder.Quantity
 
                     <button type="button"
-                            onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new {
-                            newQuantity = Model.ChildTicketOrder.Quantity - 1, tt = Model.ChildTicketOrder.GetTicketType()})'">
+                            onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
+                                               {
+                                                   newQuantity = Model.ChildTicketOrder.Quantity - 1,
+                                                   tt = Model.ChildTicketOrder.GetTicketType()
+                                               })'">
                         -
                     </button>
 
                     <button type="button"
-                            onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new {
-                            newQuantity = Model.ChildTicketOrder.Quantity + 1, tt = Model.ChildTicketOrder.GetTicketType()})'">
+                            onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
+                                               {
+                                                   newQuantity = Model.ChildTicketOrder.Quantity + 1,
+                                                   tt = Model.ChildTicketOrder.GetTicketType()
+                                               })'">
                         +
                     </button>
                 </h4>
+                }
                 <!--Student ticket-->
+                @if (Model.IsStudentTicketValid(Model.SelectedShowing.BeginDateTime))
+                {
                 <h4>
                     <label class="label_outline">Student tarief: €@Model.StudentTicketOrder.GetPrice()</label>
 
                     Aantal: @Model.StudentTicketOrder.Quantity
 
                     <button type="button"
-                            onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new {
-                            newQuantity = Model.StudentTicketOrder.Quantity - 1, tt = Model.StudentTicketOrder.GetTicketType()})'">
+                            onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
+                                               {
+                                                   newQuantity = Model.StudentTicketOrder.Quantity - 1,
+                                                   tt = Model.StudentTicketOrder.GetTicketType()
+                                               })'">
                         -
                     </button>
 
                     <button type="button"
-                            onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new {
-                            newQuantity = Model.StudentTicketOrder.Quantity + 1, tt = Model.StudentTicketOrder.GetTicketType()})'">
+                            onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
+                                               {
+                                                   newQuantity = Model.StudentTicketOrder.Quantity + 1,
+                                                   tt = Model.StudentTicketOrder.GetTicketType()
+                                               })'">
                         +
                     </button>
                 </h4>
+                }
                 <!--65+ ticket-->
+                @if (Model.IsSeniorTicketValid(Model.SelectedShowing.BeginDateTime))
+                {
                 <h4>
                     <label class="label_outline">65+ tarief: €@Model.SeniorTicketOrder.GetPrice()</label>
 
                     Aantal: @Model.SeniorTicketOrder.Quantity
 
                     <button type="button"
-                            onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new {
-                            newQuantity = Model.SeniorTicketOrder.Quantity - 1, tt = Model.SeniorTicketOrder.GetTicketType()})'">
+                            onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
+                                               {
+                                                   newQuantity = Model.SeniorTicketOrder.Quantity - 1,
+                                                   tt = Model.SeniorTicketOrder.GetTicketType()
+                                               })'">
                         -
                     </button>
 
                     <button type="button"
-                            onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new {
-                            newQuantity = Model.SeniorTicketOrder.Quantity + 1, tt = Model.SeniorTicketOrder.GetTicketType()})'">
+                            onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
+                                               {
+                                                   newQuantity = Model.SeniorTicketOrder.Quantity + 1,
+                                                   tt = Model.SeniorTicketOrder.GetTicketType()
+                                               })'">
                         +
                     </button>
                 </h4>
+                }
             </div>
             <div>
             @Html.Partial("~/Views/Shared/_OrderSummary.cshtml")

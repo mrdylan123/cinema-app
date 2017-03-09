@@ -17,7 +17,14 @@
             </div>  
             <!--Get ticket code--> 
             <div class="col-xs-4">
-                <button class="btn btn-success" id="home_button" type="button" onclick="location.href='@Url.Action("PrintTickets","Ticket")'">Vraag code op</button>
+                @if (ViewBag.keycode == null)
+                {
+                    <button class="btn btn-success" id="home_button" type="button" onclick="location.href='@Url.Action("ShowCode","Ticket")'">Laat reservingcode zien</button>
+                }
+                else
+                {
+                    <p>De reservingscode is @ViewBag.keycode</p>
+                }
                 <p class="text-center" style="margin-top:10px;">Met deze code kunt U het kaartje bij de bioscoop uitprinten.</p>
             </div>     
         </div>
