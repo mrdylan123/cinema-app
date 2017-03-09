@@ -1,24 +1,37 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Cinema.IVH7B4.Domain.Concrete;
-using Moq;
 using Cinema.IVH7B4.Domain.Entities;
 using System.Collections.Generic;
-using Cinema.IVH7B4.Domain.Abstract;
+using Moq;
+using Cinema.IVH7B4.Domain.Concrete;
+using Cinema.IVH7B4.WebUI.Models;
 
 namespace CInema.IVH7B4.UnitTests
 {
     [TestClass]
-    public class UnitTest2
+    public class UnitTestFilmOverviewLogic
     {
-        private FilmOverviewRepository getTestObject()
-        {
-            return new FilmOverviewRepository();
-        }
 
-        private List<Showing> getTestShowingsList()
+        //arrange
+        private static List<Film> filmTestList = new List<Film>{
+                new Film()
         {
-            return new List<Showing>()
+                    FilmID = 1,
+                    Name = "testName",
+                    Language = "testLanguage",
+                    LanguageSubs = "testLanguageSubs",
+                    Age = 12,
+                    FilmType = 1,
+                    Description = "testDescription",
+                    Image = null,
+                    Length = 120,
+                    Is3D = true,
+                    Trailer = "testURL",
+                    LocationID = 1
+                }
+            };
+
+        List<Showing> showingTestList = new List<Showing>()
             {
                 new Showing()
                 {
@@ -41,25 +54,17 @@ namespace CInema.IVH7B4.UnitTests
                     }
                 }
             };
-        }
 
         [TestMethod]
         public void TestConvertDateTime()
         {
-            //arrange
-            Mock<FilmOverviewRepository> mock1 = new Mock<FilmOverviewRepository>();
-            mock1.Setup(s => s.getShowingList()).Returns(getTestShowingsList());
 
             //act
-            string result1 = mock1.Object.convertDateTime(1)[0];
-            string expected1 = "Zaterdag 11/3/2017   Begintijd: 22:40   Eindtijd: 23:40 Zaalnummer: 5";
+            string result = FilmOverviewLogic.convertDateTimeFirstFilm(filmTestList, showingTestList)[0];
+            string expected = "Zaterdag 11/3/2017   Begintijd: 22:40   Eindtijd: 23:40 Zaalnummer: 5";
 
-            string result2 = mock1.Object.convertDateTime(2)[0];
-            string expected2 = "Vrijdag 10/3/2017   Begintijd: 22:40   Eindtijd: 23:50 Zaalnummer: 3";
-            
             //assert
-            Assert.AreEqual(expected1, result1);
-            Assert.AreEqual(expected2, result2);
+            Assert.AreEqual(expected, result);
         }
     }
 }
