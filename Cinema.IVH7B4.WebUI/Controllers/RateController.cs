@@ -24,6 +24,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             //model.SelectedFilm;
 
 
+            model.SeatCoordList.Clear();
             TempData["model"] = model;
             return View("RateOverview", model);
         }

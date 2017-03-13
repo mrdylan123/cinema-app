@@ -9,6 +9,7 @@ namespace Cinema.IVH7B4.WebUI.Models
 {
     public class CinemaViewModel
     {
+        public List<List<AutomaticSeatSelection.OccupyType>> SeatSelectionGUI;
         public Location SelectedLocation;
         public Film SelectedFilm;
         public Showing SelectedShowing;
@@ -179,7 +180,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                     CustomerID =  customer.CustomerID,
                     Price = 0.0m,
                     //Seat = seatsList.Find(s => s.seatNo == sc.GetSeatNumber(SelectedShowing.Room.Layout)),
-                    SeatID = seatsList.Find(s => s.seatNo == sc.GetSeatNumber(SelectedShowing.Room.Layout)).SeatID,
+                    SeatID = seatsList.Where(s => s.RowX == sc.X && s.RowY == s.RowY).Last().SeatID,
                     SecretKey = secretKey, // TODO
                     TicketType = (int)TicketType.InvalidTicket,
                     //Showing = SelectedShowing,

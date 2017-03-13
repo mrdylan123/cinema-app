@@ -33,6 +33,8 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             {
                 InsertNewTicketsIntoDatabase(model);
 
+                // empty seat coord list
+                model.SeatCoordList.Clear();
                 TempData["model"] = model;
                 return View("ShowTicketView");
             }

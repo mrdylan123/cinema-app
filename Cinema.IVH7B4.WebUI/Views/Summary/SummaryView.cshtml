@@ -29,16 +29,21 @@
             <div class="col-xs-4 text-center" style="margin-top:50px;">
             <p>O = vrije stoel, X = bezet, V = is geselecteerd</p>
 
-            @foreach (List<AutomaticSeatSelection.OccupyType> rowList in ViewBag.SeatSelectionGUI)
-            {
-                // null means empty row, to seperate front and back rows 
-                if (rowList == null)
-                {
-                    <p></p>
-                    continue;
-                }
+            @{
 
-                String str = "";
+
+                int x = 0, y = 0;
+                foreach (List<AutomaticSeatSelection.OccupyType> rowList in Model.SeatSelectionGUI)
+                {
+
+                    // null means empty row, to seperate front and back rows 
+                    if (rowList == null)
+                    {
+                    <p></p>
+                        continue;
+                    }
+
+                    String str = "";
 
                     foreach (AutomaticSeatSelection.OccupyType ot in rowList)
                     {
@@ -46,14 +51,23 @@
                         switch (ot)
                         {
                             case AutomaticSeatSelection.OccupyType.Occupied: <p class="clr_occupied">X</p>; break;
-                            case AutomaticSeatSelection.OccupyType.Selected: <p class="clr_selected">V</p>; break;
-                            case AutomaticSeatSelection.OccupyType.Unoccupied: <p class="clr_unoccupied">O</p>; break;
+                            case AutomaticSeatSelection.OccupyType.Selected:
+                                {
+                                    <p class="clr_selected">V</p>; 
+                                    break;
+                                }
+                            case AutomaticSeatSelection.OccupyType.Unoccupied: <a href="#" onclick="location.href='@Url.Action("SelectSeat", "Summary", new {y = @y, x = @x})'">
+                                <p class="clr_unoccupied">O</p></a>; break;
                             default: str += "ERROR"; break;
                         }
+                        x++;
                     }
+                    y++;
+                    x = 0;
                     <p></p>
-            }
-            </div>
+                    }
+                    }
+</div>
 
             @Html.Partial("~/Views/Shared/_OrderSummary.cshtml")
        

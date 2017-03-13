@@ -53,7 +53,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                 for (int j = 0; j < layout.BackX; j++)
                 {
                     OccupyType type;
-                    IsOccupiedSeat(occupiedSeats, seatCoords, i, j, false, out type);
+                    IsOccupiedSeat(occupiedSeats, seatCoords, i + layout.BackY, j, false, out type);
                     rowList.Add(type);
                 }
                 retList.Add(rowList);
