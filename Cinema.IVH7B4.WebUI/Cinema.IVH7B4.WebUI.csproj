@@ -173,6 +173,7 @@
     <Compile Include="Controllers\FilmOverviewController.cs" />
     <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsletterController.cs" />
     <Compile Include="Controllers\PinController.cs" />
     <Compile Include="Controllers\RateController.cs" />
     <Compile Include="Controllers\RouteMapController.cs" />
@@ -234,6 +235,8 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Filter\FilteredFilms.cshtml" />
     <Content Include="Views\RouteMap\RouteMap.cshtml" />
+    <Content Include="Views\Newsletter\ShowNewsletter.cshtml" />
+    <Content Include="Views\Newsletter\ShowRegistrationThanks.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
