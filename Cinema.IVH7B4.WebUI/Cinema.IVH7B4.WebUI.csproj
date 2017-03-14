@@ -171,13 +171,13 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\FilmOverviewController.cs" />
     <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\NewsletterController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\PinController.cs" />
     <Compile Include="Controllers\RateController.cs" />
-    <Compile Include="Controllers\RouteMapController.cs" />
     <Compile Include="Controllers\SummaryController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Controllers\UpcomingFilmController.cs" />
@@ -193,9 +193,11 @@
     <Compile Include="Models\FilmType.cs" />
     <Compile Include="Models\FilmVerifier.cs" />
     <Compile Include="Models\FilterLogic.cs" />
+    <Compile Include="Models\LadiesTicketOrder.cs" />
     <Compile Include="Models\NormalTicketOrder.cs" />
     <Compile Include="Models\PDFGenerator.cs" />
     <Compile Include="Models\PincodeViewModel.cs" />
+    <Compile Include="Models\PopcornTicketOrder.cs" />
     <Compile Include="Models\SeatCoord.cs" />
     <Compile Include="Models\SeniorTicketOrder.cs" />
     <Compile Include="Models\StudentTicketOrder.cs" />
@@ -235,9 +237,12 @@
     <Content Include="Views\Shared\_Menubar.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Filter\FilteredFilms.cshtml" />
-    <Content Include="Views\RouteMap\RouteMap.cshtml" />
-    <Content Include="Views\Newsletter\ShowNewsletter.cshtml" />
-    <Content Include="Views\Newsletter\ShowRegistrationThanks.cshtml" />
+    <Content Include="Views\Payment\BankSelection.cshtml" />
+    <Content Include="Views\Payment\CreditCardPayment.cshtml" />
+    <Content Include="Views\Payment\INGPayment.cshtml" />
+    <Content Include="Views\Payment\MasterCardPayment.cshtml" />
+    <Content Include="Views\Payment\Payment.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
