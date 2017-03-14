@@ -113,7 +113,8 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="AutomaticSeatSelectionTest.cs" />
     <Compile Include="FilmOverViewControllerTest.cs" />
-    <Compile Include="UnitTestConvertDateTime.cs" />
+    <Compile Include="UnitTestFilmOverviewController.cs" />
+    <Compile Include="UnitTestFilmOverviewRepository.cs" />
     <Compile Include="UnitTestFilmOverviewLogic.cs" />
     <Compile Include="UnitTestDatabaseInsert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

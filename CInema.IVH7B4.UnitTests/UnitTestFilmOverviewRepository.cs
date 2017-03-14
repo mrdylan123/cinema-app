@@ -9,7 +9,7 @@ using Cinema.IVH7B4.Domain.Abstract;
 namespace CInema.IVH7B4.UnitTests
 {
     [TestClass]
-    public class UnitTestConvertDateTime
+    public class UnitTestFilmOverviewRepository
     {
         private FilmOverviewRepository getTestObject()
         {
@@ -60,6 +60,20 @@ namespace CInema.IVH7B4.UnitTests
             //assert
             Assert.AreEqual(expected1, result1);
             Assert.AreEqual(expected2, result2);
+        }
+
+        [TestMethod]
+        public void TestGetNextWeekDay()
+        {
+            //arrange
+            //Mock<FilmOverviewRepository> mock = new Mock<FilmOverviewRepository>();
+
+            //act
+            string expected = DateTime.Now.AddDays(((int)DayOfWeek.Monday - (int)DateTime.Now.DayOfWeek + 7) % 7).ToString();
+            string result = FilmOverviewRepository.getNextWeekday(DateTime.Now, DayOfWeek.Monday).ToString();
+
+            //assert
+            Assert.AreEqual(expected, result); 
         }
     }
 }

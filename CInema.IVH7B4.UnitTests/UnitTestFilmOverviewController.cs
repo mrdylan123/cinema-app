@@ -1,19 +1,22 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Cinema.IVH7B4.Domain.Entities;
-using System.Collections.Generic;
 using Moq;
+using Cinema.IVH7B4.WebUI.Controllers;
+using Cinema.IVH7B4.Domain.Entities;
 using Cinema.IVH7B4.Domain.Concrete;
+using System.Collections.Generic;
 using Cinema.IVH7B4.WebUI.Models;
+using Cinema.IVH7B4.Domain.Abstract;
+using System.Web.Mvc;
 
 namespace CInema.IVH7B4.UnitTests
 {
     [TestClass]
-    public class UnitTestFilmOverviewLogic
+    public class UnitTestFilmOverviewController
     {
-
-        //arrange
-        private static List<Film> filmTestList = new List<Film>{
+        private static List<Film> getFilmTestList()
+        {
+            return new List<Film>{
                 new Film()
         {
                     FilmID = 1,
@@ -30,8 +33,11 @@ namespace CInema.IVH7B4.UnitTests
                     LocationID = 1
                 }
             };
+        }
 
-        List<Showing> showingTestList = new List<Showing>()
+        private List<Showing> getTestShowingsList()
+        {
+            return new List<Showing>()
             {
                 new Showing()
                 {
@@ -54,30 +60,33 @@ namespace CInema.IVH7B4.UnitTests
                     }
                 }
             };
-
-        [TestMethod]
-        public void TestConvertDateTime()
-        {
-            //act
-            string result = FilmOverviewLogic.convertDateTimeFirstFilm(filmTestList, showingTestList)[0];
-            string expected = "Zaterdag 11/3/2017   Begintijd: 22:40   Eindtijd: 23:40 Zaalnummer: 5";
-
-            //assert
-            Assert.AreEqual(expected, result);
         }
 
         [TestMethod]
-        public void TestGetNextWeekDay()
+        public void TestFilmOverview()
         {
             //arrange
-            //Mock<FilmOverviewRepository> mock = new Mock<FilmOverviewRepository>();
+            Mock<IFilmOverviewRepository> mockRepo = new Mock<IFilmOverviewRepository>();
+            FilmOverviewController controller = new FilmOverviewController(mockRepo.Object);
+            mockRepo.Setup(s => s.getFilmList()).Returns(getFilmTestList());
+            mockRepo.Setup(s => s.getShowingList()).Returns(getTestShowingsList());
 
             //act
-            string expected = DateTime.Now.AddDays(((int)DayOfWeek.Monday - (int)DateTime.Now.DayOfWeek + 7) % 7).ToString();
-            string result = FilmOverviewRepository.getNextWeekday(DateTime.Now, DayOfWeek.Monday).ToString();
+            ActionResult result = controller.filmOverview();
+
+            int expected1 = 1;
+            int result1 = controller.ViewBag.firstDateTime.Count;
+
+            int expected2 = 1;
+            int result2 = controller.ViewBag.filmList.Count;
+
+            CinemaViewModel model = (CinemaViewModel)controller.TempData["model"];
 
             //assert
-            Assert.AreEqual(expected, result);
+            Assert.IsNotNull(result);
+            Assert.IsNull(model);
+            Assert.AreEqual(expected1, result1);
+            Assert.AreEqual(expected2, result2);
         }
     }
 }

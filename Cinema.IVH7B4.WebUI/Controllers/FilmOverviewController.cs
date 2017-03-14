@@ -11,11 +11,9 @@ using Ninject.Infrastructure.Language;
 
 namespace Cinema.IVH7B4.WebUI.Controllers
 {
-    
-
     public class FilmOverviewController : Controller
     {
-        private IFilmOverviewRepository repo;
+        public IFilmOverviewRepository repo;
 
         public FilmOverviewController(IFilmOverviewRepository repo)
         {
@@ -45,6 +43,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
 
             SetModelStuff(model, repo.getFilmList()[0]);
             TempData["model"] = model;
+
             return View(model);
         }
 

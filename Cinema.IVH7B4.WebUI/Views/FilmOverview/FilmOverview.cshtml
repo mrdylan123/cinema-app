@@ -72,6 +72,7 @@
             </div>
                 <div class="row img_row">
                     <div class="col-xs-3">
+                        <h3>Huidige filmweek:</h3>
                         <ul id="film_list">
                             @foreach (var property in ViewBag.filmList)
                             {
@@ -85,7 +86,7 @@
                     <div class="col-xs-6" id="chooseFilm">
                         @if (ViewBag.currentFilm == null && ViewBag.filmList[0].Trailer != null)
                         {
-                            <iframe width="813" height="458" src="@ViewBag.filmList[0].Trailer" frameborder="2" allowfullscreen></iframe>
+                            <iframe width="854" height="481" src="@ViewBag.filmList[0].Trailer" frameborder="2" allowfullscreen></iframe>
                                 <!--<img src="(((byte[])ViewBag.filmList[0].Image).convertImageByteCode())" />-->
                                     <h2 class="text-right">@ViewBag.filmList[0].Name</h2>
                             }
