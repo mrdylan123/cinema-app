@@ -1,0 +1,61 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Creditcard betaling";
+}
+<div class="text-center">
+    <img class="img-responsive" style="margin: auto; display: block;" src="http://mijndebitcard.nl/wp-content/upload_folders/mijndebitcard.nl/2015/11/mastercard-logo.png"></img>
+    <p>Totaalprijs: @Model.GetCurrencyString(@Model.GetTotalPriceForAllTickets())</p>
+</div>
+
+<div class="text-center">
+    <form method="post" action="@Url.Action("ShowTicketView", "Ticket")">
+        <table style="margin: 0 auto;">
+            <tr>
+                <td>
+
+                    <p>Kaartnummer</p>
+                </td>
+                <td>
+                    <input type="text" name="cardnumber" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Naam kaarthouder</p>
+                </td>
+                <td>
+                    <input type="text" name="name" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+
+                    <p>Vervaldatum</p>
+                </td>
+                <td>
+                    <input type="text" name="date" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+
+                    <p>Beveiligingscode</p>
+                </td>
+                <td>
+                    <input type="text" name="username" />
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <br />
+        <button type="submit" class="btn btn-success">Afrekenen</button>
+    </form>
+</div>
+
+</div>
+

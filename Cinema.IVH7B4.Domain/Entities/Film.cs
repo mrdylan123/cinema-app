@@ -27,6 +27,10 @@ namespace Cinema.IVH7B4.Domain.Entities {
         public int Length { get; set; }
         public bool Is3D { get; set; }
         public string Trailer { get; set; }
+        public string Protagonist { get; set; }
+        public string IMDB { get; set; }
+        public string Website { get; set; }
+        public string Director { get; set; }
 
         public int LocationID { get; set; }
 

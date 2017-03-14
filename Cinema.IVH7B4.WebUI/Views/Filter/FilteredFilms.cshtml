@@ -29,7 +29,31 @@
                         <p>Zaal: @s.Room.RoomNumber</p>
                         <p>Begintijd: @s.BeginDateTime</p>
                         <p>Eindtijd: @s.EndDateTime</p>
+                        <p>
+                            3D: @if (@f.Is3D == true)
+                                {
+                                    string ja = "Ja";
+                                    @ja
+                                }
+                                else
+                                {
+                                    string nee = "Nee";
+                                    @nee
+                                }
+                        </p>
+
+                        @if (@f.Website != null)
+                        {
+                            <a href="@f.Website">Website</a>
+                        }
+                        <br />
+                        @if (@f.IMDB != null)
+                        {
+                            <a href="@f.IMDB">IMDb</a>
+                        }
+
                     </div>
+                    
 
                     <div class="col-xs-3">
                         @if (@f.Image != null)
@@ -46,15 +70,33 @@
                         <div class="text-center">
                             <h3>@f.Name</h3>
                         </div>
+                        
+                        <div class="embed-responsive embed-responsive-16by9 text-center">
+                            @if (@f.Trailer != null)
+                            {
+                                <iframe class="embed-responsive-item" src="@f.Trailer" frameborder="0" allowfullscreen></iframe>
+                            }
+                        </div>
+
                         <p>Duur: @f.Length</p>
                         <p style="float: right">Taal: @f.Language</p>
                         <p>Genre: @f.FilmType</p>
                         <p style="float: right">Ondertiteling: @f.LanguageSubs</p>
                         <p>Leeftijd: @f.Age</p>
-                        <p style="float: right">3D: @f.Is3D</p>
+                        @if (@f.Protagonist != null)
+                        {
+                            <p>Hoofdrolspeler: @f.Protagonist</p>
+                        }
+                        @if (@f.Director != null)
+                        {
+                            <p>Regisseur: @f.Director</p>
+                        }
+                        <p>@f.Description</p>
                     </div>
+                    
 
-                    <div class="col-xs-2">
+
+                    <div class="col-xs-2 text-center">
                         <button class="btn btn-success" type="button" onclick="location.href = '@Url.Action("Redirect", "UpcomingFilm", new {s = s.ShowingID, f = f.FilmID})'">Bestel kaartje(s)</button>
                     </div>
                 </div>

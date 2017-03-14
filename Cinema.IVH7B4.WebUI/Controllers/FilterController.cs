@@ -82,7 +82,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
 
             //Add the corresponding film to the list of showings,
             //so that the information of the film can be used
-            List<Film> allFilms = filmRepo.GetFilms().ToList();
+            List<Film> allFilms = new List<Film>();
 
             //Add every film that has been found in the result list of showings
             FilterLogic.AddFilms(allTenShowings, allFilms);
@@ -93,7 +93,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             }
             else
             {
-                ViewBag.selectedDate = time.DayOfWeek + " " + time.Day + " " + time.Month;
+                ViewBag.selectedDate = FilterLogic.GetDay(time.DayOfWeek) + " " + time.Day + "-" + time.Month;
             }
 
             ViewBag.selectedTime = time.ToString("HH:mm");
