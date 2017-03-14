@@ -17,17 +17,16 @@
                 <div class="col-xs-12">
                     @if (Model != null && Model.SelectedLocation != null)
                     {
-                        <h1 class="text-center" id="big_title">Bioscoop IVH7B4 @Model.SelectedLocation.Name</h1>
+                        <h1 class="text-center" id="big_title">@Resources.Global.HeaderLocation IVH7B4 @Model.SelectedLocation.Name</h1>
                     }
                     else
                     {
-                        <h1 class="text-center" id="big_title">Bioscoop IVH7B4</h1>
+                        <h1 class="text-center" id="big_title">@Resources.Global.HeaderLocation IVH7B4</h1>
                     }
                 </div>
             </div>
         </div>
-    </header>
-    
+    </header>  
     <div class="pageContentWrapper">
         @RenderBody()
     </div>

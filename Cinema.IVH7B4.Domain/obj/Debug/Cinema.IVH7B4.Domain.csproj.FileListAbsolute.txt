@@ -21,29 +21,6 @@ C:\Users\maikel\Source\Repos\Groep B4\Cinema.IVH7B4.Domain\bin\Debug\System.Web.
 C:\Users\maikel\Source\Repos\Groep B4\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.csprojResolveAssemblyReference.cache
 C:\Users\maikel\Source\Repos\Groep B4\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.dll
 C:\Users\maikel\Source\Repos\Groep B4\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.pdb
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\Cinema.IVH7B4.Domain.dll.config
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\Cinema.IVH7B4.Domain.dll
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\Cinema.IVH7B4.Domain.pdb
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\EntityFramework.dll
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\EntityFramework.SqlServer.dll
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.Helpers.dll
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.Mvc.dll
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.Razor.dll
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.dll
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.Razor.dll
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\EntityFramework.xml
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\EntityFramework.SqlServer.xml
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.Helpers.xml
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.Mvc.xml
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.Razor.xml
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.xml
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
-C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.Razor.xml
-C:\dev\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.dll
-C:\dev\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.pdb
-C:\dev\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.csprojResolveAssemblyReference.cache
 C:\Git\Cinema.IVH7B4.Domain\bin\Debug\Cinema.IVH7B4.Domain.dll.config
 C:\Git\Cinema.IVH7B4.Domain\bin\Debug\Cinema.IVH7B4.Domain.dll
 C:\Git\Cinema.IVH7B4.Domain\bin\Debug\Cinema.IVH7B4.Domain.pdb
@@ -67,3 +44,26 @@ C:\Git\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Git\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.dll
 C:\Git\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.pdb
 C:\Git\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.csprojResolveAssemblyReference.cache
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\Cinema.IVH7B4.Domain.dll.config
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\Cinema.IVH7B4.Domain.dll
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\Cinema.IVH7B4.Domain.pdb
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\EntityFramework.dll
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.Helpers.dll
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.Mvc.dll
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.Razor.dll
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.dll
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\EntityFramework.xml
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.Helpers.xml
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.Mvc.xml
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.Razor.xml
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.xml
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\dev\Cinema.IVH7B4.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+C:\dev\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.csprojResolveAssemblyReference.cache
+C:\dev\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.dll
+C:\dev\Cinema.IVH7B4.Domain\obj\Debug\Cinema.IVH7B4.Domain.pdb

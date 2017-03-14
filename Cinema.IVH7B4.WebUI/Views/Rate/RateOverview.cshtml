@@ -15,15 +15,15 @@
             @Html.Partial("~/Views/Shared/_FilmImgTitle.cshtml")
             <div class="col-xs-6" style="padding-bottom:20px;">
             
-                <h2 class="reset_outline"><u>Kaartjes</u></h2>
+                <h2 class="reset_outline"><u>@Resources.Global.RateOverView_Tickets</u></h2>
                 <!--reset all-->
                 <button type="button" onclick="location.href='@Url.Action("ResetQuantity","Rate")'">Reset All</button>
 
                 <!--Normal ticket-->
                 <h4>
-                    <label class="label_outline">Normaal tarief: €@Model.NormalTicketOrder.GetPrice()</label>
+                    <label class="label_outline">@Resources.Global.RateOverView_NormalPrice: €@Model.NormalTicketOrder.GetPrice()</label>
 
-                    Aantal: @Model.NormalTicketOrder.Quantity
+                    @Resources.Global.RateOverView_Quantity: @Model.NormalTicketOrder.Quantity
 
                     <button type="button"
                             onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new {
@@ -41,9 +41,9 @@
                 @if (Model.IsChildTicketSamePriceAsNormalTicket() != true)
                 {
                 <h4>
-                    <label class="label_outline">Kind(t/m 11 jaar) tarief: €@Model.ChildTicketOrder.GetPrice()</label>
+                    <label class="label_outline">@Resources.Global.RateOverView_ChildPrice: €@Model.ChildTicketOrder.GetPrice()</label>
 
-                    Aantal: @Model.ChildTicketOrder.Quantity
+                    @Resources.Global.RateOverView_Quantity: @Model.ChildTicketOrder.Quantity
 
                     <button type="button"
                             onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
@@ -68,9 +68,9 @@
                 @if (Model.IsStudentTicketValid(Model.SelectedShowing.BeginDateTime))
                 {
                 <h4>
-                    <label class="label_outline">Student tarief: €@Model.StudentTicketOrder.GetPrice()</label>
+                    <label class="label_outline">@Resources.Global.RateOverView_StudentPrice: €@Model.StudentTicketOrder.GetPrice()</label>
 
-                    Aantal: @Model.StudentTicketOrder.Quantity
+                    @Resources.Global.RateOverView_Quantity: @Model.StudentTicketOrder.Quantity
 
                     <button type="button"
                             onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
@@ -95,9 +95,9 @@
                 @if (Model.IsSeniorTicketValid(Model.SelectedShowing.BeginDateTime))
                 {
                 <h4>
-                    <label class="label_outline">65+ tarief: €@Model.SeniorTicketOrder.GetPrice()</label>
+                    <label class="label_outline">@Resources.Global.RateOverView_65Price: €@Model.SeniorTicketOrder.GetPrice()</label>
 
-                    Aantal: @Model.SeniorTicketOrder.Quantity
+                    @Resources.Global.RateOverView_Quantity: @Model.SeniorTicketOrder.Quantity
 
                     <button type="button"
                             onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
@@ -127,7 +127,7 @@
         <div class="row button_padding">
             <div class="col-xs-11"></div>
             <div class="col-xs-1 text-right">
-                <a href="/Summary/SummaryView" class="btn btn-success"> Verder ></a>
+                <a href="/Summary/SummaryView" class="btn btn-success"> @Resources.Global.RateOverView_NextButton ></a>
             </div>
         </div>       
     </div>

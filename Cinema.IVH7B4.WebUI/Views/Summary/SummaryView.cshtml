@@ -14,20 +14,20 @@
             @Html.Partial("~/Views/Shared/_FilmImgTitle.cshtml")      
             <div class="col-xs-4">
             
-                <h2><u>Film Informatie</u></h2>
+                <h2><u>@Resources.Global.SummaryView_FilmInformation</u></h2>
 
                 <div class="order_block">
-                    <p>Titel: @Model.SelectedShowing.Film.Name</p>
-                    <p>Zaal: @Model.SelectedShowing.Room.RoomNumber</p>
-                    <p>Rijnummer: @Model.GetSeatsRow()</p>
-                    <p>Stoelnummer: @Model.getSeatNumbersString()</p>
-                    <p>Datum: @Model.SelectedShowing.BeginDateTime.ToString("dddd d MMMM yyyy")</p>
-                    <p>Begintijd: @Model.SelectedShowing.BeginDateTime.ToString("HH:mm")</p>
-                    <p>Eindtijd: @Model.SelectedShowing.EndDateTime.ToString("HH:mm")</p>
+                    <p>@Resources.Global.SummaryView_FilmTitle: @Model.SelectedShowing.Film.Name</p>
+                    <p>@Resources.Global.FilmOverView_FilmRoom: @Model.SelectedShowing.Room.RoomNumber</p>
+                    <p>@Resources.Global.SummaryView_FilmRowNumber: @Model.GetSeatsRow()</p>
+                    <p>@Resources.Global.SummaryView_FilmSeatNumber: @Model.getSeatNumbersString()</p>
+                    <p>@Resources.Global.SummaryView_FilmDate: @Model.SelectedShowing.BeginDateTime.ToString("dddd d MMMM yyyy")</p>
+                    <p>@Resources.Global.FilmOverView_FilmBeginTime: @Model.SelectedShowing.BeginDateTime.ToString("HH:mm")</p>
+                    <p>@Resources.Global.FilmOverView_FilmEndTime: @Model.SelectedShowing.EndDateTime.ToString("HH:mm")</p>
                 </div>
             </div>
             <div class="col-xs-4 text-center" style="margin-top:50px;">
-            <p>O = vrije stoel, X = bezet, V = is geselecteerd</p>
+            <p>O = @Resources.Global.SummaryView_Freeseat, X = @Resources.Global.SummaryView_Takenseat, V = @Resources.Global.SummaryView_Selectedseat</p>
 
             @foreach (List<AutomaticSeatSelection.OccupyType> rowList in ViewBag.SeatSelectionGUI)
             {
@@ -63,7 +63,7 @@
 
             <div class="col-xs-10"></div>
             <div class="col-xs-2">
-                <a href="/Pin/PinView" class="btn btn-success"> Afrekenen ></a>
+                <a href="/Payment/Payment" class="btn btn-success">@Resources.Global.SummaryView_Checkout ></a>
             </div>
         </div>      
     </div>

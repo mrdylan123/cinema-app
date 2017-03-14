@@ -7,8 +7,8 @@
 }
 @Html.Partial("~/Views/Shared/_Menubar.cshtml")
 <div class="text-center">
-    <h2>Eerstkomende films na @ViewBag.selectedDate @ViewBag.selectedTime</h2>
-    <h3>@ViewBag.numberOfResults resultaten</h3>
+    <h2>@Resources.Global.Filtered_Films_FirstMoviesAfter @ViewBag.selectedDate @ViewBag.selectedTime</h2>
+    <h3>@ViewBag.numberOfResults @Resources.Global.Filtered_Films_Results</h3>
     <hr />
 </div>
 
@@ -18,27 +18,40 @@
 
     <div class="col-xs-8">
         <!-- Loop through the list of showings and show them -->
-        @for(int i = 0; i < ViewBag.numberOfResults; i++)
-        {
+        @for (int i = 0; i < ViewBag.numberOfResults; i++) {
             Showing s = ViewBag.resultShowings[i];
             Film f = ViewBag.resultFilms[i];
 
             <div class="well">
                 <div class="row">
                     <div class="col-xs-2">
-                        <p>Zaal: @s.RoomID</p>
-                        <p>Begintijd: @s.BeginDateTime</p>
-                        <p>Eindtijd: @s.EndDateTime</p>
+                        <p>@Resources.Global.FilmOverView_FilmRoom: @s.Room.RoomNumber</p>
+                        <p>@Resources.Global.FilmOverView_FilmBeginTime: @s.BeginDateTime</p>
+                        <p>@Resources.Global.FilmOverView_FilmEndTime: @s.EndDateTime</p>
+                        <p>
+                            3D: @if (@f.Is3D == true) {
+                                    @Resources.Global.FilmOverView_Film3dYes
+                            } else {
+                                    @Resources.Global.FilmOverView_Film3dNo
+                            }
+                        </p>
+
+                        @if (@f.Website != null) {
+                            <a href="@f.Website">Website</a>
+                        }
+                        <br />
+                        @if (@f.IMDB != null) {
+                            <a href="@f.IMDB">IMDb</a>
+                        }
+
                     </div>
 
+
                     <div class="col-xs-3">
-                        @if (@f.Image != null)
-                        {
-                            <img class="img-responsive" src="@(((byte[]) f.Image).getImageByteCode())"/>
-                        }
-                        else
-                        {
-                            <img class="img-responsive" src="https://www.articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png" alt="Film picture"/>
+                        @if (@f.Image != null) {
+                            <img class="img-responsive" src="@(((byte[]) f.Image).getImageByteCode())" />
+                        } else {
+                            <img class="img-responsive" src="https://www.articleonepartners.com/wp-content/uploads/2015/06/1000px-Clapboard.svg_.png" alt="Film picture" />
                         }
                     </div>
 
@@ -46,16 +59,36 @@
                         <div class="text-center">
                             <h3>@f.Name</h3>
                         </div>
-                        <p>Duur: @f.Length</p>
-                        <p style="float: right">Taal: @f.Language</p>
+
+                        <div class="embed-responsive embed-responsive-16by9 text-center">
+                            @if (@f.Trailer != null) {
+                                <iframe class="embed-responsive-item" src="@f.Trailer" frameborder="0" allowfullscreen></iframe>
+                            }
+                        </div>
+
+                        <p>@Resources.Global.FilmOverView_FilmDuration: @f.Length</p>
+                        <p style="float: right">@Resources.Global.FilmOverView_Langague: @f.Language</p>
                         <p>Genre: @f.FilmType</p>
-                        <p style="float: right">Ondertiteling: @f.LanguageSubs</p>
-                        <p>Leeftijd: @f.Age</p>
-                        <p style="float: right">3D: @f.Is3D</p>
+                        <p style="float: right">@Resources.Global.FilmOverView_Subs: @f.LanguageSubs</p>
+                        <p>@Resources.Global.FilmOverView_Age: @f.Age</p>
+                        @if (@f.Protagonist != null) {
+                            <p>@Resources.Global.Filtered_Films_Protagonist: @f.Protagonist</p>
+                        }
+                        @if (@f.Director != null) {
+                            <p>@Resources.Global.FIltered_films_Director: @f.Director</p>
+                        }
+                        @if (Culture == "nl" || Culture == "nl-NL") {
+                        @f.Description
+                        }
+                        else {
+                        @f.DescriptionEN
+                        }
                     </div>
 
-                    <div class="col-xs-2">
-                        <button class="btn btn-success" type="button" onclick="location.href = '@Url.Action("Redirect", "UpcomingFilm", new {s = s.ShowingID, f = f.FilmID})'">Bestel kaartje(s)</button>
+
+
+                    <div class="col-xs-2 text-center">
+                        <button class="btn btn-success" type="button" onclick="location.href = '@Url.Action("Redirect", "UpcomingFilm", new {s = s.ShowingID, f = f.FilmID})'">@Resources.Global.Filtered_FIlms_Ordertickets</button>
                     </div>
                 </div>
 
