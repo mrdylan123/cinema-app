@@ -159,6 +159,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\Tets.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -173,9 +174,10 @@
     <Compile Include="Controllers\FilmOverviewController.cs" />
     <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\NewsletterController.cs" />
     <Compile Include="Controllers\PinController.cs" />
     <Compile Include="Controllers\RateController.cs" />
+    <Compile Include="Controllers\RouteMapController.cs" />
     <Compile Include="Controllers\SummaryController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Controllers\UpcomingFilmController.cs" />
@@ -233,11 +235,9 @@
     <Content Include="Views\Shared\_Menubar.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Filter\FilteredFilms.cshtml" />
-    <Content Include="Views\Payment\Payment.cshtml" />
-    <Content Include="Views\Payment\BankSelection.cshtml" />
-    <Content Include="Views\Payment\INGPayment.cshtml" />
-    <Content Include="Views\Payment\CreditCardPayment.cshtml" />
-    <Content Include="Views\Payment\MasterCardPayment.cshtml" />
+    <Content Include="Views\RouteMap\RouteMap.cshtml" />
+    <Content Include="Views\Newsletter\ShowNewsletter.cshtml" />
+    <Content Include="Views\Newsletter\ShowRegistrationThanks.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

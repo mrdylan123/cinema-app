@@ -1,0 +1,34 @@
+﻿@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Nieuwsbrief";
+}
+<html>
+<body>
+    <h2>Nieuwsbrief</h2>
+    </div>
+    @using (Html.BeginForm("HandleSubmitForm", "Newsletter"))
+    {
+        @Html.ValidationSummary(true)
+
+        <p>Name:</p>
+        @Html.TextBox("Name")
+        <br>
+        <p>Age:</p>
+        @Html.TextBox("Age")
+        <br>
+        <p>Location</p>
+        @Html.TextBox("Location")
+        <br>
+        <p>Interests</p>
+        @Html.TextBox("Interests")
+        <br>
+        <p>Email</p>
+        @Html.TextBox("Email")
+        <br>
+        <input type="submit" value="Sign In">
+    }
+
+    </div>
+</body>
+</html>
+

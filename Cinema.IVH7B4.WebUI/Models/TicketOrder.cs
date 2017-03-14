@@ -23,7 +23,7 @@ namespace Cinema.IVH7B4.WebUI.Models
 
         public Decimal GetNormalPrice()
         {
-            if (this.model.SelectedFilm.Length > 120)
+            if (this.model.SelectedFilm.Length > 120 )
             {
                 return 9.00m;
             }
@@ -46,5 +46,7 @@ namespace Cinema.IVH7B4.WebUI.Models
         StudentTicket,
         SeniorTicket,
         InvalidTicket,
+        PopcornTicket,
+        LadiesTicket
     }
 }
