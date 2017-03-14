@@ -312,4 +312,49 @@
   <data name="SummaryView_Takenseat" xml:space="preserve">
     <value>taken</value>
   </data>
+  <data name="CreditCard_CardType" xml:space="preserve">
+    <value>Choose your card type</value>
+  </data>
+  <data name="CreditCard_Cartexpiration" xml:space="preserve">
+    <value>Expiration date</value>
+  </data>
+  <data name="CreditCard_CartHolder" xml:space="preserve">
+    <value>Name cartholder</value>
+  </data>
+  <data name="CreditCard_CartNumber" xml:space="preserve">
+    <value>Cart number</value>
+  </data>
+  <data name="CreditCard_CartSecurity" xml:space="preserve">
+    <value>Security code</value>
+  </data>
+  <data name="ING_Payment_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="ING_Payment_UserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Payment_PaymentIdealTitle" xml:space="preserve">
+    <value>Choose your bank</value>
+  </data>
+  <data name="Payment_PaymentMethodTitle" xml:space="preserve">
+    <value>Choose your payment method</value>
+  </data>
+  <data name="Ticket_backtoHome" xml:space="preserve">
+    <value>Back to homepage</value>
+  </data>
+  <data name="Ticket_PrintCode" xml:space="preserve">
+    <value>Show reservation code</value>
+  </data>
+  <data name="Ticket_PrintCodeText" xml:space="preserve">
+    <value>Use this code to print the tickets at the cinema</value>
+  </data>
+  <data name="Ticket_PrintTicket" xml:space="preserve">
+    <value>Print ticket</value>
+  </data>
+  <data name="Ticket_ThanksOrderTitle" xml:space="preserve">
+    <value>Thank you for your order!</value>
+  </data>
+  <data name="Ticket_YourReservationCode" xml:space="preserve">
+    <value>The reservation code</value>
+  </data>
 </root>

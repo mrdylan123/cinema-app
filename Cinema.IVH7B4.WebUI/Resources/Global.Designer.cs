@@ -63,6 +63,51 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string CreditCard_CardType {
+            get {
+                return ResourceManager.GetString("CreditCard_CardType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string CreditCard_Cartexpiration {
+            get {
+                return ResourceManager.GetString("CreditCard_Cartexpiration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string CreditCard_CartHolder {
+            get {
+                return ResourceManager.GetString("CreditCard_CartHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string CreditCard_CartNumber {
+            get {
+                return ResourceManager.GetString("CreditCard_CartNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string CreditCard_CartSecurity {
+            get {
+                return ResourceManager.GetString("CreditCard_CartSecurity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string FilmOverView_Age {
             get {
                 return ResourceManager.GetString("FilmOverView_Age", resourceCulture);
@@ -369,6 +414,24 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string ING_Payment_Password {
+            get {
+                return ResourceManager.GetString("ING_Payment_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ING_Payment_UserName {
+            get {
+                return ResourceManager.GetString("ING_Payment_UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string NavBar_Theatres {
             get {
                 return ResourceManager.GetString("NavBar_Theatres", resourceCulture);
@@ -435,6 +498,24 @@ namespace Resources {
         public static string OrderSummary_TotalPrice {
             get {
                 return ResourceManager.GetString("OrderSummary_TotalPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Payment_PaymentIdealTitle {
+            get {
+                return ResourceManager.GetString("Payment_PaymentIdealTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Payment_PaymentMethodTitle {
+            get {
+                return ResourceManager.GetString("Payment_PaymentMethodTitle", resourceCulture);
             }
         }
         
@@ -642,6 +723,60 @@ namespace Resources {
         public static string SummaryView_Takenseat {
             get {
                 return ResourceManager.GetString("SummaryView_Takenseat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Ticket_backtoHome {
+            get {
+                return ResourceManager.GetString("Ticket_backtoHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Ticket_PrintCode {
+            get {
+                return ResourceManager.GetString("Ticket_PrintCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Ticket_PrintCodeText {
+            get {
+                return ResourceManager.GetString("Ticket_PrintCodeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Ticket_PrintTicket {
+            get {
+                return ResourceManager.GetString("Ticket_PrintTicket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Ticket_ThanksOrderTitle {
+            get {
+                return ResourceManager.GetString("Ticket_ThanksOrderTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Ticket_YourReservationCode {
+            get {
+                return ResourceManager.GetString("Ticket_YourReservationCode", resourceCulture);
             }
         }
     }

@@ -312,4 +312,49 @@
   <data name="PinView_CompleteCheckout" xml:space="preserve">
     <value>Betaling afronden</value>
   </data>
+  <data name="CreditCard_CardType" xml:space="preserve">
+    <value>Kies uw type kaart</value>
+  </data>
+  <data name="CreditCard_Cartexpiration" xml:space="preserve">
+    <value>Vervaldatum</value>
+  </data>
+  <data name="CreditCard_CartHolder" xml:space="preserve">
+    <value>Naam kaarthouder</value>
+  </data>
+  <data name="CreditCard_CartNumber" xml:space="preserve">
+    <value>Kaartnummer</value>
+  </data>
+  <data name="CreditCard_CartSecurity" xml:space="preserve">
+    <value>Beveiligingscode</value>
+  </data>
+  <data name="ING_Payment_Password" xml:space="preserve">
+    <value>Wachtwoord</value>
+  </data>
+  <data name="ING_Payment_UserName" xml:space="preserve">
+    <value>Gebuikersnaam</value>
+  </data>
+  <data name="Payment_PaymentIdealTitle" xml:space="preserve">
+    <value>Kies uw bank</value>
+  </data>
+  <data name="Payment_PaymentMethodTitle" xml:space="preserve">
+    <value>Kies uw betaalmethode</value>
+  </data>
+  <data name="Ticket_backtoHome" xml:space="preserve">
+    <value>Terug naar home</value>
+  </data>
+  <data name="Ticket_PrintCode" xml:space="preserve">
+    <value>Laat reserveringscode zien</value>
+  </data>
+  <data name="Ticket_PrintCodeText" xml:space="preserve">
+    <value>Met deze code kunt U het kaartje bij de bioscoop uitprinten.</value>
+  </data>
+  <data name="Ticket_PrintTicket" xml:space="preserve">
+    <value>Print kaartje</value>
+  </data>
+  <data name="Ticket_ThanksOrderTitle" xml:space="preserve">
+    <value>Bedankt voor uw bestelling!</value>
+  </data>
+  <data name="Ticket_YourReservationCode" xml:space="preserve">
+    <value>Je reserveringscode is</value>
+  </data>
 </root>

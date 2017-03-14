@@ -312,4 +312,49 @@
   <data name="SummaryView_Takenseat" xml:space="preserve">
     <value />
   </data>
+  <data name="CreditCard_CardType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreditCard_Cartexpiration" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreditCard_CartHolder" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreditCard_CartNumber" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreditCard_CartSecurity" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ING_Payment_Password" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ING_Payment_UserName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Payment_PaymentIdealTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Payment_PaymentMethodTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Ticket_backtoHome" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Ticket_PrintCode" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Ticket_PrintCodeText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Ticket_PrintTicket" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Ticket_ThanksOrderTitle" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Ticket_YourReservationCode" xml:space="preserve">
+    <value />
+  </data>
 </root>

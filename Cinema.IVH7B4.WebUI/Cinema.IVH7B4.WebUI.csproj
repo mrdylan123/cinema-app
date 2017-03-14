@@ -175,6 +175,7 @@
     <Compile Include="Controllers\FilmOverviewController.cs" />
     <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\PinController.cs" />
     <Compile Include="Controllers\RateController.cs" />
     <Compile Include="Controllers\SummaryController.cs" />
