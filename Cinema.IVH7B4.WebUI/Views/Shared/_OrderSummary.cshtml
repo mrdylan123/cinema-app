@@ -7,29 +7,74 @@
 
         <div class="order_block">
 
+            <!--Normal ticket-->
+            @if (!Model.SelectedShowing.IsLadiesNight)
+            {
             <p style="text-align:left;">
                 <label class="label_outline_summary">Normaal kaartje:</label> 
                 Aantal: @Model.NormalTicketOrder.Quantity
                 <span style="float:right;">Prijs: €@Model.NormalTicketOrder.GetTotalPrice()</span>
             </p>
+            }
 
-            <p style="text-align:left;">
-                <label class="label_outline_summary">Kinder kaartje:</label> 
-                Aantal: @Model.ChildTicketOrder.Quantity
-                <span style="float:right;">Prijs: €@Model.ChildTicketOrder.GetTotalPrice()</span>
-            </p>
+            <!--Child ticket-->
+            @if (!Model.SelectedShowing.IsLadiesNight)
+            {
+                if (Model.IsChildTicketSamePriceAsNormalTicket() != true)
+                {
+                <p style="text-align:left;">
+                    <label class="label_outline_summary">Kinder kaartje:</label> 
+                    Aantal: @Model.ChildTicketOrder.Quantity
+                    <span style="float:right;">Prijs: €@Model.ChildTicketOrder.GetTotalPrice()</span>
+                </p>
+                }
+            }
 
-            <p style="text-align:left;">
-                <label class="label_outline_summary">Student kaartje:</label> 
-                Aantal: @Model.StudentTicketOrder.Quantity
-                <span style="float:right;">Prijs: €@Model.StudentTicketOrder.GetTotalPrice()</span>
-            </p>
+            <!--Student ticket-->
+            @if (!Model.SelectedShowing.IsLadiesNight)
+            {
+                if (Model.IsStudentTicketValid(Model.SelectedShowing.BeginDateTime))
+                {
+                <p style="text-align:left;">
+                    <label class="label_outline_summary">Student kaartje:</label> 
+                    Aantal: @Model.StudentTicketOrder.Quantity
+                    <span style="float:right;">Prijs: €@Model.StudentTicketOrder.GetTotalPrice()</span>
+                </p>
+                }
+            }
 
+            <!--65+ ticket-->
+            @if (!Model.SelectedShowing.IsLadiesNight)
+            {
+                if (Model.IsSeniorTicketValid(Model.SelectedShowing.BeginDateTime))
+                {
+                <p style="text-align:left;">
+                    <label class="label_outline_summary">65+ kaartje:</label> 
+                    Aantal: @Model.SeniorTicketOrder.Quantity
+                    <span style="float:right;">Prijs: €@Model.SeniorTicketOrder.GetTotalPrice()</span>
+                </p>
+                }
+            }
+
+            <!--popcorn ticket-->
+            @if (!Model.SelectedShowing.IsLadiesNight)
+            {
             <p style="text-align:left;">
-                <label class="label_outline_summary">65+ kaartje:</label> 
-                Aantal: @Model.SeniorTicketOrder.Quantity
-                <span style="float:right;">Prijs: €@Model.SeniorTicketOrder.GetTotalPrice()</span>
+                <label class="label_outline_summary">Popcorn arrangement:</label>
+                Aantal: @Model.PopcornTicketOrder.Quantity
+                <span style="float:right;">Prijs: €@Model.PopcornTicketOrder.GetTotalPrice()</span>
             </p>
+            }
+
+            <!--Ladies Night-->
+            @if (Model.SelectedShowing.IsLadiesNight)
+            {
+            <p style="text-align:left;">
+                <label class="label_outline_summary">Ladies night:</label>
+                Aantal: @Model.LadiesTicketOrder.Quantity
+                <span style="float:right;">Prijs: €@Model.LadiesTicketOrder.GetTotalPrice()</span>
+            </p>
+            }
 
             <br />
             <p style="text-align:right;"><b>Totaalprijs: €@Model.GetTotalPriceForAllTickets()</b></p>

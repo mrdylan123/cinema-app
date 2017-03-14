@@ -114,6 +114,8 @@ namespace Cinema.IVH7B4.WebUI.Models {
                 case TicketType.SeniorTicket: return "65+"; // 1
                 case TicketType.ChildTicket: return "Kind"; // 2
                 case TicketType.StudentTicket: return "Student"; // 3
+                case TicketType.PopcornTicket: return "Popcorn arrangement"; //4
+                case TicketType.LadiesTicket: return "Ladies night"; //5
 
                 default: return "ERROR";
             }
