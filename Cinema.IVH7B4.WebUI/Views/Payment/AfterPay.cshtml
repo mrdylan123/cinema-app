@@ -1,0 +1,18 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Achteraf betalen";
+}
+<div class="text-center">
+    <img class="img-responsive" style="margin: auto; display: block;" src="https://www.afterpay.nl/uploads/afbeeldingen/logo-share.jpg">
+    <h3>U heeft ervoor gekozen achteraf te betalen</h3>
+    <h4>Uw bestelling bedraagt: @Model.GetCurrencyString(@Model.GetTotalPriceForAllTickets())</h4>
+</div>
+
+<div class="text-center">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <button class="payment" type="button" onclick="location.href = '@Url.Action("AfterPayCode", "Ticket")'">Bevestigen</button>
+    </div>
+    <div class="col-md-4"></div>
+</div>

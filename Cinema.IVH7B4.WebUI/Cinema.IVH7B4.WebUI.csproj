@@ -169,6 +169,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -194,6 +195,7 @@
     <Compile Include="Models\FilmVerifier.cs" />
     <Compile Include="Models\FilterLogic.cs" />
     <Compile Include="Models\LadiesTicketOrder.cs" />
+    <Compile Include="Models\LocalizationAttribute.cs" />
     <Compile Include="Models\NormalTicketOrder.cs" />
     <Compile Include="Models\PDFGenerator.cs" />
     <Compile Include="Models\PincodeViewModel.cs" />
@@ -209,6 +211,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Global.Designer.cs" />
+    <Compile Include="Resources\Global.en.Designer.cs" />
+    <Compile Include="Resources\Global.nl.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
@@ -264,6 +269,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Global.en.resx" />
+    <EmbeddedResource Include="Resources\Global.nl.resx" />
+    <EmbeddedResource Include="Resources\Global.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

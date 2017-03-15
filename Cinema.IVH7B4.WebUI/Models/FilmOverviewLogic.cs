@@ -73,6 +73,10 @@ namespace Cinema.IVH7B4.WebUI.Models
                 i++;
             }
 
+            currentShowings = (from e in currentShowings
+                    orderby e.BeginDateTime, e.BeginDateTime
+                    select e).ToList();
+
             foreach (var showing in currentShowings)
             {
                 int dateCheck = DateTime.Compare(showing.BeginDateTime, DateTime.Now);
@@ -92,7 +96,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                 string minutesEnd = currentEnd.Minute.ToString("D2");
 
                 //check if film is not in the past and if film is in current week
-                if ((dateCheck == 0 || dateCheck > 0) && dayCheck <= (DateTime.Now.Day + 7) && monthCheck == DateTime.Now.Month)
+                if (currentBegin <= getNextWeekday(DateTime.Now, DayOfWeek.Thursday) && currentBegin.Day - DateTime.Now.Day <= 7)
                 {
                     switch (dayWeek)
                     {
@@ -134,9 +138,19 @@ namespace Cinema.IVH7B4.WebUI.Models
                 throw new NullReferenceException();
             }
         }
+
         public static string dateToString(DateTime dateTime)
         {
             return "" + dateTime.ToString("dd-MM-yyyy");
+        }
+
+        public static DateTime getNextWeekday(DateTime start, DayOfWeek day)
+        {
+            // The (... + 7) % 7 ensures we end up with a value in the range [0, 6]
+            int daysToAdd = ((int)day - (int)start.DayOfWeek + 7) % 7;
+            DateTime newDate = start.AddDays(daysToAdd);
+
+            return newDate;
         }
     }
 }

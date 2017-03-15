@@ -39,7 +39,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             return View("BankSelection", model);
         }
 
-        public ViewResult INGPayment()
+        public ViewResult INGPayment(string error)
         {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
 
@@ -47,9 +47,13 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             {
                 model = new CinemaViewModel();
             }
+
+            if (error != null)
+            {
+                ViewBag.Errorpayment = error;
+            }
+
             TempData["model"] = model;
-
-
             return View("INGPayment", model);
         }
 
@@ -67,7 +71,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             return View("CreditCardPayment", model);
         }
 
-        public ViewResult MasterCardPayment()
+        public ViewResult AfterPay()
         {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
 
@@ -78,6 +82,24 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             TempData["model"] = model;
 
 
+            return View("AfterPay", model);
+        }
+
+        public ViewResult MasterCardPayment(string error)
+        {
+            CinemaViewModel model = (CinemaViewModel)TempData["model"];
+
+            if (model == null)
+            {
+                model = new CinemaViewModel();
+            }
+
+            if (error != null)
+            {
+                ViewBag.Errorpayment = error;
+            }
+
+            TempData["model"] = model;
             return View("MasterCardPayment", model);
         }
     }

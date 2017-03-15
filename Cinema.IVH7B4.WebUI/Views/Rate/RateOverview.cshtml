@@ -15,14 +15,13 @@
             @Html.Partial("~/Views/Shared/_FilmImgTitle.cshtml")
             <div class="col-xs-6" style="padding-bottom:20px;">
 
-                <p>Datum: @Model.SelectedShowing.BeginDateTime.ToString("dddd d MMMM yyyy")</p>
-                <p>Begintijd: @Model.SelectedShowing.BeginDateTime.ToString("HH:mm")</p>
-                <p>Eindtijd: @Model.SelectedShowing.EndDateTime.ToString("HH:mm")</p>
-                <p>Showing ID: @Model.SelectedShowing.ShowingID</p>
-                <p>Aantal vrije stoelen: @Model.TotalFreeSeats()</p>
+                <p>@Resources.Global.FilmOverView_DateString: @Model.SelectedShowing.BeginDateTime.ToString("dddd d MMMM yyyy")</p>
+                <p>@Resources.Global.FilmOverView_FilmBeginTime: @Model.SelectedShowing.BeginDateTime.ToString("HH:mm")</p>
+                <p>@Resources.Global.FilmOverView_FilmEndTime: @Model.SelectedShowing.EndDateTime.ToString("HH:mm")</p>
+                <p>@Resources.Global.RateOverView_NumberOfFreeSeats: @Model.TotalFreeSeats()</p>
                 <p class="clr_red">@ViewBag.seatError</p>
 
-                <h2 class="reset_outline"><u>Kaartjes</u></h2>
+                <h2 class="reset_outline"><u>@Resources.Global.RateOverView_Tickets</u></h2>
                 <!--reset all-->
                 <button type="button" onclick="location.href='@Url.Action("ResetQuantity","Rate")'">Reset All</button>
 
@@ -30,9 +29,9 @@
                 @if (!Model.SelectedShowing.IsLadiesNight)
                 {
                 <h4>
-                    <label class="label_outline">Normaal tarief: €@Model.NormalTicketOrder.GetPrice()</label>
+                    <label class="label_outline">@Resources.Global.RateOverView_NormalPrice: €@Model.NormalTicketOrder.GetPrice()</label>
 
-                    Aantal: @Model.NormalTicketOrder.Quantity
+                    @Resources.Global.RateOverView_Quantity: @Model.NormalTicketOrder.Quantity
 
                     <button type="button"
                             onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
@@ -59,9 +58,9 @@
                     if (Model.IsChildTicketSamePriceAsNormalTicket() != true)
                     {
                     <h4>
-                        <label class="label_outline">Kind(t/m 11 jaar) tarief: €@Model.ChildTicketOrder.GetPrice()</label>
+                        <label class="label_outline">@Resources.Global.RateOverView_ChildPrice: €@Model.ChildTicketOrder.GetPrice()</label>
 
-                        Aantal: @Model.ChildTicketOrder.Quantity
+                        @Resources.Global.RateOverView_Quantity: @Model.ChildTicketOrder.Quantity
 
                         <button type="button"
                                 onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
@@ -89,9 +88,9 @@
                     if (Model.IsStudentTicketValid(Model.SelectedShowing.BeginDateTime))
                     {
                     <h4>
-                        <label class="label_outline">Student tarief: €@Model.StudentTicketOrder.GetPrice()</label>
+                        <label class="label_outline">@Resources.Global.RateOverView_StudentPrice: €@Model.StudentTicketOrder.GetPrice()</label>
 
-                        Aantal: @Model.StudentTicketOrder.Quantity
+                        @Resources.Global.RateOverView_Quantity: @Model.StudentTicketOrder.Quantity
 
                         <button type="button"
                                 onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
@@ -119,9 +118,9 @@
                     if (Model.IsSeniorTicketValid(Model.SelectedShowing.BeginDateTime))
                     {
                     <h4>
-                        <label class="label_outline">65+ tarief: €@Model.SeniorTicketOrder.GetPrice()</label>
+                        <label class="label_outline">@Resources.Global.RateOverView_65Price: €@Model.SeniorTicketOrder.GetPrice()</label>
 
-                        Aantal: @Model.SeniorTicketOrder.Quantity
+                        @Resources.Global.RateOverView_Quantity: @Model.SeniorTicketOrder.Quantity
 
                         <button type="button"
                                 onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
@@ -148,9 +147,9 @@
                 {
                 <h4 style="border-top:1px solid black;">
                     <br />
-                    <label class="label_outline">Popcorn arrangement: €@Model.PopcornTicketOrder.GetPrice()</label>
+                    <label class="label_outline">Popcorn @Resources.Global.Arrangement: €@Model.PopcornTicketOrder.GetPrice()</label>
                     
-                    Aantal: @Model.PopcornTicketOrder.Quantity
+                    @Resources.Global.RateOverView_Quantity: @Model.PopcornTicketOrder.Quantity
 
                     <button type="button"
                             onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
@@ -169,7 +168,7 @@
                                                })'">
                         +
                     </button>
-                    <small><br />Bevat een kaartje, een medium popcorn en een medium frisdrank naar keuze.</small>
+                    <small><br />@Resources.Global.PopCornText</small>
                 </h4>
                 }
                 <!--Ladies Night-->
@@ -177,9 +176,9 @@
                 {
                 <h4 style="border-top:1px solid black;">
                     <br />
-                    <label class="label_outline">Ladies night arrangement: €@Model.LadiesTicketOrder.GetPrice()</label>
+                    <label class="label_outline">Ladies night @Resources.Global.Arrangement: €@Model.LadiesTicketOrder.GetPrice()</label>
 
-                    Aantal: @Model.LadiesTicketOrder.Quantity
+                    @Resources.Global.RateOverView_Quantity: @Model.LadiesTicketOrder.Quantity
 
                     <button type="button"
                             onclick="location.href='@Url.Action("AdjustQuantity", "Rate", new
@@ -198,9 +197,7 @@
                                                })'">
                         +
                     </button>
-                    <small><br />Bevat een kaartje, een kleine popcorn en een kleine frisdrank naar keuze.
-                    De activiteiten beginnen een uur vóór aanvang van de film. Hierbij krijgt U nog een glaasje bubbels, een hapje, 
-                    een mooie goodiebag en maakt U tevens kans op spectaculaire prijzen.
+                    <small><br />@Resources.Global.LadiesNightText
                     </small>
                 </h4>
                 }
@@ -213,7 +210,7 @@
         <div class="row button_padding">
             <div class="col-xs-11"></div>
             <div class="col-xs-1 text-right">
-                <a href="/Summary/SummaryView" class="btn btn-success"> Verder ></a>
+                <a href='@Url.Action("SummaryView", "Summary")' , class="btn btn-success"> @Resources.Global.RateOverView_Next></a>
             </div>
         </div>       
     </div>

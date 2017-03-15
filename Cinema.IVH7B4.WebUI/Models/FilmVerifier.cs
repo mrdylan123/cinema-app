@@ -9,7 +9,7 @@ namespace Cinema.IVH7B4.WebUI.Models
 {
     public class FilmVerifier
     {
-        public Film verify(string inputString, List<Film> filmList)
+        public virtual Film verify(string inputString, List<Film> filmList)
         {
             Debug.WriteLine(inputString);
             Film film = null;

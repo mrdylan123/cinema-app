@@ -65,5 +65,19 @@ namespace CInema.IVH7B4.UnitTests
             //assert
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void TestGetNextWeekDay()
+        {
+            //arrange
+            //Mock<FilmOverviewRepository> mock = new Mock<FilmOverviewRepository>();
+
+            //act
+            string expected = DateTime.Now.AddDays(((int)DayOfWeek.Monday - (int)DateTime.Now.DayOfWeek + 7) % 7).ToString();
+            string result = FilmOverviewRepository.getNextWeekday(DateTime.Now, DayOfWeek.Monday).ToString();
+
+            //assert
+            Assert.AreEqual(expected, result);
+        }
     }
 }
