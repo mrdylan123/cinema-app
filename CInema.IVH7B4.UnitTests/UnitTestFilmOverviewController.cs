@@ -43,6 +43,7 @@ namespace CInema.IVH7B4.UnitTests
             {
                 new Showing()
                 {
+                    ShowingID = 1,
                     BeginDateTime = new DateTime(2017, 3, 11, 22, 40, 40),
                     EndDateTime = new DateTime(2017, 3, 11, 23, 40, 40),
                     FilmID = 1,
@@ -53,6 +54,7 @@ namespace CInema.IVH7B4.UnitTests
                 },
                 new Showing()
                 {
+                    ShowingID = 2,
                     BeginDateTime = new DateTime(2017, 3, 10, 22, 40, 40),
                     EndDateTime = new DateTime(2017, 3, 10, 23, 50, 40),
                     FilmID = 2,
@@ -126,21 +128,21 @@ namespace CInema.IVH7B4.UnitTests
         }
 
         [TestMethod]
-        public void TestSearchFilm()
+        public void SelectShowing()
         {
             //arrange
-            Mock<FilmVerifier> mockVerifier = new Mock<FilmVerifier>();
-            Mock <FilmOverviewRepository> mockRepo = new Mock<FilmOverviewRepository>();
+            Mock<IFilmOverviewRepository> mockRepo = new Mock<IFilmOverviewRepository>();
+            Mock<CinemaViewModel> mockViewModel = new Mock<CinemaViewModel>();
             FilmOverviewController controller = new FilmOverviewController(mockRepo.Object);
-            mockRepo.Setup(s => s.getFilmList()).Returns(getFilmTestList());
-            mockVerifier.Setup(s => s.verify("testName", mockRepo.Object.getFilmList())).Returns(mockRepo.Object.getFilmList()[0]);
+            mockRepo.Setup(s => s.getShowingbyId(1)).Returns(getTestShowingsList());
+            mockViewModel.Object.SelectedFilm = new Film() { FilmID = 1 };
+            controller.TempData["model"] = mockViewModel.Object;
 
             //act
-            string expected = "renderFilm";
-            ActionResult result = controller.searchFilm() as ActionResult;
-
+            var result = (RedirectToRouteResult)controller.SelectShowing(1);
+            
             //assert
-            Assert.AreEqual(expected, result.ToString());
-        }   
+            Assert.AreEqual("RateOverView", result.RouteValues["action"]);
+        }
     }
 }
