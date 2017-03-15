@@ -15,16 +15,20 @@
     <div class="row">
         <div class="col-md-1"></div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
             <button class="payment" type="button" onclick="location.href='@Url.Action("IdealPayment","Payment")'">iDeal</button>
         </div>
 
-        <div class="col-md-2"></div>
+        <div class="col-md-1"></div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
             <button class="payment" type="button" onclick="location.href='@Url.Action("CreditCardPayment","Payment")'">Credit Card</button>
         </div>
 
         <div class="col-md-1"></div>
+        
+        <div class="col-md-3">
+            <button class="payment" type="button" onclick="location.href='@Url.Action("AfterPay","Payment")'">Betalen in bioscoop</button>
+        </div>
     </div>
 </div>

@@ -6,6 +6,8 @@
 <div class="text-center">
     <img class="img-responsive" style="margin: auto; display: block;" src="http://mijndebitcard.nl/wp-content/upload_folders/mijndebitcard.nl/2015/11/mastercard-logo.png"></img>
     <p>Totaalprijs: @Model.GetCurrencyString(@Model.GetTotalPriceForAllTickets())</p>
+    <p>Alle velden zijn verplicht.</p>
+    <p style="color: red">@ViewBag.Errorpayment</p>
 </div>
 
 <div class="text-center">
@@ -13,11 +15,10 @@
         <table style="margin: 0 auto;">
             <tr>
                 <td>
-
                     <p>Kaartnummer</p>
                 </td>
                 <td>
-                    <input type="text" name="cardnumber" />
+                    <input type="number" name="cardnumber" min="111" max="999"/>
                 </td>
             </tr>
 
@@ -26,27 +27,25 @@
                     <p>Naam kaarthouder</p>
                 </td>
                 <td>
-                    <input type="text" name="name" />
+                    <input type="text" name="name" maxlength="20" />
                 </td>
             </tr>
             
             <tr>
                 <td>
-
                     <p>Vervaldatum</p>
                 </td>
                 <td>
-                    <input type="text" name="date" />
+                    <input type="date" name="date" />
                 </td>
             </tr>
             
             <tr>
                 <td>
-
                     <p>Beveiligingscode</p>
                 </td>
                 <td>
-                    <input type="text" name="username" />
+                    <input type="number" name="securitynumber" min="1111111111111111" max="9999999999999999"/>
                 </td>
             </tr>
 
@@ -56,6 +55,3 @@
         <button type="submit" class="btn btn-success">Afrekenen</button>
     </form>
 </div>
-
-</div>
-
