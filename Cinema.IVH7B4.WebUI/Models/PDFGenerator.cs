@@ -81,17 +81,17 @@ namespace Cinema.IVH7B4.WebUI.Models {
                 else {
                     // start ticket info
                     addText("TicketID: " + t.TicketID);
-                    addText("TicketType: " + GetDutchString(t.TicketType));
+                    addText("Ticket Type: " + GetDutchString(t.TicketType));
                     addText("ReservationKey: " + t.SecretKey);
                     AddImage(t.Showing.Film.Image);
-                    String ot = t.Showing.Film.LanguageSubs != "" ? t.Showing.Film.LanguageSubs : "geen";
-                    addText("Film: " + t.Showing.Film.Name + "       " + "Taal: " + t.Showing.Film.Language + "       " +
+                    String ot = t.Showing.Film.LanguageSubs != "" ? t.Showing.Film.LanguageSubs : "none";
+                    addText("Film: " + t.Showing.Film.Name + "       " + "Language: " + t.Showing.Film.Language + "       " +
                             "Subtitles: " + ot);
-                    addText("Age: " + t.Showing.Film.Age + " jaar en ouder" + "                         " +
+                    addText("Age: " + t.Showing.Film.Age + " years old and older" + "                         " +
                             "Category: " + ((FilmType)t.Showing.Film.FilmType).GetDutchString());
                     addText("Time: " + t.Showing.Film.Length + " minutes" + "              " + "3D: " +
                             (t.Showing.Film.Is3D ? "yes" : "no") + "        "
-                            + "price: " + t.Price.ToString());
+                            + "Price: " + t.Price.ToString());
 
 
                     /// example: maandag 1 Februari 2017
