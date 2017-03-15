@@ -84,6 +84,7 @@
     <Compile Include="Concrete\FilmRepository.cs" />
     <Compile Include="Concrete\ShowingRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
+    <Compile Include="Entities\NewsletterRegistration.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Film.cs" />
     <Compile Include="Entities\Location.cs" />

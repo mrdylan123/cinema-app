@@ -159,7 +159,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Properties\PublishProfiles\Dennis.pubxml" />
+    <None Include="Properties\PublishProfiles\Tets.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -169,7 +169,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -195,7 +194,6 @@
     <Compile Include="Models\FilmVerifier.cs" />
     <Compile Include="Models\FilterLogic.cs" />
     <Compile Include="Models\LadiesTicketOrder.cs" />
-    <Compile Include="Models\LocalizationAttribute.cs" />
     <Compile Include="Models\NormalTicketOrder.cs" />
     <Compile Include="Models\PDFGenerator.cs" />
     <Compile Include="Models\PincodeViewModel.cs" />
@@ -210,21 +208,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Global.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Global.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Global.en.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Global.en.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Global.nl.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Global.nl.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -280,21 +263,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Global.en.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Global.en.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Global.nl.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Global.nl.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources</CustomToolNamespace>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Global.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Global.Designer.cs</LastGenOutput>
-      <CustomToolNamespace>Resources</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

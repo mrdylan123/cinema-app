@@ -17,6 +17,7 @@ namespace Cinema.IVH7B4.Domain.Concrete {
         public DbSet<RoomLayout> RoomLayouts { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Manager> Managers{ get; set; }
+        public DbSet<NewsletterRegistration> NewsletterRegistrations { get; set; }
 
         public EFDbContext() : base("EFDbContext")
         {

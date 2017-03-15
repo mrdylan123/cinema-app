@@ -19,11 +19,9 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         public ActionResult RateOverview()
         {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
-
             ViewBag.Base64 = @"data:image/gif;base64," + Convert.ToBase64String(model.SelectedFilm.Image);
-            //model.SelectedFilm;
 
-
+            model.SeatCoordList.Clear();
             TempData["model"] = model;
             return View("RateOverview", model);
         }
@@ -43,17 +41,6 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
             model.ResetTickets();
-
-            TempData["model"] = model;
-            return RedirectToAction("RateOverview");
-        }
-
-        public ActionResult Test()
-        {
-            var context = new EFDbContext();
-            var model = new CinemaViewModel();
-            model.SelectedFilm = context.Films.ToList()[3];
-
 
             TempData["model"] = model;
             return RedirectToAction("RateOverview");

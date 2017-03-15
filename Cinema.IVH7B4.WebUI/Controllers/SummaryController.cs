@@ -16,8 +16,15 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
 
-            if (model.GetAllTicketsQuantity() <= 0) {
+            if (model.GetAllTicketsQuantity() <= 0)
+            {
 
+                TempData["model"] = model;
+                return RedirectToAction("RateOverview", "Rate");
+            }
+            if (model.TotalFreeSeats() < model.GetAllTicketsQuantity())
+            {
+                ViewBag.seatError = "U heeft meer tickets besteld dan dat er stoelen zijn.";
                 TempData["model"] = model;
                 return RedirectToAction("RateOverview", "Rate");
             }
@@ -28,25 +35,45 @@ namespace Cinema.IVH7B4.WebUI.Controllers
 
             var occupiedSeats = new List<Seat>();
 
-            foreach (Seat s in context.Seats.ToList()) {
+            foreach (Seat s in context.Seats.ToList())
+            {
 
                 Ticket t = context.Tickets.ToList().Find(ti => ti.SeatID == s.SeatID && ti.ShowingID == model.SelectedShowing.ShowingID);
 
-                if (t == null) {
+                if (t == null)
+                {
                     continue;
                 }
 
-                if (s.SeatID != t.SeatID) {
+                if (s.SeatID != t.SeatID)
+                {
                     continue;
                 }
                 occupiedSeats.Add(s);
             }
 
-            model.SeatCoordList = ass.CalculateSeats(model.SelectedShowing.Room, model.GetAllTicketsQuantity(), occupiedSeats);
-            ViewBag.SeatSelectionGUI = ass.VisualizeSeats(model.SelectedShowing.Room, occupiedSeats, model.SeatCoordList);
+            if (model.SeatCoordList.Count == 0)
+            {
+                model.SeatCoordList = ass.CalculateSeats(model.SelectedShowing.Room, model.GetAllTicketsQuantity(), occupiedSeats);
+            }
+
+            model.SeatSelectionGUI = ass.VisualizeSeats(model.SelectedShowing.Room, occupiedSeats, model.SeatCoordList);
 
             TempData["model"] = model;
             return View("SummaryView", model);
         }
+
+        public ActionResult SelectSeat(int x, int y)
+        {
+            CinemaViewModel model = (CinemaViewModel)TempData["model"];
+
+
+            model.SeatCoordList.RemoveAt(0);
+            model.SeatCoordList.Add(new SeatCoord(y, x));
+
+            TempData["model"] = model;
+            return RedirectToAction("SummaryView");
+        }
     }
+
 }

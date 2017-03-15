@@ -137,12 +137,12 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             if (model != null)
             {
                 model.SelectedFilm = f;
-                model.SelectedShowing = repo.getShowingList().Where(s => s.FilmID == model.SelectedFilm.FilmID && s.BeginDateTime > DateTime.Now).OrderBy(s => s.BeginDateTime).First();
+               // model.SelectedShowing = repo.getShowingList().Where(s => s.FilmID == model.SelectedFilm.FilmID && s.BeginDateTime > DateTime.Now).OrderBy(s => s.BeginDateTime).First();
             } else
             {
                 model = new CinemaViewModel();
                 model.SelectedFilm = f;
-                model.SelectedShowing = repo.getShowingList().Where(s => s.FilmID == model.SelectedFilm.FilmID && s.BeginDateTime > DateTime.Now).OrderBy(s => s.BeginDateTime).FirstOrDefault(null);
+                //model.SelectedShowing = repo.getShowingList().Where(s => s.FilmID == model.SelectedFilm.FilmID && s.BeginDateTime > DateTime.Now).OrderBy(s => s.BeginDateTime).FirstOrDefault(null);
             }
         }
     }
