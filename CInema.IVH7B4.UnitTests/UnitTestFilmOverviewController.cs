@@ -22,7 +22,7 @@ namespace CInema.IVH7B4.UnitTests
                 new Film()
         {
                     FilmID = 1,
-                    Name = "testNam",
+                    Name = "testName",
                     Language = "testLanguage",
                     LanguageSubs = "testLanguageSubs",
                     Age = 12,
