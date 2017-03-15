@@ -14,18 +14,16 @@ namespace Cinema.IVH7B4.Domain.Concrete
     {
         private EFDbContext context = new EFDbContext();
 
-        public FilmOverviewRepository() { }
-
-        public virtual List<Film> getFilmList()
+        public List<Film> getFilmList()
         {
-            List<Film> list = context.Films.ToList();
-            List<Showing> showingsList = context.Showings.ToList();
-            List<Film> retList = new List<Film>();
+            var list = context.Films.ToList();
+            var showingsList = context.Showings.ToList();
+            var retList = new List<Film>();
 
             foreach(Film f in list)
             {
                 Showing s = showingsList.Where(sh => sh.FilmID == f.FilmID && sh.BeginDateTime  >= DateTime.Now).
-                    FirstOrDefault();             
+                    FirstOrDefault();
 
                 if (s != null)
                 {
@@ -71,13 +69,9 @@ namespace Cinema.IVH7B4.Domain.Concrete
         public List<string> convertDateTime(int filmID)
         {
             List<string> currentShowings = new List<string>();
-            List<Showing> showingList = getShowingbyId(filmID);
 
-            showingList = (from e in showingList
-                               orderby e.BeginDateTime, e.BeginDateTime
-                               select e).ToList();
 
-            foreach (Showing showing in showingList)
+            foreach (Showing showing in getShowingbyId(filmID))
             {
                 int dateCheck = DateTime.Compare(showing.BeginDateTime, DateTime.Now);
                 int dayCheck = showing.BeginDateTime.Day;
@@ -95,7 +89,8 @@ namespace Cinema.IVH7B4.Domain.Concrete
                 string hourEnd = currentEnd.Hour.ToString("D2");
                 string minutesEnd = currentEnd.Minute.ToString("D2");
 
-                if (currentBegin <= getNextWeekday(DateTime.Now, DayOfWeek.Thursday) && currentBegin.Day - DateTime.Now.Day <= 7)
+                //check if film is not in the past and if film is in current week
+                if ((dateCheck == 0 || dateCheck > 0) && showing.BeginDateTime <= DateTime.Now.AddDays(7))
                 {
                     switch (dayWeek)
                     {
@@ -127,15 +122,6 @@ namespace Cinema.IVH7B4.Domain.Concrete
                 }
             }
             return currentShowings;
-        }
-
-        public static DateTime getNextWeekday(DateTime start, DayOfWeek day)
-        {
-            // The (... + 7) % 7 ensures we end up with a value in the range [0, 6]
-            int daysToAdd = ((int)day - (int)start.DayOfWeek + 7) % 7;
-            DateTime newDate = start.AddDays(daysToAdd);
-
-            return newDate;
         }
 
     }

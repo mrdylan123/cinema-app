@@ -10,23 +10,23 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h2 style="border-bottom:2px solid black;">Meld U hier aan voor de nieuwsbrief</h2>
+                <h2 style="border-bottom:2px solid black;">@Resources.Global.ContactNewsLetter_Text</h2>
                 <div>
                     @using (Html.BeginForm("HandleSubmitForm", "Contact"))
                     {
                         @Html.ValidationSummary(true)
 
-                        <label>Naam</label>
+                        <label>@Resources.Global.ContactName</label>
                         <br>
                         @Html.TextBox("Name")
                         <br><br>
 
-                        <label>Leeftijd</label>
+                        <label>@Resources.Global.ContactAge</label>
                         <br>
                         @Html.TextBox("Age")
                         <br><br>
 
-                        <label>Locatie</label>
+                        <label>@Resources.Global.ContactLocation</label>
                         <br>
                         <select class="form-control" id="Location" name="Location" style="max-width:150px;">
                                 
@@ -57,18 +57,18 @@
                         </select>
                         <br>
 
-                        <label>Interesses</label>
+                        <label>@Resources.Global.ContactInterest</label>
                         <br>
                         <div style="display:inline-block">
                             Drama: <input type="checkbox" name="Drama" id="Drama" />
-                            Actie: <input type="checkbox" name="Actie" id="Actie"/>
-                            Avontuur: <input type="checkbox" name="Avonturr" id="Avonturr"/>
+                            @Resources.Global.FilmOverView_Gerne_Action: <input type="checkbox" name="Actie" id="Actie"/>
+                            @Resources.Global.GenreAdventure: <input type="checkbox" name="Avonturr" id="Avonturr"/>
                             Thriller: <input type="checkbox" name="Thriller" id="Thriller"/>
                             <br />
-                            Animatie: <input type="checkbox" name="Animatie" id="Animatie"/>
+                            @Resources.Global.GenreAnimation: <input type="checkbox" name="Animatie" id="Animatie"/>
                             Horror: <input type="checkbox" name="Horror" id="Horror"/>
-                            Komedie: <input type="checkbox" name="Komedie" id="Komedie"/>
-                            Romantiek: <input type="checkbox" name="Romantiek" id="Romantiek"/>
+                            @Resources.Global.FilmOverView_Gerne_Comedy: <input type="checkbox" name="Komedie" id="Komedie"/>
+                            @Resources.Global.GenreRomance: <input type="checkbox" name="Romantiek" id="Romantiek"/>
                         </div>
                         <br><br>
 
@@ -77,14 +77,24 @@
                         @Html.TextBox("Email")
                         <br><br>
 
-                        <input type="submit" value="Inschrijven">
+                        <input type="submit" value="@Resources.Global.ContactSignUp">
                     }
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <h2 style="border-bottom: 2px solid black;">Routebeschrijving</h2>
+                <h2 style="border-bottom:2px solid black;">Social Media</h2>
+                <div>
+                    <a href="https://www.facebook.com/PatheBreda/?hc_ref=SEARCH" target="blank"><img border="0" src="https://crunchbase-production-res.cloudinary.com/image/upload/c_limit,h_600,w_600/v1422480063/h0fvargheeyaybm4oyyt.jpg" width="100" height="100">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 style="border-bottom: 2px solid black;">@Resources.Global.Contact_Travel_directions</h2>
 
                 <br />
                 <a class="btn btn-default" href="#" onclick="location.href='@Url.Action("SetLocationAndReturn", "Contact", new { locationName = "Breda"})'">Breda</a>
