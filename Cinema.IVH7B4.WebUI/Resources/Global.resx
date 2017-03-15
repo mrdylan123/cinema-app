@@ -411,13 +411,4 @@
   <data name="Pay_AfterPayOrder" xml:space="preserve">
     <value />
   </data>
-  <data name="GenreAdventure" xml:space="preserve">
-    <value />
-  </data>
-  <data name="GenreAnimation" xml:space="preserve">
-    <value />
-  </data>
-  <data name="GenreRomance" xml:space="preserve">
-    <value />
-  </data>
 </root>

@@ -414,13 +414,4 @@
   <data name="Pay_AfterPayOrder" xml:space="preserve">
     <value>Uw bestelling bedraagt</value>
   </data>
-  <data name="GenreAdventure" xml:space="preserve">
-    <value>Avontuur</value>
-  </data>
-  <data name="GenreAnimation" xml:space="preserve">
-    <value>Animatie</value>
-  </data>
-  <data name="GenreRomance" xml:space="preserve">
-    <value>Romantiek</value>
-  </data>
 </root>
