@@ -12,7 +12,10 @@ namespace Cinema.IVH7B4.WebUI.Models
         {
         }
 
-        public override TicketType GetTicketType() { return TicketType.NormalTicket; }
+        public override TicketType GetTicketType()
+        {
+            return TicketType.NormalTicket;
+        }
 
         public override decimal GetDiscount()
         {

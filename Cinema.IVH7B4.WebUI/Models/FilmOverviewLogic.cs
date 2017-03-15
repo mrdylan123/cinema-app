@@ -37,9 +37,9 @@ namespace Cinema.IVH7B4.WebUI.Models
 
             public static String getDutchString(this int ft) {
                 switch ((FilmType)ft) {
-                    case FilmType.Children: return Resources.Global.FilmOverView_Gerne_Children;
-                    case FilmType.Action: return Resources.Global.FilmOverView_Gerne_Action;
-                    case FilmType.Comedy: return Resources.Global.FilmOverView_Gerne_Comedy;
+                    case FilmType.Children: return "Kinder"; // 0
+                    case FilmType.Action: return "Actie"; // 1
+                    case FilmType.Comedy: return "Komedie"; // 2
                     case FilmType.Drama: return "Drama"; // 3
                     case FilmType.Horror: return "Horror"; // 4
 
@@ -97,30 +97,30 @@ namespace Cinema.IVH7B4.WebUI.Models
                     switch (dayWeek)
                     {
                         case "Monday":
-                            dayWeek = Resources.Global.FilmOverView_WeekDayMonday;
+                            dayWeek = "Maandag";
                             break;
                         case "Tuesday":
-                            dayWeek = Resources.Global.FilmOverView_WeekDayTuesday;
+                            dayWeek = "Dinsdag";
                             break;
                         case "Wednesday":
-                            dayWeek = Resources.Global.FilmOverView_WeekDayThursday;
+                            dayWeek = "Woensdag";
                             break;
                         case "Thursday":
-                            dayWeek = Resources.Global.FilmOverView_WeekDayThursday;
+                            dayWeek = "Donderdag";
                             break;
                         case "Friday":
-                            dayWeek = Resources.Global.FilmOverView_WeekDayFriday;
+                            dayWeek = "Vrijdag";
                             break;
                         case "Saturday":
-                            dayWeek = Resources.Global.FilmOverView_WeekDaySaterday;
+                            dayWeek = "Zaterdag";
                             break;
                         case "Sunday":
-                            dayWeek = Resources.Global.FilmOverView_WeekDaySunday;
+                            dayWeek = "Zondag";
                             break;
                     }
 
                     dateTimeStrings.Add(dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
-                                " " + " " + Resources.Global.FilmOverView_FilmBeginTime + " " + hourBegin + ":" + minutesBegin + " " + " " + " " + Resources.Global.FilmOverView_FilmEndTime+ " " + hourEnd + ":" + minutesEnd + " " + Resources.Global.FilmOverView_FilmRoom + " " + showing.Room.RoomNumber);
+                                " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd + " " + "Zaalnummer: " + showing.Room.RoomNumber);
                 }
             }
 

@@ -357,4 +357,43 @@
   <data name="Ticket_YourReservationCode" xml:space="preserve">
     <value>The reservation code</value>
   </data>
+  <data name="Arrangement" xml:space="preserve">
+    <value>arrangement</value>
+  </data>
+  <data name="LadiesNightText" xml:space="preserve">
+    <value>Includes a ticket, small popcorn and a medium drink of choice, the activities begin one hour before the start of the movie. You will also recieve a glass of champagne, a bite, and a goodiebag. additionally there is a chance to win spectacular prices.</value>
+  </data>
+  <data name="PopCornText" xml:space="preserve">
+    <value>Includes a ticket, medium popcorn and a medium drink of choice</value>
+  </data>
+  <data name="RateOverView_NumberOfFreeSeats" xml:space="preserve">
+    <value>Number of free seats</value>
+  </data>
+  <data name="RateOverView_Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="ContactAge" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="ContactInterest" xml:space="preserve">
+    <value>Interest</value>
+  </data>
+  <data name="ContactLocation" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ContactNewsLetter_Text" xml:space="preserve">
+    <value>Sign up to receive our news letter</value>
+  </data>
+  <data name="ContactSignUp" xml:space="preserve">
+    <value>Sign up</value>
+  </data>
+  <data name="Contact_Text_travel" xml:space="preserve">
+    <value>First select a location on the home page or choose a location from the navigation bar.</value>
+  </data>
+  <data name="Contact_Travel_directions" xml:space="preserve">
+    <value>Travel directions</value>
+  </data>
 </root>

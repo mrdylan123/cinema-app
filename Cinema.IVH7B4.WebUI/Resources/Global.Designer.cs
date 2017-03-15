@@ -63,6 +63,87 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string Arrangement {
+            get {
+                return ResourceManager.GetString("Arrangement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Contact_Text_travel {
+            get {
+                return ResourceManager.GetString("Contact_Text_travel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Contact_Travel_directions {
+            get {
+                return ResourceManager.GetString("Contact_Travel_directions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ContactAge {
+            get {
+                return ResourceManager.GetString("ContactAge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ContactInterest {
+            get {
+                return ResourceManager.GetString("ContactInterest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ContactLocation {
+            get {
+                return ResourceManager.GetString("ContactLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ContactName {
+            get {
+                return ResourceManager.GetString("ContactName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ContactNewsLetter_Text {
+            get {
+                return ResourceManager.GetString("ContactNewsLetter_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string ContactSignUp {
+            get {
+                return ResourceManager.GetString("ContactSignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string CreditCard_CardType {
             get {
                 return ResourceManager.GetString("CreditCard_CardType", resourceCulture);
@@ -432,6 +513,15 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string LadiesNightText {
+            get {
+                return ResourceManager.GetString("LadiesNightText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string NavBar_Theatres {
             get {
                 return ResourceManager.GetString("NavBar_Theatres", resourceCulture);
@@ -576,6 +666,15 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string PopCornText {
+            get {
+                return ResourceManager.GetString("PopCornText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string RateOverView_65Price {
             get {
                 return ResourceManager.GetString("RateOverView_65Price", resourceCulture);
@@ -594,6 +693,15 @@ namespace Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string RateOverView_Next {
+            get {
+                return ResourceManager.GetString("RateOverView_Next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string RateOverView_NextButton {
             get {
                 return ResourceManager.GetString("RateOverView_NextButton", resourceCulture);
@@ -606,6 +714,15 @@ namespace Resources {
         public static string RateOverView_NormalPrice {
             get {
                 return ResourceManager.GetString("RateOverView_NormalPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string RateOverView_NumberOfFreeSeats {
+            get {
+                return ResourceManager.GetString("RateOverView_NumberOfFreeSeats", resourceCulture);
             }
         }
         

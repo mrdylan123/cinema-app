@@ -357,4 +357,43 @@
   <data name="Ticket_YourReservationCode" xml:space="preserve">
     <value />
   </data>
+  <data name="Arrangement" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LadiesNightText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PopCornText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RateOverView_NumberOfFreeSeats" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RateOverView_Next" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ContactAge" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ContactInterest" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ContactLocation" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ContactNewsLetter_Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ContactSignUp" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Contact_Text_travel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Contact_Travel_directions" xml:space="preserve">
+    <value />
+  </data>
 </root>

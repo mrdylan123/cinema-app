@@ -9,6 +9,7 @@ namespace Cinema.IVH7B4.WebUI.Models
 {
     public class CinemaViewModel
     {
+        public List<List<AutomaticSeatSelection.OccupyType>> SeatSelectionGUI;
         public Location SelectedLocation;
         public Film SelectedFilm;
         public Showing SelectedShowing;
@@ -19,6 +20,8 @@ namespace Cinema.IVH7B4.WebUI.Models
         public ChildTicketOrder ChildTicketOrder;
         public StudentTicketOrder StudentTicketOrder;
         public SeniorTicketOrder SeniorTicketOrder;
+        public PopcornTicketOrder PopcornTicketOrder;
+        public LadiesTicketOrder LadiesTicketOrder;
 
         public CinemaViewModel()
         {
@@ -28,6 +31,8 @@ namespace Cinema.IVH7B4.WebUI.Models
             ChildTicketOrder = new ChildTicketOrder(this);
             StudentTicketOrder = new StudentTicketOrder(this);
             SeniorTicketOrder = new SeniorTicketOrder(this);
+            PopcornTicketOrder = new PopcornTicketOrder(this);
+            LadiesTicketOrder = new LadiesTicketOrder(this);
 
             pinValue = "";
         }
@@ -69,6 +74,8 @@ namespace Cinema.IVH7B4.WebUI.Models
             ChildTicketOrder = new ChildTicketOrder(this);
             StudentTicketOrder = new StudentTicketOrder(this);
             SeniorTicketOrder = new SeniorTicketOrder(this);
+            PopcornTicketOrder = new PopcornTicketOrder(this);
+            LadiesTicketOrder = new LadiesTicketOrder(this);
         }
 
         public void SetTicketQuantity(int quantity, TicketType tt) {
@@ -80,6 +87,8 @@ namespace Cinema.IVH7B4.WebUI.Models
                 case TicketType.SeniorTicket: SeniorTicketOrder.Quantity = quantity; break;
                 case TicketType.StudentTicket: StudentTicketOrder.Quantity = quantity; break;
                 case TicketType.NormalTicket: NormalTicketOrder.Quantity = quantity; break;
+                case TicketType.PopcornTicket: PopcornTicketOrder.Quantity = quantity; break;
+                case TicketType.LadiesTicket: LadiesTicketOrder.Quantity = quantity; break;
                 default: break;
             }
         }
@@ -88,7 +97,9 @@ namespace Cinema.IVH7B4.WebUI.Models
             return ChildTicketOrder.Quantity +
                 SeniorTicketOrder.Quantity +
                 StudentTicketOrder.Quantity +
-                NormalTicketOrder.Quantity;
+                NormalTicketOrder.Quantity +
+                PopcornTicketOrder.Quantity +
+                LadiesTicketOrder.Quantity;
         }
 
 
@@ -97,7 +108,9 @@ namespace Cinema.IVH7B4.WebUI.Models
             return ChildTicketOrder.GetTotalPrice() +
                 SeniorTicketOrder.GetTotalPrice() +
                 StudentTicketOrder.GetTotalPrice() +
-                NormalTicketOrder.GetTotalPrice();
+                NormalTicketOrder.GetTotalPrice() +
+                PopcornTicketOrder.GetTotalPrice() + 
+                LadiesTicketOrder.GetTotalPrice();
         }
 
         public bool IsChildTicketSamePriceAsNormalTicket()
@@ -117,6 +130,15 @@ namespace Cinema.IVH7B4.WebUI.Models
         public bool IsMondayTuesdayWednesdayThursday(DateTime dt)
         {
             return IsMondayTuesdayWednesdayThursday(dt.DayOfWeek);
+        }
+        public int TotalFreeSeats()
+        {
+            var rl = SelectedShowing.Room.Layout;
+            int roomSeats = (rl.BackX * rl.BackY) + (rl.FrontX * rl.FrontY);
+            int seatsUsed = (new EFDbContext()).Tickets.Where(t => t.ShowingID == SelectedShowing.ShowingID)
+                .GroupBy(x => x.SeatID).Select(y => y.FirstOrDefault()).ToList().Count();
+
+            return roomSeats - seatsUsed;
         }
 
         public String GetEuroSign()
@@ -170,7 +192,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                     CustomerID =  customer.CustomerID,
                     Price = 0.0m,
                     //Seat = seatsList.Find(s => s.seatNo == sc.GetSeatNumber(SelectedShowing.Room.Layout)),
-                    SeatID = seatsList.Find(s => s.seatNo == sc.GetSeatNumber(SelectedShowing.Room.Layout)).SeatID,
+                    SeatID = seatsList.Where(s => s.RowX == sc.X && s.RowY == s.RowY).Last().SeatID,
                     SecretKey = secretKey, // TODO
                     TicketType = (int)TicketType.InvalidTicket,
                     //Showing = SelectedShowing,
@@ -178,7 +200,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                 };
                 list.Add(ticket);
 
-                int normal = 0; int senior = 0; int student = 0; int child = 0;
+                int normal = 0; int senior = 0; int student = 0; int child = 0; int popcorn = 0; int ladies = 0;
                 for (int i = 0; i < list.Count; i++)
                 {
                     if (NormalTicketOrder.Quantity > normal)
@@ -208,6 +230,19 @@ namespace Cinema.IVH7B4.WebUI.Models
                         list[i].Price = StudentTicketOrder.GetPrice();
                         list[i].Discount += StudentTicketOrder.GetDiscount();
                         student++;
+                    }
+                    else if (PopcornTicketOrder.Quantity > popcorn)
+                    {
+                        list[i].TicketType = (int)TicketType.PopcornTicket;
+                        list[i].Price = PopcornTicketOrder.GetPrice();
+                        list[i].Discount += PopcornTicketOrder.GetDiscount();
+                        popcorn++;
+                    }
+                    else if (LadiesTicketOrder.Quantity > ladies)
+                    {
+                        list[i].TicketType = (int)TicketType.LadiesTicket;
+                        list[i].Price = LadiesTicketOrder.GetPrice();
+                        list[i].Discount += LadiesTicketOrder.GetDiscount();
                     }
 
                 }

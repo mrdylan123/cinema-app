@@ -22,6 +22,7 @@ namespace Cinema.IVH7B4.Domain.Entities {
         public string City { get; set; }
         public string Province { get; set; }
         public string Country { get; set; }
+        public string GoogleMapsUrl { get; set; }
         public int Rooms { get; set; }
         public decimal TicketPriceNormal { get; set; }
         public decimal TicketPriceLong { get; set; }

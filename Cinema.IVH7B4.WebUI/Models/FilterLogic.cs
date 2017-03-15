@@ -50,6 +50,36 @@ namespace Cinema.IVH7B4.WebUI.Models
             }
         }
 
+        // Translate Time.DayOfWeek to dutch
+        public static string GetDay(DayOfWeek dayWeek)
+        {
+            string day = dayWeek.ToString();
+            switch (day)
+            {
+                case "Monday":
+                    day = "maandag";
+                    break;
+                case "Tuesday":
+                    day = "dinsdag";
+                    break;
+                case "Wednesday":
+                    day = "woensdag";
+                    break;
+                case "Thursday":
+                    day = "donderdag";
+                    break;
+                case "Friday":
+                    day = "vrijdag";
+                    break;
+                case "Saturday":
+                    day = "zaterdag";
+                    break;
+                case "Sunday":
+                    day = "zondag";
+                    break;
+            }
 
+            return day;
+        }
     }
 }

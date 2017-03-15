@@ -1,0 +1,72 @@
+﻿@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Contact";
+}
+<html>
+<head>
+    @Html.Partial("~/Views/Shared/_Menubar.cshtml")
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 style="border-bottom:2px solid black;">@Resources.Global.ContactNewsLetter_Text</h2>
+                <div>
+                    @using (Html.BeginForm("HandleSubmitForm", "Contact"))
+                    {
+                        @Html.ValidationSummary(true)
+
+                        <p>@Resources.Global.ContactName:</p>
+                        @Html.TextBox("Name")
+                        <br>
+                        <p>@Resources.Global.ContactAge:</p>
+                        @Html.TextBox("Age")
+                        <br>
+                        <p>@Resources.Global.ContactLocation</p>
+                        @Html.TextBox("Location")
+                        <br>
+                        <p>@Resources.Global.ContactInterest</p>
+                        @Html.TextBox("Interests")
+                        <br>
+                        <p>Email</p>
+                        @Html.TextBox("Email")
+                        <br>
+                        <input type="submit" value="@Resources.Global.ContactSignUp">
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 style="border-bottom: 2px solid black;">@Resources.Global.Contact_Travel_directions</h2>
+                <br />
+                @if (Model != null && Model.SelectedLocation != null)
+                {
+                    if (Model.SelectedLocation.Name.Equals("Eindhoven"))
+                    {
+                        <h4>Eindhoven</h4>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9947.622320237191!2d5.458637338900737!3d51.441527873987965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4277133f7c8e4fe8!2sPath%C3%A9+Eindhoven!5e0!3m2!1sen!2snl!4v1489408388705"
+                                width="600" height="450" frameborder="0" style="margin-bottom:20px;" allowfullscreen></iframe>
+                    }
+                    else if (Model.SelectedLocation.Name.Equals("Tilburg"))
+                    {
+                        <h4>Tilburg</h4>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19848.549734453707!2d5.065199916456671!3d51.5486389470671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x23ad188e62c0330b!2zUGF0aMOp!5e0!3m2!1sen!2snl!4v1489408302047"
+                                width="600" height="450" frameborder="0" style="margin-bottom:20px;" allowfullscreen></iframe>
+                    }
+                    else if (Model.SelectedLocation.Name.Equals("Breda"))
+                    {
+                        <h4>Breda</h4>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.8269724123566!2d4.782858415519151!3d51.589734479648776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c69f7f704bcddd%3A0x39798afaa1dc4718!2sPath%C3%A9+Breda+Cinema!5e0!3m2!1sen!2snl!4v1489407306579"
+                                width="600" height="450" frameborder="0" style="margin-bottom:20px;" allowfullscreen></iframe>
+                    }
+                }
+                else
+                {
+                    <p>@Resources.Global.Contact_Text_travel</p>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -30,7 +30,7 @@ namespace Cinema.IVH7B4.Domain.Entities {
         public int SeatID { get; set; }
 
         [ForeignKey("SeatID")]
-        public virtual Seat Seat { get; set; }
+        public virtual Seat Seat { get; set;  }
 
         public int ShowingID { get; set; }
 

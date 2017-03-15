@@ -357,4 +357,43 @@
   <data name="Ticket_YourReservationCode" xml:space="preserve">
     <value>Je reserveringscode is</value>
   </data>
+  <data name="Arrangement" xml:space="preserve">
+    <value>arrangement</value>
+  </data>
+  <data name="LadiesNightText" xml:space="preserve">
+    <value>Bevat een kaartje, een kleine popcorn en een kleine frisdrank naar keuze. De activiteiten beginnen een uur vóór aanvang van de film. Hierbij krijgt U nog een glaasje bubbels, een hapje, een mooie goodiebag en maakt U tevens kans op spectaculaire prijzen.</value>
+  </data>
+  <data name="PopCornText" xml:space="preserve">
+    <value>Bevat een kaartje, een medium popcorn en een medium frisdrank naar keuze.</value>
+  </data>
+  <data name="RateOverView_NumberOfFreeSeats" xml:space="preserve">
+    <value>Aantal vrije stoelen</value>
+  </data>
+  <data name="RateOverView_Next" xml:space="preserve">
+    <value>Verder</value>
+  </data>
+  <data name="ContactAge" xml:space="preserve">
+    <value>Leeftijd</value>
+  </data>
+  <data name="ContactInterest" xml:space="preserve">
+    <value>Interesse</value>
+  </data>
+  <data name="ContactLocation" xml:space="preserve">
+    <value>Locatie</value>
+  </data>
+  <data name="ContactName" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="ContactNewsLetter_Text" xml:space="preserve">
+    <value>Meld U hier aan voor de nieuwsbrief</value>
+  </data>
+  <data name="ContactSignUp" xml:space="preserve">
+    <value>Inschrijven</value>
+  </data>
+  <data name="Contact_Text_travel" xml:space="preserve">
+    <value>Selecteer eerst een locatie op de home pagina of kies een locatie vanuit de menubalk en klik dan op contact.</value>
+  </data>
+  <data name="Contact_Travel_directions" xml:space="preserve">
+    <value>Route beschrijving</value>
+  </data>
 </root>
