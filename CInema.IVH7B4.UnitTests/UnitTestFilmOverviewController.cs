@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using Cinema.IVH7B4.WebUI.Models;
 using Cinema.IVH7B4.Domain.Abstract;
 using System.Web.Mvc;
+using System.Web;
+using System.Web.Routing;
 
 namespace CInema.IVH7B4.UnitTests
 {
@@ -122,5 +124,23 @@ namespace CInema.IVH7B4.UnitTests
             Assert.AreEqual(expected4, result4);
             Assert.AreEqual(expected5, result5);
         }
+
+        [TestMethod]
+        public void TestSearchFilm()
+        {
+            //arrange
+            Mock<FilmVerifier> mockVerifier = new Mock<FilmVerifier>();
+            Mock <FilmOverviewRepository> mockRepo = new Mock<FilmOverviewRepository>();
+            FilmOverviewController controller = new FilmOverviewController(mockRepo.Object);
+            mockRepo.Setup(s => s.getFilmList()).Returns(getFilmTestList());
+            mockVerifier.Setup(s => s.verify("testName", mockRepo.Object.getFilmList())).Returns(mockRepo.Object.getFilmList()[0]);
+
+            //act
+            string expected = "renderFilm";
+            ActionResult result = controller.searchFilm() as ActionResult;
+
+            //assert
+            Assert.AreEqual(expected, result.ToString());
+        }   
     }
 }
