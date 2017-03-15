@@ -6,15 +6,21 @@
 @Html.Partial("~/Views/Shared/_Menubar.cshtml")
 <html>
 <body>
-    <div class="container">
-        <div>
-            <h1 align="center" style="margin-bottom:30px;">@Resources.Global.Ticket_ThanksOrderTitle</h1>
-        </div>
-        <div class="row">
-            <!--Print tickets-->
-            <div class="col-sm-offset-2 col-xs-4">        
-                <button class ="btn btn-success" id="home_button" type="button" onclick="location.href='@Url.Action("PrintTickets","Ticket")'">@Resources.Global.Ticket_PrintTicket</button>         
-            </div>  
+<div class="container">
+    <div>
+        <h1 align="center" style="margin-bottom: 30px;">@Resources.Global.Ticket_ThanksOrderTitle</h1>
+    </div>
+    <div class="row">
+        <!--Print tickets-->
+        @if (Culture == "nl" || Culture == "nl-NL") {
+            <div class="col-sm-offset-2 col-xs-4">
+                <button class="btn btn-success" id="home_button" type="button" onclick="location.href = '@Url.Action("PrintTickets", "Ticket",new {Culture = Culture})'">@Resources.Global.Ticket_PrintTicket</button>
+            </div>
+        } else {
+            <div class="col-sm-offset-2 col-xs-4">
+                <button class="btn btn-success" id="home_button" type="button" onclick="location.href = '@Url.Action("PrintTickets", "Ticket",new {Culture = Culture})'">@Resources.Global.Ticket_PrintTicket</button>
+            </div>
+        }
             <!--Get ticket code--> 
             <div class="col-xs-4">
                 @if (ViewBag.keycode == null)

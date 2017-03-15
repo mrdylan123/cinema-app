@@ -249,6 +249,7 @@
     <Content Include="Views\Payment\Payment.cshtml" />
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\Payment\AfterPay.cshtml" />
+    <Content Include="Views\Ticket\ShowCodeView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

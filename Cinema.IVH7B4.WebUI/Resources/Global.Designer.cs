@@ -887,13 +887,61 @@ namespace Resources {
                 return ResourceManager.GetString("Ticket_ThanksOrderTitle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         public static string Ticket_YourReservationCode {
+            get { return ResourceManager.GetString("Ticket_YourReservationCode", resourceCulture); }
+        }
+
+        /// <summary>
+                    ///   Looks up a localized string similar to .
+                    /// </summary>
+        public static string Current_filmWeek {
             get {
-                return ResourceManager.GetString("Ticket_YourReservationCode", resourceCulture);
+                return ResourceManager.GetString("Current_filmWeek", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Payment_PaymInTheatrhe {
+            get {
+                return ResourceManager.GetString("Payment_PaymInTheatrhe", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Pay_AfterPayConfirm {
+            get {
+                return ResourceManager.GetString("Pay_AfterPayConfirm", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Pay_AfterPayChosetoPay {
+            get {
+                return ResourceManager.GetString("Pay_AfterPayChosetoPay", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Pay_AfterPayOrder {
+            get {
+                return ResourceManager.GetString("Pay_AfterPayOrder", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string CodeViewText {
+            get {
+                return ResourceManager.GetString("CodeViewText", resourceCulture);
             }
         }
     }
