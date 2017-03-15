@@ -1,0 +1,41 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+
+@{
+    ViewBag.Title = "iDeal - Kies uw bank";
+}
+@Html.Partial("~/Views/Shared/_Menubar.cshtml")
+
+<div class="container">
+    <div class="text-center">
+        <h2>iDeal</h2>
+        <h3>@Resources.Global.Payment_PaymentIdealTitle</h3>
+        <hr />
+    </div>
+
+    <div class="row">
+        
+        <div class="col-md-5"></div>
+
+        <div class="col-md-2 text-center">
+            <form method="post" action="@Url.Action("INGPayment", "Payment")">
+                <p class="bankselection">Bank:</p>
+                <select name="searchDay">
+                    <option value="bank1">ING Bank</option>
+                    <option value="bank2">ING Bank</option>
+                    <option value="bank3">ING Bank</option>
+                    <option value="bank4">ING Bank</option>
+                    <option value="bank5">ING Bank</option>
+                    <option value="bank6">ING Bank</option>
+                </select>
+                <br /><br /><br />
+                <button type="submit" class="btn btn-success">@Resources.Global.PinView_CompleteCheckout</button>
+            </form>
+        </div>
+
+        <div class="col-md-5"></div>
+
+    </div>
+
+</div>
+

@@ -3,36 +3,36 @@
 <body>
     <div class="col-xs-5">
 
-        <h2><u>Bestel overzicht</u></h2>
+        <h2><u>@Resources.Global.OrderSummary_OrderView</u></h2>
 
         <div class="order_block">
 
             <p style="text-align:left;">
-                <label class="label_outline_summary">Normaal kaartje:</label> 
-                Aantal: @Model.NormalTicketOrder.Quantity
-                <span style="float:right;">Prijs: €@Model.NormalTicketOrder.GetTotalPrice()</span>
+                <label class="label_outline_summary">@Resources.Global.OrderSummary_NormalTicket:</label> 
+                @Resources.Global.RateOverView_Quantity: @Model.NormalTicketOrder.Quantity
+                <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.NormalTicketOrder.GetTotalPrice()</span>
             </p>
 
             <p style="text-align:left;">
-                <label class="label_outline_summary">Kinder kaartje:</label> 
-                Aantal: @Model.ChildTicketOrder.Quantity
-                <span style="float:right;">Prijs: €@Model.ChildTicketOrder.GetTotalPrice()</span>
+                <label class="label_outline_summary">@Resources.Global.OrderSummary_ChildTicket:</label> 
+                @Resources.Global.RateOverView_Quantity: @Model.ChildTicketOrder.Quantity
+                <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.ChildTicketOrder.GetTotalPrice()</span>
             </p>
 
             <p style="text-align:left;">
-                <label class="label_outline_summary">Student kaartje:</label> 
-                Aantal: @Model.StudentTicketOrder.Quantity
-                <span style="float:right;">Prijs: €@Model.StudentTicketOrder.GetTotalPrice()</span>
+                <label class="label_outline_summary">@Resources.Global.OrderSummary_StudentTicket:</label> 
+                @Resources.Global.RateOverView_Quantity: @Model.StudentTicketOrder.Quantity
+                <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.StudentTicketOrder.GetTotalPrice()</span>
             </p>
 
             <p style="text-align:left;">
-                <label class="label_outline_summary">65+ kaartje:</label> 
-                Aantal: @Model.SeniorTicketOrder.Quantity
-                <span style="float:right;">Prijs: €@Model.SeniorTicketOrder.GetTotalPrice()</span>
+                <label class="label_outline_summary">@Resources.Global.OrderSummary_SeniorTicket:</label> 
+                @Resources.Global.RateOverView_Quantity: @Model.SeniorTicketOrder.Quantity
+                <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.SeniorTicketOrder.GetTotalPrice()</span>
             </p>
 
             <br />
-            <p style="text-align:right;"><b>Totaalprijs: €@Model.GetTotalPriceForAllTickets()</b></p>
+            <p style="text-align:right;"><b>@Resources.Global.OrderSummary_TotalPrice: €@Model.GetTotalPriceForAllTickets()</b></p>
 
         </div>
 

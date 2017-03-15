@@ -1,0 +1,41 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "ING Bankbetaling";
+}
+    <div class="text-center">
+        <img class="img-responsive" style="margin: auto; display: block;" src="http://www.winkeleninbloemendaal.nl/wp-content/uploads/2016/04/ING_Lion_Logo.jpg">
+        <p>@Resources.Global.OrderSummary_TotalPrice: @Model.GetCurrencyString(@Model.GetTotalPriceForAllTickets())</p>
+        <p style="color: red">@ViewBag.Errorpayment</p>
+    </div>    
+
+<div class="text-center">
+    <form method="post" action="@Url.Action("ShowTicketView", "Ticket", Model.PinValue = "4566")'">
+        <table style="margin: 0 auto;">
+            <tr>
+                <td>
+                        
+                    <p>@Resources.Global.ING_Payment_UserName</p>
+                </td>
+                <td>
+                    <input type="text" name="username" minlength="4" maxlength="10"/>
+                </td>
+            </tr>
+                
+            <tr>
+                <td>
+                    <p>@Resources.Global.ING_Payment_Password</p>
+                </td>
+                <td>
+                    <input type="password" name="password" minlength="5" maxlength="15"/>
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <br />
+        <button type="submit" class="btn btn-success">@Resources.Global.SummaryView_Checkout</button>
+    </form>
+</div>
+
+

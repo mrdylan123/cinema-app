@@ -8,19 +8,18 @@
     <link href="~/Content/FilmOverview.css" rel="stylesheet" />
     @Html.Partial("~/Views/Shared/_Menubar.cshtml")
 </head>
-    <body>
+<body>
         <div class="container">
             <div class="row" id="searchSection">
                 <div class="col-xs-5">
-                    <table id="searchTable">
-                        
+                    <table id="searchTable">      
                             <form method="post" action="@Url.Action("searchFilm", "filmOverview")">
                                 <tr>
-                                    <td><label for="search">Zoeken op film:</label></td>
+                                    <td><label for="search">@Resources.Global.FilmOverView_Searchonmovie:</label></td>
                                     </tr>
                                 <tr>
                                     <td><input type="text" name="searchFilm" /></td>
-                                    <td><button type="submit" class="btn btn-success">Zoeken</button></td>
+                                    <td><button type="submit" class="btn btn-success">@Resources.Global.FilmOverView_SearchButton</button></td>
                                 </tr>
                             </form>
                         
@@ -33,40 +32,39 @@
                 <div class="col-xs-4">
                     <table id="datum_search">
                         <tr>
-                            <td colspan="3"><label>Zoeken op datum en tijd:</label></td>
+                            <td colspan="3"><label>@Resources.Global.FilmOverView_Searchondate:</label></td>
                         </tr>
                         <tr>
                             <form method="post" action="@Url.Action("GetFilteredFilms", "Filter")">
-                                <td>Datum:</td>
-                                <td>
-                                    <select name="searchDay">
-                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(0))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(0))</option>
-                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(1))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(1))</option>
-                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(2))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(2))</option>
-                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(3))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(3))</option>
-                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(4))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(4))</option>
-                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(5))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(5))</option>
-                                        <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(6))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(6))</option>
-                                    </select>
-                                </td>
-                                <td>Tijd:</td>
-                                <td>
-                                    <select name="searchTime">
-                                        <option value="13">13:00</option>
-                                        <option value="14">14:00</option>
-                                        <option value="15">15:00</option>
-                                        <option value="16">16:00</option>
-                                        <option value="17">17:00</option>
-                                        <option value="18">18:00</option>
-                                        <option value="19">19:00</option>
-                                        <option value="20">20:00</option>
-                                        <option value="21">21:00</option>
-                                    </select>
-                                </td>
-                                <td><button type="submit" class="btn btn-success">Zoeken</button></td>
-                        </tr>
-                           
-                            </form>
+                            <td>@Resources.Global.FilmOverView_DateString:</td>
+                            <td>
+                                <select name="searchDay">
+                                    <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(0))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(0))</option>
+                                    <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(1))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(1))</option>
+                                    <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(2))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(2))</option>
+                                    <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(3))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(3))</option>
+                                    <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(4))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(4))</option>
+                                    <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(5))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(5))</option>
+                                    <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(6))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(6))</option>
+                                </select>
+                            </td>
+                            <td>Tijd:</td>
+                            <td>
+                                <select name="searchTime">
+                                    <option value="13">13:00</option>
+                                    <option value="14">14:00</option>
+                                    <option value="15">15:00</option>
+                                    <option value="16">16:00</option>
+                                    <option value="17">17:00</option>
+                                    <option value="18">18:00</option>
+                                    <option value="19">19:00</option>
+                                    <option value="20">20:00</option>
+                                    <option value="21">21:00</option>
+                                </select>
+                            </td>
+                            <td><button type="submit" class="btn btn-success">@Resources.Global.FilmOverView_SearchButton</button></td>
+                        </tr>                         
+                        </form>
                     </table>
                 </div>
             </div>
@@ -92,7 +90,7 @@
                             }
                             else if (ViewBag.currentFilm == null && ViewBag.filmList[0].Image == null)
                             {
-                            <h2>Er is geen Afbeelding beschikbaar</h2>
+                            <h2>@Resources.Global.FilmOverView_NoImage</h2>
                             }
                             else
                             {
@@ -105,16 +103,18 @@
                 </div>
                 <div class="row" id="info_row">
                     <div class="col-xs-4" id="beschrijving_block">
-                        <h3>Beschrijving</h3>
+                        <h3>@Resources.Global.FilmOverView_Description</h3>
                         @if (ViewBag.currentFilm == null)
                         {
                             <p>
-                                @if (ViewBag.filmList[0].Description != null)
-                                {
-                                    @ViewBag.filmList[0].Description
-                                }
-                                else
-                                {
+                                @if (ViewBag.filmList[0].Description != null) {
+                                    if (Culture == "nl" || Culture == "nl-NL") {
+                                        @ViewBag.filmList[0].Description
+                                    }
+                                    else {
+                                        @ViewBag.filmList[0].DescriptionEN
+                                    }
+                                } else {
                                     @: Geen informatie beschikbaar
                             }
                             </p>
@@ -134,12 +134,12 @@
                         }
                     </div>
                     <div class="col-xs-3" id="info_block">
-                        <h3>Film informatie</h3>
+                        <h3>@Resources.Global.FilmOverView_FilmInfo</h3>
                         @if (ViewBag.currentFilm == null)
                         {
                             <ul>
                                 <li>
-                                    <label>Duur:</label>
+                                    <label>@Resources.Global.FilmOverView_FilmDuration:</label>
                                     @if (ViewBag.filmList[0].Length != null)
                                     {
                                         @ViewBag.filmList[0].Length
@@ -161,7 +161,7 @@
                                     }
                                 </li>
                                 <li>
-                                    <label>Taal:</label>
+                                    <label>@Resources.Global.FilmOverView_Langague:</label>
                                     @if (ViewBag.filmList[0].Language != null)
                                     {
                                         @ViewBag.filmList[0].Language
@@ -173,7 +173,7 @@
 
                                 </li>
                                 <li>
-                                    <label>Ondertiteling:</label>
+                                    <label>@Resources.Global.FilmOverView_Subs:</label>
                                     @if (ViewBag.filmList[0].LanguageSubs != null || ViewBag.filmList[0].LanguageSubs != "")
                                     {
                                         @ViewBag.filmList[0].LanguageSubs
@@ -187,15 +187,15 @@
                                     <label>3D:</label>
                                     @if (ViewBag.filmList[0].Is3D == true)
                                     {
-                                        @: Ja
+                                        @Resources.Global.FilmOverView_Film3dYes
                                     }
                                     else
                                     {
-                                        @: Nee
+                                        @Resources.Global.FilmOverView_Film3dNo
                                     }
                                 </li>
                                 <li>
-                                    <label>Leeftijd</label>
+                                    <label>@Resources.Global.FilmOverView_Age</label>
                                     @if (ViewBag.filmList[0].Age != null)
                                     {
                                         @ViewBag.filmList[0].Age
@@ -211,7 +211,7 @@
                         {
                             <ul>
                                 <li>
-                                    <label>Duur:</label>
+                                    <label>@Resources.Global.FilmOverView_FilmDuration:</label>
                                     @if (ViewBag.currentFilm.Length != null)
                                     {
                                         @ViewBag.currentFilm.Length
@@ -233,7 +233,7 @@
                                     }
                                 </li>
                                 <li>
-                                    <label>Taal:</label>
+                                    <label>@Resources.Global.FilmOverView_Langague:</label>
                                     @if (ViewBag.currentFilm.Language != null)
                                     {
                                         @ViewBag.currentFilm.Language
@@ -244,7 +244,7 @@
                                     }
                                 </li>
                                 <li>
-                                    <label>Ondertiteling:</label>
+                                    <label>@Resources.Global.FilmOverView_Subs:</label>
                                     @if (ViewBag.currentFilm.LanguageSubs == "")
                                     {
                                         @ViewBag.currentFilm.LanguageSubs
@@ -266,7 +266,7 @@
                                     }
                                 </li>
                                 <li>
-                                    <label>Leeftijd</label>
+                                    <label>@Resources.Global.FilmOverView_Age</label>
                                     @if (ViewBag.currentFilm.Age != null)
                                     {
                                         @ViewBag.currentFilm.Age
@@ -280,7 +280,7 @@
                         }
                     </div>
                     <div class="col-xs-5" id="time_block">
-                        <h3>Kaarten bestellen</h3>
+                        <h3>@Resources.Global.FilmOverView_OrderTickets</h3>
                         @if (ViewBag.datetime != null)
                         {
                             foreach (DateTimeAndID property in ViewBag.datetime)

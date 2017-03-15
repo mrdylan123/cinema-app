@@ -15,6 +15,53 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         public ActionResult ShowTicketView()
         {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
+            // Request input from Credit Card Payment
+            string cardNumber = Request["cardnumber"];
+            string name = Request["name"];
+            string date = Request["date"];
+            string securityNumber = Request["securitynumber"];
+
+            //Request input from ING Bank Payment
+            string username = Request["username"];
+            string password = Request["password"];
+
+            if (cardNumber != null && name != null && date != null && securityNumber != null)
+            {
+                if (cardNumber == "" || name == "" || date == "" || securityNumber == "")
+                {
+                    ViewBag.Errorpayment = "Vul a.u.b. alle velden in.";
+
+                    return RedirectToAction("MasterCardPayment", "Payment", new {error = "Vul a.u.b. alle velden in." });
+                }
+                else
+                {
+                    InsertNewTicketsIntoDatabase(model);
+
+                    // empty seat coord list
+                    model.SeatCoordList.Clear();
+                    TempData["model"] = model;
+                    return View("ShowTicketView");
+                }
+            }
+
+            if (username != null && password != null)
+            {
+                if (username == "" || password == "")
+                {
+                    ViewBag.Errorpayment = "Vul a.u.b. alle velden in.";
+
+                    return RedirectToAction("INGPayment", "Payment", new { error = "Vul a.u.b. beide velden in." });
+                }
+                else
+                {
+                    InsertNewTicketsIntoDatabase(model);
+
+                    // empty seat coord list
+                    model.SeatCoordList.Clear();
+                    TempData["model"] = model;
+                    return View("ShowTicketView");
+                }
+            }
 
             if (model.PinValue == "")
             {
@@ -33,6 +80,8 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             {
                 InsertNewTicketsIntoDatabase(model);
 
+                // empty seat coord list
+                model.SeatCoordList.Clear();
                 TempData["model"] = model;
                 return View("ShowTicketView");
             }
@@ -93,6 +142,30 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             }
             TempData["InsertedTickets"] = tickets;
             context.SaveChanges();
+        }
+
+        public ViewResult AfterPayCode()
+        {
+            CinemaViewModel model = (CinemaViewModel)TempData["model"];
+
+            InsertNewTicketsIntoDatabase(model);
+
+            // empty seat coord list
+            model.SeatCoordList.Clear();
+
+            List<Ticket> InsertedTickets = ((List<Ticket>)TempData["InsertedTickets"]);
+
+            Ticket t = InsertedTickets[0];
+
+            if (t != null)
+            {
+                ViewBag.keycode = t.SecretKey;
+            }
+
+
+            TempData["model"] = model;
+            TempData["InsertedTickets"] = InsertedTickets;
+            return View("ShowCodeView");
         }
     }
 }

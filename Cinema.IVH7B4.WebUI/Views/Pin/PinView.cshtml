@@ -7,14 +7,14 @@
 <body>
     <div class="container">
         <div>
-            <h2 align="center">Betaal Informatie</h2>
+            <h2 align="center">@Resources.Global.PinView_CheckoutInfo</h2>
         </div>
         <div class="col-md-offset-3 col-md-6 col-md-offset-3" style="padding: 20px; border: solid medium black;">
             <table>
                 <tbody>
-                    <tr><td>Film: @Model.SelectedFilm.Name</td></tr>
-                    <tr><td>Aan: Cinema IHV7B4</td></tr>
-                    <tr><td>Totaal bedrag: @Model.GetCurrencyString(@Model.GetTotalPriceForAllTickets())</td></tr>
+                    <tr><td>@Resources.Global.PinView_CheckoutFilm: @Model.SelectedFilm.Name</td></tr>
+                    <tr><td>@Resources.Global.PinView_CheckoutAt: Cinema IHV7B4</td></tr>
+                    <tr><td>@Resources.Global.OrderSummary_TotalPrice: @Model.GetCurrencyString(@Model.GetTotalPriceForAllTickets())</td></tr>
                     <tr>
                         <td>
                             <div class="form-group">
@@ -55,18 +55,18 @@
                 <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
                     <div class="btn-group mr-2" role="group" aria-label="First group">
                         <button type="button" onclick="location.href='@Url.Action("PinViewAddchar", "Pin", new { s = "0"})'">0</button>
-                        <button type="button" onclick="location.href='@Url.Action("PinViewRemoveChar", "Pin")'">terug</button>
+                        <button type="button" onclick="location.href='@Url.Action("PinViewRemoveChar", "Pin")'">@Resources.Global.PinView_BackButton</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-2">
-                <a href="/Summary/SummaryView" class="btn btn-success button_padding"> Transactie afbreken</a>
+                <a href="/Summary/SummaryView" class="btn btn-success button_padding">@Resources.Global.PinView_CancelCheckout</a>
             </div>
             <div class="col-xs-8"></div>
             <div class="col-xs-2 text-right">
-                <button type="button" class="btn btn-success button_padding" onclick="location.href='@Url.Action("ShowTicketView","Ticket")'">Transactie afronden</button>
+                <button type="button" class="btn btn-success button_padding" onclick="location.href='@Url.Action("ShowTicketView","Ticket", Model)'">@Resources.Global.PinView_CompleteCheckout</button>
             </div>
         </div>
     </div>

@@ -23,6 +23,8 @@ namespace Cinema.IVH7B4.Domain.Entities {
 
         public int FilmID { get; set; }
 
+        public bool IsLadiesNight { get; set; }
+
         [ForeignKey("FilmID")]
         public virtual Film Film { get; set; }
 
