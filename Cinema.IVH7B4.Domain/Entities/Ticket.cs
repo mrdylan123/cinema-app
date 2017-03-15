@@ -19,6 +19,7 @@ namespace Cinema.IVH7B4.Domain.Entities {
         public decimal Price { get; set; }
         public int TicketType { get; set; }
         public decimal Discount { get; set; }
+        public bool IsPaid { get; set; }
 
         public int CustomerID { get; set; }
 

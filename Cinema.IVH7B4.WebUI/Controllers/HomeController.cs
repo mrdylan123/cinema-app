@@ -23,7 +23,14 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         public ActionResult SetLocationAndGotoFilmOverview(String locationName)
         {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
-            model.SelectedLocation = model.findLocationByName(locationName);
+            if (locationName == null)
+            {
+                model.SelectedLocation = model.findLocationByName("Breda");
+            }
+            else
+            {
+                model.SelectedLocation = model.findLocationByName(locationName);
+            }
 
             TempData["model"] = model;
             return RedirectToAction("filmOverview","FilmOverview");
