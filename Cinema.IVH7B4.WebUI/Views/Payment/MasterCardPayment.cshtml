@@ -4,8 +4,9 @@
     ViewBag.Title = "Creditcard betaling";
 }
 <div class="text-center">
-    <img class="img-responsive" style="margin: auto; display: block;" src="http://mijndebitcard.nl/wp-content/upload_folders/mijndebitcard.nl/2015/11/mastercard-logo.png"></img>
+    <img class="img-responsive" style="margin: auto; display: block;" src="http://mijndebitcard.nl/wp-content/upload_folders/mijndebitcard.nl/2015/11/mastercard-logo.png">
     <p>@Resources.Global.OrderSummary_TotalPrice: @Model.GetCurrencyString(@Model.GetTotalPriceForAllTickets())</p>
+    <p style="color: red">@ViewBag.Errorpayment</p>
 </div>
 
 <div class="text-center">
@@ -17,7 +18,7 @@
                     <p>@Resources.Global.CreditCard_CartNumber</p>
                 </td>
                 <td>
-                    <input type="text" name="cardnumber" />
+                    <input type="number" name="cardnumber" min="111" max="999"/>
                 </td>
             </tr>
 
@@ -26,7 +27,7 @@
                     <p>@Resources.Global.CreditCard_CartHolder</p>
                 </td>
                 <td>
-                    <input type="text" name="name" />
+                    <input type="text" name="name" minlength="2" maxlength="10"/>
                 </td>
             </tr>
             
@@ -36,7 +37,7 @@
                     <p>@Resources.Global.CreditCard_Cartexpiration</p>
                 </td>
                 <td>
-                    <input type="text" name="date" />
+                    <input type="date" name="date" />
                 </td>
             </tr>
             
@@ -46,7 +47,7 @@
                     <p>@Resources.Global.CreditCard_CartSecurity</p>
                 </td>
                 <td>
-                    <input type="text" name="username" />
+                    <input type="number" name="securitynumber" min="1111111111111111" max="9999999999999999"/>
                 </td>
             </tr>
 
@@ -55,6 +56,5 @@
         <br />
         <button type="submit" class="btn btn-success">@Resources.Global.SummaryView_Checkout</button>
     </form>
-</div>
 </div>
 
