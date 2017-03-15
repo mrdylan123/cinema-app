@@ -301,7 +301,7 @@
     <value>Seatnumber</value>
   </data>
   <data name="SummaryView_FilmTitle" xml:space="preserve">
-    <value>Tittle</value>
+    <value>Title</value>
   </data>
   <data name="SummaryView_Freeseat" xml:space="preserve">
     <value>free seat</value>
@@ -319,10 +319,10 @@
     <value>Expiration date</value>
   </data>
   <data name="CreditCard_CartHolder" xml:space="preserve">
-    <value>Name cartholder</value>
+    <value>Name cardholder</value>
   </data>
   <data name="CreditCard_CartNumber" xml:space="preserve">
-    <value>Cart number</value>
+    <value>Card number</value>
   </data>
   <data name="CreditCard_CartSecurity" xml:space="preserve">
     <value>Security code</value>
@@ -395,5 +395,23 @@
   </data>
   <data name="Contact_Travel_directions" xml:space="preserve">
     <value>Travel directions</value>
+  </data>
+  <data name="Current_filmWeek" xml:space="preserve">
+    <value>Current filmweek</value>
+  </data>
+  <data name="Payment_PaymInTheatrhe" xml:space="preserve">
+    <value>Pay in the theatre</value>
+  </data>
+  <data name="CodeViewText" xml:space="preserve">
+    <value>You can collect your tickets at the theatre 20 minutes before the start of the movie.</value>
+  </data>
+  <data name="Pay_AfterPayChosetoPay" xml:space="preserve">
+    <value>You have chosen to pay in the theatre</value>
+  </data>
+  <data name="Pay_AfterPayConfirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Pay_AfterPayOrder" xml:space="preserve">
+    <value>Your order is</value>
   </data>
 </root>

@@ -22,11 +22,14 @@ namespace Cinema.IVH7B4.WebUI.Models {
         private Font largeFont;
         private Font smallFont;
         private PdfImage image;
+        private bool english;
+        private string culture;
 
-        public PDFGenerator(List<Ticket> tickets, Location loc) {
+        public PDFGenerator(List<Ticket> tickets, Location loc, String Culture) {
             normalFont = FontFactory.GetFont("Segoe UI", 8.0f, BaseColor.BLACK);
             smallFont = FontFactory.GetFont("Segoe UI", 6.0f, BaseColor.BLACK);
             largeFont = FontFactory.GetFont("Segoe UI", 10.0f, BaseColor.BLACK);
+            this.culture = Culture;
 
             doc = new Document(PageSize.A6);
             ms = new MemoryStream();
@@ -50,26 +53,57 @@ namespace Cinema.IVH7B4.WebUI.Models {
                 // add two empty lines
                 AddEmptyLine();
                 AddEmptyLine();
+                if (culture == "nl" || culture == "nl-NL") {
+                    // start ticket info
+                    addText("TicketID: " + t.TicketID);
+                    addText("TicketType: " + GetDutchString(t.TicketType));
+                    addText("Reserveringsnummer: " + t.SecretKey);
+                    AddImage(t.Showing.Film.Image);
+                    String ot = t.Showing.Film.LanguageSubs != "" ? t.Showing.Film.LanguageSubs : "geen";
+                    addText("Film: " + t.Showing.Film.Name + "       " + "Taal: " + t.Showing.Film.Language + "       " +
+                            "Ondertiteling: " + ot);
+                    addText("Leeftijd: " + t.Showing.Film.Age + " jaar en ouder" + "                         " +
+                            "Categorie: " + ((FilmType) t.Showing.Film.FilmType).GetDutchString());
+                    addText("Duur: " + t.Showing.Film.Length + " minuten" + "              " + "3D: " +
+                            (t.Showing.Film.Is3D ? "Ja" : "Nee") + "        "
+                            + "Prijs: " + t.Price.ToString());
 
-                // start ticket info
-                addText("TicketID: " + t.TicketID);
-                addText("TicketType: " + GetDutchString(t.TicketType));
-                addText("Reserveringsnummer: " + t.SecretKey);
-                AddImage(t.Showing.Film.Image);
-                String ot = t.Showing.Film.LanguageSubs != "" ? t.Showing.Film.LanguageSubs : "geen";
-                addText("Film: " + t.Showing.Film.Name + "       " + "Taal: " + t.Showing.Film.Language + "       " + "Ondertiteling: " + ot);
-                addText("Leeftijd: " + t.Showing.Film.Age + " jaar en ouder" + "                         " + "Categorie: " + ((FilmType)t.Showing.Film.FilmType).GetDutchString());
-                addText("Duur: " + t.Showing.Film.Length + " minuten" + "              " + "3D: " + (t.Showing.Film.Is3D ? "Ja" : "Nee") + "        "
-                        + "Prijs: " + t.Price.ToString());
+
+                    /// example: maandag 1 Februari 2017
+                    addText("Datum: " + t.Showing.BeginDateTime.ToString("dddd d MMMM yyyy"), smallFont);
+                    // example: 23:45
+                    addText(
+                        "Begintijd: " + t.Showing.BeginDateTime.ToString("HH:mm") + " - " + "Eindtijd: " +
+                        t.Showing.EndDateTime.ToString("HH:mm"), smallFont);
+                    addText("Locatie: " + loc.Name + "   " + "Zaal: " + t.Seat.Room.RoomNumber, smallFont);
+                    addText("Stoelnummer: " + t.Seat.seatNo + "   " + "Rijnummer:" + t.Seat.RowY, smallFont);
+                }
+                else {
+                    // start ticket info
+                    addText("TicketID: " + t.TicketID);
+                    addText("TicketType: " + GetDutchString(t.TicketType));
+                    addText("ReservationKey: " + t.SecretKey);
+                    AddImage(t.Showing.Film.Image);
+                    String ot = t.Showing.Film.LanguageSubs != "" ? t.Showing.Film.LanguageSubs : "geen";
+                    addText("Film: " + t.Showing.Film.Name + "       " + "Taal: " + t.Showing.Film.Language + "       " +
+                            "Subtitles: " + ot);
+                    addText("Age: " + t.Showing.Film.Age + " jaar en ouder" + "                         " +
+                            "Category: " + ((FilmType)t.Showing.Film.FilmType).GetDutchString());
+                    addText("Time: " + t.Showing.Film.Length + " minutes" + "              " + "3D: " +
+                            (t.Showing.Film.Is3D ? "yes" : "no") + "        "
+                            + "price: " + t.Price.ToString());
 
 
-                /// example: maandag 1 Februari 2017
-                addText("Datum: " + t.Showing.BeginDateTime.ToString("dddd d MMMM yyyy"), smallFont);
-                // example: 23:45
-                addText("Begintijd: " + t.Showing.BeginDateTime.ToString("HH:mm") + " - " + "Eindtijd: " + t.Showing.EndDateTime.ToString("HH:mm"), smallFont);
-                addText("Locatie: " + loc.Name + "   " + "Zaal: " + t.Seat.Room.RoomNumber, smallFont);
-                addText("Stoelnummer: " + t.Seat.seatNo + "   " + "Rijnummer:" + t.Seat.RowY, smallFont);
-            }
+                    /// example: maandag 1 Februari 2017
+                    addText("Date: " + t.Showing.BeginDateTime.ToString("dddd d MMMM yyyy"), smallFont);
+                    // example: 23:45
+                    addText(
+                        "Begintime: " + t.Showing.BeginDateTime.ToString("HH:mm") + " - " + "Endtime: " +
+                        t.Showing.EndDateTime.ToString("HH:mm"), smallFont);
+                    addText("Location: " + loc.Name + "   " + "Room: " + t.Seat.Room.RoomNumber, smallFont);
+                    addText("Seatnumber: " + t.Seat.seatNo + "   " + "Rownumber:" + t.Seat.RowY, smallFont);
+                }
+    }
 
             doc.Close();
             writer.Close();
@@ -110,10 +144,10 @@ namespace Cinema.IVH7B4.WebUI.Models {
 
         public static String GetDutchString(int ticketType) {
             switch ((TicketType)ticketType) {
-                case TicketType.NormalTicket: return "Normaal"; // 0
-                case TicketType.SeniorTicket: return "65+"; // 1
-                case TicketType.ChildTicket: return "Kind"; // 2
-                case TicketType.StudentTicket: return "Student"; // 3
+                case TicketType.NormalTicket: return Resources.Global.OrderSummary_NormalTicket; // 0
+                case TicketType.SeniorTicket: return Resources.Global.OrderSummary_SeniorTicket; // 1
+                case TicketType.ChildTicket: return Resources.Global.OrderSummary_ChildTicket; // 2
+                case TicketType.StudentTicket: return Resources.Global.OrderSummary_StudentTicket; // 3
                 case TicketType.PopcornTicket: return "Popcorn arrangement"; //4
                 case TicketType.LadiesTicket: return "Ladies night"; //5
 

@@ -396,4 +396,19 @@
   <data name="Contact_Travel_directions" xml:space="preserve">
     <value />
   </data>
+  <data name="Current_filmWeek" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Payment_PaymInTheatrhe" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Pay_AfterPayChosetoPay" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Pay_AfterPayConfirm" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Pay_AfterPayOrder" xml:space="preserve">
+    <value />
+  </data>
 </root>

@@ -396,4 +396,22 @@
   <data name="Contact_Travel_directions" xml:space="preserve">
     <value>Route beschrijving</value>
   </data>
+  <data name="Current_filmWeek" xml:space="preserve">
+    <value>Huidige filmweek</value>
+  </data>
+  <data name="Payment_PaymInTheatrhe" xml:space="preserve">
+    <value>Betalen in de bioscoop</value>
+  </data>
+  <data name="CodeViewText" xml:space="preserve">
+    <value>U kunt uw ticket bij de bioscoop tot 20 minuten voor aanvang van de film afrekenen en ophalen met de volgende code</value>
+  </data>
+  <data name="Pay_AfterPayChosetoPay" xml:space="preserve">
+    <value>U heeft ervoor gekozen achteraf te betalen.</value>
+  </data>
+  <data name="Pay_AfterPayConfirm" xml:space="preserve">
+    <value>Bevestigen</value>
+  </data>
+  <data name="Pay_AfterPayOrder" xml:space="preserve">
+    <value>Uw bestelling bedraagt</value>
+  </data>
 </root>

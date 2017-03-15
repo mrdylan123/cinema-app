@@ -101,30 +101,30 @@ namespace Cinema.IVH7B4.WebUI.Models
                     switch (dayWeek)
                     {
                         case "Monday":
-                            dayWeek = "Maandag";
+                            dayWeek = Resources.Global.FilmOverView_WeekDayMonday;
                             break;
                         case "Tuesday":
-                            dayWeek = "Dinsdag";
+                            dayWeek = Resources.Global.FilmOverView_WeekDayTuesday;
                             break;
                         case "Wednesday":
-                            dayWeek = "Woensdag";
+                            dayWeek = Resources.Global.FilmOverView_WeekDayWednesday;
                             break;
                         case "Thursday":
-                            dayWeek = "Donderdag";
+                            dayWeek = Resources.Global.FilmOverView_WeekDayThursday;
                             break;
                         case "Friday":
-                            dayWeek = "Vrijdag";
+                            dayWeek = Resources.Global.FilmOverView_WeekDayFriday;
                             break;
                         case "Saturday":
-                            dayWeek = "Zaterdag";
+                            dayWeek = Resources.Global.FilmOverView_WeekDaySaterday;
                             break;
                         case "Sunday":
-                            dayWeek = "Zondag";
+                            dayWeek = Resources.Global.FilmOverView_WeekDaySunday;
                             break;
                     }
 
                     dateTimeStrings.Add(dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
-                                " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd + " " + "Zaalnummer: " + showing.Room.RoomNumber);
+                                " " + " " + Resources.Global.FilmOverView_FilmBeginTime+ " " + hourBegin + ":" + minutesBegin + " " + " " + " " + Resources.Global.FilmOverView_FilmEndTime + " " + hourEnd + ":" + minutesEnd + " " + Resources.Global.FilmOverView_FilmRoom+" " + showing.Room.RoomNumber);
                 }
             }
 
