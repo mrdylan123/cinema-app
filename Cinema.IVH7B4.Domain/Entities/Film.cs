@@ -31,6 +31,7 @@ namespace Cinema.IVH7B4.Domain.Entities {
         public string IMDB { get; set; }
         public string Website { get; set; }
         public string Director { get; set; }
+        public string DescriptionEN { get; set; }
 
         public int LocationID { get; set; }
 

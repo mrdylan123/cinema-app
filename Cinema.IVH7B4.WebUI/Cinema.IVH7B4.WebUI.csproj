@@ -169,16 +169,16 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\FilmOverviewController.cs" />
     <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\NewsletterController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\PinController.cs" />
     <Compile Include="Controllers\RateController.cs" />
-    <Compile Include="Controllers\RouteMapController.cs" />
     <Compile Include="Controllers\SummaryController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Controllers\UpcomingFilmController.cs" />
@@ -195,6 +195,7 @@
     <Compile Include="Models\FilmVerifier.cs" />
     <Compile Include="Models\FilterLogic.cs" />
     <Compile Include="Models\LadiesTicketOrder.cs" />
+    <Compile Include="Models\LocalizationAttribute.cs" />
     <Compile Include="Models\NormalTicketOrder.cs" />
     <Compile Include="Models\PDFGenerator.cs" />
     <Compile Include="Models\PincodeViewModel.cs" />
@@ -210,6 +211,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Global.Designer.cs" />
+    <Compile Include="Resources\Global.en.Designer.cs" />
+    <Compile Include="Resources\Global.nl.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config">
@@ -238,16 +242,12 @@
     <Content Include="Views\Shared\_Menubar.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Filter\FilteredFilms.cshtml" />
-    <Content Include="Views\RouteMap\RouteMap.cshtml" />
-    <Content Include="Views\Newsletter\ShowNewsletter.cshtml" />
-    <Content Include="Views\Newsletter\ShowRegistrationThanks.cshtml" />
     <Content Include="Views\Payment\BankSelection.cshtml" />
     <Content Include="Views\Payment\CreditCardPayment.cshtml" />
     <Content Include="Views\Payment\INGPayment.cshtml" />
     <Content Include="Views\Payment\MasterCardPayment.cshtml" />
     <Content Include="Views\Payment\Payment.cshtml" />
-    <Content Include="Views\Payment\AfterPay.cshtml" />
-    <Content Include="Views\Ticket\ShowCodeView.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -269,6 +269,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Global.en.resx" />
+    <EmbeddedResource Include="Resources\Global.nl.resx" />
+    <EmbeddedResource Include="Resources\Global.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

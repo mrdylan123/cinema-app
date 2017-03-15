@@ -8,31 +8,34 @@
 <body>
     <div class="container">
         <div>
-            <h1 align="center" style="margin-bottom:30px;">Bedankt voor uw bestelling!</h1>
+            <h1 align="center" style="margin-bottom:30px;">@Resources.Global.Ticket_ThanksOrderTitle</h1>
         </div>
         <div class="row">
             <!--Print tickets-->
             <div class="col-sm-offset-2 col-xs-4">        
-                <button class ="btn btn-success" id="home_button" type="button" onclick="location.href='@Url.Action("PrintTickets","Ticket")'">Print Kaartjes</button>         
+                <button class ="btn btn-success" id="home_button" type="button" onclick="location.href='@Url.Action("PrintTickets","Ticket")'">@Resources.Global.Ticket_PrintTicket</button>         
             </div>  
             <!--Get ticket code--> 
             <div class="col-xs-4">
                 @if (ViewBag.keycode == null)
                 {
-                    <button class="btn btn-success" id="home_button" type="button" onclick="location.href='@Url.Action("ShowCode","Ticket")'">Laat reservingcode zien</button>
+                    <button class="btn btn-success" id="home_button" type="button" onclick="location.href='@Url.Action("ShowCode","Ticket")'">@Resources.Global.Ticket_PrintCode</button>
                 }
                 else
                 {
-                    <p>De reservingscode is @ViewBag.keycode</p>
+                    <p>@Resources.Global.Ticket_YourReservationCode @ViewBag.keycode</p>
                 }
-                <p class="text-center" style="margin-top:10px;">Met deze code kunt U het kaartje bij de bioscoop uitprinten.</p>
+                <p class="text-center" style="margin-top:10px;">@Resources.Global.Ticket_ThanksOrderTitle</p>
             </div>     
         </div>
 
         <div class="row">
             <div class="col-xs-12 text-center">
-                
-                <a href="/" class="btn btn-success" style="margin-top:150px;">Terug naar home</a>
+                @if (Culture == "nl" || Culture == "nl-NL") {
+                    <a href="/" class="btn btn-success" style="margin-top:150px;">@Resources.Global.Ticket_backtoHome</a>
+                } else {
+                    <a href="/en" class="btn btn-success" style="margin-top:150px;">@Resources.Global.Ticket_backtoHome</a>
+                }
             </div>
         </div>
    </div> 

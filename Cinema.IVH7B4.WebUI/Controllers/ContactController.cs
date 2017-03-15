@@ -5,15 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using Cinema.IVH7B4.Domain.Concrete;
 using Cinema.IVH7B4.Domain.Entities;
+using Cinema.IVH7B4.WebUI.Models;
 
 namespace Cinema.IVH7B4.WebUI.Controllers
 {
-    public class NewsletterController : Controller
+    public class ContactController : Controller
     {
-        // GET: Newsletter
-        public ActionResult ShowNewsletter()
+        // GET: Contact
+        public ActionResult Contact()
         {
-            return View("ShowNewsletter");
+            CinemaViewModel model = (CinemaViewModel)TempData["model"];
+
+            TempData["model"] = model;
+            return View("Contact", model);
         }
 
         [HttpPost]
@@ -39,14 +43,15 @@ namespace Cinema.IVH7B4.WebUI.Controllers
                 });
 
                 context.SaveChanges();
-                return View("ShowRegistrationThanks");
+                ModelState.AddModelError("", "U bent ingeschreven voor de nieuwsbrief!");
+                return View("Contact");
             }
             else
             {
                 ModelState.AddModelError("", "Email bestaat al");
-                return View("ShowNewsletter");
+                return View("Contact");
             }
-            
+
         }
     }
 }

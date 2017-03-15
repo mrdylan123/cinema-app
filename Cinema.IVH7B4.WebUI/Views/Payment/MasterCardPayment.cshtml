@@ -5,53 +5,56 @@
 }
 <div class="text-center">
     <img class="img-responsive" style="margin: auto; display: block;" src="http://mijndebitcard.nl/wp-content/upload_folders/mijndebitcard.nl/2015/11/mastercard-logo.png"></img>
-    <p>Totaalprijs: @Model.GetCurrencyString(@Model.GetTotalPriceForAllTickets())</p>
-    <p>Alle velden zijn verplicht.</p>
-    <p style="color: red">@ViewBag.Errorpayment</p>
+    <p>@Resources.Global.OrderSummary_TotalPrice: @Model.GetCurrencyString(@Model.GetTotalPriceForAllTickets())</p>
 </div>
 
 <div class="text-center">
-    <form method="post" action="@Url.Action("ShowTicketView", "Ticket")">
+    <form method="post" action="@Url.Action("ShowTicketView", "Ticket", Model.PinValue = "6859")">
         <table style="margin: 0 auto;">
             <tr>
                 <td>
-                    <p>Kaartnummer</p>
+
+                    <p>@Resources.Global.CreditCard_CartNumber</p>
                 </td>
                 <td>
-                    <input type="number" name="cardnumber" min="111" max="999"/>
+                    <input type="text" name="cardnumber" />
                 </td>
             </tr>
 
             <tr>
                 <td>
-                    <p>Naam kaarthouder</p>
+                    <p>@Resources.Global.CreditCard_CartHolder</p>
                 </td>
                 <td>
-                    <input type="text" name="name" maxlength="20" />
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-                    <p>Vervaldatum</p>
-                </td>
-                <td>
-                    <input type="date" name="date" />
+                    <input type="text" name="name" />
                 </td>
             </tr>
             
             <tr>
                 <td>
-                    <p>Beveiligingscode</p>
+
+                    <p>@Resources.Global.CreditCard_Cartexpiration</p>
                 </td>
                 <td>
-                    <input type="number" name="securitynumber" min="1111111111111111" max="9999999999999999"/>
+                    <input type="text" name="date" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+
+                    <p>@Resources.Global.CreditCard_CartSecurity</p>
+                </td>
+                <td>
+                    <input type="text" name="username" />
                 </td>
             </tr>
 
         </table>
         <br />
         <br />
-        <button type="submit" class="btn btn-success">Afrekenen</button>
+        <button type="submit" class="btn btn-success">@Resources.Global.SummaryView_Checkout</button>
     </form>
 </div>
+</div>
+

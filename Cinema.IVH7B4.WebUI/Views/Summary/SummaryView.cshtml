@@ -11,76 +11,71 @@
 <body>
     <div class="container">
         <div class="row row_padding">
-            @Html.Partial("~/Views/Shared/_FilmImgTitle.cshtml")      
+            @Html.Partial("~/Views/Shared/_FilmImgTitle.cshtml")
             <div class="col-xs-4">
-            
-                <h2><u>Film Informatie</u></h2>
+
+                <h2><u>@Resources.Global.SummaryView_FilmInformation</u></h2>
 
                 <div class="order_block">
-                    <p>Titel: @Model.SelectedShowing.Film.Name</p>
-                    <p>Zaal: @Model.SelectedShowing.Room.RoomNumber</p>
-                    <p>Rijnummer: @Model.GetSeatsRow()</p>
-                    <p>Stoelnummer: @Model.getSeatNumbersString()</p>
-                    <p>Datum: @Model.SelectedShowing.BeginDateTime.ToString("dddd d MMMM yyyy")</p>
-                    <p>Begintijd: @Model.SelectedShowing.BeginDateTime.ToString("HH:mm")</p>
-                    <p>Eindtijd: @Model.SelectedShowing.EndDateTime.ToString("HH:mm")</p>
+                    <p>@Resources.Global.SummaryView_FilmTitle: @Model.SelectedShowing.Film.Name</p>
+                    <p>@Resources.Global.FilmOverView_FilmRoom: @Model.SelectedShowing.Room.RoomNumber</p>
+                    <p>@Resources.Global.SummaryView_FilmRowNumber: @Model.GetSeatsRow()</p>
+                    <p>@Resources.Global.SummaryView_FilmSeatNumber: @Model.getSeatNumbersString()</p>
+                    <p>@Resources.Global.SummaryView_FilmDate: @Model.SelectedShowing.BeginDateTime.ToString("dddd d MMMM yyyy")</p>
+                    <p>@Resources.Global.FilmOverView_FilmBeginTime: @Model.SelectedShowing.BeginDateTime.ToString("HH:mm")</p>
+                    <p>@Resources.Global.FilmOverView_FilmEndTime: @Model.SelectedShowing.EndDateTime.ToString("HH:mm")</p>
                 </div>
             </div>
             <div class="col-xs-4 text-center" style="margin-top:50px;">
-            <p>O = vrije stoel, X = bezet, V = is geselecteerd</p>
+                <p>O = @Resources.Global.SummaryView_Freeseat, X = @Resources.Global.SummaryView_Takenseat, V = @Resources.Global.SummaryView_Selectedseat</p>
 
-            @{
+                @{
 
 
-                int x = 0, y = 0;
-                foreach (List<AutomaticSeatSelection.OccupyType> rowList in Model.SeatSelectionGUI)
-                {
+                    int x = 0, y = 0;
+                    foreach (List<AutomaticSeatSelection.OccupyType> rowList in Model.SeatSelectionGUI) {
 
-                    // null means empty row, to seperate front and back rows 
-                    if (rowList == null)
-                    {
-                    <p></p>
-                        continue;
-                    }
-
-                    String str = "";
-
-                    foreach (AutomaticSeatSelection.OccupyType ot in rowList)
-                    {
-
-                        switch (ot)
-                        {
-                            case AutomaticSeatSelection.OccupyType.Occupied: <p class="clr_occupied">X</p>; break;
-                            case AutomaticSeatSelection.OccupyType.Selected:
-                                {
-                                    <p class="clr_selected">V</p>; 
-                                    break;
-                                }
-                            case AutomaticSeatSelection.OccupyType.Unoccupied: <a href="#" onclick="location.href='@Url.Action("SelectSeat", "Summary", new {y = @y, x = @x})'">
-                                <p class="clr_unoccupied">O</p></a>; break;
-                            default: str += "ERROR"; break;
+                        // null means empty row, to seperate front and back rows
+                        if (rowList == null) {
+                            <p></p>
+                            continue;
                         }
-                        x++;
+
+                        String str = "";
+
+                        foreach (AutomaticSeatSelection.OccupyType ot in rowList) {
+
+                            switch (ot) {
+                                case AutomaticSeatSelection.OccupyType.Occupied: <p class="clr_occupied">X</p>; break;
+                                case AutomaticSeatSelection.OccupyType.Selected: {
+                                        <p class="clr_selected">V</p>;
+                                        break;
+                                    }
+                                case AutomaticSeatSelection.OccupyType.Unoccupied: <a href="#" onclick="location.href='@Url.Action("SelectSeat", "Summary", new {y = @y, x = @x})'">
+                    <p class="clr_unoccupied">O</p>
+                </a>; break;
+                                default: str += "ERROR"; break;
+                            }
+                            x++;
+                        }
+                        y++;
+                        x = 0;
+                        <p></p>
                     }
-                    y++;
-                    x = 0;
-                    <p></p>
-                    }
-                    }
-</div>
+                }
+            </div>
 
             @Html.Partial("~/Views/Shared/_OrderSummary.cshtml")
-       
+
         </div>
 
         <div class="row text-right button_padding">
 
             <div class="col-xs-10"></div>
             <div class="col-xs-2">
-                <a href="/Payment/Payment" class="btn btn-success"> Afrekenen ></a>
+                <a href='@Url.Action("Payment", "Payment")' , class="btn btn-success"> @Resources.Global.SummaryView_Checkout></a>
             </div>
-        </div>      
+        </div>
     </div>
 </body>
 </html>
-
