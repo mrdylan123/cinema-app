@@ -33,6 +33,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             {
                 model = new CinemaViewModel();
             }
+            
             TempData["model"] = model;
 
 
@@ -52,6 +53,8 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             {
                 ViewBag.Errorpayment = error;
             }
+
+            model.isPaid = true;
 
             TempData["model"] = model;
             return View("INGPayment", model);
@@ -81,6 +84,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             }
             TempData["model"] = model;
 
+            model.isPaid = false;
 
             return View("AfterPay", model);
         }
@@ -98,6 +102,8 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             {
                 ViewBag.Errorpayment = error;
             }
+
+            model.isPaid = true;
 
             TempData["model"] = model;
             return View("MasterCardPayment", model);

@@ -15,6 +15,7 @@ namespace Cinema.IVH7B4.WebUI.Models {
         public Showing SelectedShowing;
         public List<SeatCoord> SeatCoordList;
         private String pinValue;
+        public bool isPaid;
         public string WrongPingValue { get; set; }
         public NormalTicketOrder NormalTicketOrder;
         public ChildTicketOrder ChildTicketOrder;
@@ -46,6 +47,12 @@ namespace Cinema.IVH7B4.WebUI.Models {
                     pinValue = value;
                 }
             }
+        }
+
+        public bool IsPaid
+        {
+            get { return isPaid; }
+            set { isPaid = value; }
         }
 
         public int GetSeatsRow()
@@ -193,10 +200,12 @@ namespace Cinema.IVH7B4.WebUI.Models {
                     Price = 0.0m,
                     //Seat = seatsList.Find(s => s.seatNo == sc.GetSeatNumber(SelectedShowing.Room.Layout)),
                     SeatID = seatsList.Where(s => s.RowX == sc.X && s.RowY == s.RowY).Last().SeatID,
-                    SecretKey = secretKey, // TODO
+                    SecretKey = secretKey,
                     TicketType = (int)TicketType.InvalidTicket,
                     //Showing = SelectedShowing,
-                    ShowingID = SelectedShowing.ShowingID
+                    ShowingID = SelectedShowing.ShowingID,
+                    //Check if this has been reached by MasterCard or iDeal -> isPaid = true, else false
+                    IsPaid = this.isPaid
                 };
                 list.Add(ticket);
 
