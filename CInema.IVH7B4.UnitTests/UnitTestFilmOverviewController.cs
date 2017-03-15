@@ -88,5 +88,39 @@ namespace CInema.IVH7B4.UnitTests
             Assert.AreEqual(expected1, result1);
             Assert.AreEqual(expected2, result2);
         }
+
+        [TestMethod]
+        public void TestRenderFilm()
+        {
+            //arrange
+            Mock<IFilmOverviewRepository> mockRepo = new Mock<IFilmOverviewRepository>();
+            FilmOverviewController controller = new FilmOverviewController(mockRepo.Object);
+            mockRepo.Setup(s => s.getFilmList()).Returns(getFilmTestList());
+            mockRepo.Setup(s => s.getShowingList()).Returns(getTestShowingsList());
+            mockRepo.Setup(s => s.convertDateTime(1)).Returns(new List<string> { "testString"});
+
+            //act
+            string expected = "filmOverview";
+            ViewResult result = controller.renderFilm(1) as ViewResult;
+
+            string expected2 = "testName";
+            string result2 = controller.ViewBag.currentFilm.Name;
+
+            string expected3 = "Zaterdag 11/3/2017   Begintijd: 22:40   Eindtijd: 23:40 Zaalnummer: 5";
+            string result3 = controller.ViewBag.firstDateTime[0];
+
+            int expected4 = 1;
+            int result4 = controller.ViewBag.filmList.Count;
+
+            string expected5 = "testString";
+            string result5 = controller.ViewBag.dateTime[0].str;
+
+            //assert
+            Assert.AreEqual(expected, result.ViewName);
+            Assert.AreEqual(expected2, result2);
+            Assert.AreEqual(expected3, result3);
+            Assert.AreEqual(expected4, result4);
+            Assert.AreEqual(expected5, result5);
+        }
     }
 }
