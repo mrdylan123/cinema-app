@@ -944,5 +944,23 @@ namespace Resources {
                 return ResourceManager.GetString("CodeViewText", resourceCulture);
             }
         }
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string GenreAdventure {
+            get {
+                return ResourceManager.GetString("GenreAdventure", resourceCulture);
+            }
+        }
+        public static string GenreAnimation {
+            get {
+                return ResourceManager.GetString("GenreAnimation", resourceCulture);
+            }
+        }
+        public static string GenreRomance {
+            get {
+                return ResourceManager.GetString("GenreRomance", resourceCulture);
+            }
+        }
     }
 }
