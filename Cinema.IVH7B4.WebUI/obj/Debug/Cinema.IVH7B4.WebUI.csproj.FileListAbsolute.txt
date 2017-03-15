@@ -130,6 +130,12 @@ C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.dll
 C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.pdb
 C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Properties.Resources.resources
 C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.csproj.GenerateResource.Cache
+C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.csprojResolveAssemblyReference.cache
+C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Properties.Resources.resources
+C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.csproj.GenerateResource.Cache
+C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Resources.Global.resources
+C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Resources.Global.en.resources
+C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Resources.Global.nl.resources
 C:\dev\Cinema.IVH7B4.WebUI\bin\ApplicationInsights.config
 C:\dev\Cinema.IVH7B4.WebUI\bin\roslyn\csc.exe
 C:\dev\Cinema.IVH7B4.WebUI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -195,12 +201,6 @@ C:\dev\Cinema.IVH7B4.WebUI\bin\System.Web.Webpages.Deployment.xml
 C:\dev\Cinema.IVH7B4.WebUI\bin\System.Web.Webpages.Razor.xml
 C:\dev\Cinema.IVH7B4.WebUI\bin\System.Web.Helpers.xml
 C:\dev\Cinema.IVH7B4.WebUI\bin\System.Web.Mvc.xml
-C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.csprojResolveAssemblyReference.cache
-C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Properties.Resources.resources
-C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Resources.Global.resources
-C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Resources.Global.en.resources
-C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Resources.Global.nl.resources
-C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.csproj.GenerateResource.Cache
 C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\en\Cinema.IVH7B4.WebUI.resources.dll
 C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\nl\Cinema.IVH7B4.WebUI.resources.dll
 C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.dll

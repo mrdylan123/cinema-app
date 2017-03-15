@@ -105,6 +105,7 @@ C:\Git\CInema.IVH7B4.UnitTests\bin\Debug\itextsharp.xml
 C:\Git\CInema.IVH7B4.UnitTests\obj\Debug\Cinema.IVH7B4.UnitTests.csprojResolveAssemblyReference.cache
 C:\Git\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.dll
 C:\Git\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.pdb
+C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\Cinema.IVH7B4.UnitTests.csprojResolveAssemblyReference.cache
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\ApplicationInsights.config
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\csc.exe
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -158,6 +159,5 @@ C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\System.Web.WebPages.Razor.xml
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\itextsharp.xml
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\en\Cinema.IVH7B4.WebUI.resources.dll
 C:\dev\CInema.IVH7B4.UnitTests\bin\Debug\nl\Cinema.IVH7B4.WebUI.resources.dll
-C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\Cinema.IVH7B4.UnitTests.csprojResolveAssemblyReference.cache
 C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.dll
 C:\dev\CInema.IVH7B4.UnitTests\obj\Debug\CInema.IVH7B4.UnitTests.pdb
