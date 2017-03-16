@@ -10,6 +10,7 @@ namespace Cinema.IVH7B4.WebUI.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using System.Globalization;
 
     public static class NinjectWebCommon 
     {
@@ -23,6 +24,7 @@ namespace Cinema.IVH7B4.WebUI.App_Start
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
             bootstrapper.Initialize(CreateKernel);
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new CultureInfo("nl-NL");
         }
         
         /// <summary>
