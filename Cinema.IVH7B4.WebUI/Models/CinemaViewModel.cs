@@ -267,8 +267,7 @@ namespace Cinema.IVH7B4.WebUI.Models {
             Random rnd3 = new Random(Guid.NewGuid().GetHashCode());
             Random rnd4 = new Random(Guid.NewGuid().GetHashCode());
 
-            return rnd1.Next(0, 999999).ToString() + rnd2.Next(0, 999999).ToString()
-                + rnd3.Next(0, 999999).ToString() + rnd4.Next(0, 999999).ToString();
+            return rnd1.Next(10000, 99999).ToString() + rnd2.Next(10000, 99999).ToString();
         }
 
         public void PinRemoveChar()
