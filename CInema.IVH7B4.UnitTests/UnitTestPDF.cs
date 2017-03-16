@@ -17,7 +17,7 @@ namespace CInema.IVH7B4.UnitTests {
 
             Location loc = new Location();
 
-            PDFGenerator generator = new PDFGenerator(tickets,loc);
+            PDFGenerator generator = new PDFGenerator(tickets,loc,"nl");
                 var result = generator.Write(tickets, loc);
         }
     }

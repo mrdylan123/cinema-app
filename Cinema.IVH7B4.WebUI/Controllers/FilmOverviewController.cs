@@ -28,9 +28,11 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             var DateTimeAndIDList = new List<DateTimeAndID>();
 
             int i = 0;
-            foreach (string s in Models.FilmOverviewLogic.convertDateTimeFirstFilm(repo.getFilmList(), repo.getShowingList())) {
+            foreach (string s in Models.FilmOverviewLogic.convertDateTimeFirstFilm(repo.getFilmList(), repo.getShowingList()))
+            {
 
-                DateTimeAndIDList.Add(new DateTimeAndID() {
+                DateTimeAndIDList.Add(new DateTimeAndID()
+                {
                     str = s,
                     index = i
                 });
@@ -53,19 +55,21 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             CinemaViewModel model;
             model = (CinemaViewModel)TempData["model"];
 
-            if (model ==  null)
+            if (model == null)
             {
                 model = new CinemaViewModel();
             }
 
             List<Film> filmList = repo.getFilmList();
             ViewBag.currentFilm = FilmOverviewLogic.renderFilm(filmID, filmList);
-            ViewBag.firstDateTime = FilmOverviewLogic.convertDateTimeFirstFilm(filmList, repo.getShowingList()); 
+            ViewBag.firstDateTime = FilmOverviewLogic.convertDateTimeFirstFilm(filmList, repo.getShowingList());
 
             ViewBag.filmList = repo.getFilmList();
             var foundFilm = (filmList.ToEnumerable().Where(f => f.FilmID == filmID));
-            foreach (Film f in foundFilm) {
-                if (f.Image != null) {
+            foreach (Film f in foundFilm)
+            {
+                if (f.Image != null)
+                {
                     ViewBag.image = @"data:image/jpg;base64," +
                                     Convert.ToBase64String(Models.FilmOverviewLogic.renderFilm(filmID, filmList).Image);
                 }
@@ -75,7 +79,8 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             if (filmID == -1)
             {
                 ViewBag.isNull = "GEEN RESULTATEN GEVONDEN";
-            } else
+            }
+            else
             {
                 ViewBag.isNull = "";
             }
@@ -84,7 +89,8 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             foreach (string s in repo.convertDateTime(filmID))
             {
 
-                DateTimeAndIDList.Add(new DateTimeAndID() {
+                DateTimeAndIDList.Add(new DateTimeAndID()
+                {
                     str = s,
                     index = i
                 });
@@ -113,15 +119,17 @@ namespace Cinema.IVH7B4.WebUI.Controllers
 
                 //andere controller aanroepen
                 return RedirectToAction("renderFilm", new { filmID = searchResult.FilmID });
-            } else
+            }
+            else
             {
                 return RedirectToAction("renderFilm", new { filmID = -1 });
             }
-            
+
         }
 
         [HttpGet]
-        public ActionResult SelectShowing(int index) {
+        public ActionResult SelectShowing(int index)
+        {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
             var Showing = repo.getShowingbyId(model.SelectedFilm.FilmID)[index];
 
@@ -132,12 +140,14 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             return RedirectToAction("RateOverView", "Rate");
         }
 
-        private void SetModelStuff(CinemaViewModel model, Film f) {
+        private void SetModelStuff(CinemaViewModel model, Film f)
+        {
             if (model != null)
             {
                 model.SelectedFilm = f;
-               // model.SelectedShowing = repo.getShowingList().Where(s => s.FilmID == model.SelectedFilm.FilmID && s.BeginDateTime > DateTime.Now).OrderBy(s => s.BeginDateTime).First();
-            } else
+                // model.SelectedShowing = repo.getShowingList().Where(s => s.FilmID == model.SelectedFilm.FilmID && s.BeginDateTime > DateTime.Now).OrderBy(s => s.BeginDateTime).First();
+            }
+            else
             {
                 model = new CinemaViewModel();
                 model.SelectedFilm = f;

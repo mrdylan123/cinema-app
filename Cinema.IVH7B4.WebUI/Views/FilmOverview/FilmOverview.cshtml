@@ -74,10 +74,13 @@
                         <ul id="film_list">
                             @foreach (var property in ViewBag.filmList)
                             {
-                                <li>
-                                    <a id="filmLink" href="@Url.Action("renderFilm", "filmOverview",
-                                        new { filmID = property.FilmID })">@property.Name</a>
+                                <a id="filmLink" href="@Url.Action("renderFilm", "filmOverview",
+                                        new { filmID = property.FilmID })">
+                                    <li>
+                                        @property.Name
+
                                     </li>
+                                </a>
                             }
                         </ul>
                     </div>

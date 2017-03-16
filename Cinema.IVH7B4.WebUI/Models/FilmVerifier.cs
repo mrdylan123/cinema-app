@@ -13,7 +13,7 @@ namespace Cinema.IVH7B4.WebUI.Models
         {
             Debug.WriteLine(inputString);
             Film film = null;
-            foreach(Film currentFilm in filmList)
+            foreach (Film currentFilm in filmList)
             {
                 inputString = inputString.ToLower();
                 string verifyString = currentFilm.Name.ToLower();
@@ -22,7 +22,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                     film = currentFilm;
                 }
             }
-                return film;
+            return film;
         }
     }
 }

@@ -16,9 +16,7 @@ namespace CInema.IVH7B4.UnitTests
     [TestClass]
     public class UnitTestFilmOverviewController
     {
-        private static List<Film> getFilmTestList()
-        {
-            return new List<Film>{
+            List<Film> testList = new List<Film>{
                 new Film()
         {
                     FilmID = 1,
@@ -35,7 +33,7 @@ namespace CInema.IVH7B4.UnitTests
                     LocationID = 1
                 }
             };
-        }
+        
 
         private List<Showing> getTestShowingsList()
         {
@@ -72,7 +70,7 @@ namespace CInema.IVH7B4.UnitTests
             //arrange
             Mock<IFilmOverviewRepository> mockRepo = new Mock<IFilmOverviewRepository>();
             FilmOverviewController controller = new FilmOverviewController(mockRepo.Object);
-            mockRepo.Setup(s => s.getFilmList()).Returns(getFilmTestList());
+            mockRepo.Setup(s => s.getFilmList()).Returns(testList);
             mockRepo.Setup(s => s.getShowingList()).Returns(getTestShowingsList());
 
             //act
@@ -99,7 +97,7 @@ namespace CInema.IVH7B4.UnitTests
             //arrange
             Mock<IFilmOverviewRepository> mockRepo = new Mock<IFilmOverviewRepository>();
             FilmOverviewController controller = new FilmOverviewController(mockRepo.Object);
-            mockRepo.Setup(s => s.getFilmList()).Returns(getFilmTestList());
+            mockRepo.Setup(s => s.getFilmList()).Returns(testList);
             mockRepo.Setup(s => s.getShowingList()).Returns(getTestShowingsList());
             mockRepo.Setup(s => s.convertDateTime(1)).Returns(new List<string> { "testString"});
 
@@ -110,7 +108,7 @@ namespace CInema.IVH7B4.UnitTests
             string expected2 = "testName";
             string result2 = controller.ViewBag.currentFilm.Name;
 
-            string expected3 = "Zaterdag 11/3/2017   Begintijd: 22:40   Eindtijd: 23:40 Zaalnummer: 5";
+            string expected3 = "Zaterdag 11/3/2017   Begintijd 22:40   Eindtijd 23:40 Zaalnummer 5";
             string result3 = controller.ViewBag.firstDateTime[0];
 
             int expected4 = 1;
