@@ -268,7 +268,7 @@
     <value>Selecteer uw bioscoop</value>
   </data>
   <data name="SummaryView_Checkout" xml:space="preserve">
-    <value>Afreken</value>
+    <value>Afrekenen</value>
   </data>
   <data name="SummaryView_FilmDate" xml:space="preserve">
     <value>Datum</value>
