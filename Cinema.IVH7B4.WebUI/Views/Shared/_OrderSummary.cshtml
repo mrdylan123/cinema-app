@@ -7,30 +7,73 @@
 
         <div class="order_block">
 
-            <p style="text-align:left;">
-                <label class="label_outline_summary">@Resources.Global.OrderSummary_NormalTicket:</label> 
-                @Resources.Global.RateOverView_Quantity: @Model.NormalTicketOrder.Quantity
-                <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.NormalTicketOrder.GetTotalPrice()</span>
-            </p>
+            <!--Normal ticket-->
+            @if (!Model.SelectedShowing.IsLadiesNight)
+            {
+                <p style="text-align:left;">
+                    <label class="label_outline_summary">@Resources.Global.OrderSummary_NormalTicket:</label> 
+                    @Resources.Global.RateOverView_Quantity: @Model.NormalTicketOrder.Quantity
+                    <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.NormalTicketOrder.GetTotalPrice()</span>
+                </p>
+            }
 
-            <p style="text-align:left;">
-                <label class="label_outline_summary">@Resources.Global.OrderSummary_ChildTicket:</label> 
-                @Resources.Global.RateOverView_Quantity: @Model.ChildTicketOrder.Quantity
-                <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.ChildTicketOrder.GetTotalPrice()</span>
-            </p>
+            <!--Child ticket-->
+            @if (!Model.SelectedShowing.IsLadiesNight)
+            {
+                if (Model.IsChildTicketSamePriceAsNormalTicket() != true)
+                {
+                    <p style="text-align:left;">
+                        <label class="label_outline_summary">@Resources.Global.OrderSummary_ChildTicket:</label> 
+                        @Resources.Global.RateOverView_Quantity: @Model.ChildTicketOrder.Quantity
+                        <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.ChildTicketOrder.GetTotalPrice()</span>
+                    </p>
+                }
+            }
 
-            <p style="text-align:left;">
-                <label class="label_outline_summary">@Resources.Global.OrderSummary_StudentTicket:</label> 
-                @Resources.Global.RateOverView_Quantity: @Model.StudentTicketOrder.Quantity
-                <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.StudentTicketOrder.GetTotalPrice()</span>
-            </p>
+            <!--Student ticket-->
+            @if (!Model.SelectedShowing.IsLadiesNight)
+            {
+                if (Model.IsStudentTicketValid(Model.SelectedShowing.BeginDateTime))
+                {
+                    <p style="text-align:left;">
+                        <label class="label_outline_summary">@Resources.Global.OrderSummary_StudentTicket:</label> 
+                        @Resources.Global.RateOverView_Quantity: @Model.StudentTicketOrder.Quantity
+                        <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.StudentTicketOrder.GetTotalPrice()</span>
+                    </p>
+                }
+            }
 
-            <p style="text-align:left;">
-                <label class="label_outline_summary">@Resources.Global.OrderSummary_SeniorTicket:</label> 
-                @Resources.Global.RateOverView_Quantity: @Model.SeniorTicketOrder.Quantity
-                <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.SeniorTicketOrder.GetTotalPrice()</span>
-            </p>
+            <!--65+ ticket-->
+            @if (!Model.SelectedShowing.IsLadiesNight)
+            {
+                if (Model.IsSeniorTicketValid(Model.SelectedShowing.BeginDateTime))
+                {
+                    <p style="text-align:left;">
+                        <label class="label_outline_summary">@Resources.Global.OrderSummary_SeniorTicket:</label> 
+                        @Resources.Global.RateOverView_Quantity: @Model.SeniorTicketOrder.Quantity
+                        <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.SeniorTicketOrder.GetTotalPrice()</span>
+                    </p>
+                }
+            }
+            <!--popcorn ticket-->
+            @if (!Model.SelectedShowing.IsLadiesNight)
+            {
+                <p style="text-align:left;">
+                    <label class="label_outline_summary">popcorn arrangement: </label>
+                    @Resources.Global.RateOverView_Quantity: @Model.PopcornTicketOrder.Quantity
+                    <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.PopcornTicketOrder.GetTotalPrice()</span> 
+                </p>
+            }
 
+            <!--Ladies Night-->
+            @if (Model.SelectedShowing.IsLadiesNight)
+            {
+                <p style="text-align:left;">
+                    <label class="label_outline_summary">ladies night:</label>
+                    @Resources.Global.RateOverView_Quantity: @Model.LadiesTicketOrder.Quantity
+                    <span style="float:right;">@Resources.Global.OrderSummary_Price: €@Model.LadiesTicketOrder.GetTotalPrice()</span>
+                </p>
+            }
             <br />
             <p style="text-align:right;"><b>@Resources.Global.OrderSummary_TotalPrice: €@Model.GetTotalPriceForAllTickets()</b></p>
 
