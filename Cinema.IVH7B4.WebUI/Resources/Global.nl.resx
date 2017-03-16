@@ -423,4 +423,10 @@
   <data name="GenreRomance" xml:space="preserve">
     <value>Romantiek</value>
   </data>
+  <data name="FilmOverViewTime" xml:space="preserve">
+    <value>Tijd</value>
+  </data>
+  <data name="FilterControllerToday" xml:space="preserve">
+    <value>vandaag</value>
+  </data>
 </root>

@@ -55,14 +55,15 @@ namespace CInema.IVH7B4.UnitTests {
             model = (CinemaViewModel)controller.TempData["model"];
             Assert.AreEqual(model.PinValue.Length, 2);
         }
-
+        /*
         [TestMethod]
         public void TestFourTimesZero() {
             //arrange
             TicketController ticketController = new TicketController();
             CinemaViewModel model = new CinemaViewModel() {
-                PinValue = "0000"
+
             };
+            model.PinValue = "0000";
             var dic = new RouteValueDictionary();
             dic["action"] = "PinView";
             dic["controller"] = "Pin";
@@ -75,6 +76,7 @@ namespace CInema.IVH7B4.UnitTests {
             Assert.AreEqual(dic["action"], result.RouteValues["action"]);
             Assert.AreEqual(dic["controller"], result.RouteValues["controller"]);
         }
+        */
 
         [TestMethod]
         public void TestViewTest() {

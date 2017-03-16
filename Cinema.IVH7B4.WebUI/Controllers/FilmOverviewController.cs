@@ -14,6 +14,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
     public class FilmOverviewController : Controller
     {
         public IFilmOverviewRepository repo;
+        public DateStringTranslation trans = new DateStringTranslation();
 
         public FilmOverviewController(IFilmOverviewRepository repo)
         {
@@ -86,7 +87,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             }
 
             int i = 0;
-            foreach (string s in repo.convertDateTime(filmID))
+            foreach (string s in trans.convertDateTime(filmID))
             {
 
                 DateTimeAndIDList.Add(new DateTimeAndID()

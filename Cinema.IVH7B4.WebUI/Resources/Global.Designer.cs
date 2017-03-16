@@ -974,5 +974,23 @@ namespace Resources {
                 return ResourceManager.GetString("GenreRomance", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string FilmOverViewTime {
+            get {
+                return ResourceManager.GetString("FilmOverViewTime", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string FilterControllerToday {
+            get {
+                return ResourceManager.GetString("FilterControllerToday", resourceCulture);
+            }
+        }
     }
 }

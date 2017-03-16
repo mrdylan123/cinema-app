@@ -89,7 +89,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
 
             if (time.Day == DateTime.Now.Day)
             {
-                ViewBag.selectedDate = "Vandaag";
+                ViewBag.selectedDate = Resources.Global.FilterControllerToday;
             }
             else
             {

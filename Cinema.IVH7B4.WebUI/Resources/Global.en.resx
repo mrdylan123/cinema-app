@@ -423,4 +423,10 @@
   <data name="GenreRomance" xml:space="preserve">
     <value>Romance</value>
   </data>
+  <data name="FilmOverViewTime" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="FilterControllerToday" xml:space="preserve">
+    <value>today</value>
+  </data>
 </root>

@@ -11,6 +11,7 @@
 <body>
         <div class="container">
             <div class="row" id="searchSection">
+            <div class="row" id="searchSection">
                 <div class="col-xs-5">
                     <table id="searchTable">      
                             <form method="post" action="@Url.Action("searchFilm", "filmOverview")">
@@ -48,7 +49,7 @@
                                     <option value="@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(6))">@FilmOverviewLogic.dateToString(DateTime.Now.AddDays(6))</option>
                                 </select>
                             </td>
-                            <td>Tijd:</td>
+                            <td>@Resources.Global.FilmOverViewTime:</td>
                             <td>
                                 <select name="searchTime">
                                     <option value="13">13:00</option>
@@ -78,7 +79,6 @@
                                         new { filmID = property.FilmID })">
                                     <li>
                                         @property.Name
-
                                     </li>
                                 </a>
                             }
@@ -124,16 +124,18 @@
                         }
                         else
                         {
-                            if (ViewBag.currentFilm.Description != null)
-                            {
-                                <p>
-                                    @ViewBag.currentFilm.Description
-                                </p>
-                            }
-                            else
-                            {
+                            if (ViewBag.currentFilm.Description != null) {
+                                if (Culture == "nl" || Culture == "nl-NL") {
+                                    <p>
+                                        @ViewBag.currentFilm.Description
+                                    </p>
+                                }
+                                else {
+                                    @ViewBag.currentFilm.DescriptionEN
+                                }
+                            } else {
                                 @: Geen informatie beschikbaar
-                        }
+                            }
                         }
                     </div>
                     <div class="col-xs-3" id="info_block">
@@ -261,11 +263,11 @@
                                     <label>3D:</label>
                                     @if (ViewBag.currentFilm.Is3D == true)
                                     {
-                                        @: Ja
+                                        @Resources.Global.FilmOverView_Film3dYes
                                     }
                                     else
                                     {
-                                        @: Nee
+                                        @Resources.Global.FilmOverView_Film3dNo
                                     }
                                 </li>
                                 <li>

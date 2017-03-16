@@ -37,9 +37,9 @@ namespace Cinema.IVH7B4.WebUI.Models
 
             public static String getDutchString(this int ft) {
                 switch ((FilmType)ft) {
-                    case FilmType.Children: return "Kinder"; // 0
-                    case FilmType.Action: return "Actie"; // 1
-                    case FilmType.Comedy: return "Komedie"; // 2
+                    case FilmType.Children: return Resources.Global.FilmOverView_Gerne_Children; // 0
+                    case FilmType.Action: return Resources.Global.FilmOverView_Gerne_Action; // 1
+                    case FilmType.Comedy: return Resources.Global.FilmOverView_Gerne_Comedy; // 2
                     case FilmType.Drama: return "Drama"; // 3
                     case FilmType.Horror: return "Horror"; // 4
 

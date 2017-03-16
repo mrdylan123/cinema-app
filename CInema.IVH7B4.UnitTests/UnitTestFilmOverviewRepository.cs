@@ -4,7 +4,10 @@ using Cinema.IVH7B4.Domain.Concrete;
 using Moq;
 using Cinema.IVH7B4.Domain.Entities;
 using System.Collections.Generic;
+using System.Data.Entity.SqlServer;
+using System.Web.Management;
 using Cinema.IVH7B4.Domain.Abstract;
+using Cinema.IVH7B4.WebUI.Models;
 
 namespace CInema.IVH7B4.UnitTests
 {
@@ -44,17 +47,19 @@ namespace CInema.IVH7B4.UnitTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(NullReferenceException))]
         public void TestConvertDateTime()
         {
             //arrange
+            Mock<DateStringTranslation> mock2 = new Mock<DateStringTranslation>();
             Mock<FilmOverviewRepository> mock1 = new Mock<FilmOverviewRepository>();
             mock1.Setup(s => s.getShowingList()).Returns(getTestShowingsList());
 
             //act
-            string result1 = mock1.Object.convertDateTime(1)[0];
+            string result1 = mock2.Object.convertDateTime(1)[0];
             string expected1 = "Zaterdag 11/3/2017   Begintijd: 22:40   Eindtijd: 23:40 Zaalnummer: 5";
 
-            string result2 = mock1.Object.convertDateTime(2)[0];
+            string result2 = mock2.Object.convertDateTime(2)[0];
             string expected2 = "Vrijdag 10/3/2017   Begintijd: 22:40   Eindtijd: 23:50 Zaalnummer: 3";
             
             //assert

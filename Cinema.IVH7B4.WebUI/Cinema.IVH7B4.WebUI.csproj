@@ -189,6 +189,7 @@
     <Compile Include="Models\AutomaticSeatSelection.cs" />
     <Compile Include="Models\ChildTicketOrder.cs" />
     <Compile Include="Models\CinemaViewModel.cs" />
+    <Compile Include="Models\DateStringTranslation.cs" />
     <Compile Include="Models\DateTimeAndID.cs" />
     <Compile Include="Models\FilmOverviewLogic.cs" />
     <Compile Include="Models\FilmType.cs" />

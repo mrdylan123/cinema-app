@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Cinema.IVH7B4.Domain.Entities;
 using Cinema.IVH7B4.Domain.Concrete;
 using System.Diagnostics;
+using TaskExtensions = System.Data.Entity.SqlServer.Utilities.TaskExtensions;
 
 namespace Cinema.IVH7B4.Domain.Concrete
 {
@@ -67,67 +68,6 @@ namespace Cinema.IVH7B4.Domain.Concrete
             {
                 throw new Exception("Er is iets misgegaan");
             }
-        }
-
-        public List<string> convertDateTime(int filmID)
-        {
-            List<string> currentShowings = new List<string>();
-            List<Showing> showingList = getShowingbyId(filmID);
-
-            showingList = (from e in showingList
-                           orderby e.BeginDateTime, e.BeginDateTime
-                           select e).ToList();
-
-            foreach (Showing showing in showingList)
-            {
-                int dateCheck = DateTime.Compare(showing.BeginDateTime, DateTime.Now);
-                int dayCheck = showing.BeginDateTime.Day;
-                int monthCheck = showing.BeginDateTime.Month;
-
-                DateTime currentBegin = showing.BeginDateTime;
-                string dayWeek = currentBegin.DayOfWeek.ToString();
-                string dayMonth = currentBegin.Day.ToString();
-                string month = currentBegin.Month.ToString();
-                string year = currentBegin.Year.ToString();
-                string hourBegin = currentBegin.Hour.ToString("D2");
-                string minutesBegin = currentBegin.Minute.ToString("D2");
-
-                DateTime currentEnd = showing.EndDateTime;
-                string hourEnd = currentEnd.Hour.ToString("D2");
-                string minutesEnd = currentEnd.Minute.ToString("D2");
-
-                if (currentBegin <= getNextWeekday(DateTime.Now, DayOfWeek.Thursday) && currentBegin.Day - DateTime.Now.Day <= 7)
-                {
-                    switch (dayWeek)
-                    {
-                        case "Monday":
-                            dayWeek = "Maandag";
-                            break;
-                        case "Tuesday":
-                            dayWeek = "Dinsdag";
-                            break;
-                        case "Wednesday":
-                            dayWeek = "Woensdag";
-                            break;
-                        case "Thursday":
-                            dayWeek = "Donderdag";
-                            break;
-                        case "Friday":
-                            dayWeek = "Vrijdag";
-                            break;
-                        case "Saturday":
-                            dayWeek = "Zaterdag";
-                            break;
-                        case "Sunday":
-                            dayWeek = "Zondag";
-                            break;
-                    }
-
-                    currentShowings.Add(dayWeek + " " + dayMonth + "/" + month + "/" + year + " " +
-                                    " " + " " + "Begintijd: " + hourBegin + ":" + minutesBegin + " " + " " + " " + "Eindtijd: " + hourEnd + ":" + minutesEnd + " " + "Zaalnummer: " + showing.Room.RoomNumber);
-                }
-            }
-            return currentShowings;
         }
 
         public static DateTime getNextWeekday(DateTime start, DayOfWeek day)

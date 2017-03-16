@@ -68,7 +68,7 @@
 
                         <p>@Resources.Global.FilmOverView_FilmDuration: @f.Length</p>
                         <p style="float: right">@Resources.Global.FilmOverView_Langague: @f.Language</p>
-                        <p>Genre: @f.FilmType</p>
+                        <p>Genre: @f.FilmType.getDutchString()</p>
                         <p style="float: right">@Resources.Global.FilmOverView_Subs: @f.LanguageSubs</p>
                         <p>@Resources.Global.FilmOverView_Age: @f.Age</p>
                         @if (@f.Protagonist != null) {
