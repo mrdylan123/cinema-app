@@ -144,38 +144,5 @@ namespace CInema.IVH7B4.UnitTests
             //assert
             Assert.AreEqual("RateOverView", result.RouteValues["action"]);
         }
-
-        [TestMethod]
-        public void TestFilmRender()
-        {
-            var mockRepo = new Mock<IFilmOverviewRepository>();
-            FilmOverviewController controller = new FilmOverviewController(mockRepo.Object);
-            int showingID = 1;
-            Mock<IFilmOverviewRepository> mock = new Mock<IFilmOverviewRepository>();
-            Mock<DateStringTranslation> transMock = new Mock<DateStringTranslation>();
-            mock.Setup(f => f.getShowingbyId(showingID));
-            transMock.Setup(f => f.convertDateTime(1)).Returns(new List<string> { "testString" });
-
-            var mockHttpContext = new Mock<HttpContextBase>();
-            mockHttpContext.Setup(s => s.Session["Film"]).Returns(new Film
-            {
-                Age = 16,
-                Description = "Test",
-                FilmID = 2,
-                FilmType = 1,
-                Is3D = true,
-                Language = "NL",
-                LanguageSubs = "NL",
-                Length = 180,
-                LocationID = 1,
-                Name = "Test"
-            });
-
-            RequestContext rc = new RequestContext(mockHttpContext.Object, new RouteData());
-            controller.ControllerContext = new ControllerContext(rc, controller);
-            var result = controller.renderFilm(showingID);
-
-            Assert.AreEqual(result.ViewName, "FilmOverview");
-        }
     }
 }
