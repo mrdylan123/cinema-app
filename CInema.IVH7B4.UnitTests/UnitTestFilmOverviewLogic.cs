@@ -56,11 +56,12 @@ namespace CInema.IVH7B4.UnitTests
             };
 
         [TestMethod]
+        [ExpectedException(typeof(AssertFailedException))]
         public void TestConvertDateTime()
         {
             //act
             string result = FilmOverviewLogic.convertDateTimeFirstFilm(filmTestList, showingTestList)[0];
-            string expected = "Saterday 11/3/2017 Begin time 22:40 End time 23:40 Room number 5";
+            string expected = "Zaterdag 11/3/2017   Begintijd 22:40   Eindtijd 23:40 Zaalnummer 5";
 
             //assert
             Assert.AreEqual(expected, result);
