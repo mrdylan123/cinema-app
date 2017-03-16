@@ -429,4 +429,10 @@
   <data name="FilterControllerToday" xml:space="preserve">
     <value>vandaag</value>
   </data>
+  <data name="FilmOverViewNoInformation" xml:space="preserve">
+    <value>Geen informatie beschikbaar</value>
+  </data>
+  <data name="FilmOverViewNoSubs" xml:space="preserve">
+    <value>Geen ondertiteling</value>
+  </data>
 </root>

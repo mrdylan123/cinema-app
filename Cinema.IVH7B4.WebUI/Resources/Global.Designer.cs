@@ -992,5 +992,21 @@ namespace Resources {
                 return ResourceManager.GetString("FilterControllerToday", resourceCulture);
             }
         }
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string FilmOverViewNoInformation {
+            get {
+                return ResourceManager.GetString("FilmOverViewNoInformation", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string FilmOverViewNoSubs {
+            get {
+                return ResourceManager.GetString("FilmOverViewNoSubs", resourceCulture);
+            }
+        }
     }
 }

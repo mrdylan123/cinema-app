@@ -8,19 +8,22 @@
 <body>
     <div class="container">
         <div>
-            <h1 align="center" style="margin-bottom:30px;">Bedankt voor uw bestelling!</h1>
+            <h1 align="center" style="margin-bottom:30px;">@Resources.Global.Ticket_ThanksOrderTitle!</h1>
         </div>
         <div class="row">
             <div class="col-xs-12 text-center">
-                <h3>U kunt uw ticket bij de bioscoop tot 20 minuten voor aanvang van de film afrekenen en ophalen met de volgende code:</h3>
+                <h3>@Resources.Global.CodeViewText:</h3>
                 <h4><u>@ViewBag.keycode</u></h4>
             </div>            
         </div>
 
         <div class="row">
             <div class="col-xs-12 text-center">
-
-                <a href="/" class="btn btn-success" style="margin-top:150px;">Terug naar home</a>
+                @if (Culture == "nl" || Culture == "nl-NL") {
+                    <a href="/" class="btn btn-success" style="margin-top:150px;">@Resources.Global.Ticket_backtoHome</a>
+                } else {
+                    <a href="/en" class="btn btn-success" style="margin-top:150px;">@Resources.Global.Ticket_backtoHome</a>
+                }
             </div>
         </div>
     </div>
