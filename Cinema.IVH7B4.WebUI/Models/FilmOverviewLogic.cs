@@ -96,7 +96,7 @@ namespace Cinema.IVH7B4.WebUI.Models
                 string minutesEnd = currentEnd.Minute.ToString("D2");
 
                 //check if film is not in the past and if film is in current week
-                if (currentBegin <= getNextWeekday(DateTime.Now, DayOfWeek.Thursday) && currentBegin.Day - DateTime.Now.Day <= 7)
+                if (currentBegin <= getNextWeekday(DateTime.Now, DayOfWeek.Thursday) && currentBegin.Day - DateTime.Now.Day <= 7 && currentBegin.Day - DateTime.Now.Day > 0)
                 {
                     switch (dayWeek)
                     {

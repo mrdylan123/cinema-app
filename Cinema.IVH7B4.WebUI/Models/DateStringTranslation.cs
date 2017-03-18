@@ -34,7 +34,7 @@ namespace Cinema.IVH7B4.WebUI.Models {
                 string hourEnd = currentEnd.Hour.ToString("D2");
                 string minutesEnd = currentEnd.Minute.ToString("D2");
                 if (currentBegin <= FilmOverviewRepository.getNextWeekday(DateTime.Now, DayOfWeek.Thursday) &&
-                    currentBegin.Day - DateTime.Now.Day <= 7) {
+                    currentBegin.Day - DateTime.Now.Day <= 7 && currentBegin.Day - DateTime.Now.Day > 0) {
                     switch (dayWeek) {
                         case "Monday":
                             dayWeek = Resources.Global.FilmOverView_WeekDayMonday;

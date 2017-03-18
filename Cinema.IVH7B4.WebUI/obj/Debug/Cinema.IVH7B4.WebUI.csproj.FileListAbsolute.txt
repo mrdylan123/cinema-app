@@ -205,3 +205,10 @@ C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\en\Cinema.IVH7B4.WebUI.resources.dll
 C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\nl\Cinema.IVH7B4.WebUI.resources.dll
 C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.dll
 C:\dev\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.pdb
+C:\Git\Cinema.IVH7B4.WebUI\bin\en\Cinema.IVH7B4.WebUI.resources.dll
+C:\Git\Cinema.IVH7B4.WebUI\bin\nl\Cinema.IVH7B4.WebUI.resources.dll
+C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Resources.Global.resources
+C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Resources.Global.en.resources
+C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\Cinema.IVH7B4.WebUI.Resources.Global.nl.resources
+C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\en\Cinema.IVH7B4.WebUI.resources.dll
+C:\Git\Cinema.IVH7B4.WebUI\obj\Debug\nl\Cinema.IVH7B4.WebUI.resources.dll
