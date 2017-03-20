@@ -77,10 +77,10 @@ namespace CInema.IVH7B4.UnitTests
             //act
             ActionResult result = controller.filmOverview();
 
-            int expected1 = 1;
+            int expected1 = 0;
             int result1 = controller.ViewBag.firstDateTime.Count;
 
-            int expected2 = 1;
+            int expected2 = 0;
             int result2 = controller.ViewBag.filmList.Count;
 
             CinemaViewModel model = (CinemaViewModel)controller.TempData["model"];
