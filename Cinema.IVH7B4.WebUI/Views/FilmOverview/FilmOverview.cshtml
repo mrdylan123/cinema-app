@@ -210,6 +210,10 @@
                                         @Resources.Global.FilmOverViewNoInformation
                                     }
                                 </li>
+                                <li>
+                                    <label>Beoordeling:</label>
+                                    <a style="cursor: pointer;" onclick="location.href = '@Url.Action("Redirect", "FilmOverview", new {f = ViewBag.filmList[0].Name})'"> @(new ReviewLogic().GetRatingByFilmName(ViewBag.filmList[0].Name, ViewBag.reviews, ViewBag.films)) </a>
+                                </li>
                             </ul>
                         }
                         else
@@ -280,6 +284,10 @@
                                     {
                                         @Resources.Global.FilmOverViewNoInformation
                                     }
+                                </li>
+                                <li>
+                                    <label>Beoordeling:</label>
+                                    <a style="cursor: pointer;" onclick="location.href = '@Url.Action("Redirect", "FilmOverview", new {f = ViewBag.currentFilm.Name})'"> @(new ReviewLogic().GetRatingByFilmName(ViewBag.currentFilm.Name, ViewBag.reviews, ViewBag.films)) </a>
                                 </li>
                             </ul>
                         }

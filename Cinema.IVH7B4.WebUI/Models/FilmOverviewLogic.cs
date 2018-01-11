@@ -54,7 +54,7 @@ namespace Cinema.IVH7B4.WebUI.Models
             return image;
         }
 
-        public static List<string> convertDateTimeFirstFilm(this List<Film> allFilms, List<Showing> allShowings)
+        public static List<string> convertDateTimeFirstFilm(List<Film> allFilms, List<Showing> allShowings)
         {
             List<Showing> currentShowings = new List<Showing>();
             List<string> dateTimeStrings = new List<string>();

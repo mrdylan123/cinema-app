@@ -28,6 +28,15 @@ namespace Cinema.IVH7B4.WebUI.Infrastructure {
             kernel.Bind<IFilmRepository>().To<FilmRepository>();
             kernel.Bind<IShowingRepository>().To<ShowingRepository>();
             kernel.Bind<IFilmOverviewRepository>().To<FilmOverviewRepository>();
+            kernel.Bind<ICashRegisterLoginRepository>().To<CashRegisterLoginRepository>();
+            kernel.Bind<ILostAndFoundRepository>().To<LostAndFoundRepository>();
+            kernel.Bind<IManagerLoginRepository>().To<ManagerLoginRepository>();
+            kernel.Bind<IReviewRepository>().To<ReviewRepository>();
+            kernel.Bind<IBackOfficeRepository>().To<BackOfficeRepository>();
+            kernel.Bind<ITenRidesCardRepository>().To<TenRidesCardRepository>();
+            kernel.Bind<IWeekDayCardRepository>().To<WeekDayCardRepository>();
+            kernel.Bind<INewsLetterRegistrationRepository>().To<NewsLetterRegistrationRepository>();
+            kernel.Bind<ISubscriptionHolderRepository>().To<SubscriptionHolderRepository>();
         }
     }
 }

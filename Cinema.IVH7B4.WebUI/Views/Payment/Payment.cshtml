@@ -11,24 +11,40 @@
         <h2>@Resources.Global.Payment_PaymentMethodTitle</h2>
         <hr />
     </div>
+    
+    @if (Model.LoggedInCashRegister == true)
+    {
+        <div class="row" style="margin-top: 50px;">
 
-    <div class="row">
-        <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <button class="payment" type="button" onclick="location.href = '@Url.Action("GiftCardPayment", "Payment")'">Bioscoopbon</button>
+            </div>
 
-        <div class="col-md-3">
-            <button class="payment" type="button" onclick="location.href='@Url.Action("IdealPayment","Payment")'">iDeal</button>
+            <div class="col-md-4">
+                <button class="payment" type="button" onclick="location.href = '@Url.Action("TenRideCardPayment", "Payment")'">10-ritten kaart</button>
+            </div>
+
+            <div class="col-md-4">
+                <button class="payment" type="button" onclick="location.href = '@Url.Action("WeekDayCard", "Payment")'">MaDiWoDo bon</button>
+            </div>
+
         </div>
+    }
+    else
+    {
+        <div class="row">
 
-        <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <button class="payment" type="button" onclick="location.href = '@Url.Action("IdealPayment", "Payment")'">iDeal</button>
+            </div>
 
-        <div class="col-md-3">
-            <button class="payment" type="button" onclick="location.href='@Url.Action("CreditCardPayment","Payment")'">Credit Card</button>
+            <div class="col-md-4">
+                <button class="payment" type="button" onclick="location.href = '@Url.Action("CreditCardPayment", "Payment")'">Credit Card</button>
+            </div>
+
+            <div class="col-md-4">
+                <button class="payment" type="button" onclick="location.href = '@Url.Action("AfterPay", "Payment")'">@Resources.Global.Payment_PaymInTheatrhe</button>
+            </div>
         </div>
-
-        <div class="col-md-1"></div>
-        
-        <div class="col-md-3">
-            <button class="payment" type="button" onclick="location.href='@Url.Action("AfterPay","Payment")'">@Resources.Global.Payment_PaymInTheatrhe</button>
-        </div>
-    </div>
+    }
 </div>

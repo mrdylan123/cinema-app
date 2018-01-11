@@ -23,6 +23,12 @@ namespace Cinema.IVH7B4.WebUI.Models {
         public SeniorTicketOrder SeniorTicketOrder;
         public PopcornTicketOrder PopcornTicketOrder;
         public LadiesTicketOrder LadiesTicketOrder;
+        public string loggedInUser;
+        public bool loggedInCashRegister;
+        public bool loggedInManager;
+        public bool loggedInBackOffice;
+        public string facebookLogin;
+        public SubscriptionHolder foundHolder;
 
         public CinemaViewModel()
         {
@@ -53,6 +59,42 @@ namespace Cinema.IVH7B4.WebUI.Models {
         {
             get { return isPaid; }
             set { isPaid = value; }
+        }
+
+        public string LoggedInUser
+        {
+            get { return loggedInUser; }
+            set { loggedInUser = value; }
+        }
+
+        public SubscriptionHolder FoundHolder
+        {
+            get { return foundHolder; }
+            set { foundHolder = value; }
+        }
+
+        public string Facebooklogin
+        {
+            get { return facebookLogin; }
+            set { facebookLogin = value; }
+        }
+
+        public bool LoggedInCashRegister
+        {
+            get { return loggedInCashRegister; }
+            set { loggedInCashRegister = value; }
+        }
+
+        public bool LoggedInManager
+        {
+            get { return LoggedInManager; }
+            set { loggedInManager = value; }
+        }
+
+        public bool LoggedInBackOffice
+        {
+            get { return loggedInBackOffice; }
+            set { loggedInBackOffice = value; }
         }
 
         public int GetSeatsRow()

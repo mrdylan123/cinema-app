@@ -1,0 +1,67 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Zoek een gevonden voorwerp";
+    Layout = "~/Views/Shared/_Header2.cshtml";
+}
+<head>
+    <!--Datepciker css-->
+    <link href="~/Content/datepicker.css" rel="stylesheet" />
+    <!--Datepicker js-->
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <!--initiate datepicker -->
+    <script>
+        $(function () {
+            $('.datepicker').datepicker();
+        });
+    </script>
+</head>
+<body>
+    <div class="container-fluid" style="background-color: #ffffff; border-bottom: 1px solid #e6e6e6">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h2>Zoeken naar een gevonden voorwerp</h2>
+                    <h3>Meerdere filters zijn mogelijk</h3>
+                    <p style="color: red;"><b>@ViewBag.FindError</b></p>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid text-center" style="background-color: #f7f7f7; border-bottom: 1px solid #e0e0e0;">
+        <form method="post" action="@Url.Action("FindObject", "CashRegister")">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h4>Zoeken op:</h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <p><u>Datum</u></p>
+                    <input class="datepicker" type="text" name="date" />
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <p><u>Zaal</u></p>
+                    <input type="number" name="roomnumber" min="1" max="99" />
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <p><u>Voorwerp</u></p>
+                    <input type="text" name="object" minlength="1" maxlength="50" />
+                </div>
+            </div>
+            
+            <br />
+            
+            <button type="submit" class="btn btn-success">Zoeken <i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+</div>
+    
+    
+    
+
+</body>

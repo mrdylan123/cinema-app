@@ -155,6 +155,7 @@
     <Content Include="Content\FilmOverview.css" />
     <Content Include="Content\Flag_of_the_Netherlands.png" />
     <Content Include="Content\Flag_of_the_United_Kingdom.svg.png" />
+    <Content Include="Content\MailLayout.PNG" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -174,13 +175,20 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BackofficeController.cs" />
+    <Compile Include="Controllers\CashRegisterController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\CriticizeController.cs" />
     <Compile Include="Controllers\FilmOverviewController.cs" />
     <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MailController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\PinController.cs" />
     <Compile Include="Controllers\RateController.cs" />
+    <Compile Include="Controllers\SubscriptionHolderController.cs" />
     <Compile Include="Controllers\SummaryController.cs" />
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Controllers\UpcomingFilmController.cs" />
@@ -197,15 +205,21 @@
     <Compile Include="Models\FilmType.cs" />
     <Compile Include="Models\FilmVerifier.cs" />
     <Compile Include="Models\FilterLogic.cs" />
+    <Compile Include="Models\FindLostAndFoundLogic.cs" />
     <Compile Include="Models\LadiesTicketOrder.cs" />
     <Compile Include="Models\LocalizationAttribute.cs" />
+    <Compile Include="Models\LoginLogic.cs" />
+    <Compile Include="Models\Mailer.cs" />
     <Compile Include="Models\NormalTicketOrder.cs" />
+    <Compile Include="Models\PaymentLogic.cs" />
     <Compile Include="Models\PDFGenerator.cs" />
     <Compile Include="Models\PincodeViewModel.cs" />
     <Compile Include="Models\PopcornTicketOrder.cs" />
+    <Compile Include="Models\ReviewLogic.cs" />
     <Compile Include="Models\SeatCoord.cs" />
     <Compile Include="Models\SeniorTicketOrder.cs" />
     <Compile Include="Models\StudentTicketOrder.cs" />
+    <Compile Include="Models\SubscriptionHolderLogic.cs" />
     <Compile Include="Models\TicketOrder.cs" />
     <Compile Include="Models\UpcomingFilmLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -253,6 +267,29 @@
     <Content Include="Views\Contact\Contact.cshtml" />
     <Content Include="Views\Ticket\ShowCodeView.cshtml" />
     <Content Include="Views\Payment\AfterPay.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\CashRegisterEmployeeLogin.cshtml" />
+    <Content Include="Views\CashRegister\Dashboard.cshtml" />
+    <Content Include="Views\CashRegister\ManageLostAndFound.cshtml" />
+    <Content Include="Views\Shared\_Header2.cshtml" />
+    <Content Include="Views\CashRegister\AddLostAndFound.cshtml" />
+    <Content Include="Views\CashRegister\FindLostAndFound.cshtml" />
+    <Content Include="Views\CashRegister\SearchResults.cshtml" />
+    <Content Include="Views\Login\ManagerLogin.cshtml" />
+    <Content Include="Views\Manager\Dashboard.cshtml" />
+    <Content Include="Views\Criticize\Survey.cshtml" />
+    <Content Include="Views\Criticize\Review.cshtml" />
+    <Content Include="Views\Criticize\SurveyConfirmation.cshtml" />
+    <Content Include="Views\Login\BackOfficeLogin.cshtml" />
+    <Content Include="Views\Backoffice\Dashboard.cshtml" />
+    <Content Include="Views\Payment\GiftCardPayment.cshtml" />
+    <Content Include="Views\Payment\TenRideCardPayment.cshtml" />
+    <Content Include="Views\Payment\WeekDayCardPayment.cshtml" />
+    <Content Include="Views\Mail\Mail.cshtml" />
+    <Content Include="Views\SubscriptionHolder\Login.cshtml" />
+    <Content Include="Views\SubscriptionHolder\Manage.cshtml" />
+    <Content Include="Views\SubscriptionHolder\NewHolder.cshtml" />
+    <Content Include="Views\SubscriptionHolder\EditInfo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -262,6 +299,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="MailAttachments\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cinema.IVH7B4.Domain\Cinema.IVH7B4.Domain.csproj">

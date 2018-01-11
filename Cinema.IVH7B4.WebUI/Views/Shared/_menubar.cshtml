@@ -10,7 +10,8 @@
                 
                         <ul class="nav navbar-nav">
                             <li><a href="#" onclick="location.href='@Url.Action("filmOverview", "FilmOverview")'">Films</a></li>
-                            
+                            <li><a href="#" onclick="location.href='@Url.Action("Survey", "Criticize")'">Beoordeel ons</a></li>
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Resources.Global.NavBar_Theatres <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -21,13 +22,18 @@
                             </li>
 
                             <li><a href="#" onclick="location.href='@Url.Action("Contact", "Contact")'">Contact</a></li>
+                            
                         </ul>
+
+
                     </div>
                 </div>
                 <div class="col-xs-6">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/Nl/"><img class="flag" alt="Nederlands" src="~/Content/Flag_of_the_Netherlands.png" /></a></li>
-                        <li><a href="/en/"><img class="flag" alt="English" src="~/Content/Flag_of_the_United_Kingdom.svg.png" /></a></li>
+                        <li><a href="#" onclick="location.href = '@Url.Action("Login", "SubscriptionHolder")'">Abonnementhouders</a></li>
+                        <li><a href="#" onclick="location.href = '@Url.Action("Login", "Login")'">Medewerkers</a></li>
+                        <li><a href="/Nl/"><img class="flag" alt="Nederlands" src="~/Content/Flag_of_the_Netherlands.png"/></a></li>
+                        <li><a href="/en/"><img class="flag" alt="English" src="~/Content/Flag_of_the_United_Kingdom.svg.png"/></a></li>
                     </ul>
                 </div>           
             </div>

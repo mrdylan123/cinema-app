@@ -112,6 +112,8 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="AutomaticSeatSelectionTest.cs" />
+    <Compile Include="UnitTestPayment.cs" />
+    <Compile Include="UnitTestLogin.cs" />
     <Compile Include="UnitTestFilmOverviewController.cs" />
     <Compile Include="UnitTestFilmOverviewRepository.cs" />
     <Compile Include="UnitTestFilmOverviewLogic.cs" />

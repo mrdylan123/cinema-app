@@ -77,23 +77,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IBackOfficeRepository.cs" />
+    <Compile Include="Abstract\ICashRegisterLoginRepository.cs" />
     <Compile Include="Abstract\IFilmOverviewRepository.cs" />
     <Compile Include="Abstract\IFilmRepository.cs" />
+    <Compile Include="Abstract\ILostAndFoundRepository.cs" />
+    <Compile Include="Abstract\IManagerLoginRepository.cs" />
+    <Compile Include="Abstract\INewsLetterRegistrationRepository.cs" />
+    <Compile Include="Abstract\IReviewRepository.cs" />
     <Compile Include="Abstract\IShowingRepository.cs" />
+    <Compile Include="Abstract\ISubscriptionHolderRepository.cs" />
+    <Compile Include="Abstract\ITenRidesCardRepository.cs" />
+    <Compile Include="Abstract\IWeekDayCardRepository.cs" />
+    <Compile Include="Concrete\BackOfficeRepository.cs" />
+    <Compile Include="Concrete\CashRegisterLoginRepository.cs" />
     <Compile Include="Concrete\FilmOverviewRepository.cs" />
     <Compile Include="Concrete\FilmRepository.cs" />
+    <Compile Include="Concrete\LostAndFoundRepository.cs" />
+    <Compile Include="Concrete\ManagerLoginRepository.cs" />
+    <Compile Include="Concrete\NewsLetterRegistrationRepository.cs" />
+    <Compile Include="Concrete\ReviewRepository.cs" />
     <Compile Include="Concrete\ShowingRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
+    <Compile Include="Concrete\SubscriptionHolderRepository.cs" />
+    <Compile Include="Concrete\TenRidesCardRepository.cs" />
+    <Compile Include="Concrete\WeekDayCardRepository.cs" />
+    <Compile Include="Entities\BackOfficeLogin.cs" />
+    <Compile Include="Entities\CashRegisterLogin.cs" />
+    <Compile Include="Entities\LostAndFound.cs" />
+    <Compile Include="Entities\ManagerLogin.cs" />
     <Compile Include="Entities\NewsletterRegistration.cs" />
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\Film.cs" />
     <Compile Include="Entities\Location.cs" />
     <Compile Include="Entities\Manager.cs" />
+    <Compile Include="Entities\Review.cs" />
     <Compile Include="Entities\Room.cs" />
     <Compile Include="Entities\RoomLayout.cs" />
     <Compile Include="Entities\Seat.cs" />
     <Compile Include="Entities\Showing.cs" />
+    <Compile Include="Entities\SubscriptionHolder.cs" />
+    <Compile Include="Entities\Survey.cs" />
+    <Compile Include="Entities\TenRidesCard.cs" />
     <Compile Include="Entities\Ticket.cs" />
+    <Compile Include="Entities\WeekDayCard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

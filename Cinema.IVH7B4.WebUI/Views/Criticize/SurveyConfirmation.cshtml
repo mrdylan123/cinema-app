@@ -1,0 +1,18 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Enquete bevestiging";
+}
+
+<div class="container-fluid" style="background-color: #ffffff; border-bottom: 1px solid #e6e6e6;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h2>Dankuwel!</h2>
+                <h3>Uw enquete is succesvol toegevoegd</h3>
+                <a onclick="location.href='@Url.Action("Index","Home")'"><h3>Klik hier om terug te gaan</h3></a>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

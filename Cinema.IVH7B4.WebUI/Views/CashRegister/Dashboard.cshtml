@@ -1,0 +1,43 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Header2.cshtml";
+}
+<div class="container">
+    <div class="text-center">
+        <h2>Welkom op het dashboard, @Model.LoggedInUser</h2>
+        <h4>Wat wilt u doen?</h4>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-4 text-center">
+            <button class="payment" type="button" onclick="location.href = '@Url.Action("filmOverview", "FilmOverview")'">Bon/kaarthouders helpen</button>
+        </div>
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-4 text-center">
+            <button class="payment" type="button" onclick="location.href = '@Url.Action("ManageLostAndFound", "CashRegister")'">Gevonden voorwerpen beheren</button>
+        </div>
+        
+        <div class="col-md-1"></div>
+    </div>
+    
+
+    <br />
+    <br />
+
+    <div class="row">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4 text-center">
+            <button class="btn btn-success" onclick="location.href = '@Url.Action("FilmOverview", "FilmOverview")'">Home</button>
+        </div>
+
+        <div class="col-md-4"></div>
+    </div>
+
+</div>

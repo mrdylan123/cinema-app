@@ -1,0 +1,87 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Enquete";
+}
+
+<div class="container-fluid" style="background-color: #ffffff; border-bottom: 1px solid #e6e6e6;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h2>Vul onze enquete in</h2>
+                <h3>Hierbij is 1 volledig oneens en 10 volledig eens</h3>
+                <h3>Velden met een <span style="color: red;">*</span> zijn verplicht</h3>
+                <p style="color: #3fa024;"><b>@ViewBag.SurveyConfirmation</b></p>
+                <p style="color: red;"><b>@ViewBag.SurveyError</b></p>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center" style="background-color: #d1d1d1;">
+    <br />
+    <form method="post" action="@Url.Action("AddSurvey", "Criticize")">
+        <table style="margin: 0 auto; border-collapse: separate; border-spacing: 0 1em">
+            <thead>
+            <tr>
+                <th>Stelling</th>
+                <th>Beoordeling</th>
+            </tr>
+            </thead>
+            
+            <tbody>
+            <tr>
+                <td>
+                    <p>Het kleurgebruik op de website sluit aan bij de huisstijl van de bioscoop</p>
+                </td>
+                <td>
+                    <input type="number" name="rating1" min="1" max="10" value="0" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Ik weet als bezoeker snel waar ik moet zijn op deze website</p>
+                </td>
+                <td>
+                    <input type="number" name="rating2" min="1" max="10" value="0" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>De website werkt snel (laadtijd)</p>
+                </td>
+                <td>
+                    <input type="number" name="rating3" min="1" max="10" value="0" />
+                </td>
+            </tr>
+                
+            <tr>
+                <td>
+                    <p>De website is gebruiksvriendelijk</p>
+                </td>
+                <td>
+                    <input type="number" name="rating4" min="1" max="10" value="0" />
+                </td>
+            </tr> 
+                
+            <tr>
+                <td>
+                    <p>Ik zou het gebruik van deze website aanraden bij een ander</p>
+                </td>
+                <td>
+                    <input type="number" name="rating5" min="1" max="10" value="0" />
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+        <br />
+
+        <button type="submit" class="btn btn-success">Voer in</button>
+    </form>
+    
+    <br />
+</div>

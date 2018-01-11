@@ -1,0 +1,107 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Gevonden voorwerp toevoegen";
+    Layout = "~/Views/Shared/_Header2.cshtml";
+}
+<head>
+    <!--Datepciker css-->
+    <link href="~/Content/datepicker.css" rel="stylesheet" />
+    <!--Datepicker js-->
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <!--initiate datepicker -->
+    <script>
+        $(function () {
+            $('.datepicker').datepicker();
+        });
+    </script>
+</head>
+<body>
+    <div class="container-fluid" style="background-color: #ffffff; border-bottom: 1px solid #e6e6e6">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h2>Gevonden voorwerp toevoegen</h2>
+                    <h3>Velden met een <span style="color: red;">*</span> zijn verplicht</h3>
+                    <p style="color: #3fa024;"><b>@ViewBag.AddConfirmation</b></p>
+                    <p style="color: red;"><b>@ViewBag.AddError</b></p>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+<br />
+    <div class="text-center">
+        <form method="post" action="@Url.Action("AddObject", "CashRegister")">
+            <table style="margin: 0 auto;">
+                <tr>
+                    <td>
+
+                        <p>Datum<span style="color: red;">*</span></p>
+                    </td>
+                    <td>
+                        <input class="datepicker" type="text" name="date" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Object<span style="color: red;">*</span></p>
+                    </td>
+                    <td>
+                        <input type="text" name="object" minlength="2" maxlength="50" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Telefoonnummer vinder</p>
+                    </td>
+                    <td>
+                        <input type="number" name="finder" min="0000000000" max="9999999999" value="0600000000"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Telefoonnummer eigenaar</p>
+                    </td>
+                    <td>
+                        <input type="number" name="owner" min="0000000000" max="9999999999" value="0600000000"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Zaalnummer<span style="color: red;">*</span></p>
+                    </td>
+                    <td>
+                        <input type="number" name="roomnumber" min="1" max="99" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Vestiging<span style="color: red;">*</span></p>
+                    </td>
+                    <td>
+                        <input type="number" name="location" min="1" max="9" />
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <p>Waarbij: <b>3</b> = Breda, <b>4</b> = Tilburg, <b>5</b> = Eindhoven</p>
+                    </td>
+                </tr>
+
+            </table>
+            <br />
+            <br />
+
+            <button type="submit" class="btn btn-success">Voer in</button>
+        </form>
+    </div>
+
+
+</body>

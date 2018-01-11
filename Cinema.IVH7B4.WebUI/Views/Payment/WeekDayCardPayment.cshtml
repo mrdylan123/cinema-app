@@ -1,0 +1,43 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "MaDiWoDo vrijkaartjes";
+}
+<div class="text-center">
+    <h3>@Resources.Global.OrderSummary_TotalPrice: @Model.GetCurrencyString(@Model.GetTotalPriceForAllTickets())</h3>
+    <p style="color: red">@ViewBag.Errorpayment</p>
+</div>
+
+<div class="container">
+    <div class="text-center">
+        <form method="post" action="@Url.Action("WeekDayCardCheck", "Payment")">
+            <table style="margin: 0 auto;">
+                <tr>
+                    <td>
+                        <p>Code van de bon:</p>
+                    </td>
+                    <td>
+                        <input type="number" name="code" min="11111" max="99999" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <br />
+
+            <button type="submit" class="btn btn-success">Betalen</button>
+        </form>
+
+        <h3 style="color: green">@ViewBag.confirmation</h3>
+
+        @if (ViewBag.confirmation != null)
+        {
+            <form method="post" action="@Url.Action("ShowTicketView", "Ticket")">
+
+                <button class="btn btn-primary">Afronden</button>
+            </form>
+        }
+
+    </div>
+
+
+</div>

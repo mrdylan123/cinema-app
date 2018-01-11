@@ -79,5 +79,10 @@ namespace Cinema.IVH7B4.Domain.Concrete
             return newDate;
         }
 
+        public IEnumerable<Film> GetAllFilms()
+        {
+            return context.Films;
+        }
+
     }
 }

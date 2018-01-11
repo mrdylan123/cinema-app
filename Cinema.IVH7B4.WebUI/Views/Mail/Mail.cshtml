@@ -1,0 +1,83 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Mail verzenden";
+    Layout = "~/Views/Shared/_Header2.cshtml";
+}
+<body>
+    <div class="container-fluid" style="background-color: #ffffff; border-bottom: 1px solid #e6e6e6">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h2>Mail verzenden</h2>
+                    <h3>Gelieve alle velden in te vullen</h3>
+                    <p style="color: #3fa024;"><b>@ViewBag.confirmation</b></p>
+                    <p style="color: red;"><b>@ViewBag.error</b></p>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+<div class="row">
+<div class="col-md-6">
+    <form method="post" action="@Url.Action("SendMails", "Mail")">
+        <table style="margin: 0 auto;">
+            <tr>
+                <td>
+                    <p>Onderwerp</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="subject" minlength="3" maxlength="35" required/>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <p>Tekst</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea name="text" cols="60" rows="7" maxlength="500" required></textarea>
+                </td>
+
+            </tr>
+
+
+            @*<tr>
+                    <td>
+                        <p>Bijlage</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="file" name="attachment" id="file" accept=".doc, .docx, application/pdf" required/>
+                    </td>
+                </tr>*@
+
+        </table>
+        <br/>
+        <br/>
+        
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Verzenden</button>
+        </div>
+    </form>
+</div>
+    
+    <div class="col-md-6">
+        <div class="text-center">
+            <h4>Het resultaat zal als volgt zijn:</h4>
+            <img class="img-responsive" src="~/Content/MailLayout.PNG" style="display: block; margin: auto;"/>
+        </div>
+    </div>
+    
+
+</div>
+
+
+</body>

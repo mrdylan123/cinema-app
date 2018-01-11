@@ -432,4 +432,7 @@
   <data name="FilmOverViewNoSubs" xml:space="preserve">
     <value />
   </data>
+  <data name="Navbar_Rate" xml:space="preserve">
+    <value />
+  </data>
 </root>

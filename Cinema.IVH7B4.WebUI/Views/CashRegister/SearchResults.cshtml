@@ -1,0 +1,59 @@
+﻿@using Cinema.IVH7B4.Domain.Entities
+@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Zoekresultaten gevonden voorwerpen";
+    Layout = "~/Views/Shared/_Header2.cshtml";
+}
+<body>
+    <div class="container-fluid" style="background-color: #ffffff; border-bottom: 1px solid #e6e6e6">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h2>Resultaat zoekopdracht</h2>
+                    <h3>Verloren / gevonden voorwerpen</h3>
+                    <p style="color: #3fa024;"><b><u>Er zijn @ViewBag.numberOfResults resultaten gevonden</u></b></p>
+                    <br />
+                </div>
+            </div>
+        </div>
+    </div>
+<br />
+    
+    <!------------------------------------- Show all found objects ------------------------------>
+    <div class="row">
+        <div class="col-xs-2"></div>
+
+        <div class="col-xs-8">
+            <!-- Loop through the list of showings and show them -->
+            @for (int i = 0; i < ViewBag.numberOfResults; i++)
+            {
+                LostAndFound f = ViewBag.resultList[i];
+
+                <div class="well">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <p><u>Datum</u>: @f.Date.ToString("d/M")</p>
+                        <p><u>Object</u>: @f.Object</p>
+                        </div>
+
+                        <div class="col-xs-4">
+                            <p><u>Vinder</u>: @f.Finder</p>
+                            <p><u>Eigenaar</u>: @f.Owner</p>
+                        </div>
+
+                        <div class="col-xs-4">
+                            <p><u>Zaalnummer</u>: @f.RoomNumber</p>
+                            <p><u>Vestiging</u>: @f.RoomNumber</p>  
+                            <p><i>Waarbij: <b>3</b> = Breda, <b>4</b> = Tilburg, <b>5</b> = Eindhoven</i></p>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+
+        <div class="col-xs-2"></div>
+        
+    </div>
+</body>

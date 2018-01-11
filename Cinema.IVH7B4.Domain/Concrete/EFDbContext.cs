@@ -18,6 +18,15 @@ namespace Cinema.IVH7B4.Domain.Concrete {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Manager> Managers{ get; set; }
         public DbSet<NewsletterRegistration> NewsletterRegistrations { get; set; }
+        public DbSet<CashRegisterLogin> CashRegisterLogins { get; set; }
+        public DbSet<LostAndFound> LostAndFounds { get; set; }
+        public DbSet<ManagerLogin> ManagerLogins { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Survey> Surveys { get; set; }
+        public DbSet<BackOfficeLogin> BackOfficeLogins { get; set; }
+        public DbSet<TenRidesCard> TenRidesCards { get; set; }
+        public DbSet<WeekDayCard> WeekDayCards { get; set; }
+        public DbSet<SubscriptionHolder> SubscriptionHolders { get; set; }
 
         public EFDbContext() : base("EFDbContext")
         {

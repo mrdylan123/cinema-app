@@ -12,5 +12,7 @@ namespace Cinema.IVH7B4.Domain.Abstract
         List<Film> getFilmList();
         List<Showing> getShowingList();
         List<Showing> getShowingbyId(int id);
+
+        IEnumerable<Film> GetAllFilms();
     }
 }

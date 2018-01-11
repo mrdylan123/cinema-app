@@ -29,7 +29,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             }
             else
             {
-                model.SelectedLocation = model.findLocationByName(locationName);
+                model.SelectedLocation = model.findLocationByName("Breda");
             }
 
             TempData["model"] = model;

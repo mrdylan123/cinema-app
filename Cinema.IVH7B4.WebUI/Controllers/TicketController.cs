@@ -16,12 +16,12 @@ namespace Cinema.IVH7B4.WebUI.Controllers
         public ActionResult ShowTicketView()
         {
             CinemaViewModel model = (CinemaViewModel)TempData["model"];
+
             // Request input from Credit Card Payment
             string cardNumber = Request["cardnumber"];
             string name = Request["name"];
             string date = Request["date"];
             string securityNumber = Request["securitynumber"];
-
 
             //Request input from ING Bank Payment
             string username = Request["username"];
@@ -65,19 +65,31 @@ namespace Cinema.IVH7B4.WebUI.Controllers
                 }
             }
 
-            if (model.PinValue == "")
+            /* if (model.PinValue != null)
             {
-                return View("ShowTicketVIew");
-            }
+                if (model.PinValue == "")
+                {
+                    return View("ShowTicketView");
+                }
 
-            if (model.PinValue == "0000")
-            {
-                model.WrongPingValue = "Vul een geldige pincode in";
+                if (model.PinValue == "0000")
+                {
+                    model.WrongPingValue = "Vul een geldige pincode in";
 
 
-                TempData["model"] = model;
-                return RedirectToAction("PinView", "Pin");
-            }
+                    TempData["model"] = model;
+                    return RedirectToAction("PinView", "Pin");
+                }
+                else
+                {
+                    InsertNewTicketsIntoDatabase(model);
+
+                    // empty seat coord list
+                    model.SeatCoordList.Clear();
+                    TempData["model"] = model;
+                    return View("ShowTicketView");
+                }
+            } */
             else
             {
                 InsertNewTicketsIntoDatabase(model);
@@ -87,7 +99,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
                 TempData["model"] = model;
                 return View("ShowTicketView");
             }
-
+            
         }
 
         public ActionResult ShowCode()

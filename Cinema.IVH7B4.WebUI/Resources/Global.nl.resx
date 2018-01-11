@@ -435,4 +435,7 @@
   <data name="FilmOverViewNoSubs" xml:space="preserve">
     <value>Geen ondertiteling</value>
   </data>
+  <data name="Navbar_Rate" xml:space="preserve">
+    <value>Beoordeel ons</value>
+  </data>
 </root>

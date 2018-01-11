@@ -527,7 +527,18 @@ namespace Resources {
                 return ResourceManager.GetString("NavBar_Theatres", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string NavBar_Rate
+        {
+            get
+            {
+                return ResourceManager.GetString("NavBar_Rate", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
@@ -1008,5 +1019,6 @@ namespace Resources {
                 return ResourceManager.GetString("FilmOverViewNoSubs", resourceCulture);
             }
         }
+
     }
 }

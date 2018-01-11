@@ -65,7 +65,8 @@
                                 <iframe class="embed-responsive-item" src="@f.Trailer" frameborder="0" allowfullscreen></iframe>
                             }
                         </div>
-
+                        
+                        <a style="cursor: pointer;" onclick="location.href = '@Url.Action("Redirect", "Filter", new {f = f.FilmID})'"><p style="float: right">Beoordeling: @(new ReviewLogic().GetRating(f.FilmID, ViewBag.reviews))</p></a>
                         <p>@Resources.Global.FilmOverView_FilmDuration: @f.Length</p>
                         <p style="float: right">@Resources.Global.FilmOverView_Langague: @f.Language</p>
                         <p>Genre: @f.FilmType.getDutchString()</p>

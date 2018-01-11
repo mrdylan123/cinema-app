@@ -1,0 +1,33 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Gebruikerslogin";
+}
+@Html.Partial("~/Views/Shared/_Menubar.cshtml")
+
+<div class="container">
+    <div class="text-center">
+        <h2>Als wie wenst u in te loggen?</h2>
+        <hr />
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-3">
+            <button class="payment" type="button" onclick="location.href='@Url.Action("CashRegisterEmployeeLogin","Login")'">Kassamedewerker</button>
+        </div>
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-3">
+            <button class="payment" type="button" onclick="location.href='@Url.Action("BackOfficeLogin","Login")'">Back-office medewerker</button>
+        </div>
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-3">
+            <button class="payment" type="button" onclick="location.href='@Url.Action("ManagerLogin","Login")'">Manager</button>
+        </div>
+    </div>
+</div>

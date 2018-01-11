@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Beheer gevonden voorwerpen";
+    Layout = "~/Views/Shared/_Header2.cshtml";
+}
+<div class="container">
+    <div class="text-center">
+        <h2>Beheer van gevonden voorwerpen</h2>
+        <h4>Voer een gevonden voorwerp in, of zoek naar een voorwerp</h4>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-4 text-center">
+            <button class="payment" type="button" onclick="location.href = '@Url.Action("AddLostAndFound", "CashRegister")'">Voer gevonden voorwerp in <i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+        </div>
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-4 text-center">
+            <button class="payment" type="button" onclick="location.href = '@Url.Action("FindLostAndFound", "CashRegister")'">Zoek gevonden voorwerp <br/><i class="fa fa-search" aria-hidden="true"></i> </button>
+        </div>
+
+        <div class="col-md-1"></div>
+    </div>
+</div>

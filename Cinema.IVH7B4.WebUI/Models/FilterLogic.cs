@@ -50,8 +50,30 @@ namespace Cinema.IVH7B4.WebUI.Models
             }
         }
 
-        // Translate Time.DayOfWeek to dutch
-        public static string GetDay(DayOfWeek dayWeek)
+
+  /**      public static List<int> GetRatings(List<Film> films, List<Review> reviews)
+        {
+
+            List<Review> reviewsFromFilteredFilms = new List<Review>();
+
+            foreach (var f in films)
+            {
+                reviewsFromFilteredFilms = reviews.Where(r => r.FilmID == f.FilmID).ToList();       
+            }
+
+
+            foreach (var r in reviewsFromFilteredFilms)
+            {
+                
+            }
+
+           
+        } **/
+    
+
+
+    // Translate Time.DayOfWeek to dutch
+    public static string GetDay(DayOfWeek dayWeek)
         {
             string day = dayWeek.ToString();
             switch (day)

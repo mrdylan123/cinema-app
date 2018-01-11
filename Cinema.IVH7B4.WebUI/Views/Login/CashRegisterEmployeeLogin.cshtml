@@ -1,0 +1,44 @@
+﻿@using Cinema.IVH7B4.WebUI.Models
+@model Cinema.IVH7B4.WebUI.Models.CinemaViewModel
+@{
+    ViewBag.Title = "Kassa medewerker login";
+    Layout = "~/Views/Shared/_Header2.cshtml";
+}
+<div class="container-fluid" style="background-color: #ffffff; border-bottom: 1px solid #e6e6e6">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <h2 style="color: #777777">Kassamedewerker login</h2>
+                <p style="color: red;">
+                    <b>@ViewBag.Errorlogincash</b>
+                </p>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="post" action="@Url.Action("Dashboard", "CashRegister")">
+    <div class="container-fluid text-center" style="text-align: center;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group" style="text-align: center; display: inline-block;">
+                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i></span>
+                    <input type="text" name="username" minlength="4" maxlength="10" placeholder="Gebruikersnaam" />
+                </div>
+            
+                <div class="input-group" style="text-align: center; display: inline-block;">
+                    <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                    <input type="password" name="password" minlength="5" maxlength="15" placeholder="Wachtwoord"/>
+                </div>
+                <br />
+                <br />
+                <button type="submit" class="btn btn-success">Inloggen</button>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+

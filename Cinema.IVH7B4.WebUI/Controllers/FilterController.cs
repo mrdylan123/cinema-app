@@ -14,11 +14,13 @@ namespace Cinema.IVH7B4.WebUI.Controllers
     {
         private IShowingRepository showingRepo;
         private IFilmRepository filmRepo;
+        private IReviewRepository reviewRepo;
 
-        public FilterController(IFilmRepository filmRepo, IShowingRepository showingRepo)
+        public FilterController(IFilmRepository filmRepo, IShowingRepository showingRepo, IReviewRepository reviewRepo)
         {
             this.filmRepo = filmRepo;
             this.showingRepo = showingRepo;
+            this.reviewRepo = reviewRepo;
         }
 
 
@@ -30,7 +32,6 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             {
                 model = new CinemaViewModel();
             }
-
 
             // Retrieve the user input
             string dayInput = Request["searchDay"]; // format: 03-04-2017      (string)
@@ -87,6 +88,8 @@ namespace Cinema.IVH7B4.WebUI.Controllers
             //Add every film that has been found in the result list of showings
             FilterLogic.AddFilms(allTenShowings, allFilms);
 
+            List<Review> allReviews = reviewRepo.GetReviews().ToList();
+            
             if (time.Day == DateTime.Now.Day)
             {
                 ViewBag.selectedDate = Resources.Global.FilterControllerToday;
@@ -96,6 +99,7 @@ namespace Cinema.IVH7B4.WebUI.Controllers
                 ViewBag.selectedDate = FilterLogic.GetDay(time.DayOfWeek) + " " + time.Day + "-" + time.Month;
             }
 
+            ViewBag.reviews = allReviews;
             ViewBag.selectedTime = time.ToString("HH:mm");
             ViewBag.numberOfResults = allTenShowings.Count;
             ViewBag.resultShowings = allTenShowings;
@@ -103,6 +107,16 @@ namespace Cinema.IVH7B4.WebUI.Controllers
 
             TempData["Model"] = model;
             return View("FilteredFilms", model);
+        }
+
+        public ActionResult Redirect(int f)
+        {
+            CinemaViewModel model = (CinemaViewModel)TempData["model"];
+            Film film = filmRepo.GetFilms().First(fl => fl.FilmID == f);
+            model.SelectedFilm = film;
+
+            TempData["model"] = model;
+            return RedirectToAction("Review", "Criticize");
         }
     }
 }
